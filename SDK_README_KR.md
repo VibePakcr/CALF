@@ -1,0 +1,129 @@
+# CALF SDK 0.2.0 — 개발자 프리뷰
+
+[English](SDK_README.md) · [프로토콜 규격](SDK_PROTOCOL_KR.md) · [확장 라이선스](SDK-LICENSE.txt)
+
+**CALF Harness 1.8.6** 및 **CALF Workbench 1.9.1**에 포함된 네이티브 코어를 연결하는 작은 SDK입니다. Python 3.10 이상과 표준 라이브러리로 동작합니다. 상주 서비스·모델 런타임·데이터베이스·네트워크 의존성을 추가하지 않으며, 비공개 코어 소스는 포함하지 않습니다.
+
+이 SDK 프리뷰는 **macOS ARM64·Windows x64·Linux x64(Debian 13)**에서 두 릴리즈의 네이티브 코어와 실제 연결 시험을 마쳤습니다. 각 OS에서 SDK 경계 검사 9개와 검사 실패·수정·증거 무효화·기록 공유·작업 제어·Local MCP 통합 검사를 통과했습니다. 합성 제공자와 실제 Python 검사로 검증했으며 새로운 AI 실서비스 시험이나 모든 배포판 지원을 뜻하지는 않습니다. 압축 파일의 `VERIFICATION.json`에 결과가 있습니다.
+
+[SDK 0.2.0 다운로드](https://github.com/thermany/CALF/releases/tag/sdk-v0.2.0). 하나의 공용 소스 압축 파일에 SDK·영문/한글 안내·영문/한글 프로토콜·예제·검사 실행기가 포함됩니다. 해당 OS의 CALF 네이티브 릴리즈는 별도로 설치합니다. SDK 압축 파일에 코어 런타임은 포함하지 않습니다.
+
+## 시작하기
+
+압축을 풀고 SDK 루트에서 Python을 실행하거나 해당 폴더를 import 경로에 추가합니다. 설치된 네이티브 `calf` 또는 `calf.exe`와 **기존 CALF가 사용하는 동일한 기록 폴더**를 명시합니다. SDK는 경로를 추측하거나 기존 기록을 이동하지 않습니다. 평소 CALF 실행 환경에서 `calf task home`으로 기록 경로를 확인할 수 있습니다. 처음 시험할 때는 새로운 절대 경로를 사용하세요.
+
+```python
+from pathlib import Path
+from calf_sdk import CalfClient, is_satisfied
+
+client = CalfClient(Path("/절대경로/calf"), Path("/절대경로/CALF/workbench"))
+print(client.version())
+for job in client.tasks()["jobs"]:
+    current = client.inspect(job["task"])
+    print(job["task"], current["state"], is_satisfied(current))
+```
+
+Windows는 `Path(r"C:\Tools\CALF\calf.exe")` 같은 절대 경로를 사용합니다. GUI 실행기나 `.app` 폴더 대신 내부 네이티브 코어를 선택합니다. 제공자·검사 명령의 실행 파일은 `Path(sys.executable).resolve()`처럼 실제 물리 경로를 사용해야 합니다.
+
+setuptools가 설치된 개발 환경에서는 `python -m pip install --no-build-isolation .`로 로컬 설치할 수도 있습니다. 외부 런타임 라이브러리는 필요하지 않습니다. PyPI에는 게시하지 않았습니다.
+
+## 작업 등록과 제어
+
+AI 연결은 먼저 CALF에서 설정합니다. 간편 큐는 지원되는 Python `unittest`·설정된 `pytest`·제한된 Cargo 통합 테스트 검사 명세를 찾습니다. 지원하는 검사가 없는 폴더는 등록을 거절합니다.
+
+```python
+job = client.submit(Path("/절대경로/project"), "청구서 반올림 오류를 수정하세요")
+task = job["task"]
+client.control(task, "pause")
+client.control(task, "resume")
+```
+
+등록은 큐에 넣는 동작이며 AI 프로세스를 자동 시작하지 않습니다. Workbench의 기존 워커를 이용하거나 다음과 같이 포그라운드 워커를 명시적으로 실행합니다.
+
+```python
+import subprocess
+subprocess.run(client.worker_argv(), check=True)
+print(is_satisfied(client.inspect(task)))
+```
+
+호출자가 포그라운드 프로세스를 관리하며 CALF의 중단·취소 처리가 끝나도록 기다려야 합니다. 워커 종료 코드 0은 작업 성공을 뜻하지 않습니다. `cancel` 응답은 취소 요청 접수이며 완료 영수증이 아닙니다. 취소한 작업은 재개할 수 없습니다. `recheck`도 기존 예산과 Guard를 따릅니다.
+
+`tasks()`는 최근 32개 작업을 반환합니다. `changes(task, mode="task")`는 읽기 전용 변경 조회이며 모드는 `task`, `attempt`, `recovery`입니다. `path`로 파일 하나, `attempt`로 시도를 지정합니다. 과거 텍스트가 없으면 그대로 미확인으로 남습니다. Working Tree Git diff는 별도의 Workbench 기능입니다.
+
+`reuse(task)`의 레시피를 `submit(..., reuse=recipe)`에 넘기면 새 작업을 만듭니다. 레시피는 성공 증거가 아니며 digest가 일치해야 합니다. `preferences(text)`는 CALF를 통해 작업 성향을 추가 기록합니다. 빈 문자열은 해당 성향의 현재 값을 비우고, 인수 없이 호출하면 현재 값을 조회합니다.
+
+## Local Sources와 MCP
+
+```python
+root = "/절대경로/참고자료"
+registry = client.sources("add", root=root)
+source = next(s for s in registry["sources"] if s["root"] == root)
+listing = client.sources("browse", source=source["id"])
+uri = listing["resources"][0]["uri"]
+preview = client.sources("read", source=source["id"], uri=uri)
+reference = client.reference(source["id"], preview)
+job = client.submit(Path("/절대경로/project"), "첨부 요구사항을 반영하세요",
+                    attachments=[reference])
+```
+
+폴더 추가·조회·미리보기만으로 AI에게 전송하지 않습니다. 위의 명시적 작업 등록이 선택한 참조를 첨부합니다. 미리보기 이후 파일이 바뀌면 기존 참조로 등록할 수 없습니다. 참조 최대 4개, 직렬화된 문맥 총 8KiB 제한이 적용됩니다. 네이티브 어댑터는 숨김·자격증명 관련 경로와 링크를 제외합니다. 이는 문맥 전송 통제이며 외부 AI 프로세스의 기존 파일 접근 권한을 제한하는 샌드박스는 아닙니다.
+
+`client.mcp_server(Path("/절대경로/참고자료"))`는 MCP 클라이언트용 `command`, `args`를 반환합니다. CALF의 읽기 전용 stdio 리소스 서버를 실행하며 초기화·`resources/list`·`resources/read`를 지원합니다. 임의 MCP 도구를 실행하는 플러그인 호스트가 아닙니다. 사용 후 stdin을 닫고 프로세스 종료를 확인합니다.
+
+## 제공자·검사 어댑터
+
+`Check`·`ProviderConfig`는 기존 네이티브 JSON 설정을 만듭니다. `read_request`·`plan`·`action`·`review`·`emit`으로 제공자 프로토콜을 구현할 수 있습니다. 제공자는 변경안을 반환하고 네이티브 코어가 동일성·보호 파일·검사·증거를 판정합니다. 정상 종료만으로 완료를 선언할 수 없습니다.
+
+```python
+import sys
+from calf_sdk import Check, ProviderConfig
+
+python = str(Path(sys.executable).resolve())
+config = ProviderConfig(
+    command=[python, "/절대경로/my_adapter.py"],
+    checks=[Check("unit", [python, "-m", "unittest"], ["test_invoice.py"])],
+    max_attempts=4,
+)
+config.write_new("/절대경로/new-provider.json")
+```
+
+검사 명령은 빈 검사·전체 건너뛰기·불완전한 검증을 계약에 맞춰 실패로 처리해야 합니다. 일반 종료 코드만으로 검사가 의미 있었는지 추론할 수는 없습니다. `write_new`는 기존 설정을 덮어쓰지 않습니다.
+
+사용자 정의 어댑터는 `calf run WORKSPACE REQUEST PROVIDER.json STATE`로 실행하고 `calf run-status WORKSPACE STATE TASK`로 조회합니다. 이 명시적 상태 경로는 Workbench 큐와 별개이며 **Workbench 작업 목록으로 자동 가져오지 않습니다.** 공유 목록이 필요한 작업은 `client.submit`을 사용합니다.
+
+제공자 명령의 마지막 인수에 요청 JSON 파일 경로가 붙습니다. stdout에는 JSON 객체 하나, 진단은 stderr로 출력합니다. `examples/provider_demo.py`는 한 번 실패하고 수정·검토하는 합성 예제이며 실제 AI를 호출하지 않습니다. 제공자 프로세스에서도 SDK를 import할 수 있어야 합니다.
+
+## 실패 처리와 범위
+
+- `CalfError`: 네이티브 명령이 실패했습니다. `error.response`에 구조화된 응답이 있습니다.
+- `CalfTransportError`: 시간 초과·출력 한도·실행·파싱 문제입니다. 변경이 이미 일어났을 수 있으므로 **조회한 뒤 재시도 여부를 판단합니다. 자동 재시도하지 않습니다.**
+- `is_satisfied`는 전달된 응답의 명시적 `SATISFIED`만 인식합니다. 임의 데이터의 진위나 서명을 검증하지 않으며 저장된 응답을 최신화하지 않습니다. 신뢰하는 바이너리에서 새 `inspect`·`run-status` 응답을 받아 사용합니다.
+- API 입력은 64KiB, 기본 응답 한도는 8MiB, 기본 응답 제한 시간은 30초입니다. 출력은 임시 파일에 모으고 한도를 확인한 뒤 메모리로 읽습니다. 폴링 사이에 디스크 출력이 일시적으로 한도를 초과할 수 있습니다. 호출 간 캐시는 없습니다.
+- 조회 중에도 CALF 자체 폴더 생성·색인 재구성이 일어날 수 있습니다. SDK는 저널·계약·설정을 직접 다시 쓰지 않습니다.
+- 제공자와 검사 프로그램은 호스트 권한을 유지합니다. 신뢰하는 어댑터만 실행하세요. SDK는 실행 승인·보안 정책을 변경하지 않고 모델 설치나 인증정보 관리를 하지 않습니다.
+
+## 검증 실행
+
+SDK 루트에서 `python -m unittest discover -s tests -v`를 실행합니다. 실제 바이너리 연결 시험은 다음과 같습니다.
+
+```text
+python ops/verify.py --harness /절대경로/calf-1.8.6 --workbench /절대경로/calf-1.9.1 --output /절대경로/새-시험-폴더
+```
+
+새 상태와 합성 제공자, 실제 Python 검사로 실패→수정→검수, 외부 변경 이후 증거 무효화, 공유 기록, 작업 제어, CJK, MCP 종료와 오래된 참조 거절을 확인합니다. 실제 AI 호출·기존 CALF 홈 접근·메모리 벤치마크는 하지 않습니다. 출력 폴더는 없어야 하며 실패 보고서도 보존합니다.
+
+## Check Profile과 업데이트 (0.2.0)
+
+새 검사 탐색은 Harness 1.8.6 또는 Workbench 1.9.1이 필요하며 기존 0.1 API는 유지합니다.
+
+```python
+from calf_sdk import Check, ProviderConfig
+checks = [Check.from_discovered(c) for c in client.discover_checks(project)]
+config = ProviderConfig(command=[python, adapter_path], checks=checks)
+```
+
+`discover_checks`는 설치된 도구의 메타데이터를 확인하며 검사 실행·의존성 설치·작업 등록을 하지 않습니다. Python은 `.venv`, `venv`, 활성 환경, PATH 순서로 선택하며 명시된 환경이 불완전하면 다른 환경으로 몰래 전환하지 않습니다. Python v2는 인터프리터·환경 설정·패키지 메타데이터를 결속하지만 설치된 모든 패키지 파일의 해시를 보장하지 않습니다. Cargo는 잠금 파일이 있는 단일 패키지의 통합 검사를 지원합니다.
+
+코어가 작업 전 실패를 기록하고 기존·새로운·해결된 실패를 구분합니다. 실패한 검사에서 파일과 결과가 계속 같으면 무효 재시도를 멈춥니다. 빈 검사·전부 건너뛴 검사·불완전 결과는 완료가 아닙니다. `no_progress`, `UNKNOWN`, 요청 접수 응답을 성공으로 해석하지 마세요.
+
+새 큐 작업은 기록 폴더에 버전별 실행 파일 한 개를 공유 보관합니다. 업데이트할 때 전체 기록 폴더를 유지하고, `control(task, "resume")` 후 워커를 실행하면 원래 런타임과 남은 시도 횟수로 이어집니다. 런타임이 없거나 변조되면 거부하며 기존 계약을 고쳐 통과시키지 않습니다. 고급 `calf run` 경로는 명시적으로 고정한 바이너리·설정·상태를 사용하며 큐로 자동 이관되지 않습니다.
