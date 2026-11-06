@@ -1,12 +1,15 @@
-# CALF SDK 0.2.0 — 개발자 프리뷰
+# CALF SDK 0.2.1 — 개발자 프리뷰
+
+Universal Work v1은 고정 계약·파일 버전 결속 검수·범용 Adapter·의존성 없는 Python/Node 클라이언트·선택적 제어 MCP를 제공합니다. [규약과 실행 예제](SDK_WORK_PROTOCOL_KR.md)를 참고하세요. Workbench 1.9.2의 **Runtime Work**에서 같은 작업을 조회·제어할 수 있으며 기존 코드 작업 API도 유지됩니다.
+
 
 [English](SDK_README.md) · [프로토콜 규격](SDK_PROTOCOL_KR.md) · [확장 라이선스](SDK-LICENSE.txt)
 
-**CALF Harness 1.8.6** 및 **CALF Workbench 1.9.1**에 포함된 네이티브 코어를 연결하는 작은 SDK입니다. Python 3.10 이상과 표준 라이브러리로 동작합니다. 상주 서비스·모델 런타임·데이터베이스·네트워크 의존성을 추가하지 않으며, 비공개 코어 소스는 포함하지 않습니다.
+**CALF Harness 1.8.7** 및 **CALF Workbench 1.9.2**에 포함된 네이티브 코어를 연결하는 작은 SDK입니다. Python 3.10 이상과 표준 라이브러리로 동작합니다. 상주 서비스·모델 런타임·데이터베이스·네트워크 의존성을 추가하지 않으며, 비공개 코어 소스는 포함하지 않습니다.
 
-이 SDK 프리뷰는 **macOS ARM64·Windows x64·Linux x64(Debian 13)**에서 두 릴리즈의 네이티브 코어와 실제 연결 시험을 마쳤습니다. 각 OS에서 SDK 경계 검사 9개와 검사 실패·수정·증거 무효화·기록 공유·작업 제어·Local MCP 통합 검사를 통과했습니다. 합성 제공자와 실제 Python 검사로 검증했으며 새로운 AI 실서비스 시험이나 모든 배포판 지원을 뜻하지는 않습니다. 압축 파일의 `VERIFICATION.json`에 결과가 있습니다.
+이 SDK 프리뷰는 **macOS ARM64·Windows x64·Linux x64(Debian 13)**에서 두 릴리즈의 네이티브 코어와 실제 연결 시험을 마쳤습니다. 각 OS에서 SDK 경계 검사 16개와 검사 실패·수정·증거 무효화·기록 공유·작업 제어·Local MCP 통합 검사를 통과했습니다. 합성 제공자와 실제 Python 검사로 검증했으며 새로운 AI 실서비스 시험이나 모든 배포판 지원을 뜻하지는 않습니다. 압축 파일의 `VERIFICATION.json`에 결과가 있습니다.
 
-[SDK 0.2.0 다운로드](https://github.com/thermany/CALF/releases/tag/sdk-v0.2.0). 하나의 공용 소스 압축 파일에 SDK·영문/한글 안내·영문/한글 프로토콜·예제·검사 실행기가 포함됩니다. 해당 OS의 CALF 네이티브 릴리즈는 별도로 설치합니다. SDK 압축 파일에 코어 런타임은 포함하지 않습니다.
+[SDK 0.2.1 다운로드](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.1). 하나의 공용 소스 압축 파일에 SDK·영문/한글 안내·영문/한글 프로토콜·예제·검사 실행기가 포함됩니다. 해당 OS의 CALF 네이티브 릴리즈는 별도로 설치합니다. SDK 압축 파일에 코어 런타임은 포함하지 않습니다.
 
 ## 시작하기
 
@@ -107,14 +110,14 @@ config.write_new("/절대경로/new-provider.json")
 SDK 루트에서 `python -m unittest discover -s tests -v`를 실행합니다. 실제 바이너리 연결 시험은 다음과 같습니다.
 
 ```text
-python ops/verify.py --harness /절대경로/calf-1.8.6 --workbench /절대경로/calf-1.9.1 --output /절대경로/새-시험-폴더
+python ops/verify.py --harness /절대경로/calf-1.8.7 --workbench /절대경로/calf-1.9.2 --output /절대경로/새-시험-폴더
 ```
 
 새 상태와 합성 제공자, 실제 Python 검사로 실패→수정→검수, 외부 변경 이후 증거 무효화, 공유 기록, 작업 제어, CJK, MCP 종료와 오래된 참조 거절을 확인합니다. 실제 AI 호출·기존 CALF 홈 접근·메모리 벤치마크는 하지 않습니다. 출력 폴더는 없어야 하며 실패 보고서도 보존합니다.
 
-## Check Profile과 업데이트 (0.2.0)
+## Check Profile과 업데이트 (0.2.1)
 
-새 검사 탐색은 Harness 1.8.6 또는 Workbench 1.9.1이 필요하며 기존 0.1 API는 유지합니다.
+새 검사 탐색은 Harness 1.8.7 또는 Workbench 1.9.2이 필요하며 기존 0.1 API는 유지합니다.
 
 ```python
 from calf_sdk import Check, ProviderConfig
@@ -127,3 +130,8 @@ config = ProviderConfig(command=[python, adapter_path], checks=checks)
 코어가 작업 전 실패를 기록하고 기존·새로운·해결된 실패를 구분합니다. 실패한 검사에서 파일과 결과가 계속 같으면 무효 재시도를 멈춥니다. 빈 검사·전부 건너뛴 검사·불완전 결과는 완료가 아닙니다. `no_progress`, `UNKNOWN`, 요청 접수 응답을 성공으로 해석하지 마세요.
 
 새 큐 작업은 기록 폴더에 버전별 실행 파일 한 개를 공유 보관합니다. 업데이트할 때 전체 기록 폴더를 유지하고, `control(task, "resume")` 후 워커를 실행하면 원래 런타임과 남은 시도 횟수로 이어집니다. 런타임이 없거나 변조되면 거부하며 기존 계약을 고쳐 통과시키지 않습니다. 고급 `calf run` 경로는 명시적으로 고정한 바이너리·설정·상태를 사용하며 큐로 자동 이관되지 않습니다.
+
+
+### JavaScript / TypeScript
+
+CALF 1.8.7 / 1.9.2는 Node 24 이상 내장 node:test 프로파일을 지원합니다. `Check.from_discovered()`가 v3와 실행 명령을 그대로 유지합니다. `examples/check_profiles.py`를 참고하세요. npm 스크립트·Jest·Vitest·TypeScript 타입 검사는 이 프로파일 범위 밖입니다.

@@ -1,8 +1,8 @@
-# CALF 확장 프로토콜 — SDK 0.2.0
+# CALF 확장 프로토콜 — SDK 0.2.1
 
-[English](PROTOCOL.md) · [SDK 안내](../README_KR.md)
+[English](SDK_PROTOCOL.md) · [SDK 안내](SDK_README_KR.md)
 
-호환 대상은 Harness 1.8.6 및 Workbench 1.9.1의 네이티브 코어입니다. 기존 공개 명령 경계의 개발자 프리뷰이며, 알 수 없는 필드나 명령을 이후에도 지원한다는 보장은 아닙니다. 실행 엔진과 내부 기록 저장 형식은 확장 API가 아닙니다.
+호환 대상은 Harness 1.8.7 및 Workbench 1.9.2의 네이티브 코어입니다. 기존 공개 명령 경계의 개발자 프리뷰이며, 알 수 없는 필드나 명령을 이후에도 지원한다는 보장은 아닙니다. 실행 엔진과 내부 기록 저장 형식은 확장 API가 아닙니다.
 
 ## 1. 명령 전송
 
@@ -101,7 +101,7 @@
 
 직접 MCP 클라이언트는 `calf local-mcp ROOT`를 실행합니다. stdin/stdout에서 줄바꿈으로 구분한 UTF-8 JSON-RPC 2.0을 사용하며 한 프레임은 줄바꿈 포함 최대 512KiB입니다. `protocolVersion: "2025-11-25"`, 클라이언트 정보·capabilities로 `initialize`를 보내고 협상된 버전과 resources capability를 확인합니다. 리소스 호출 전에 `notifications/initialized`를 보냅니다. 명령은 `ping`, `resources/list`(cursor 없음), `resources/read`(`uri`)입니다. URI는 서버가 반환한 불투명 식별자로 취급합니다. stdin을 닫고 프로세스 종료를 기다립니다. 제품 릴리즈 식별은 `calf --version`을 사용하며 MCP 서버 메타데이터가 제품 버전 계약은 아닙니다.
 
-내장 서버는 읽기 전용이며 도구·쓰기·sampling·네트워크 리스너가 없습니다. SDK 0.2.0은 임의 외부 MCP 서버 등록을 추가하지 않습니다. 명시적 첨부 외의 제공자 파일 접근을 제한하려면 별도의 OS 권한 경계가 필요합니다.
+내장 서버는 읽기 전용이며 도구·쓰기·sampling·네트워크 리스너가 없습니다. SDK 0.2.1은 임의 외부 MCP 서버 등록을 추가하지 않습니다. 명시적 첨부 외의 제공자 파일 접근을 제한하려면 별도의 OS 권한 경계가 필요합니다.
 
 ## 4. 보존과 호환성
 
@@ -112,3 +112,7 @@
 ## 버전별 검사 프로필
 
 `check-discover WORKSPACE`는 `{ "checks": [...] }`를 반환합니다. 각 항목의 `id`, `command`, `inputs`, `envKeys`, `class`, `profile`을 유지하세요. `profile`과 명령 안의 직렬화된 프로필 인자는 선택한 코어가 만든 한 쌍이며 임의로 다시 작성하지 않습니다. `Check.from_discovered`가 이를 보존합니다. Python v2는 환경 신원과 소스 목록 제외 경계를 추가합니다. `profile`이 없는 기존 종료 코드 검사는 의미가 유지됩니다. `checkBaseline`, 검사 `verification`, `failureClassification`은 관측 정보이고 검사 조건을 완화하는 권한이 아닙니다. 큐 작업의 `runtime`은 CALF가 관리하며 SDK에서 편집하는 설정이 아닙니다.
+
+## 개발용 프로파일 v3
+
+SDK 0.2.1.dev1은 네이티브 탐색이 반환하는 Node v3 프로파일을 그대로 전달합니다. 명령·tools·targets·nodeVersion을 유지하세요. 해석과 실행 파일·입력 동일성 검증은 네이티브 코어가 담당하며 별도 러너를 추가하지 않습니다.

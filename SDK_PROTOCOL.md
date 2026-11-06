@@ -1,8 +1,8 @@
-# CALF extension protocol — SDK 0.2.0
+# CALF extension protocol — SDK 0.2.1
 
-[한국어](PROTOCOL_KR.md) · [SDK guide](../README.md)
+[한국어](SDK_PROTOCOL_KR.md) · [SDK guide](SDK_README.md)
 
-Compatibility target: Harness 1.8.6 and Workbench 1.9.1 native core. This is a developer preview of the existing public command boundary. Unknown fields/operations are not a forward-compatibility promise. The execution engine and record-storage format are not extension APIs.
+Compatibility target: Harness 1.8.7 and Workbench 1.9.2 native core. This is a developer preview of the existing public command boundary. Unknown fields/operations are not a forward-compatibility promise. The execution engine and record-storage format are not extension APIs.
 
 ## 1. Command transport
 
@@ -103,7 +103,7 @@ A submission attachment is `{"source":"registered-id","uri":"calf-local:///...",
 
 For a direct MCP client, launch `calf local-mcp ROOT`. It uses newline-delimited UTF-8 JSON-RPC 2.0 over stdin/stdout; maximum frame is 512 KiB including newline. Send `initialize` with `protocolVersion: "2025-11-25"`, client information and capabilities; accept/check the negotiated protocol and resources capability. Send `notifications/initialized` before resource calls. Methods are `ping`, `resources/list` (no cursor), `resources/read` (`uri`). URIs are opaque identifiers from the server. Close stdin, then wait for exit. Use `calf --version` to identify the product release; MCP server metadata is not the product version contract.
 
-The built-in server is read-only and has no tools, writes, sampling or network listener. SDK 0.2.0 does not add arbitrary external MCP-server registration. A separate OS boundary is needed to restrict what a provider process can access outside explicit attachments.
+The built-in server is read-only and has no tools, writes, sampling or network listener. SDK 0.2.1 does not add arbitrary external MCP-server registration. A separate OS boundary is needed to restrict what a provider process can access outside explicit attachments.
 
 ## 4. Preservation and compatibility
 
@@ -114,3 +114,7 @@ Protocol failures, stale evidence, exhausted attempts and rejected requests stay
 ## Versioned check profiles
 
 `check-discover WORKSPACE` returns `{ "checks": [...] }`. Each entry retains `id`, `command`, `inputs`, `envKeys`, `class` and `profile`. Treat `profile` and its serialized command argument as an opaque pair supplied by the selected core; do not rewrite either. `Check.from_discovered` preserves them. Profile v1 covers the initial adapters; Python v2 adds explicit environment identity and source-inventory exclusion. Legacy exit-code checks omit `profile` and keep their meaning. `checkBaseline`, check `verification` and `failureClassification` are observations, never authority to bypass a requirement. Queue job `runtime` metadata is owned by CALF, not editable SDK configuration.
+
+## Development profile v3
+
+SDK 0.2.1.dev1 accepts the opaque Node v3 profile returned by native discovery. Keep its exact command, tools, targets and nodeVersion. Interpretation and tool/input identity verification remain in the native core; this does not add a second runner.

@@ -1,12 +1,15 @@
-# CALF SDK 0.2.0 — Developer Preview
+# CALF SDK 0.2.1 — Developer Preview
+
+Universal Work v1 adds frozen contracts, exact-version file validation, runtime adapters, dependency-free Node/Python clients and optional-control Local MCP. [Protocol and runnable examples](SDK_WORK_PROTOCOL.md). Workbench 1.9.2 shows the same work under **Runtime Work**. Existing code-job API calls remain compatible.
+
 
 [한국어](SDK_README_KR.md) · [Protocol](SDK_PROTOCOL.md) · [Extension license](SDK-LICENSE.txt)
 
-A small integration layer for **CALF Harness 1.8.6** and the native core included in **CALF Workbench 1.9.1**. Python 3.10+ and the standard library are sufficient. The SDK adds no background service, model runtime, database or network dependency. CALF's execution engine remains proprietary and is not included.
+A small integration layer for **CALF Harness 1.8.7** and the native core included in **CALF Workbench 1.9.2**. Python 3.10+ and the standard library are sufficient. The SDK adds no background service, model runtime, database or network dependency. CALF's execution engine remains proprietary and is not included.
 
-This preview has been verified against both released native cores on **macOS ARM64, Windows x64 and Linux x64 (Debian 13)**. Each platform passed nine SDK boundary tests and native integration covering failed checks, repair, evidence invalidation, shared records, task control and Local MCP. Tests use a deterministic provider and real Python checks; they do not claim a new live AI-service test or support for every OS distribution. See `VERIFICATION.json` in the archive.
+Qualification details for the native cores and SDK are in `VERIFICATION.json` in the archive. Runtime tests use real Python/Node processes and a loopback HTTP service; no new live AI-service benchmark is claimed.
 
-[Download SDK 0.2.0](https://github.com/thermany/CALF/releases/tag/sdk-v0.2.0). One portable source archive includes this SDK, English/Korean guides, both protocol documents, examples and the test runner. Install a matching CALF native release separately; the SDK archive contains no core runtime.
+[Download SDK 0.2.1](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.1). One portable source archive includes this SDK, English/Korean guides, both protocol documents, examples and the test runner. Install a matching CALF native release separately; the SDK archive contains no core runtime.
 
 ## Start with existing records
 
@@ -119,14 +122,14 @@ From this SDK root:
 
 ```text
 python -m unittest discover -s tests -v
-python ops/verify.py --harness /absolute/calf-1.8.6 --workbench /absolute/calf-1.9.1 --output /absolute/new-test-folder
+python ops/verify.py --harness /absolute/calf-1.8.7 --workbench /absolute/calf-1.9.2 --output /absolute/new-test-folder
 ```
 
 The integration check uses fresh state, synthetic providers and actual Python tests. It verifies a failed check followed by repair, stale evidence after an external edit, shared records, control operations, CJK text, MCP shutdown and refusal of stale attachments. It does not call an AI service, touch your existing CALF home or perform a memory benchmark. The output folder must not already exist; failed reports are retained.
 
-## Check Profiles and updates (0.2.0)
+## Check Profiles and updates (0.2.1)
 
-Requires Harness 1.8.6 or Workbench 1.9.1 for native check discovery. Existing 0.1 APIs remain available.
+Requires Harness 1.8.7 or Workbench 1.9.2 for native check discovery. Existing 0.1 APIs remain available.
 
 ```python
 from calf_sdk import Check, ProviderConfig
@@ -140,3 +143,8 @@ config = ProviderConfig(command=[python, adapter_path], checks=checks)
 The native core records baseline failures, distinguishes existing/new/resolved failures and stops repeated unsuccessful checks with unchanged files and results. Empty, skipped-only or incomplete checks never imply completion. Do not turn `no_progress`, `UNKNOWN` or a request acknowledgment into a successful result.
 
 New queued jobs retain one shared executable per version in the selected records home. Keep that complete home when updating; `control(task, "resume")` followed by the foreground worker uses the original runtime and remaining attempt budget. Missing/changed runtimes are refused. `runtime_unavailable` is not a provider failure. Old contracts are not rewritten. The advanced `calf run` path still uses its explicitly pinned binary/config/state and is not automatically moved into the queue.
+
+
+### JavaScript / TypeScript
+
+CALF 1.8.7 / 1.9.2 supports Node 24+ built-in node:test profiles. `Check.from_discovered()` retains profile v3 and its command. See `examples/check_profiles.py`. npm scripts, Jest, Vitest and TypeScript typechecking are outside this profile.

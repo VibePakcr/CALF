@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "versions": {
+    "Harness": "1.8.7",
+    "Workbench": "1.9.2",
+    "SDK": "0.2.1"
+  },
+  "platforms": {
+    "macos": {
+      "platform": "darwin",
+      "coreSha256": {
+        "harness": "219326cdc9ca62663a81c2a98214d886f53fb133dcc906d4884f9ac31f54e1ee",
+        "workbench": "ea53acd4bf3f0369170fff9708779f53cd9c35a03fb5aeb96ef65a44f9ebe7c3"
+      },
+      "sdkBoundaryTests": 16,
+      "universalChecksPerCore": {
+        "harness": 23,
+        "workbench": 23
+      },
+      "checks": [
+        "logical_request_dedup_and_conflict",
+        "python_cjk_real_execution_independent_validator_and_auto_adoption",
+        "node_data_execution_and_digest_bound_manual_adoption",
+        "new_attempt_keeps_prior_candidate_and_enforces_budget",
+        "post_check_file_drift_invalidates_adoption_and_recheck_restores_evidence",
+        "successful_process_exit_does_not_override_failed_check",
+        "partial_cannot_claim_success",
+        "extra_cannot_claim_success",
+        "malformed_cannot_claim_success",
+        "link_cannot_claim_success",
+        "owned_synchronous_timeout_is_settled_without_success",
+        "frozen_input_drift_blocks_execution",
+        "registered_tool_identity_drift_blocks_execution",
+        "portable_output_contract_rejects_escape_and_reserved_names",
+        "unknown_async_job_reserves_single_slot_and_blocks_blind_retry_and_legacy_worker",
+        "lost_http_response_reconciled_after_restart_without_duplicate_execute",
+        "async_cancellation_requires_provider_confirmation",
+        "python_sdk_timeout_relays_owned_process_cleanup",
+        "mcp_default_read_only_does_not_expose_execution",
+        "mcp_control_real_submit_execute_check_and_inspect",
+        "node_sdk_real_native_evidence_call",
+        "node_sdk_timeout_requests_native_cleanup_before_forceful_termination",
+        "preexisting_records_settings_contract_and_inputs_preserved"
+      ],
+      "recoveryChecks": [
+        "updated_binary_resumes_real_task_through_frozen_older_runtime",
+        "updated_runtime_bridge_propagates_cancel_and_reaps_producer",
+        "core_crash_without_end_receipt_keeps_unknown_and_execution_reservation",
+        "schema_documents_parse_and_reference_real_protocol"
+      ]
+    },
+    "windows": {
+      "platform": "win32",
+      "coreSha256": {
+        "harness": "c759a3920030dfa86f25150b255248b2f8be12fd798c5fc2e3fc9e78e19c7aa7",
+        "workbench": "9c0f4d3e67242d3af61f34893341c97b8769487e49cd50b815cee8b0d41c6819"
+      },
+      "sdkBoundaryTests": 16,
+      "universalChecksPerCore": {
+        "harness": 23,
+        "workbench": 23
+      },
+      "checks": [
+        "logical_request_dedup_and_conflict",
+        "python_cjk_real_execution_independent_validator_and_auto_adoption",
+        "node_data_execution_and_digest_bound_manual_adoption",
+        "new_attempt_keeps_prior_candidate_and_enforces_budget",
+        "post_check_file_drift_invalidates_adoption_and_recheck_restores_evidence",
+        "successful_process_exit_does_not_override_failed_check",
+        "partial_cannot_claim_success",
+        "extra_cannot_claim_success",
+        "malformed_cannot_claim_success",
+        "link_cannot_claim_success",
+        "owned_synchronous_timeout_is_settled_without_success",
+        "frozen_input_drift_blocks_execution",
+        "registered_tool_identity_drift_blocks_execution",
+        "portable_output_contract_rejects_escape_and_reserved_names",
+        "unknown_async_job_reserves_single_slot_and_blocks_blind_retry_and_legacy_worker",
+        "lost_http_response_reconciled_after_restart_without_duplicate_execute",
+        "async_cancellation_requires_provider_confirmation",
+        "python_sdk_timeout_relays_owned_process_cleanup",
+        "mcp_default_read_only_does_not_expose_execution",
+        "mcp_control_real_submit_execute_check_and_inspect",
+        "node_sdk_real_native_evidence_call",
+        "node_sdk_timeout_requests_native_cleanup_before_forceful_termination",
+        "preexisting_records_settings_contract_and_inputs_preserved"
+      ],
+      "recoveryChecks": [
+        "updated_binary_resumes_real_task_through_frozen_older_runtime",
+        "updated_runtime_bridge_propagates_cancel_and_reaps_producer",
+        "core_crash_without_end_receipt_keeps_unknown_and_execution_reservation",
+        "schema_documents_parse_and_reference_real_protocol"
+      ]
+    },
+    "linux": {
+      "platform": "linux",
+      "coreSha256": {
+        "harness": "dd04edf99b815027061f0a01224ccc8af268310f5358c683e20ccbb517af4076",
+        "workbench": "a3fb6822c9e73f007b21fcf21b75f37c919e8c7c167497e24e09b8307bf5d47b"
+      },
+      "sdkBoundaryTests": 16,
+      "universalChecksPerCore": {
+        "harness": 23,
+        "workbench": 23
+      },
+      "checks": [
+        "logical_request_dedup_and_conflict",
+        "python_cjk_real_execution_independent_validator_and_auto_adoption",
+        "node_data_execution_and_digest_bound_manual_adoption",
+        "new_attempt_keeps_prior_candidate_and_enforces_budget",
+        "post_check_file_drift_invalidates_adoption_and_recheck_restores_evidence",
+        "successful_process_exit_does_not_override_failed_check",
+        "partial_cannot_claim_success",
+        "extra_cannot_claim_success",
+        "malformed_cannot_claim_success",
+        "link_cannot_claim_success",
+        "owned_synchronous_timeout_is_settled_without_success",
+        "frozen_input_drift_blocks_execution",
+        "registered_tool_identity_drift_blocks_execution",
+        "portable_output_contract_rejects_escape_and_reserved_names",
+        "unknown_async_job_reserves_single_slot_and_blocks_blind_retry_and_legacy_worker",
+        "lost_http_response_reconciled_after_restart_without_duplicate_execute",
+        "async_cancellation_requires_provider_confirmation",
+        "python_sdk_timeout_relays_owned_process_cleanup",
+        "mcp_default_read_only_does_not_expose_execution",
+        "mcp_control_real_submit_execute_check_and_inspect",
+        "node_sdk_real_native_evidence_call",
+        "node_sdk_timeout_requests_native_cleanup_before_forceful_termination",
+        "preexisting_records_settings_contract_and_inputs_preserved"
+      ],
+      "recoveryChecks": [
+        "updated_binary_resumes_real_task_through_frozen_older_runtime",
+        "updated_runtime_bridge_propagates_cancel_and_reaps_producer",
+        "core_crash_without_end_receipt_keeps_unknown_and_execution_reservation",
+        "schema_documents_parse_and_reference_real_protocol"
+      ]
+    }
+  },
+  "nativeRegressionTests": 40,
+  "ui": {
+    "macos": "Actual Run -> check -> manual adoption, reopen same records, Task Flow and Diff screenshots",
+    "windows": "Final native bridge and system monitor; no fresh window interaction claimed",
+    "linux": "Final native bridge and system monitor; no fresh window interaction claimed"
+  },
+  "scope": "Real Python/Node processes, independent validator, loopback HTTP and MCP. No new live AI-service, memory or soak benchmark. Existing records preserved. Windows long record paths use the native extended-path SQLite VFS."
+}
