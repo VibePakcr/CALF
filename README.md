@@ -1,5 +1,7 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+**Repository Navigator:** [free extension and illustrated manuals](#free-repository-navigator-extension).
+
 ## Host connection companion
 
 [CALF 1.8.7 three-host kit](https://github.com/VibePakcr/CALF/releases/tag/hosts-v1.8.7.3) documents Codex, Antigravity and Claude local Code connections. [English](hosts/README.md) · [한국어](hosts/README_KR.md). Claude adapter qualification is macOS-only. [Local Pack Tools + Repository pack](https://github.com/VibePakcr/CALF-Extensions/releases/tag/packs-v0.1.0-preview.1) separately supports verified installation and recovery on macOS, Windows and Linux. The native engine and Workbench versions are unchanged.
@@ -106,3 +108,14 @@ Before / After shows the recorded change and its matching CHECK receipt. Light E
 A Python adapter produced a CJK document in this release. An independent exact-UTF-8 check passed; adoption is bound to that manifest. The same adopted record was verified after reopening Workbench.
 
 <!-- workbench-gallery:end -->
+
+## Free Repository Navigator extension
+
+**Repository Navigator 0.1.0-dev.1** is a free, optional download for exploring Local Git and manually registered GitHub.com / GitLab.com repositories through one relationship map, descriptions, code and Diff view. It runs with Python 3.10+, Git 2.43+ and a modern browser; the CALF core, SDK and models are not required.
+
+- **Preview download and checksums:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/tag/navigator-v0.1.0-dev.1) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/navigator-v0.1.0-dev.1).
+- **Screenshot manuals:** [English - 9 chapters, 6 screenshots](https://github.com/VibePakcr/CALF-Extensions/blob/main/README.md#project-navigation-preview) · [한국어 - 9개 장, 실화면 6장](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/README_KR.md#프로젝트-탐색-미리보기).
+- **English PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/download/navigator-v0.1.0-dev.1/CALF-Repository-Navigator-Guide-en.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/navigator-v0.1.0-dev.1/downloads/CALF-Repository-Navigator-Guide-en.pdf).
+- **한국어 PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/download/navigator-v0.1.0-dev.1/CALF-Repository-Navigator-Guide-ko.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/navigator-v0.1.0-dev.1/downloads/CALF-Repository-Navigator-Guide-ko.pdf).
+
+The ZIP includes both offline HTML/PDF manuals. See [extension qualification and limits](https://github.com/VibePakcr/CALF-Extensions/blob/main/docs/NAVIGATOR_PACK_VERIFICATION.json) for the installed preview scope.

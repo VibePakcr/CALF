@@ -1,5 +1,7 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+**Repository Navigator:** [무료 탐색 확장팩·한영 실화면 매뉴얼](#무료-통합-저장소-탐색-확장팩).
+
 ## 세 호스트 연결 키트
 
 [CALF 1.8.7 연결 키트](https://github.com/VibePakcr/CALF/releases/tag/hosts-v1.8.7.3)에 Codex·Antigravity·Claude 로컬 Code의 연동 방법을 정리했습니다. [한국어](hosts/README_KR.md) · [English](hosts/README.md). Claude 어댑터는 macOS 검증 범위입니다. [별도 팩 관리기·Repository 팩](https://github.com/VibePakcr/CALF-Extensions/releases/tag/packs-v0.1.0-preview.1)은 macOS·Windows·Linux에서 설치·복구를 검증했습니다. 네이티브 엔진·워크벤치 버전은 유지합니다.
@@ -112,3 +114,14 @@ Before / After에서 실제 변경과 같은 파일 버전의 CHECK 영수증을
 이번 배포판의 Python Adapter가 CJK 문서를 생성했습니다. 독립 exact-UTF-8 검사를 통과한 파일 명세에 채택을 결속했으며, Workbench를 다시 열어 같은 채택 기록을 확인했습니다.
 
 <!-- workbench-gallery:end -->
+
+## 무료 통합 저장소 탐색 확장팩
+
+**Repository Navigator 0.1.0-dev.1**은 Local Git과 수동 등록한 GitHub.com·GitLab.com 저장소를 같은 관계 지도·설명·코드·Diff로 탐색하는 별도 무료 확장팩입니다. Python 3.10 이상, Git 2.43 이상과 최신 브라우저로 실행하며 CALF core·SDK·모델은 요구하지 않습니다.
+
+- **프리뷰 다운로드·체크섬:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/tag/navigator-v0.1.0-dev.1) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/navigator-v0.1.0-dev.1).
+- **스크린샷 매뉴얼:** [한글 - 9개 장, 실화면 6장](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/README_KR.md#프로젝트-탐색-미리보기) · [English - 9 chapters, 6 screenshots](https://github.com/VibePakcr/CALF-Extensions/blob/main/README.md#project-navigation-preview).
+- **한글 PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/download/navigator-v0.1.0-dev.1/CALF-Repository-Navigator-Guide-ko.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/navigator-v0.1.0-dev.1/downloads/CALF-Repository-Navigator-Guide-ko.pdf).
+- **English PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/download/navigator-v0.1.0-dev.1/CALF-Repository-Navigator-Guide-en.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/navigator-v0.1.0-dev.1/downloads/CALF-Repository-Navigator-Guide-en.pdf).
+
+ZIP 안에 한·영 오프라인 HTML/PDF 매뉴얼이 함께 들어 있습니다. 설치 프리뷰의 실제 검증 범위는 [확장팩 검증·한계](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/docs/NAVIGATOR_PACK_VERIFICATION.json)를 참고하세요.
