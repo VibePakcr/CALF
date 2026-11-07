@@ -1,5 +1,10 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+## 세 호스트 연결 키트
+
+[CALF 1.8.7 연결 키트](https://github.com/VibePakcr/CALF/releases/tag/hosts-v1.8.7.3)에 Codex·Antigravity·Claude 로컬 Code의 연동 방법을 정리했습니다. [한국어](hosts/README_KR.md) · [English](hosts/README.md). Claude 어댑터는 macOS 검증 범위입니다. [별도 팩 관리기·Repository 팩](https://github.com/VibePakcr/CALF-Extensions/releases/tag/packs-v0.1.0-preview.1)은 macOS·Windows·Linux에서 설치·복구를 검증했습니다. 네이티브 엔진·워크벤치 버전은 유지합니다.
+
+
 [English](README.md) · [한국어](README_KR.md)
 
 **[바로 다운로드 · Direct downloads](DOWNLOADS.md)** — 릴리즈 목록을 열지 않고 OS별 파일을 받습니다. 앱 내부 브라우저에서 릴리즈 조회 오류가 나면 이 링크를 이용하거나 외부 브라우저에서 여세요.

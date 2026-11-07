@@ -1,0 +1,31 @@
+{
+  "schema": "calf.host-connections.v1",
+  "revision": "1.8.7-hosts.3",
+  "coreVersion": "1.8.7",
+  "coreBundled": false,
+  "hostTests": {
+    "status": "PASS",
+    "checks": [
+      "fresh-claude-install-preserves-settings-and-unrelated-hooks",
+      "settings-cas-refuses-stale-input",
+      "installed-claude-hook-actually-calls-core187",
+      "update-and-old-revision-selection-preserve-later-settings",
+      "interrupted-host-apply-reconciles-without-settings-write",
+      "edited-managed-hook-refused-without-overwrite",
+      "native-codex-antigravity-install-explicit-test-homes",
+      "native-two-host-reinstall-preserves-owner-settings"
+    ],
+    "coreSha256": "219326cdc9ca62663a81c2a98214d886f53fb133dcc906d4884f9ac31f54e1ee",
+    "freshModelCalls": 0,
+    "existingHostSettingsWritten": false,
+    "scope": "macOS isolated host settings and native hook invocation; actual model sessions reused from prior evidence"
+  },
+  "evidenceReused": true,
+  "modelSessionScopes": {
+    "codex": "macOS new session, 8 checks, SATISFIED",
+    "antigravity": "macOS ACP new session, 8 checks, SATISFIED",
+    "claude": "macOS CLI and desktop local Code, 8 checks, accepted Stop"
+  },
+  "windowsLinuxClaudeAdapterQualified": false,
+  "permissionRulesAdded": false
+}

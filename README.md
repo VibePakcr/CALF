@@ -1,5 +1,10 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+## Host connection companion
+
+[CALF 1.8.7 three-host kit](https://github.com/VibePakcr/CALF/releases/tag/hosts-v1.8.7.3) documents Codex, Antigravity and Claude local Code connections. [English](hosts/README.md) · [한국어](hosts/README_KR.md). Claude adapter qualification is macOS-only. [Local Pack Tools + Repository pack](https://github.com/VibePakcr/CALF-Extensions/releases/tag/packs-v0.1.0-preview.1) separately supports verified installation and recovery on macOS, Windows and Linux. The native engine and Workbench versions are unchanged.
+
+
 [English](README.md) · [한국어](README_KR.md)
 
 **[Direct downloads · 바로 다운로드](DOWNLOADS.md)** — choose your OS without opening the Releases list. If an embedded browser reports a Releases error, use these links or open them in your browser.
