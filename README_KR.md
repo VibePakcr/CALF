@@ -87,7 +87,7 @@ Python은 프로젝트 `.venv`, `venv`, 현재 활성화한 환경, 제한된 PA
 
 새 대기열 작업은 생성 당시 런타임을 해시로 검증해 로컬 기록 폴더에 보존합니다. 업데이트 후 Resume는 그 런타임과 원래 검사·근거를 사용합니다. `runtimes`를 포함한 기록 폴더 전체를 유지하세요. 실행 버전을 입증할 수 없는 이전 작업을 임의로 이관하거나 성공 처리하지 않습니다. 고급 `calf run`의 직접 상태 경로는 원래 호환 런타임으로 실행해야 합니다.
 
-**SDK 0.2.2**에는 `CalfClient.discover_checks()`와 `Check.from_discovered()`가 추가되어 네이티브 검사 명세를 사용자 어댑터에서 그대로 연결할 수 있습니다. [SDK 안내](SDK_README_KR.md), [프로토콜](SDK_PROTOCOL_KR.md), `examples/check_profiles.py`를 참고하세요. Python 표준 라이브러리 클라이언트와 별도 의존성이 없는 Node 클라이언트를 제공합니다. 추가 에이전트 엔진이나 상주 서비스는 없습니다.
+**SDK 0.2.2**에는 `CalfClient.discover_checks()`와 `Check.from_discovered()`가 포함되어 네이티브 검사 명세를 사용자 어댑터에서 그대로 연결할 수 있습니다. [SDK 안내](SDK_README_KR.md), [프로토콜](SDK_PROTOCOL_KR.md), `examples/check_profiles.py`를 참고하세요. Python 표준 라이브러리 클라이언트와 별도 의존성이 없는 Node 클라이언트를 제공합니다. 추가 에이전트 엔진이나 상주 서비스는 없습니다.
 
 [Update details / 업데이트 내용](UPDATE.md) · [Universal Work SDK / 범용 작업 SDK](SDK_WORK_PROTOCOL.md)
 

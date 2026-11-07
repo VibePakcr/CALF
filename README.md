@@ -34,7 +34,7 @@ CALF focuses on one agent’s work at a time. It loads the selected work and fil
 
 **Illegal or unauthorized alteration of CALF is prohibited.** The distribution policy does not permit reverse engineering, decompilation, disassembly, binary patching or modification of the proprietary CALF runtime. Violations may result in legal action under applicable law. Free use does not grant permission to extract, modify or redistribute a modified core.
 
-Extensions are provided through official **SDK, adapter and MCP** interfaces, without modifying the core. **Available in the retained 1.9.2 example:** provider and check adapter specifications with explicit limits, the local JSON task interface and the source-reader MCP and optional-control Universal Work MCP. **Developer SDK 0.2.2 is now available separately:** [English guide](SDK_README.md), [한국어 안내](SDK_README_KR.md), and [download](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.2/CALF-SDK-0.2.2.zip). Verified on macOS ARM64, Windows x64 and Linux x64. SDK source is supplied under its integration license; the CALF core remains private.
+Extensions are provided through official **SDK, adapter and MCP** interfaces, without modifying the core. **Available interfaces:** provider and check adapter specifications with explicit limits, the local JSON task interface and the source-reader MCP and optional-control Universal Work MCP. **Developer SDK 0.2.2 is now available separately:** [English guide](SDK_README.md), [한국어 안내](SDK_README_KR.md), and [download](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.2/CALF-SDK-0.2.2.zip). Verified on macOS ARM64, Windows x64 and Linux x64. SDK source is supplied under its integration license; the CALF core remains private.
 
 These restrictions concern the proprietary CALF implementation, not the user's own project code or supported configuration and extension interfaces. Bundled third-party components retain their own licenses and notices in `THIRD-PARTY-NOTICES.txt`.
 
@@ -81,7 +81,7 @@ Python selection prefers the project's `.venv`, then `venv`, an explicitly activ
 
 New queued tasks retain a hash-verified copy of their originating runtime in the local records home. After an update, Resume uses that runtime and the original task's checks and evidence. Keep the complete records home and its `runtimes` directory. Old jobs without a provable runtime remain unresolved; they are not silently migrated. Direct advanced `calf run` states still require their original compatible runtime.
 
-**SDK 0.2.2** adds `CalfClient.discover_checks()` and `Check.from_discovered()` to preserve native profile definitions in custom adapters. See [SDK guide](SDK_README.md), [protocol](SDK_PROTOCOL.md) and the included `examples/check_profiles.py`. The SDK provides small Python standard-library and dependency-free Node clients; it does not add an agent engine or background service.
+**SDK 0.2.2** provides `CalfClient.discover_checks()` and `Check.from_discovered()` to preserve native profile definitions in custom adapters. See [SDK guide](SDK_README.md), [protocol](SDK_PROTOCOL.md) and the included `examples/check_profiles.py`. The SDK provides small Python standard-library and dependency-free Node clients; it does not add an agent engine or background service.
 
 [Update details / 업데이트 내용](UPDATE.md) · [Universal Work SDK / 범용 작업 SDK](SDK_WORK_PROTOCOL.md)
 
