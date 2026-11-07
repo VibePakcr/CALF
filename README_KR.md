@@ -1,5 +1,7 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+**문서 개정판 docs.1:** 배포 패키지 안의 영·한 매뉴얼도 최신 교정본으로 맞췄습니다. 실행 코드와 기존 버전은 유지합니다. [변경 내용·검증 범위](DOCUMENTATION-RELEASE-20261107.1.md).
+
 CALF는 AI의 작업 실행과 검수를 관리하는 가벼운 로컬 하네스·워크벤치입니다. 에이전트 하나에게 작업을 맡기고, 진행 과정과 실제 변경을 살펴본 뒤 요구사항을 충족했는지 검사합니다. 실패하거나 끝내지 못한 시도도 로컬 기록에 남아 원인을 확인하고 작업을 이어갈 수 있습니다.
 
 **Harness 1.8.x**는 창 없이 실행합니다. **Workbench 1.9.x**는 같은 런타임과 작업 기록에 Rust + Tauri 화면을 더합니다. Codex·Antigravity는 네이티브 훅으로, Claude CLI·앱의 로컬 Code 모드는 별도 macOS 어댑터로 연결합니다. 각 호스트의 계정·모델·승인 정책은 그대로 사용합니다.
@@ -11,7 +13,7 @@ CALF는 AI의 작업 실행과 검수를 관리하는 가벼운 로컬 하네스
 
 ## 세 호스트 연결 키트
 
-[CALF 1.8.8 연결 키트](https://github.com/VibePakcr/CALF/releases/tag/hosts-v1.8.8.1)에 Codex·Antigravity·Claude 로컬 Code의 연동 방법을 정리했습니다. [한국어](hosts/README_KR.md) · [English](hosts/README.md). Claude 어댑터는 macOS에서 검증했습니다. [별도 팩 관리기·Repository 팩](https://github.com/VibePakcr/CALF-Extensions/releases/tag/packs-v0.1.0-preview.1)은 macOS·Windows·Linux에서 설치·복구를 검증했습니다. 연결 키트는 네이티브 엔진·워크벤치와 별도로 받습니다.
+[CALF 1.8.8 연결 키트](https://github.com/VibePakcr/CALF/releases/tag/docs-20261107.1)에 Codex·Antigravity·Claude 로컬 Code의 연동 방법을 정리했습니다. [한국어](hosts/README_KR.md) · [English](hosts/README.md). Claude 어댑터는 macOS에서 검증했습니다. [별도 팩 관리기·Repository 팩](https://github.com/VibePakcr/CALF-Extensions/releases/tag/docs-20261107.1)은 macOS·Windows·Linux에서 설치·복구를 검증했습니다. 연결 키트는 네이티브 엔진·워크벤치와 별도로 받습니다.
 
 
 [English](README.md) · [한국어](README_KR.md)
@@ -34,7 +36,7 @@ CALF는 에이전트 하나의 작업에 집중합니다. 필요한 작업과 �
 
 **CALF의 불법·무단 개변조는 금지합니다.** 배포 정책상 독점 소유인 CALF 런타임의 리버싱·디컴파일·디스어셈블·바이너리 패치·개조를 허용하지 않습니다. 위반 시 적용 법률에 따라 법적 조치를 취할 수 있습니다. 무료 사용은 코어의 추출·수정·변조본 재배포를 허락하는 것이 아닙니다.
 
-확장은 코어를 개변조하지 않고 공식 **SDK·어댑터·MCP** 인터페이스를 통해 제공합니다. **이번 릴리즈에서 제공하는 기능:** 범위가 제한된 공급자·검사 어댑터 명세, 로컬 JSON 작업 인터페이스, 자료 조회용 Local MCP와 제어 기능을 선택적으로 켜는 작업 MCP입니다. **개발용 SDK 0.2.2를 별도로 제공합니다:** [한글 안내](SDK_README_KR.md), [English guide](SDK_README.md), [다운로드](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.2/CALF-SDK-0.2.2.zip). macOS ARM64·Windows x64·Linux x64에서 실제 검증했습니다. SDK 소스는 확장 라이선스로 제공하며 CALF 코어는 계속 비공개입니다.
+확장은 코어를 개변조하지 않고 공식 **SDK·어댑터·MCP** 인터페이스를 통해 제공합니다. **이번 릴리즈에서 제공하는 기능:** 범위가 제한된 공급자·검사 어댑터 명세, 로컬 JSON 작업 인터페이스, 자료 조회용 Local MCP와 제어 기능을 선택적으로 켜는 작업 MCP입니다. **개발용 SDK 0.2.2를 별도로 제공합니다:** [한글 안내](SDK_README_KR.md), [English guide](SDK_README.md), [다운로드](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-SDK-0.2.2-docs.1.zip). macOS ARM64·Windows x64·Linux x64에서 실제 검증했습니다. SDK 소스는 확장 라이선스로 제공하며 CALF 코어는 계속 비공개입니다.
 
 이 제한은 CALF 자체의 비공개 구현에 적용합니다. 사용자가 소유한 프로젝트 코드나 지원되는 설정·확장 인터페이스를 제한하는 의미가 아닙니다. 함께 사용하는 외부 구성요소에는 각각의 라이선스가 적용되며 `THIRD-PARTY-NOTICES.txt`에 고지를 포함합니다.
 
@@ -42,18 +44,18 @@ CALF는 에이전트 하나의 작업에 집중합니다. 필요한 작업과 �
 
 | 에디션 | 버전 | 용도 |
 |---|---|---|
-| **Harness** | [1.8.8](https://github.com/VibePakcr/CALF/releases/tag/v1.8.8) | 기존 Codex·Antigravity 훅과 독립 headless 작업. WebView 없음 |
-| **Workbench** | [1.9.3](https://github.com/VibePakcr/CALF/releases/tag/v1.9.3) | 같은 실행 코어와 작업 기록을 사용하는 Rust + Tauri 데스크톱 앱 |
+| **Harness** | [1.8.8](https://github.com/VibePakcr/CALF/releases/tag/docs-20261107.1) | 기존 Codex·Antigravity 훅과 독립 headless 작업. WebView 없음 |
+| **Workbench** | [1.9.3](https://github.com/VibePakcr/CALF/releases/tag/docs-20261107.1) | 같은 실행 코어와 작업 기록을 사용하는 Rust + Tauri 데스크톱 앱 |
 
-먼저 스크린샷이 포함된 **[CALF_mannual.html](https://raw.githubusercontent.com/VibePakcr/CALF/main/CALF_mannual.html)**을 내려받아 로컬에서 열어 주세요. 상단 고정 메뉴와 **EN / KR** 버튼으로 목차·본문 전체·화면 설명을 전환할 수 있습니다. 각 패키지에는 해당 버전의 오프라인 매뉴얼이 들어 있으며, 위 링크에서 최신 문구 교정본을 받을 수 있습니다. [릴리즈 노트](RELEASE-NOTES.md)와 [SHA256SUMS](SHA256SUMS)도 확인하세요.
+먼저 스크린샷이 포함된 **[CALF_mannual.html](https://raw.githubusercontent.com/VibePakcr/CALF/main/CALF_mannual.html)**을 내려받아 로컬에서 열어 주세요. 상단 고정 메뉴와 **EN / KR** 버튼으로 목차·본문 전체·화면 설명을 전환할 수 있습니다. 각 패키지에는 해당 버전의 오프라인 매뉴얼이 들어 있으며, 위 링크에서 최신 문구 교정본을 받을 수 있습니다. [릴리즈 노트](RELEASE-NOTES.md)와 [docs.1 SHA256SUMS](DOCS-20261107.1-SHA256SUMS)도 확인하세요.
 
 ## 다운로드
 
 | 플랫폼 | Harness 1.8.8 | Workbench 1.9.3 |
 |---|---|---|
-| macOS Apple Silicon | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.8.8/CALF-Harness-1.8.8-macos-arm64.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.9.3/CALF-Workbench-1.9.3-macos-arm64.zip) |
-| Windows x64 | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.8.8/CALF-Harness-1.8.8-windows-x86_64.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.9.3/CALF-Workbench-1.9.3-windows-x86_64.zip) |
-| Linux x64 | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/v1.8.8/CALF-Harness-1.8.8-linux-x86_64.tar.gz) | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/v1.9.3/CALF-Workbench-1.9.3-linux-x86_64.tar.gz) |
+| macOS Apple Silicon | [ZIP](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Harness-1.8.8-macos-arm64-docs.1.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Workbench-1.9.3-macos-arm64-docs.1.zip) |
+| Windows x64 | [ZIP](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Harness-1.8.8-windows-x86_64-docs.1.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Workbench-1.9.3-windows-x86_64-docs.1.zip) |
+| Linux x64 | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Harness-1.8.8-linux-x86_64-docs.1.tar.gz) | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Workbench-1.9.3-linux-x86_64-docs.1.tar.gz) |
 
 해시를 확인하고 전체 압축을 푸세요. Workbench는 **CALF Workbench.app**, `calf-terminal.exe`, `./calf-terminal` 중 해당 플랫폼의 실행 파일로 엽니다. Harness는 `./calf --help` 또는 PowerShell의 `.\calf.exe --help`로 시작합니다. 간편 작업 실행은 지원되는 unittest·pytest·Cargo 검사를 찾으며 프로젝트 검사 도구는 별도 준비해야 합니다.
 
@@ -120,7 +122,7 @@ Before / After에서 실제 변경과 같은 파일 버전의 CHECK 영수증을
 
 **Repository Navigator 0.1.0-dev.1**은 Local Git과 수동 등록한 GitHub.com·GitLab.com 저장소를 같은 화면에서 관계 지도·설명·코드·Diff를 탐색하는 별도 무료 확장팩입니다. Python 3.10 이상, Git 2.43 이상과 최신 브라우저로 실행하며 CALF core·SDK·모델은 요구하지 않습니다.
 
-- **프리뷰 다운로드·체크섬:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/tag/navigator-v0.1.0-dev.1) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/navigator-v0.1.0-dev.1).
+- **프리뷰 다운로드·체크섬:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/tag/docs-20261107.1) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/docs-20261107.1).
 - **스크린샷 매뉴얼:** [한글 - 9개 장, 실화면 6장](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/docs/navigator-manual/README_KR.md) · [English - 9 chapters, 6 screenshots](https://github.com/VibePakcr/CALF-Extensions/blob/main/docs/navigator-manual/README.md).
 - **한글 PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/blob/main/docs/navigator-manual/ko.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/docs/navigator-manual/ko.pdf).
 - **English PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/blob/main/docs/navigator-manual/en.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/docs/navigator-manual/en.pdf).

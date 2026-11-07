@@ -1,5 +1,7 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+**Documentation revision docs.1:** download packages now include the reviewed English and Korean manuals. Runtime code and previous releases are retained. [Changes and verification scope](DOCUMENTATION-RELEASE-20261107.1.md).
+
 CALF is a lightweight, local harness and workbench for supervising AI work. Submit a task to an AI agent, follow its execution, inspect the changes, and check the result against your requirements. Failed and incomplete attempts stay in the local record so you can investigate or resume them.
 
 **Harness 1.8.x** runs without a desktop window. **Workbench 1.9.x** adds a Rust + Tauri interface to the same runtime and task records. Codex and Antigravity connect through native hooks; Claude CLI and desktop local Code use a separate macOS adapter. Each host keeps its own account, model and permission policy.
@@ -11,7 +13,7 @@ CALF is a lightweight, local harness and workbench for supervising AI work. Subm
 
 ## Host connection companion
 
-[CALF 1.8.8 three-host kit](https://github.com/VibePakcr/CALF/releases/tag/hosts-v1.8.8.1) documents Codex, Antigravity and Claude local Code connections. [English](hosts/README.md) · [한국어](hosts/README_KR.md). The Claude adapter has been tested on macOS. [Local Pack Tools + Repository pack](https://github.com/VibePakcr/CALF-Extensions/releases/tag/packs-v0.1.0-preview.1) separately supports verified installation and recovery on macOS, Windows and Linux. This kit is a separate download from the native engine and Workbench.
+[CALF 1.8.8 three-host kit](https://github.com/VibePakcr/CALF/releases/tag/docs-20261107.1) documents Codex, Antigravity and Claude local Code connections. [English](hosts/README.md) · [한국어](hosts/README_KR.md). The Claude adapter has been tested on macOS. [Local Pack Tools + Repository pack](https://github.com/VibePakcr/CALF-Extensions/releases/tag/docs-20261107.1) separately supports verified installation and recovery on macOS, Windows and Linux. This kit is a separate download from the native engine and Workbench.
 
 
 [English](README.md) · [한국어](README_KR.md)
@@ -34,24 +36,24 @@ CALF focuses on one agent’s work at a time. It loads the selected work and fil
 
 **Illegal or unauthorized alteration of CALF is prohibited.** The distribution policy does not permit reverse engineering, decompilation, disassembly, binary patching or modification of the proprietary CALF runtime. Violations may result in legal action under applicable law. Free use does not grant permission to extract, modify or redistribute a modified core.
 
-Extensions are provided through official **SDK, adapter and MCP** interfaces, without modifying the core. **Available interfaces:** provider and check adapter specifications with explicit limits, the local JSON task interface and the source-reader MCP and optional-control Universal Work MCP. **Developer SDK 0.2.2 is now available separately:** [English guide](SDK_README.md), [한국어 안내](SDK_README_KR.md), and [download](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.2/CALF-SDK-0.2.2.zip). Verified on macOS ARM64, Windows x64 and Linux x64. SDK source is supplied under its integration license; the CALF core remains private.
+Extensions are provided through official **SDK, adapter and MCP** interfaces, without modifying the core. **Available interfaces:** provider and check adapter specifications with explicit limits, the local JSON task interface and the source-reader MCP and optional-control Universal Work MCP. **Developer SDK 0.2.2 is now available separately:** [English guide](SDK_README.md), [한국어 안내](SDK_README_KR.md), and [download](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-SDK-0.2.2-docs.1.zip). Verified on macOS ARM64, Windows x64 and Linux x64. SDK source is supplied under its integration license; the CALF core remains private.
 
 These restrictions concern the proprietary CALF implementation, not the user's own project code or supported configuration and extension interfaces. Bundled third-party components retain their own licenses and notices in `THIRD-PARTY-NOTICES.txt`.
 
 | Edition | Version | Use |
 |---|---|---|
-| **Harness** | [1.8.8](https://github.com/VibePakcr/CALF/releases/tag/v1.8.8) | Native headless tasks and existing Codex / Antigravity hooks; no WebView |
-| **Workbench** | [1.9.3](https://github.com/VibePakcr/CALF/releases/tag/v1.9.3) | Rust + Tauri desktop for the same execution core and new task records |
+| **Harness** | [1.8.8](https://github.com/VibePakcr/CALF/releases/tag/docs-20261107.1) | Native headless tasks and existing Codex / Antigravity hooks; no WebView |
+| **Workbench** | [1.9.3](https://github.com/VibePakcr/CALF/releases/tag/docs-20261107.1) | Rust + Tauri desktop for the same execution core and new task records |
 
-**Start with the illustrated [CALF_mannual.html](https://raw.githubusercontent.com/VibePakcr/CALF/main/CALF_mannual.html)** — download and open locally. It includes fixed top navigation and an **EN / KR** switch for the full manual, contents and screenshot captions. Each package retains its version’s offline manual; the link above provides the latest wording revision. See [release notes](RELEASE-NOTES.md) and [SHA256SUMS](SHA256SUMS).
+**Start with the illustrated [CALF_mannual.html](https://raw.githubusercontent.com/VibePakcr/CALF/main/CALF_mannual.html)** — download and open locally. It includes fixed top navigation and an **EN / KR** switch for the full manual, contents and screenshot captions. The docs.1 packages include this reviewed offline manual. Earlier release archives retain their original manuals. See [release notes](RELEASE-NOTES.md) and [docs.1 SHA256SUMS](DOCS-20261107.1-SHA256SUMS).
 
 ## Downloads
 
 | Platform | Harness 1.8.8 | Workbench 1.9.3 |
 |---|---|---|
-| macOS Apple Silicon | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.8.8/CALF-Harness-1.8.8-macos-arm64.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.9.3/CALF-Workbench-1.9.3-macos-arm64.zip) |
-| Windows x64 | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.8.8/CALF-Harness-1.8.8-windows-x86_64.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.9.3/CALF-Workbench-1.9.3-windows-x86_64.zip) |
-| Linux x64 | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/v1.8.8/CALF-Harness-1.8.8-linux-x86_64.tar.gz) | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/v1.9.3/CALF-Workbench-1.9.3-linux-x86_64.tar.gz) |
+| macOS Apple Silicon | [ZIP](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Harness-1.8.8-macos-arm64-docs.1.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Workbench-1.9.3-macos-arm64-docs.1.zip) |
+| Windows x64 | [ZIP](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Harness-1.8.8-windows-x86_64-docs.1.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Workbench-1.9.3-windows-x86_64-docs.1.zip) |
+| Linux x64 | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Harness-1.8.8-linux-x86_64-docs.1.tar.gz) | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/docs-20261107.1/CALF-Workbench-1.9.3-linux-x86_64-docs.1.tar.gz) |
 
 Extract the complete package. Open **CALF Workbench.app**, `calf-terminal.exe`, or `./calf-terminal` for the desktop. Run `./calf --help` or `.\calf.exe --help` for Harness. The simple task workflow discovers supported unittest, pytest, Cargo or node:test checks; your project check tools remain separate prerequisites.
 
@@ -114,7 +116,7 @@ A Python adapter produced a CJK document in the retained 1.9.2 example. A separa
 
 **Repository Navigator 0.1.0-dev.1** is a free, optional download for exploring Local Git and manually registered GitHub.com / GitLab.com repositories through one relationship map, descriptions, code and Diff view. It runs with Python 3.10+, Git 2.43+ and a modern browser; the CALF core, SDK and models are not required.
 
-- **Preview download and checksums:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/tag/navigator-v0.1.0-dev.1) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/navigator-v0.1.0-dev.1).
+- **Preview download and checksums:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/tag/docs-20261107.1) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/docs-20261107.1).
 - **Screenshot manuals:** [English - 9 chapters, 6 screenshots](https://github.com/VibePakcr/CALF-Extensions/blob/main/docs/navigator-manual/README.md) · [한국어 - 9개 장, 실화면 6장](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/docs/navigator-manual/README_KR.md).
 - **English PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/blob/main/docs/navigator-manual/en.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/docs/navigator-manual/en.pdf).
 - **한국어 PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/blob/main/docs/navigator-manual/ko.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/docs/navigator-manual/ko.pdf).
