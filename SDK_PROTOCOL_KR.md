@@ -6,15 +6,15 @@
 
 ## 1. 명령 전송
 
-명시적으로 선택한 네이티브 실행 파일을 인수 배열과 `shell=False`로 실행합니다. 절대 실제 경로를 사용합니다. `calf --version`은 `name`, `version`, `os`, `arch` JSON을 반환합니다. 신뢰하는 릴리즈를 선택하고 다운로드 파일의 SHA-256을 공개 체크섬과 대조합니다. SDK의 `binary_sha256()`는 선택한 실행 파일의 해시를 반환하며 게시자를 인증하거나 자동 비교하지 않습니다.
+명시적으로 선택한 네이티브 실행 파일을 인수 배열과 `shell=False`로 실행합니다. 실제 실행 파일의 절대 경로를 사용합니다. `calf --version`은 `name`, `version`, `os`, `arch` JSON을 반환합니다. 신뢰하는 릴리즈를 선택하고 다운로드 파일의 SHA-256을 공개 체크섬과 대조합니다. SDK의 `binary_sha256()`는 선택한 실행 파일의 해시를 반환하며 게시자를 인증하거나 자동 비교하지 않습니다.
 
-`calf api`는 stdin에서 EOF까지 UTF-8 JSON 객체 하나를 읽으며 최대 65,536바이트를 허용합니다. stdout으로 JSON 객체 하나를 반환합니다. 종료 코드 1과 `{"error":"..."}`는 명령 실패입니다. 종료 코드 0은 정상 응답을 뜻합니다. 현재 조회 결과의 `outcome: "SATISFIED"`만 네이티브 검수가 작업을 수락했다는 뜻입니다. 요청 접수·프로세스 종료·저장된 영수증·제공자 검토만으로 완료가 성립하지 않습니다.
+`calf api`는 stdin에서 EOF까지 UTF-8 JSON 객체 하나를 읽으며 최대 65,536바이트를 허용합니다. stdout으로 JSON 객체 하나를 반환합니다. 종료 코드 1과 `{"error":"..."}`는 명령 실패입니다. 종료 코드 0은 정상 응답을 뜻합니다. 현재 조회 결과에 `outcome: "SATISFIED"`가 있어야 네이티브 검수가 작업을 수락한 것으로 볼 수 있습니다. 요청 접수·프로세스 종료·저장된 영수증·제공자 검토만으로 완료가 성립하지 않습니다.
 
 ```json
 {"op":"inspect","home":"/absolute/records-home","task":"job-..."}
 ```
 
-큐 API에는 `op`와 명시적 절대 경로 `home`이 필요합니다. API는 자체 비공개 폴더나 색인을 생성할 수 있습니다. Harness와 Workbench의 같은 `home`을 사용하면 큐 작업을 공유합니다. 내부 상태 파일을 직접 수정하지 않습니다.
+큐 API에는 `op`와 명시적 절대 경로 `home`이 필요합니다. API는 자체 비공개 폴더나 색인을 생성할 수 있습니다. Harness와 Workbench에 같은 `home`을 지정하면 대기열의 작업을 공유합니다. 내부 상태 파일을 직접 수정하지 않습니다.
 
 | 명령 | 추가 입력 | 응답 의미 |
 | --- | --- | --- |
@@ -101,7 +101,7 @@
 
 직접 MCP 클라이언트는 `calf local-mcp ROOT`를 실행합니다. stdin/stdout에서 줄바꿈으로 구분한 UTF-8 JSON-RPC 2.0을 사용하며 한 프레임은 줄바꿈 포함 최대 512KiB입니다. `protocolVersion: "2025-11-25"`, 클라이언트 정보·capabilities로 `initialize`를 보내고 협상된 버전과 resources capability를 확인합니다. 리소스 호출 전에 `notifications/initialized`를 보냅니다. 명령은 `ping`, `resources/list`(cursor 없음), `resources/read`(`uri`)입니다. URI는 서버가 반환한 불투명 식별자로 취급합니다. stdin을 닫고 프로세스 종료를 기다립니다. 제품 릴리즈 식별은 `calf --version`을 사용하며 MCP 서버 메타데이터가 제품 버전 계약은 아닙니다.
 
-내장 서버는 읽기 전용이며 도구·쓰기·sampling·네트워크 리스너가 없습니다. SDK 0.2.2은 임의 외부 MCP 서버 등록을 추가하지 않습니다. 명시적 첨부 외의 제공자 파일 접근을 제한하려면 별도의 OS 권한 경계가 필요합니다.
+내장 서버는 읽기 전용이며 도구·쓰기·sampling·네트워크 리스너가 없습니다. SDK 0.2.2는 임의 외부 MCP 서버 등록을 추가하지 않습니다. 명시적 첨부 외의 제공자 파일 접근을 제한하려면 별도의 OS 권한 경계가 필요합니다.
 
 ## 4. 보존과 호환성
 
@@ -113,6 +113,6 @@
 
 `check-discover WORKSPACE`는 `{ "checks": [...] }`를 반환합니다. 각 항목의 `id`, `command`, `inputs`, `envKeys`, `class`, `profile`을 유지하세요. `profile`과 명령 안의 직렬화된 프로필 인자는 선택한 코어가 만든 한 쌍이며 임의로 다시 작성하지 않습니다. `Check.from_discovered`가 이를 보존합니다. Python v2는 환경 신원과 소스 목록 제외 경계를 추가합니다. `profile`이 없는 기존 종료 코드 검사는 의미가 유지됩니다. `checkBaseline`, 검사 `verification`, `failureClassification`은 관측 정보이고 검사 조건을 완화하는 권한이 아닙니다. 큐 작업의 `runtime`은 CALF가 관리하며 SDK에서 편집하는 설정이 아닙니다.
 
-## 개발용 프로파일 v3
+## 검사 프로파일 v3
 
-SDK 0.2.2.dev1은 네이티브 탐색이 반환하는 Node v3 프로파일을 그대로 전달합니다. 명령·tools·targets·nodeVersion을 유지하세요. 해석과 실행 파일·입력 동일성 검증은 네이티브 코어가 담당하며 별도 러너를 추가하지 않습니다.
+Node v3 프로파일은 개발판 SDK 0.2.2.dev1에서 도입됐으며, 네이티브 탐색이 반환한 내용을 그대로 전달합니다. 명령·tools·targets·nodeVersion을 유지하세요. 해석과 실행 파일·입력 동일성 검증은 네이티브 코어가 담당하며 별도 러너를 추가하지 않습니다.

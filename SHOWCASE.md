@@ -24,7 +24,7 @@ Before / After에서 실제 변경과 같은 파일 버전의 CHECK 영수증을
 
 ![Runtime Work · file artifacts across runtimes](workbench-runtime.png)
 
-A Python adapter produced a CJK document in the 1.9.2 capture. An independent exact-UTF-8 check passed; adoption is bound to that manifest. The same adopted record was verified after reopening Workbench.
+A Python adapter produced a CJK document in the 1.9.2 capture. A separate check verified the exact UTF-8 content. The adoption record refers to the same file manifest. The same adopted record was verified after reopening Workbench.
 
 1.9.2 화면에서 Python Adapter가 CJK 문서를 생성했습니다. 생성된 문서의 UTF-8 내용을 별도로 검사하고, 검사한 파일 목록의 해시를 채택 기록에 남겼으며, Workbench를 다시 열어 같은 채택 기록이 남아 있는지 확인했습니다.
 

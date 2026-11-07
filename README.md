@@ -1,6 +1,6 @@
 # CALF — Controlled Agent Lifecycle Framework
 
-CALF is a lightweight, local harness and workbench for supervising AI work. Give one agent a task, follow its execution, inspect the changes, and check the result against your requirements. Failed and incomplete attempts stay in the local record so you can investigate or resume them.
+CALF is a lightweight, local harness and workbench for supervising AI work. Submit a task to an AI agent, follow its execution, inspect the changes, and check the result against your requirements. Failed and incomplete attempts stay in the local record so you can investigate or resume them.
 
 **Harness 1.8.x** runs without a desktop window. **Workbench 1.9.x** adds a Rust + Tauri interface to the same runtime and task records. Codex and Antigravity connect through native hooks; Claude CLI and desktop local Code use a separate macOS adapter. Each host keeps its own account, model and permission policy.
 
@@ -43,7 +43,7 @@ These restrictions concern the proprietary CALF implementation, not the user's o
 | **Harness** | [1.8.8](https://github.com/VibePakcr/CALF/releases/tag/v1.8.8) | Native headless tasks and existing Codex / Antigravity hooks; no WebView |
 | **Workbench** | [1.9.3](https://github.com/VibePakcr/CALF/releases/tag/v1.9.3) | Rust + Tauri desktop for the same execution core and new task records |
 
-**Start with the illustrated [CALF_mannual.html](https://github.com/VibePakcr/CALF/releases/download/v1.9.3/CALF_mannual.html)** — download and open locally. It includes fixed top navigation and an **EN / KR** switch for the full manual, contents and screenshot captions. The same self-contained offline manual is inside every package. See [release notes](RELEASE-NOTES.md) and [SHA256SUMS](SHA256SUMS).
+**Start with the illustrated [CALF_mannual.html](https://raw.githubusercontent.com/VibePakcr/CALF/main/CALF_mannual.html)** — download and open locally. It includes fixed top navigation and an **EN / KR** switch for the full manual, contents and screenshot captions. Each package retains its version’s offline manual; the link above provides the latest wording revision. See [release notes](RELEASE-NOTES.md) and [SHA256SUMS](SHA256SUMS).
 
 ## Downloads
 
@@ -106,7 +106,7 @@ Before / After shows the recorded change and its matching CHECK receipt. Light E
 
 ![Runtime Work · file artifacts across runtimes](workbench-runtime.png)
 
-A Python adapter produced a CJK document in the retained 1.9.2 example. An independent exact-UTF-8 check passed; adoption is bound to that manifest. The same adopted record was verified after reopening Workbench.
+A Python adapter produced a CJK document in the retained 1.9.2 example. A separate check verified the exact UTF-8 content. The adoption record refers to the same file manifest. The same adopted record was verified after reopening Workbench.
 
 <!-- workbench-gallery:end -->
 
@@ -115,8 +115,8 @@ A Python adapter produced a CJK document in the retained 1.9.2 example. An indep
 **Repository Navigator 0.1.0-dev.1** is a free, optional download for exploring Local Git and manually registered GitHub.com / GitLab.com repositories through one relationship map, descriptions, code and Diff view. It runs with Python 3.10+, Git 2.43+ and a modern browser; the CALF core, SDK and models are not required.
 
 - **Preview download and checksums:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/tag/navigator-v0.1.0-dev.1) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/navigator-v0.1.0-dev.1).
-- **Screenshot manuals:** [English - 9 chapters, 6 screenshots](https://github.com/VibePakcr/CALF-Extensions/blob/main/README.md#project-navigation-preview) · [한국어 - 9개 장, 실화면 6장](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/README_KR.md#프로젝트-탐색-미리보기).
-- **English PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/download/navigator-v0.1.0-dev.1/CALF-Repository-Navigator-Guide-en.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/navigator-v0.1.0-dev.1/downloads/CALF-Repository-Navigator-Guide-en.pdf).
-- **한국어 PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/releases/download/navigator-v0.1.0-dev.1/CALF-Repository-Navigator-Guide-ko.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/releases/navigator-v0.1.0-dev.1/downloads/CALF-Repository-Navigator-Guide-ko.pdf).
+- **Screenshot manuals:** [English - 9 chapters, 6 screenshots](https://github.com/VibePakcr/CALF-Extensions/blob/main/docs/navigator-manual/README.md) · [한국어 - 9개 장, 실화면 6장](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/docs/navigator-manual/README_KR.md).
+- **English PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/blob/main/docs/navigator-manual/en.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/docs/navigator-manual/en.pdf).
+- **한국어 PDF:** [GitHub](https://github.com/VibePakcr/CALF-Extensions/blob/main/docs/navigator-manual/ko.pdf) · [GitLab](https://gitlab.com/vibepackr-group/CALF-Extensions/-/blob/main/docs/navigator-manual/ko.pdf).
 
 The ZIP includes both offline HTML/PDF manuals. See [extension qualification and limits](https://github.com/VibePakcr/CALF-Extensions/blob/main/docs/NAVIGATOR_PACK_VERIFICATION.json) for the installed preview scope.

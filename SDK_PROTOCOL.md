@@ -6,7 +6,7 @@ Compatibility target: Harness 1.8.7–1.8.8 and Workbench 1.9.2–1.9.3 native c
 
 ## 1. Command transport
 
-Run an explicitly native binary you selected with an argument array and `shell=False`. Use absolute physical paths. `calf --version` returns JSON with `name`, `version`, `os`, `arch`. Select a trusted release and compare its download SHA-256 against the published manifest before use. The SDK's `binary_sha256()` returns the selected executable's hash; it does not authenticate a publisher or compare it automatically.
+Run the native executable you selected with an argument array and `shell=False`. Use absolute physical paths. `calf --version` returns JSON with `name`, `version`, `os`, `arch`. Select a trusted release and compare its download SHA-256 against the published manifest before use. The SDK's `binary_sha256()` returns the selected executable's hash; it does not authenticate a publisher or compare it automatically.
 
 `calf api` reads one UTF-8 JSON object from stdin through EOF, at most 65,536 bytes. It returns one JSON object on stdout. Exit 1 with `{"error":"..."}` indicates a command failure. Exit 0 indicates a normal command response; only a current `outcome: "SATISFIED"` from status means the native verifier accepted the task. A request acknowledgement, process exit, saved receipt or provider review alone is insufficient.
 
@@ -28,7 +28,7 @@ Every queue API request has `op` and the explicit absolute `home`. The API may c
 | `reuse` | `task` | `sourceTask`, `sourceWorkspace`, `request`, requirements/check IDs, `contractDigest`, `digest` |
 | `sources` | `action` and fields below | Local registry or MCP resource response |
 
-`submit.request` must be non-empty and at most 8,192 UTF-8 bytes. The queue discovers supported unittest, pytest, Cargo and node:test profiles. It refuses a task when no supported checks are available. A connection must already be configured in CALF. The SDK sets `helper` to its native binary you selected so jobs use that release. It does not collect API keys or probe credentials. Queue capacity is 256 jobs. Reuse requires both source identity and matching recipe digest; it does not transfer a success verdict.
+`submit.request` must be non-empty and at most 8,192 UTF-8 bytes. The queue discovers supported unittest, pytest, Cargo and node:test profiles. It refuses a task when no supported checks are available. A connection must already be configured in CALF. The SDK sets `helper` to the selected native executable so jobs use that release. It does not collect API keys or probe credentials. Queue capacity is 256 jobs. Reuse requires both source identity and matching recipe digest; it does not transfer a success verdict.
 
 `changes.mode` is `task` (default), `attempt`, or `recovery`. The response has `readOnly`, `files`, available attempts and a scope explanation. A file's hash, `currentMatches`, and per-check `versionMatched` are separate claims. Missing snapshots produce unavailable/null content. The SDK does not invent missing content, apply patches or roll back files. Working-tree Git diff uses a separate Workbench path.
 

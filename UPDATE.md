@@ -20,7 +20,7 @@ Apps may save window size, sidebar state or other UI preferences while you use t
 1. 실행 중인 작업이 끝나기를 기다리거나 Pause를 요청하고 프로세스가 멈춘 뒤 이전 Workbench 창을 닫습니다.
 2. 설치 설정과 기록 폴더 전체를 백업합니다. `history.html`, 계약, 저널 조각, 색인, `runtimes`, `work-v1`을 함께 보관하세요.
 3. [다운로드](DOWNLOADS.md)에서 OS·CPU에 맞는 패키지를 받고 SHA256SUMS와 해시를 대조한 뒤 새 폴더에 압축을 풉니다.
-4. 기존 기록 위치를 그대로 사용합니다. `calf task home`으로 선택된 위치를 확인할 수 있습니다. CALF_WORK_HOME이나 기존 runtime 설정을 사용한다면 같은 위치를 가리키도록 유지하세요.
+4. 기존 기록 위치를 그대로 사용합니다. `calf task home`으로 선택된 위치를 확인할 수 있습니다. CALF_WORK_HOME이나 기존 런타임 설정을 사용한다면 같은 위치를 가리키도록 유지하세요.
 5. Codex·Antigravity 네이티브 훅은 기존 설치 위치와 호스트 홈을 지정해 새 설치기로 갱신합니다. 호스트가 요청하는 명령 검토를 마친 뒤 새 세션을 시작하세요. Claude는 [연결 키트 안내](hosts/README_KR.md)를 따릅니다.
 6. 이전 작업과 근거를 열어 보고 작은 등록 검사를 실행합니다. 기존 대기 작업은 보관한 시작 런타임으로 이어지고, 새로 만든 작업은 새 버전으로 시작합니다.
 

@@ -1,8 +1,8 @@
 # 범용 작업 규약 v1
 
-CALF **1.8.7–1.8.8 / 1.9.2–1.9.3**, SDK **0.2.2**이 필요합니다. [English](SDK_WORK_PROTOCOL.md).
+CALF **1.8.7–1.8.8 / 1.9.2–1.9.3**, SDK **0.2.2**가 필요합니다. [English](SDK_WORK_PROTOCOL.md).
 
-Python 문서 정리, Node 데이터 집계, 로컬 HTTP 서비스가 같은 작업·산출물·검수·채택 규약을 사용합니다. AI 모델이나 상주 서비스가 필수는 아닙니다. 연결된 하나의 에이전트 또는 앱이 호출할 수 있으며, 코어 실행 엔진은 SDK에 포함되지 않습니다.
+Python 문서 정리, Node 데이터 집계, 로컬 HTTP 서비스가 같은 작업·산출물·검수·채택 규약을 사용합니다. AI 모델이나 상주 서비스가 필수는 아닙니다. 연결된 에이전트 하나 또는 앱이 호출할 수 있으며, 코어 실행 엔진은 SDK에 포함되지 않습니다.
 
 ## 작업에서 채택까지
 
@@ -60,19 +60,19 @@ Windows에서는 calf.exe와 인터프리터·기록 폴더의 절대 경로를 
 
 상태는 running/succeeded/failed/cancelled/unknown/not_found입니다. 동기 Adapter는 running/unknown을 반환할 수 없습니다. 비동기 Adapter는 응답 유실로 providerJobId를 받지 못했어도 requestId로 조회할 수 있어야 합니다. 알려진 providerJobId는 바꿀 수 없습니다. not_found는 접수된 작업이 없다는 확정 조회 결과여야 하며 타임아웃을 대신 표시하면 안 됩니다. 불확실한 작업은 실행 슬롯을 계속 점유하며 새 execute 호출로 대체하지 않습니다. HTTP 예제는 loopback 전용이고 프록시·리다이렉트·자동 재전송이 없습니다.
 
-Validator는 별도 프로세스로 실행되며 checkId, manifestDigest, outcome(SATISFIED/VIOLATED/UNKNOWN), reason을 반환합니다. 내장 검사는 SHA-256 일치, JSON Pointer 값 일치, 텍스트 포함입니다. 모든 산출물은 적어도 하나의 검사가 필요합니다. 이 규칙이 작업의 의미적 품질까지 자동 보장하지는 않습니다. 품질·업무 규칙은 작업에 맞는 검사를 공급해야 합니다.
+Validator는 별도 프로세스로 실행되며 checkId, manifestDigest, outcome(SATISFIED/VIOLATED/UNKNOWN), reason을 반환합니다. 내장 검사는 SHA-256 일치, JSON Pointer 값 일치, 텍스트 포함입니다. 모든 산출물은 적어도 하나의 검사가 필요합니다. 이 규칙이 작업의 의미적 품질까지 자동 보장하지는 않습니다. 품질과 업무 규칙을 확인하려면 작업에 맞는 검사를 마련해야 합니다.
 
 ## Local MCP
 
 `calf work-mcp /absolute/records`는 MCP 2025-11-25 JSON-lines stdio 서버입니다. 기본 도구는 work_list, work_inspect, work_adapters입니다. `--control`로 submit/step/cancel/retry/recheck/adopt를 추가합니다. Adapter 등록은 MCP에 노출하지 않습니다. Python의 work_mcp_server(control=True), Node의 workMcpServer({control:true})는 실행 설정만 반환하고 호스트 설정을 쓰거나 서버를 띄우지 않습니다. 기존 Local Sources MCP는 그대로입니다.
 
-MCP 도구 사용 권한은 호스트가 결정합니다. explicit-client는 허용된 클라이언트 호출 기록이지 사람이 직접 클릭했다는 증명은 아닙니다. 다중 에이전트 조정이나 sampling은 추가하지 않습니다. 서버는 순차 호출을 처리하므로, 긴 step 실행 중 취소는 별도의 API/SDK 프로세스에서 요청합니다. 별도 inspect는 실행 중임을 명시한 아직 검증하지 않은 임시 상태를 반환합니다.
+MCP 도구 사용 권한은 호스트가 결정합니다. explicit-client는 허용된 클라이언트 호출 기록이지 사람이 직접 클릭했다는 증명은 아닙니다. 다중 에이전트 조정이나 sampling은 추가하지 않습니다. 서버는 순차 호출을 처리하므로, 긴 step 실행 중 취소는 별도의 API/SDK 프로세스에서 요청합니다. 별도의 inspect 호출은 실행 중이라는 표시와 함께 아직 검증되지 않은 임시 상태를 반환합니다.
 
 ## 경량화·보존·보장 범위
 
 * 계약 <48KiB, 고정 계약·요청 ≤64KiB, 입력 16개·출력 16개·검사 32개·시도 8회 상한입니다. 입력 합계·출력 합계·개별 파일은 최대 512MiB이며 Adapter는 더 작은 제한을 둘 수 있습니다.
 * 출력 목록은 112항목/6단계 디렉터리/파일 16개 이하입니다. 텍스트·JSON 검사는 1MiB 이하만 읽고 해시·복사는 32KiB씩 처리합니다. 기존 제한된 프로세스 출력을 사용하며 응답 JSON은 64KiB 이하입니다. 이력 전체 적재·벡터 DB·모델·새 상주 캐시는 없습니다.
-* 기존 자원 Fader와 worker.lock을 재사용합니다. 같은 records home에서는 미종결 범용 작업 하나만 실행하고 기존 코드 워커도 기다립니다. 다른 home은 별개의 실행 범위입니다.
+* 기존 자원 Fader와 worker.lock을 재사용합니다. 같은 기록 폴더에서는 아직 끝나지 않은 범용 작업 하나만 실행하며, 기존 코드 워커와도 차례를 조정합니다. 다른 home은 별개의 실행 범위입니다.
 * 새 기록은 work-v1 아래에만 추가됩니다. 기존 기록·설정·계약·자료 조회 MCP는 그대로 사용합니다. 작업 시작 시 코어 실행 파일을 보존해 업데이트 뒤에도 같은 런타임으로 이어갑니다. 보존 런타임이 없거나 변경되면 차단합니다.
 * 프로세스 정리나 비동기 종료를 확인하지 못하면 UNKNOWN과 점유 상태를 유지합니다. 동기 프로세스 종료 영수증만 있고 응답이 유실된 경우에는 성공을 추정하지 않고 UNKNOWN으로 종결합니다. 종료 영수증 이전의 비정상 중단은 호스트 수준 확인이 필요할 수 있습니다.
 * 파일 해시를 비교해 각 확인 시점의 파일을 기록된 해시와 대조합니다. OS 샌드박스나 악성 프로세스에 대한 완전한 격리가 아닙니다. 신뢰할 수 있는 등록 Adapter를 적절한 호스트 권한 안에서 실행해야 합니다. 출력 상한은 수집 시 검사하며 커널 디스크 할당량은 아닙니다. 현재 범용 규약은 파일로 저장되는 산출물을 다룹니다. DB 변경·결제·임의 앱 부작용은 별도 Adapter와 검증 계약이 필요합니다.

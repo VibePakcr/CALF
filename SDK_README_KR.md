@@ -1,6 +1,6 @@
 # CALF SDK 0.2.2 — 개발자 프리뷰
 
-Universal Work v1은 고정 계약·검사한 파일 버전과 결과를 함께 확인하는 검수·범용 Adapter·의존성 없는 Python/Node 클라이언트·선택적 제어 MCP를 제공합니다. [규약과 실행 예제](SDK_WORK_PROTOCOL_KR.md)를 참고하세요. Workbench 1.9.2의 **Runtime Work**에서 같은 작업을 조회·제어할 수 있으며 기존 코드 작업 API도 유지됩니다.
+Universal Work v1은 작업 계약을 고정하고 검사한 파일 버전과 결과를 함께 확인하는 범용 작업 규약입니다. 범용 어댑터, 별도 런타임 라이브러리가 필요 없는 Python·Node 클라이언트, 제어 기능을 선택적으로 켤 수 있는 MCP를 제공합니다. [규약과 실행 예제](SDK_WORK_PROTOCOL_KR.md)를 참고하세요. Workbench 1.9.2의 **Runtime Work**에서 같은 작업을 조회·제어할 수 있으며 기존 코드 작업 API도 유지됩니다.
 
 
 [English](SDK_README.md) · [프로토콜 규격](SDK_PROTOCOL_KR.md) · [확장 라이선스](SDK-LICENSE.txt)
@@ -13,7 +13,7 @@ Universal Work v1은 고정 계약·검사한 파일 버전과 결과를 함께 
 
 ## 시작하기
 
-압축을 풀고 SDK 루트에서 Python을 실행하거나 해당 폴더를 import 경로에 추가합니다. 설치된 네이티브 `calf` 또는 `calf.exe`와 **기존 CALF가 사용하는 동일한 기록 폴더**를 명시합니다. SDK는 경로를 추측하거나 기존 기록을 이동하지 않습니다. 평소 CALF 실행 환경에서 `calf task home`으로 기록 경로를 확인할 수 있습니다. 처음 시험할 때는 새로운 절대 경로를 사용하세요.
+압축을 풀고 SDK 루트에서 Python을 실행하거나 해당 폴더를 import 경로에 추가합니다. 설치된 네이티브 `calf` 또는 `calf.exe`와 **기존 CALF와 같은 기록 폴더**를 명시합니다. SDK는 경로를 추측하거나 기존 기록을 이동하지 않습니다. 평소 CALF 실행 환경에서 `calf task home`으로 기록 경로를 확인할 수 있습니다. 처음 시험할 때는 새로운 절대 경로를 사용하세요.
 
 ```python
 from pathlib import Path
@@ -117,7 +117,7 @@ python ops/verify.py --harness /절대경로/calf-1.8.8 --workbench /절대경�
 
 ## Check Profile과 업데이트 (0.2.2)
 
-새 검사 탐색은 Harness 1.8.7 또는 Workbench 1.9.2이 필요하며 기존 0.1 API는 유지합니다.
+검사 탐색에는 최소 Harness 1.8.7 또는 Workbench 1.9.2가 필요합니다. 기존 0.1 API도 유지합니다.
 
 ```python
 from calf_sdk import Check, ProviderConfig
@@ -127,7 +127,7 @@ config = ProviderConfig(command=[python, adapter_path], checks=checks)
 
 `discover_checks`는 설치된 도구의 메타데이터를 확인하며 검사 실행·의존성 설치·작업 등록을 하지 않습니다. Python은 `.venv`, `venv`, 활성 환경, PATH 순서로 선택하며 명시된 환경이 불완전하면 다른 환경으로 바꾸지 않고 오류를 알립니다. Python v2는 인터프리터·환경 설정·패키지 메타데이터를 결속하지만 설치된 모든 패키지 파일의 해시를 보장하지 않습니다. Cargo는 잠금 파일이 있는 단일 패키지의 통합 검사를 지원합니다.
 
-코어가 작업 전 실패를 기록하고 기존·새로운·해결된 실패를 구분합니다. 실패한 검사에서 파일과 결과가 계속 같으면 무효 재시도를 멈춥니다. 빈 검사·전부 건너뛴 검사·불완전 결과는 완료가 아닙니다. `no_progress`, `UNKNOWN`, 요청 접수 응답을 성공으로 해석하지 마세요.
+코어가 작업 전 실패를 기록하고 기존·새로운·해결된 실패를 구분합니다. 실패한 검사에서 파일과 결과가 계속 같으면 무효 재시도를 멈춥니다. 검사가 없거나 전부 건너뛰었거나 결과가 불완전하면 완료로 판정하지 않습니다. `no_progress`, `UNKNOWN`, 요청 접수 응답을 성공으로 해석하지 마세요.
 
 새 큐 작업은 기록 폴더에 버전별 실행 파일 한 개를 공유 보관합니다. 업데이트할 때 전체 기록 폴더를 유지하고, `control(task, "resume")` 후 워커를 실행하면 원래 런타임과 남은 시도 횟수로 이어집니다. 런타임이 없거나 변조되면 거부하며 기존 계약을 고쳐 통과시키지 않습니다. 고급 `calf run` 경로는 명시적으로 고정한 바이너리·설정·상태를 사용하며 큐로 자동 이관되지 않습니다.
 

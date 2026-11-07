@@ -20,7 +20,7 @@ SDK 0.2.2 updates documentation and release-verification version checks. Its tas
 
 The packaged macOS ARM64, Windows x64 and Linux x64 cores are checked with real local Python/Node processes, independent artifact validation, loopback HTTP and MCP, stale-evidence rejection, cancellation and retained-runtime recovery. Both editions are also exercised through native Antigravity hooks with a real long-output command and a registered check. Workbench’s native bridge is checked on each OS. Exact results and binary hashes are in VERIFICATION.json.
 
-The native Rust suite passed 49 tests. macOS host-kit tests cover actual 1.8.8 hook invocation, settings merge, stale-hash refusal, update, rollback and interrupted apply recovery. Prior live Codex, Antigravity and Claude sessions are retained evidence from earlier versions. This patch makes no new paid model call, desktop-window interaction claim for Windows/Linux, or memory/soak claim.
+The native Rust suite passed 49 tests. macOS host-kit tests cover actual 1.8.8 hook invocation, settings merge, stale-hash refusal, update, rollback and interrupted apply recovery. Prior live Codex, Antigravity and Claude sessions are retained evidence from earlier versions. No paid model calls were made for this patch. Windows/Linux desktop-window interaction and memory or long-running behavior were not tested.
 
 ### Update without losing work
 
