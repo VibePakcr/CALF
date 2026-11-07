@@ -1,6 +1,6 @@
 # Universal Work v1
 
-Requires CALF **1.8.7 / 1.9.2** and SDK **0.2.1**. [한국어](SDK_WORK_PROTOCOL_KR.md).
+Compatible with CALF **1.8.7–1.8.8 / 1.9.2–1.9.3** and SDK **0.2.2**. [한국어](SDK_WORK_PROTOCOL_KR.md).
 
 This additive protocol supervises file-producing work across runtimes. Python text processing, Node data aggregation and a loopback HTTP service use the same contract. It does not require an AI model, a multi-agent framework, or a background service. A single connected agent or application can drive it. The core remains private; the SDK and example adapters contain no execution engine.
 
@@ -56,7 +56,7 @@ On Windows use absolute native `calf.exe`, interpreter and records paths. Inputs
 | `recheck(work=...)` | Check an existing candidate again without running its producer. |
 | `adopt(work=..., digest=...)` | Select the exact current validated version. |
 
-See [schema](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.1/CALF-SDK-0.2.1.zip), [runnable client](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.1/CALF-SDK-0.2.1.zip), [Python executor](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.1/CALF-SDK-0.2.1.zip), [Node executor](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.1/CALF-SDK-0.2.1.zip), [independent validator](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.1/CALF-SDK-0.2.1.zip), and [HTTP bridge](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.1/CALF-SDK-0.2.1.zip).
+See [schema](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.2/CALF-SDK-0.2.2.zip), [runnable client](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.2/CALF-SDK-0.2.2.zip), [Python executor](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.2/CALF-SDK-0.2.2.zip), [Node executor](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.2/CALF-SDK-0.2.2.zip), [independent validator](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.2/CALF-SDK-0.2.2.zip), and [HTTP bridge](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.2/CALF-SDK-0.2.2.zip).
 
 ## Runtime adapter contract
 

@@ -1,23 +1,31 @@
-# CALF update / 업데이트 안내
+# Update CALF / CALF 업데이트
 
-## What is new — Harness 1.8.7 / Workbench 1.9.2 / SDK 0.2.1
+Harness **1.8.8** · Workbench **1.9.3** · SDK **0.2.2**
 
-- **Universal Work v1:** freeze a work contract, input snapshots and registered adapter identities; produce per-attempt file candidates; bind required checks and adoption to their exact manifest digest.
-- **Runtime Work in Workbench:** import a contract, run or reconcile a registered runtime, inspect timestamped stages, artifacts and checks, cancel, recheck and explicitly adopt a verified version. Harness, SDK, MCP and Workbench use the same local records home.
-- **Python, Node and local HTTP adapters:** real file-producing execution through one protocol. Dependency-free Python/Node SDK clients and a foreground stdio work MCP endpoint; read-only by default, control tools opt-in. Existing source-reader MCP stays separate.
-- **Recovery:** unknown asynchronous submissions reserve the single execution slot and are queried using the original request ID. An explicit new attempt consumes the original budget. Previous candidates and adoption events remain. A timeout or exit 0 is not PASS.
-- **Setup and updates:** first-run diagnostics, staged archive verification and retained originating runtimes. JavaScript/TypeScript node:test Check Profiles join Python unittest/pytest and bounded Cargo integration checks. No dependency installation or npm script execution.
+## English
 
-The core remains local, lightweight and focused on a single agent. No model, multi-agent orchestration, embedding index or new resident service is added. Workbench loads only the selected runtime work; settled work is not continuously rehashed in the background.
+1. Let active work finish, or request Pause and wait for its process to stop. Close the old Workbench window.
+2. Back up your installation settings and the complete records home. Keep `history.html`, contracts, journal segments, indexes, `runtimes` and `work-v1` together.
+3. Download the package for your OS and CPU from [Downloads](DOWNLOADS.md). Compare its hash with SHA256SUMS, then extract it into a new folder.
+4. Use the same records home. `calf task home` shows the selected location. An explicit CALF_WORK_HOME or existing runtime configuration must still point there.
+5. For native Codex/Antigravity hooks, run the new installer with the existing installation root and host homes. Review new commands through the host’s usual controls, then start a new session. For Claude, follow [the Host Connections guide](hosts/README.md).
+6. Open a retained task, inspect its evidence and run a small registered check. Existing queued tasks resume through their saved starting runtime; newly created tasks use the new release.
 
-## 이번 업데이트 — Harness 1.8.7 / Workbench 1.9.2 / SDK 0.2.1
+Keep the previous package until you have checked the update. Do not overwrite live journals or restore old settings over later edits. A missing or modified retained runtime blocks resumption rather than silently selecting another binary.
 
-- **공통 작업 규약 v1:** 작업 계약·입력 사본·등록 어댑터를 고정하고, 시도별 파일 산출물과 필수 검수·채택을 같은 파일 명세 해시에 결속합니다.
-- **Workbench Runtime Work:** 계약 가져오기, 등록 런타임 실행·조회 재개, 타임스탬프 흐름·산출물·검수 확인, 취소·재검수·검증 버전 채택을 제공합니다. Harness·SDK·MCP와 같은 로컬 기록을 읽습니다.
-- **Python·Node·로컬 HTTP Adapter:** 서로 다른 런타임의 파일 생성 작업을 공통 규약으로 실행합니다. 의존성 없는 Python·Node SDK와 전경 stdio 작업 MCP를 제공합니다. MCP는 기본 조회 전용이며 제어 도구는 명시적으로 켭니다. 기존 자료 조회 MCP는 별도로 유지됩니다.
-- **복구:** 응답이 불명확한 비동기 요청은 실행 슬롯을 유지하며 기존 요청 ID로 조회합니다. 새 시도는 원래 예산을 소비하고 이전 산출물·채택 이력을 보존합니다. 시간 초과나 종료 코드 0을 PASS로 판정하지 않습니다.
-- **첫 실행·업데이트·검사:** 환경 진단, 배포 압축 검증 후 별도 준비, 작업 시작 버전 보존을 제공합니다. Python unittest·pytest·제한된 Cargo 검사에 JavaScript/TypeScript node:test Check Profile을 추가합니다. 의존성 설치나 npm 스크립트 실행은 하지 않습니다.
+Apps may save window size, sidebar state or other UI preferences while you use them. Keep those changes in your audit, but distinguish them from changes to models, permissions, hooks, credentials or contracts. If an unexplained change appears, retain both observations and investigate it before writing anything back.
 
-로컬·경량·싱글 에이전트 중심을 유지합니다. 모델·멀티 에이전트·임베딩 색인·새 상주 서비스를 추가하지 않습니다. Runtime Work는 선택한 작업만 불러오며 종결된 산출물을 계속 백그라운드 해싱하지 않습니다.
+## 한국어
 
-[Downloads / 다운로드](DOWNLOADS.md) · [Full release notes / 전체 변경 안내](RELEASE-NOTES.md)
+1. 실행 중인 작업이 끝나기를 기다리거나 Pause를 요청하고 프로세스가 멈춘 뒤 이전 Workbench 창을 닫습니다.
+2. 설치 설정과 기록 폴더 전체를 백업합니다. `history.html`, 계약, 저널 조각, 색인, `runtimes`, `work-v1`을 함께 보관하세요.
+3. [다운로드](DOWNLOADS.md)에서 OS·CPU에 맞는 패키지를 받고 SHA256SUMS와 해시를 대조한 뒤 새 폴더에 압축을 풉니다.
+4. 기존 기록 위치를 그대로 사용합니다. `calf task home`으로 선택된 위치를 확인할 수 있습니다. CALF_WORK_HOME이나 기존 runtime 설정을 사용한다면 같은 위치를 가리키도록 유지하세요.
+5. Codex·Antigravity 네이티브 훅은 기존 설치 위치와 호스트 홈을 지정해 새 설치기로 갱신합니다. 호스트가 요청하는 명령 검토를 마친 뒤 새 세션을 시작하세요. Claude는 [연결 키트 안내](hosts/README_KR.md)를 따릅니다.
+6. 이전 작업과 근거를 열어 보고 작은 등록 검사를 실행합니다. 기존 대기 작업은 보관한 시작 런타임으로 이어지고, 새로 만든 작업은 새 버전으로 시작합니다.
+
+업데이트를 확인할 때까지 이전 패키지를 보관하세요. 실행 중인 저널이나 이후 변경한 설정 위에 오래된 백업을 덮어쓰지 마세요. 보관한 런타임이 없거나 바뀌었다면 다른 실행 파일로 바꾸지 않고 재개를 중단합니다.
+
+앱 사용 중 창 크기·사이드바 같은 UI 설정이 자동 저장될 수 있습니다. 이런 변경도 감사 기록에 남기되, 모델·권한·훅·인증정보·계약 변경과 구분해 확인하세요. 설명되지 않는 변경이 있으면 전후 상태를 보존하고 원인을 확인한 뒤 처리합니다.
+
+[Release notes / 변경 사항](RELEASE-NOTES.md) · [Offline EN/KR manual](CALF_mannual.html)

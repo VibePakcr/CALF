@@ -1,39 +1,55 @@
-# CALF — Universal Work and Runtime Workbench
+# CALF Harness 1.8.8 · Workbench 1.9.3 · SDK 0.2.2
 
-## What is new — Harness 1.8.7 / Workbench 1.9.2 / SDK 0.2.1
+[Downloads](DOWNLOADS.md) · [English](README.md) · [한국어](README_KR.md)
 
-- **Universal Work v1:** freeze a work contract, input snapshots and registered adapter identities; produce per-attempt file candidates; bind required checks and adoption to their exact manifest digest.
-- **Runtime Work in Workbench:** import a contract, run or reconcile a registered runtime, inspect timestamped stages, artifacts and checks, cancel, recheck and explicitly adopt a verified version. Harness, SDK, MCP and Workbench use the same local records home.
-- **Python, Node and local HTTP adapters:** real file-producing execution through one protocol. Dependency-free Python/Node SDK clients and a foreground stdio work MCP endpoint; read-only by default, control tools opt-in. Existing source-reader MCP stays separate.
-- **Recovery:** unknown asynchronous submissions reserve the single execution slot and are queried using the original request ID. An explicit new attempt consumes the original budget. Previous candidates and adoption events remain. A timeout or exit 0 is not PASS.
-- **Setup and updates:** first-run diagnostics, staged archive verification and retained originating runtimes. JavaScript/TypeScript node:test Check Profiles join Python unittest/pytest and bounded Cargo integration checks. No dependency installation or npm script execution.
+## English
 
-The core remains local, lightweight and focused on a single agent. No model, multi-agent orchestration, embedding index or new resident service is added. Workbench loads only the selected runtime work; settled work is not continuously rehashed in the background.
+### Antigravity long-output fix
 
-## 이번 업데이트 — Harness 1.8.7 / Workbench 1.9.2 / SDK 0.2.1
+Antigravity adds a preview header when a command’s output is too long to display. CALF could miss the command’s exit code after that header and leave the observation pending. Both editions now recognize this specific host envelope after matching its session, step and transcript location. Text printed by the command cannot serve as its terminal result. Missing, mismatched or contradictory evidence still stays UNKNOWN.
 
-- **공통 작업 규약 v1:** 작업 계약·입력 사본·등록 어댑터를 고정하고, 시도별 파일 산출물과 필수 검수·채택을 같은 파일 명세 해시에 결속합니다.
-- **Workbench Runtime Work:** 계약 가져오기, 등록 런타임 실행·조회 재개, 타임스탬프 흐름·산출물·검수 확인, 취소·재검수·검증 버전 채택을 제공합니다. Harness·SDK·MCP와 같은 로컬 기록을 읽습니다.
-- **Python·Node·로컬 HTTP Adapter:** 서로 다른 런타임의 파일 생성 작업을 공통 규약으로 실행합니다. 의존성 없는 Python·Node SDK와 전경 stdio 작업 MCP를 제공합니다. MCP는 기본 조회 전용이며 제어 도구는 명시적으로 켭니다. 기존 자료 조회 MCP는 별도로 유지됩니다.
-- **복구:** 응답이 불명확한 비동기 요청은 실행 슬롯을 유지하며 기존 요청 ID로 조회합니다. 새 시도는 원래 예산을 소비하고 이전 산출물·채택 이력을 보존합니다. 시간 초과나 종료 코드 0을 PASS로 판정하지 않습니다.
-- **첫 실행·업데이트·검사:** 환경 진단, 배포 압축 검증 후 별도 준비, 작업 시작 버전 보존을 제공합니다. Python unittest·pytest·제한된 Cargo 검사에 JavaScript/TypeScript node:test Check Profile을 추가합니다. 의존성 설치나 npm 스크립트 실행은 하지 않습니다.
+The native SessionStart and PreInvocation responses already used typed injection messages. Their behavior is retained. The separate, older compatibility bridge used in one local installation is not included in this distribution.
 
-로컬·경량·싱글 에이전트 중심을 유지합니다. 모델·멀티 에이전트·임베딩 색인·새 상주 서비스를 추가하지 않습니다. Runtime Work는 선택한 작업만 불러오며 종결된 산출물을 계속 백그라운드 해싱하지 않습니다.
+### Guides and companion downloads
 
-## Verification and limits / 검증과 한계
+The English and Korean README files, download page, SDK protocols, host guides, screenshot captions and offline manual have been revised. The manual keeps its EN/KR switch, top navigation and embedded screenshots. Those screenshots were captured in Workbench 1.9.2 and remain labeled with that version.
 
-Completed release qualification used the exact packaged native cores and SDK on macOS ARM64, Windows x64 and Linux x64 (Debian 13). It covers real Python and Node processes, independent validation, a local HTTP service, MCP, cancellation, stale evidence, preserved files and retained-runtime resumption. See VERIFICATION.json for the completed results. Deterministic adapters are used; this release does not claim a new live Codex/Antigravity service benchmark or memory/long-duration benchmark.
+SDK 0.2.2 updates documentation and release-verification version checks. Its task and runtime APIs are unchanged. The new Host Connections kit accepts Harness 1.8.7 and 1.8.8, pins the selected binary and records its actual version in Claude adapter receipts. Claude integration remains qualified on macOS; Codex and Antigravity use the native installer.
 
-The work protocol currently supervises **file artifacts**. It is not an OS sandbox, a monetary cost ledger, remote database transaction system or a guarantee of aesthetic quality. Only registered executables and declared adapter files are pinned; transitive dependencies need their own packaging. Cancellation of external jobs depends on the adapter/provider. Unconfirmed cleanup stays UNKNOWN and may require host-level investigation. List calls are bounded (128 adapters / 256 works); no automatic full-history index is added. Adoption selects the current verified candidate; selecting an older adoption is not exposed yet.
+### Verification
 
-Existing records, contracts and settings need no migration. Keep the full records home, including retained runtimes and work-v1. Do not merge or overwrite active journal files. Extract an update into a separate folder. The same CALF_WORK_HOME connects Harness and Workbench; legacy 1.8.4 hook history remains separate from the task queue.
+The packaged macOS ARM64, Windows x64 and Linux x64 cores are checked with real local Python/Node processes, independent artifact validation, loopback HTTP and MCP, stale-evidence rejection, cancellation and retained-runtime recovery. Both editions are also exercised through native Antigravity hooks with a real long-output command and a registered check. Workbench’s native bridge is checked on each OS. Exact results and binary hashes are in VERIFICATION.json.
 
-macOS packages have ad-hoc integrity signatures, **not Apple notarization**. Windows packages have no publisher signature and Workbench needs WebView2. Linux Workbench requires GTK 3, WebKitGTK 4.1 and a graphical session. Included targets: macOS ARM64, Windows x64, Linux glibc x64; no Intel Mac, Windows/Linux ARM64 or musl package.
+The native Rust suite passed 49 tests. macOS host-kit tests cover actual 1.8.8 hook invocation, settings merge, stale-hash refusal, update, rollback and interrupted apply recovery. Prior live Codex, Antigravity and Claude sessions are retained evidence from earlier versions. This patch makes no new paid model call, desktop-window interaction claim for Windows/Linux, or memory/soak claim.
 
-최종 바이너리·SDK를 macOS ARM64·Windows x64·Linux x64(Debian 13)에서 시험했습니다. 실제 Python·Node 프로세스, 독립 검수, 로컬 HTTP, MCP, 취소, 오래된 근거 무효화, 파일 보존, 원래 런타임을 통한 재개가 대상이며 완료 결과는 VERIFICATION.json에 기록합니다. 결정적인 시험 어댑터를 사용하며 새로운 Codex·Antigravity 실서비스 또는 메모리·장시간 시험을 주장하지 않습니다.
+### Update without losing work
 
-현재 규약은 파일 산출물을 감독합니다. OS 샌드박스·금액 정산·원격 DB 트랜잭션·미적 품질 보장은 제공하지 않습니다. 종료를 확인할 수 없으면 UNKNOWN을 유지합니다. 기존 기록·계약·설정과 전체 runtimes·work-v1 폴더를 보존하고, 업데이트는 별도 폴더에 풉니다. macOS 공증·Windows 게시자 서명은 없으며 각 OS의 WebView·GUI 라이브러리는 별도 요건입니다.
+Extract into a new folder and keep your complete records home, including `runtimes` and `work-v1`. Existing queued tasks continue through their retained starting runtime. To update native hooks, use the existing installation root and normal host review flow. Keep older binaries referenced by registered checks. The updater does not reset contracts, settings or history. [Step-by-step update guide](UPDATE.md).
 
-Native regression: 40 PASS. SDK boundaries: 16 per OS. Universal work: 23 scenarios per core per OS, plus retained-runtime/crash recovery and existing code-job SDK integration. macOS window interaction is freshly verified. Windows/Linux final UI bridge and system monitor are verified; fresh native-window interaction is not claimed.
+macOS packages have ad-hoc integrity signatures, not Apple notarization. Windows packages have no publisher signature; Workbench needs WebView2. Linux Workbench needs GTK 3, WebKitGTK 4.1 and a graphical session; Debian 13 is the tested Linux host. No Intel Mac, ARM64 Windows/Linux or musl build is included.
 
-네이티브 회귀 40개, OS별 SDK 경계 검사 16개, 각 OS·코어별 범용 작업 23개와 재개·강제 종료·기존 코드 작업 통합을 통과했습니다. macOS 실제 창 조작과 Windows/Linux 최종 네이티브 UI 연결·시스템 모니터를 확인했습니다. Windows/Linux의 새로운 창 조작 시험을 주장하지 않습니다.
+## 한국어
+
+### Antigravity의 긴 출력 처리 수정
+
+Antigravity는 명령 출력이 길면 앞부분에 미리보기 안내를 붙입니다. CALF가 그 뒤의 종료 코드를 놓쳐 실행 기록을 대기 상태로 남기는 경우를 고쳤습니다. 두 에디션 모두 세션·단계·대화 기록 위치를 대조한 뒤 이 안내 형식에 있는 종료 정보를 읽습니다. 명령이 출력한 성공 문구는 종료 근거로 사용하지 않습니다. 근거가 없거나 경로가 다르거나 결과가 충돌하면 UNKNOWN을 유지합니다.
+
+네이티브 SessionStart·PreInvocation 응답은 이미 올바른 주입 메시지 형식을 사용하고 있었으며 그대로 유지합니다. 개인 환경에서 쓰던 이전 호환 브리지는 이번 배포에 포함하지 않습니다.
+
+### 문서와 연결 키트
+
+영·한 README, 다운로드 안내, SDK 규약, 호스트 연결 안내, 화면 설명과 오프라인 매뉴얼을 다듬었습니다. 매뉴얼의 EN/KR 전환, 상단 메뉴와 내장 스크린샷은 유지합니다. 화면은 Workbench 1.9.2에서 촬영한 자료이므로 실제 촬영 버전을 그대로 표시했습니다.
+
+SDK 0.2.2는 문서와 배포 검수기의 대상 버전을 갱신한 패치입니다. 작업·런타임 API는 바뀌지 않았습니다. 새 Host Connections 키트는 Harness 1.8.7·1.8.8을 지원하며, 선택한 실행 파일을 해시로 확인하고 Claude 기록에도 실제 버전을 남깁니다. Claude 연결은 macOS에서 검증했습니다. Codex·Antigravity는 네이티브 설치기를 사용합니다.
+
+### 확인한 내용
+
+최종 macOS ARM64·Windows x64·Linux x64 코어로 실제 Python·Node 프로세스, 독립 산출물 검사, 로컬 HTTP·MCP, 변경된 파일의 근거 무효화, 취소와 원래 런타임을 통한 재개를 확인했습니다. 두 에디션의 네이티브 Antigravity 훅에는 실제 긴 출력 명령과 등록 검사를 연결했습니다. 각 OS의 Workbench 네이티브 연결도 확인했으며, 완료된 결과와 바이너리 해시는 VERIFICATION.json에 남깁니다.
+
+Rust 단위 검사 49개를 통과했습니다. macOS 연결 키트 시험에서는 1.8.8 실제 훅 호출, 설정 병합, 오래된 해시 거절, 업데이트·이전 버전 선택과 적용 중단 복구를 확인했습니다. 과거 Codex·Antigravity·Claude 실서비스 세션은 이전 버전의 근거로 보존합니다. 이번 패치는 유료 모델을 새로 호출하지 않으며, Windows·Linux 새 창 조작이나 메모리·장시간 시험 결과를 추가하지 않습니다.
+
+### 기존 작업을 보존하는 업데이트
+
+새 폴더에 압축을 풀고 `runtimes`·`work-v1`을 포함한 기존 기록 폴더 전체를 유지하세요. 대기 중인 작업은 시작할 때 보관한 런타임으로 이어집니다. 네이티브 훅은 같은 설치 위치에서 갱신하고 호스트가 요청하는 검토 절차를 따릅니다. 등록 검사에서 참조하는 이전 실행 파일은 보관하세요. 계약·설정·이력은 초기화하지 않습니다. [업데이트 순서](UPDATE.md).
+
+macOS는 공증되지 않은 ad-hoc 무결성 서명을 사용합니다. Windows 게시자 서명은 없으며 Workbench에는 WebView2가 필요합니다. Linux Workbench에는 GTK 3·WebKitGTK 4.1·그래픽 세션이 필요하고 Debian 13에서 검증했습니다. Intel Mac, Windows·Linux ARM64, musl 패키지는 포함하지 않습니다.

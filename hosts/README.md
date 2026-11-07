@@ -1,16 +1,16 @@
-# CALF 1.8.7 host connections
+# CALF host connections — 1.8.7 and 1.8.8
 
 [한국어](README_KR.md)
 
-One native CALF engine can supervise work in Codex, Antigravity and Claude Code. Each host retains its own account, model, permissions and settings. Connect one agent to a work item at a time. No additional model, background service or local LLM is required.
+Use CALF to supervise one agent working in Codex, Antigravity or Claude Code. Each host retains its own account, model, permissions and settings. Connect one agent to a work item at a time. No additional model, background service or local LLM is required.
 
 ## Choose the connection
 
-| Host | Connection | Freshly verified scope |
+| Host | Connection | Verified host sessions |
 |---|---|---|
 | Codex | Native CALF hooks; review them in `/hooks` | macOS, real new Codex session, 8 independent checks, `SATISFIED` |
 | Antigravity | Native CALF hooks; existing compatibility bridge may remain | macOS, real new ACP session, 8 independent checks, `SATISFIED` |
-| Claude CLI and desktop local Code | Python hook adapter to the pinned 1.8.7 engine | macOS CLI and desktop Code, 8 independent checks, accepted Stop and saved session |
+| Claude CLI and desktop local Code | Python hook adapter to the selected 1.8.7 or 1.8.8 engine | macOS CLI and desktop Code, 8 independent checks, accepted Stop and saved session |
 
 These host-session results are separate from the released native core's Windows/Linux qualification. The Claude adapter uses POSIX locking and is qualified here only on macOS. Ordinary Claude chat, Cowork and cloud sessions are separate products/modes.
 
@@ -35,14 +35,14 @@ First install the native engine without changing hooks:
 Use the versioned executable path returned by that command and its `config.json`:
 
 ```sh
-python3 -B hostkit.py prepare --root /path/to/claude-calf --revision 1.8.7-hosts.3 --core /path/to/native-calf/versions/VERSION/calf --config /path/to/native-calf/config.json --python /physical/path/to/python3
+python3 -B hostkit.py prepare --root /path/to/claude-calf --revision 1.8.8-hosts.1 --core /path/to/native-calf/versions/VERSION/calf --config /path/to/native-calf/config.json --python /physical/path/to/python3
 python3 -B hostkit.py inspect --settings /physical/path/to/claude/settings.json
-python3 -B hostkit.py apply --root /path/to/claude-calf --revision 1.8.7-hosts.3 --settings /physical/path/to/claude/settings.json --expected-sha256 HASH_FROM_INSPECT
+python3 -B hostkit.py apply --root /path/to/claude-calf --revision 1.8.8-hosts.1 --settings /physical/path/to/claude/settings.json --expected-sha256 HASH_FROM_INSPECT
 ```
 
 The settings JSON must already exist. For a new Claude profile, create an empty `{}` file at the location Claude uses, or start Claude once before selecting it. `prepare` writes only a new version inside the chosen kit state folder. `apply` retains the original settings bytes and merges CALF hooks after checking the supplied hash. Existing permission/MCP settings and unrelated hooks remain in the JSON. Review the hooks in Claude and start a new local Code session.
 
-Do not reset an already working owner-managed installation to use this kit. The kit refuses an unmanaged hook command containing `CALF` rather than adding another route. Existing installations can continue using their current routing; a migration needs an explicit review of that connection first.
+Do not reset an existing CALF hook connection to use this kit. The kit refuses an unmanaged hook command containing `CALF` rather than adding another route. Existing installations can continue using their current routing; a migration needs an explicit review of that connection first.
 
 ## Update and recover
 
@@ -67,7 +67,7 @@ Register an explicit contract with the installed core:
 
 Run the returned registered check command from that work folder through the selected host's normal approval flow. A first local command may need approval, including in Claude Auto mode. Do not use a permanent allow rule unless you intend to save it. The actual native check receipt and matching file versions establish completion; a host's text or exit code does not. Inspect the work's `history.html` and the recorded `SATISFIED`, `VIOLATED` or `UNKNOWN` result.
 
-Existing macOS model-session evidence is reused for the host behavior above. The kit's separate installation tests cover isolated settings merge, update/rollback, interrupted apply and actual local hook execution. They do not make another model call or claim additional OS host support.
+Existing 1.8.7 macOS model-session evidence is reused for the host behavior above. The kit's separate installation tests cover isolated settings merge, update/rollback, interrupted apply and actual local hook execution. They do not make another model call or claim additional OS host support.
 
 ## Local extension packs
 

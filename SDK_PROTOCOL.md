@@ -1,12 +1,12 @@
-# CALF extension protocol — SDK 0.2.1
+# CALF extension protocol — SDK 0.2.2
 
 [한국어](SDK_PROTOCOL_KR.md) · [SDK guide](SDK_README.md)
 
-Compatibility target: Harness 1.8.7 and Workbench 1.9.2 native core. This is a developer preview of the existing public command boundary. Unknown fields/operations are not a forward-compatibility promise. The execution engine and record-storage format are not extension APIs.
+Compatibility target: Harness 1.8.7–1.8.8 and Workbench 1.9.2–1.9.3 native core. This is a developer preview of the existing public command boundary. Unknown fields/operations are not a forward-compatibility promise. The execution engine and record-storage format are not extension APIs.
 
 ## 1. Command transport
 
-Run an explicitly selected native binary with an argument array and `shell=False`. Use absolute physical paths. `calf --version` returns JSON with `name`, `version`, `os`, `arch`. Select a trusted release and compare its download SHA-256 against the published manifest before use. The SDK's `binary_sha256()` returns the selected executable's hash; it does not authenticate a publisher or compare it automatically.
+Run an explicitly native binary you selected with an argument array and `shell=False`. Use absolute physical paths. `calf --version` returns JSON with `name`, `version`, `os`, `arch`. Select a trusted release and compare its download SHA-256 against the published manifest before use. The SDK's `binary_sha256()` returns the selected executable's hash; it does not authenticate a publisher or compare it automatically.
 
 `calf api` reads one UTF-8 JSON object from stdin through EOF, at most 65,536 bytes. It returns one JSON object on stdout. Exit 1 with `{"error":"..."}` indicates a command failure. Exit 0 indicates a normal command response; only a current `outcome: "SATISFIED"` from status means the native verifier accepted the task. A request acknowledgement, process exit, saved receipt or provider review alone is insufficient.
 
@@ -24,11 +24,11 @@ Every queue API request has `op` and the explicit absolute `home`. The API may c
 | `pause`, `resume`, `cancel` | `task` | `requested: true`; observe subsequent status |
 | `recheck` | `task` | Queued revalidation subject to current guard/budget |
 | `preferences` | optional `value` string | Current working-style preferences; providing a value appends through CALF |
-| `changes` | `task`, optional `mode`, `attempt`, `path` | Read-only native change projection |
+| `changes` | `task`, optional `mode`, `attempt`, `path` | Read-only view of changes recorded by CALF |
 | `reuse` | `task` | `sourceTask`, `sourceWorkspace`, `request`, requirements/check IDs, `contractDigest`, `digest` |
 | `sources` | `action` and fields below | Local registry or MCP resource response |
 
-`submit.request` must be non-empty and at most 8,192 UTF-8 bytes. The current queue discovers Python unittest files and refuses missing supported checks. A connection must already be configured in CALF. The SDK sets `helper` to its selected native binary so jobs use that release. It does not collect API keys or probe credentials. Queue capacity is 256 jobs. Reuse requires both source identity and matching recipe digest; it does not transfer a success verdict.
+`submit.request` must be non-empty and at most 8,192 UTF-8 bytes. The queue discovers supported unittest, pytest, Cargo and node:test profiles. It refuses a task when no supported checks are available. A connection must already be configured in CALF. The SDK sets `helper` to its native binary you selected so jobs use that release. It does not collect API keys or probe credentials. Queue capacity is 256 jobs. Reuse requires both source identity and matching recipe digest; it does not transfer a success verdict.
 
 `changes.mode` is `task` (default), `attempt`, or `recovery`. The response has `readOnly`, `files`, available attempts and a scope explanation. A file's hash, `currentMatches`, and per-check `versionMatched` are separate claims. Missing snapshots produce unavailable/null content. The SDK does not invent missing content, apply patches or roll back files. Working-tree Git diff uses a separate Workbench path.
 
@@ -103,7 +103,7 @@ A submission attachment is `{"source":"registered-id","uri":"calf-local:///...",
 
 For a direct MCP client, launch `calf local-mcp ROOT`. It uses newline-delimited UTF-8 JSON-RPC 2.0 over stdin/stdout; maximum frame is 512 KiB including newline. Send `initialize` with `protocolVersion: "2025-11-25"`, client information and capabilities; accept/check the negotiated protocol and resources capability. Send `notifications/initialized` before resource calls. Methods are `ping`, `resources/list` (no cursor), `resources/read` (`uri`). URIs are opaque identifiers from the server. Close stdin, then wait for exit. Use `calf --version` to identify the product release; MCP server metadata is not the product version contract.
 
-The built-in server is read-only and has no tools, writes, sampling or network listener. SDK 0.2.1 does not add arbitrary external MCP-server registration. A separate OS boundary is needed to restrict what a provider process can access outside explicit attachments.
+The built-in server is read-only and has no tools, writes, sampling or network listener. SDK 0.2.2 does not add arbitrary external MCP-server registration. A separate OS boundary is needed to restrict what a provider process can access outside explicit attachments.
 
 ## 4. Preservation and compatibility
 
@@ -115,6 +115,6 @@ Protocol failures, stale evidence, exhausted attempts and rejected requests stay
 
 `check-discover WORKSPACE` returns `{ "checks": [...] }`. Each entry retains `id`, `command`, `inputs`, `envKeys`, `class` and `profile`. Treat `profile` and its serialized command argument as an opaque pair supplied by the selected core; do not rewrite either. `Check.from_discovered` preserves them. Profile v1 covers the initial adapters; Python v2 adds explicit environment identity and source-inventory exclusion. Legacy exit-code checks omit `profile` and keep their meaning. `checkBaseline`, check `verification` and `failureClassification` are observations, never authority to bypass a requirement. Queue job `runtime` metadata is owned by CALF, not editable SDK configuration.
 
-## Development profile v3
+## Node check profile v3
 
-SDK 0.2.1.dev1 accepts the opaque Node v3 profile returned by native discovery. Keep its exact command, tools, targets and nodeVersion. Interpretation and tool/input identity verification remain in the native core; this does not add a second runner.
+SDK 0.2.2 accepts the opaque Node v3 profile returned by native discovery. Keep its exact command, tools, targets and nodeVersion. Interpretation and tool/input identity verification remain in the native core; this does not add a second runner.

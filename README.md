@@ -1,31 +1,32 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+CALF is a lightweight, local harness and workbench for supervising AI work. Give one agent a task, follow its execution, inspect the changes, and check the result against your requirements. Failed and incomplete attempts stay in the local record so you can investigate or resume them.
+
+**Harness 1.8.x** runs without a desktop window. **Workbench 1.9.x** adds a Rust + Tauri interface to the same runtime and task records. Codex and Antigravity connect through native hooks; Claude CLI and desktop local Code use a separate macOS adapter. Each host keeps its own account, model and permission policy.
+
+**New in Harness 1.8.8 / Workbench 1.9.3:** Antigravity commands with long, truncated output now retain their actual exit result. The result must match the session, step and transcript location; missing or conflicting evidence still stays UNKNOWN. English and Korean guides have also been revised for clarity.
+
+
 **Repository Navigator:** [free extension and illustrated manuals](#free-repository-navigator-extension).
 
 ## Host connection companion
 
-[CALF 1.8.7 three-host kit](https://github.com/VibePakcr/CALF/releases/tag/hosts-v1.8.7.3) documents Codex, Antigravity and Claude local Code connections. [English](hosts/README.md) · [한국어](hosts/README_KR.md). Claude adapter qualification is macOS-only. [Local Pack Tools + Repository pack](https://github.com/VibePakcr/CALF-Extensions/releases/tag/packs-v0.1.0-preview.1) separately supports verified installation and recovery on macOS, Windows and Linux. The native engine and Workbench versions are unchanged.
+[CALF 1.8.8 three-host kit](https://github.com/VibePakcr/CALF/releases/tag/hosts-v1.8.8.1) documents Codex, Antigravity and Claude local Code connections. [English](hosts/README.md) · [한국어](hosts/README_KR.md). The Claude adapter has been tested on macOS. [Local Pack Tools + Repository pack](https://github.com/VibePakcr/CALF-Extensions/releases/tag/packs-v0.1.0-preview.1) separately supports verified installation and recovery on macOS, Windows and Linux. This kit is a separate download from the native engine and Workbench.
 
 
 [English](README.md) · [한국어](README_KR.md)
 
 **[Direct downloads · 바로 다운로드](DOWNLOADS.md)** — choose your OS without opening the Releases list. If an embedded browser reports a Releases error, use these links or open them in your browser.
 
-CALF is a lightweight, local **AI execution harness and development workbench**. It connects an AI provider to a bounded work request, records execution, checks changes against registered requirements and file-version evidence, and retains failed or incomplete work for inspection and recovery.
+## What you can do
 
-The Harness is the native headless runtime: it can complement an existing Codex / Antigravity host through hooks or run tasks without a desktop window. The Workbench adds a Rust + Tauri interface for viewing and controlling the same core and new task records. It is a supervision workspace rather than a full IDE. CALF does not replace the connected host's approval or sandbox policy.
+- **Define and check work:** set the allowed changes and required checks, retain each attempt’s outputs, and require the adopted files to match the hashes recorded by their checks.
+- **Follow the work:** inspect Task Flow, Git Graph, Diff and Evidence. Runtime Work brings Python, Node and local HTTP adapter jobs into the same record.
+- **Resume after updates:** new tasks keep their starting runtime, checks and remaining attempts. Lost responses are queried by their existing request ID to avoid duplicate execution.
+- **Connect your tools and references:** use the Python or Node SDK, or Local MCP. Attach only the local references you choose. Enable MCP control tools explicitly when you need them.
+- **Use project checks:** discover unittest, pytest, single-package Cargo integration tests and node:test. Prepare the required tools and dependencies in your project first.
 
-
-Codex and Antigravity are supported through focused **single-agent** workflows. CALF records and checks the work; host permissions remain in force.
-## What is new — Harness 1.8.7 / Workbench 1.9.2 / SDK 0.2.1
-
-- **Universal Work v1:** freeze a work contract, input snapshots and registered adapter identities; produce per-attempt file candidates; bind required checks and adoption to their exact manifest digest.
-- **Runtime Work in Workbench:** import a contract, run or reconcile a registered runtime, inspect timestamped stages, artifacts and checks, cancel, recheck and explicitly adopt a verified version. Harness, SDK, MCP and Workbench use the same local records home.
-- **Python, Node and local HTTP adapters:** real file-producing execution through one protocol. Dependency-free Python/Node SDK clients and a foreground stdio work MCP endpoint; read-only by default, control tools opt-in. Existing source-reader MCP stays separate.
-- **Recovery:** unknown asynchronous submissions reserve the single execution slot and are queried using the original request ID. An explicit new attempt consumes the original budget. Previous candidates and adoption events remain. A timeout or exit 0 is not PASS.
-- **Setup and updates:** first-run diagnostics, staged archive verification and retained originating runtimes. JavaScript/TypeScript node:test Check Profiles join Python unittest/pytest and bounded Cargo integration checks. No dependency installation or npm script execution.
-
-The core remains local, lightweight and focused on a single agent. No model, multi-agent orchestration, embedding index or new resident service is added. Workbench loads only the selected runtime work; settled work is not continuously rehashed in the background.
+CALF focuses on one agent’s work at a time. It loads the selected work and files as needed, without adding a model or resident service.
 
 ## Free use, closed core, official extensions
 
@@ -33,24 +34,24 @@ The core remains local, lightweight and focused on a single agent. No model, mul
 
 **Illegal or unauthorized alteration of CALF is prohibited.** The distribution policy does not permit reverse engineering, decompilation, disassembly, binary patching or modification of the proprietary CALF runtime. Violations may result in legal action under applicable law. Free use does not grant permission to extract, modify or redistribute a modified core.
 
-Extensions are provided through official **SDK, adapter and MCP** interfaces, without modifying the core. **Available in this release:** bounded provider/check adapter specifications, the local JSON task interface and the source-reader MCP and optional-control Universal Work MCP. **Developer SDK 0.2.1 is now available separately:** [English guide](SDK_README.md), [한국어 안내](SDK_README_KR.md), and [download](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.1/CALF-SDK-0.2.1.zip). Verified on macOS ARM64, Windows x64 and Linux x64. SDK source is supplied under its integration license; the CALF core remains private.
+Extensions are provided through official **SDK, adapter and MCP** interfaces, without modifying the core. **Available in the retained 1.9.2 example:** provider and check adapter specifications with explicit limits, the local JSON task interface and the source-reader MCP and optional-control Universal Work MCP. **Developer SDK 0.2.2 is now available separately:** [English guide](SDK_README.md), [한국어 안내](SDK_README_KR.md), and [download](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.2/CALF-SDK-0.2.2.zip). Verified on macOS ARM64, Windows x64 and Linux x64. SDK source is supplied under its integration license; the CALF core remains private.
 
 These restrictions concern the proprietary CALF implementation, not the user's own project code or supported configuration and extension interfaces. Bundled third-party components retain their own licenses and notices in `THIRD-PARTY-NOTICES.txt`.
 
 | Edition | Version | Use |
 |---|---|---|
-| **Harness** | [1.8.7](https://github.com/VibePakcr/CALF/releases/tag/v1.8.7) | Native headless tasks and existing Codex / Antigravity hooks; no WebView |
-| **Workbench** | [1.9.2](https://github.com/VibePakcr/CALF/releases/tag/v1.9.2) | Rust + Tauri desktop for the same execution core and new task records |
+| **Harness** | [1.8.8](https://github.com/VibePakcr/CALF/releases/tag/v1.8.8) | Native headless tasks and existing Codex / Antigravity hooks; no WebView |
+| **Workbench** | [1.9.3](https://github.com/VibePakcr/CALF/releases/tag/v1.9.3) | Rust + Tauri desktop for the same execution core and new task records |
 
-**Start with the illustrated [CALF_mannual.html](https://github.com/VibePakcr/CALF/releases/download/v1.9.2/CALF_mannual.html)** — download and open locally. It includes fixed top navigation and an **EN / KR** switch for the full manual, contents and screenshot captions. The same self-contained offline manual is inside every package. See [release notes](RELEASE-NOTES.md) and [SHA256SUMS](SHA256SUMS).
+**Start with the illustrated [CALF_mannual.html](https://github.com/VibePakcr/CALF/releases/download/v1.9.3/CALF_mannual.html)** — download and open locally. It includes fixed top navigation and an **EN / KR** switch for the full manual, contents and screenshot captions. The same self-contained offline manual is inside every package. See [release notes](RELEASE-NOTES.md) and [SHA256SUMS](SHA256SUMS).
 
 ## Downloads
 
-| Platform | Harness 1.8.7 | Workbench 1.9.2 |
+| Platform | Harness 1.8.8 | Workbench 1.9.3 |
 |---|---|---|
-| macOS Apple Silicon | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.8.7/CALF-Harness-1.8.7-macos-arm64.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.9.2/CALF-Workbench-1.9.2-macos-arm64.zip) |
-| Windows x64 | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.8.7/CALF-Harness-1.8.7-windows-x86_64.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.9.2/CALF-Workbench-1.9.2-windows-x86_64.zip) |
-| Linux x64 | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/v1.8.7/CALF-Harness-1.8.7-linux-x86_64.tar.gz) | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/v1.9.2/CALF-Workbench-1.9.2-linux-x86_64.tar.gz) |
+| macOS Apple Silicon | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.8.8/CALF-Harness-1.8.8-macos-arm64.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.9.3/CALF-Workbench-1.9.3-macos-arm64.zip) |
+| Windows x64 | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.8.8/CALF-Harness-1.8.8-windows-x86_64.zip) | [ZIP](https://github.com/VibePakcr/CALF/releases/download/v1.9.3/CALF-Workbench-1.9.3-windows-x86_64.zip) |
+| Linux x64 | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/v1.8.8/CALF-Harness-1.8.8-linux-x86_64.tar.gz) | [tar.gz](https://github.com/VibePakcr/CALF/releases/download/v1.9.3/CALF-Workbench-1.9.3-linux-x86_64.tar.gz) |
 
 Extract the complete package. Open **CALF Workbench.app**, `calf-terminal.exe`, or `./calf-terminal` for the desktop. Run `./calf --help` or `.\calf.exe --help` for Harness. The simple task workflow discovers supported unittest, pytest, Cargo or node:test checks; your project check tools remain separate prerequisites.
 
@@ -70,7 +71,7 @@ macOS 14+ ARM64; Windows x64 with WebView2 for Workbench; Linux glibc x64 with G
 
 한국어 설명: [README_KR.md](README_KR.md).
 
-Previous release: [CALF 1.8.4](https://github.com/VibePakcr/CALF/releases/tag/v1.8.4).
+Legacy hook release: [CALF 1.8.4](https://github.com/VibePakcr/CALF/releases/tag/v1.8.4).
 
 ## Check Profiles and update-safe tasks
 
@@ -80,7 +81,7 @@ Python selection prefers the project's `.venv`, then `venv`, an explicitly activ
 
 New queued tasks retain a hash-verified copy of their originating runtime in the local records home. After an update, Resume uses that runtime and the original task's checks and evidence. Keep the complete records home and its `runtimes` directory. Old jobs without a provable runtime remain unresolved; they are not silently migrated. Direct advanced `calf run` states still require their original compatible runtime.
 
-**SDK 0.2.1** adds `CalfClient.discover_checks()` and `Check.from_discovered()` to preserve native profile definitions in custom adapters. See [SDK guide](SDK_README.md), [protocol](SDK_PROTOCOL.md) and the included `examples/check_profiles.py`. The SDK provides small Python standard-library and dependency-free Node clients; it does not add an agent engine or background service.
+**SDK 0.2.2** adds `CalfClient.discover_checks()` and `Check.from_discovered()` to preserve native profile definitions in custom adapters. See [SDK guide](SDK_README.md), [protocol](SDK_PROTOCOL.md) and the included `examples/check_profiles.py`. The SDK provides small Python standard-library and dependency-free Node clients; it does not add an agent engine or background service.
 
 [Update details / 업데이트 내용](UPDATE.md) · [Universal Work SDK / 범용 작업 SDK](SDK_WORK_PROTOCOL.md)
 
@@ -105,7 +106,7 @@ Before / After shows the recorded change and its matching CHECK receipt. Light E
 
 ![Runtime Work · file artifacts across runtimes](workbench-runtime.png)
 
-A Python adapter produced a CJK document in this release. An independent exact-UTF-8 check passed; adoption is bound to that manifest. The same adopted record was verified after reopening Workbench.
+A Python adapter produced a CJK document in the retained 1.9.2 example. An independent exact-UTF-8 check passed; adoption is bound to that manifest. The same adopted record was verified after reopening Workbench.
 
 <!-- workbench-gallery:end -->
 

@@ -1,14 +1,14 @@
-# CALF 확장 프로토콜 — SDK 0.2.1
+# CALF 확장 프로토콜 — SDK 0.2.2
 
 [English](SDK_PROTOCOL.md) · [SDK 안내](SDK_README_KR.md)
 
-호환 대상은 Harness 1.8.7 및 Workbench 1.9.2의 네이티브 코어입니다. 기존 공개 명령 경계의 개발자 프리뷰이며, 알 수 없는 필드나 명령을 이후에도 지원한다는 보장은 아닙니다. 실행 엔진과 내부 기록 저장 형식은 확장 API가 아닙니다.
+호환 대상은 Harness 1.8.7–1.8.8 및 Workbench 1.9.2–1.9.3의 네이티브 코어입니다. 기존 공개 명령 경계의 개발자 프리뷰이며, 알 수 없는 필드나 명령을 이후에도 지원한다는 보장은 아닙니다. 실행 엔진과 내부 기록 저장 형식은 확장 API가 아닙니다.
 
 ## 1. 명령 전송
 
-명시적으로 선택한 네이티브 실행 파일을 인수 배열과 `shell=False`로 실행합니다. 절대 물리 경로를 사용합니다. `calf --version`은 `name`, `version`, `os`, `arch` JSON을 반환합니다. 신뢰하는 릴리즈를 선택하고 다운로드 파일의 SHA-256을 공개 체크섬과 대조합니다. SDK의 `binary_sha256()`는 선택한 실행 파일의 해시를 반환하며 게시자를 인증하거나 자동 비교하지 않습니다.
+명시적으로 선택한 네이티브 실행 파일을 인수 배열과 `shell=False`로 실행합니다. 절대 실제 경로를 사용합니다. `calf --version`은 `name`, `version`, `os`, `arch` JSON을 반환합니다. 신뢰하는 릴리즈를 선택하고 다운로드 파일의 SHA-256을 공개 체크섬과 대조합니다. SDK의 `binary_sha256()`는 선택한 실행 파일의 해시를 반환하며 게시자를 인증하거나 자동 비교하지 않습니다.
 
-`calf api`는 stdin에서 EOF까지 UTF-8 JSON 객체 하나를 읽으며 최대 65,536바이트를 허용합니다. stdout으로 JSON 객체 하나를 반환합니다. 종료 코드 1과 `{"error":"..."}`는 명령 실패입니다. 종료 코드 0은 정상 응답을 뜻합니다. 현재 상태의 `outcome: "SATISFIED"`만 네이티브 검수가 작업을 수락했다는 뜻입니다. 요청 접수·프로세스 종료·저장된 영수증·제공자 검토만으로 완료가 성립하지 않습니다.
+`calf api`는 stdin에서 EOF까지 UTF-8 JSON 객체 하나를 읽으며 최대 65,536바이트를 허용합니다. stdout으로 JSON 객체 하나를 반환합니다. 종료 코드 1과 `{"error":"..."}`는 명령 실패입니다. 종료 코드 0은 정상 응답을 뜻합니다. 현재 조회 결과의 `outcome: "SATISFIED"`만 네이티브 검수가 작업을 수락했다는 뜻입니다. 요청 접수·프로세스 종료·저장된 영수증·제공자 검토만으로 완료가 성립하지 않습니다.
 
 ```json
 {"op":"inspect","home":"/absolute/records-home","task":"job-..."}
@@ -28,7 +28,7 @@
 | `reuse` | `task` | `sourceTask`, `sourceWorkspace`, `request`, 요구사항·검사 ID, `contractDigest`, `digest` |
 | `sources` | 아래의 `action`과 필드 | 로컬 등록 목록 또는 MCP 리소스 응답 |
 
-`submit.request`는 비어 있지 않아야 하며 UTF-8 최대 8,192바이트입니다. 현재 큐는 Python unittest 파일을 발견하며 지원하는 검사가 없으면 거절합니다. CALF에 AI 연결이 미리 설정되어 있어야 합니다. SDK는 `helper`를 선택한 네이티브 실행 파일로 설정합니다. API 키를 수집하거나 인증정보를 탐색하지 않습니다. 큐 최대 작업 수는 256개입니다. Reuse에는 원본 작업 ID와 일치하는 레시피 digest가 모두 필요하며 성공 판정을 옮기지 않습니다.
+`submit.request`는 비어 있지 않아야 하며 UTF-8 최대 8,192바이트입니다. 큐는 지원되는 unittest·pytest·Cargo·node:test 검사를 찾습니다. 지원되는 검사가 없으면 작업 등록을 거절합니다. CALF에 AI 연결이 미리 설정되어 있어야 합니다. SDK는 `helper`를 선택한 네이티브 실행 파일로 설정합니다. 인증정보는 기존 CALF 연결 설정에서 관리합니다. 큐 최대 작업 수는 256개입니다. Reuse에는 원본 작업 ID와 일치하는 레시피 digest가 모두 필요하며 성공 판정을 옮기지 않습니다.
 
 `changes.mode`는 기본값 `task` 또는 `attempt`, `recovery`입니다. 응답에는 `readOnly`, `files`, 사용 가능한 시도와 범위 설명이 있습니다. 파일 해시·`currentMatches`·검사별 `versionMatched`는 서로 다른 근거입니다. 스냅샷이 없으면 내용은 미확인/null입니다. SDK는 없는 내용을 만들거나 패치를 적용하거나 파일을 되돌리지 않습니다. Working Tree Git diff는 별도 Workbench 경로를 사용합니다.
 
@@ -53,14 +53,14 @@
 }
 ```
 
-검사 1–16개, 시도 1–8회, 제한 시간 100–300,000ms, 자원 등급 `light`/`heavy`를 지원합니다. 제공자 인수는 1–32개 문자열이며 각 UTF-8 문자열은 4,096바이트 미만입니다. 실행 파일은 절대 경로여야 합니다. 네이티브 코어가 검사 ID·상대 경로·입력·명령도 검증합니다. 증거 결속용 `envKeys`에는 `LANG`, `LC_ALL`, `TZ`, `NODE_ENV`, `NODE_OPTIONS`, `PYTHONHASHSEED`만 지정할 수 있습니다. 이 필드는 샌드박스나 환경변수 비밀값 필터가 아닙니다.
+검사 1–16개, 시도 1–8회, 제한 시간 100–300,000ms, 자원 등급 `light`/`heavy`를 지원합니다. 제공자 인수는 1–32개 문자열이며 각 UTF-8 문자열은 4,096바이트 미만입니다. 실행 파일은 절대 경로여야 합니다. 네이티브 코어가 검사 ID·상대 경로·입력·명령도 검증합니다. 검사 환경을 기록하는 `envKeys`에는 `LANG`, `LC_ALL`, `TZ`, `NODE_ENV`, `NODE_OPTIONS`, `PYTHONHASHSEED`만 지정할 수 있습니다. 이 필드는 샌드박스나 환경변수 비밀값 필터가 아닙니다.
 
 실행은 `calf run WORKSPACE REQUEST PROVIDER.json STATE [RESUME_TASK]`, 조회는 `calf run-status WORKSPACE STATE TASK`입니다. `STATE`는 명시적 별도 폴더여야 하며 다른 작업의 저널을 재사용하지 않습니다. 이 경로는 Workbench 큐와 독립적이며 작업 목록으로 자동 표시하지 않습니다. 취소는 `calf cancel STATE TASK`로 요청하지만 응답이 종료 완료 증거는 아닙니다. 재개할 때는 원래 요청·제공자 설정·상태를 유지합니다.
 
 제공자 명령의 마지막 인수에 요청 파일 경로가 붙습니다. 최대 256KiB를 읽습니다. `schema: 1`, `phase`, `request`, `requestHash`와 단계별 자료가 있습니다.
 
 - `plan` / `repair`: `workspace`, `contract`, `registeredChecks`, `files`, `verificationFiles`, `feedback`, 사용 가능한 성향·과거 검증 경험·Reuse·선택한 로컬 문맥.
-- `review`: `contract`, `files`, `evidence`, 요청 동일성. `workspace` 필드가 반드시 있지는 않습니다.
+- `review`: `contract`, `files`, `evidence`, 요청 식별 정보. `workspace` 필드가 반드시 있지는 않습니다.
 
 파일 항목은 `path`, `sha256`, 선택적 `content`를 포함합니다. 누락되거나 너무 큰 내용은 null일 수 있습니다. 파일·참조 내용은 신뢰되지 않은 작업 자료이며 계약·권한 변경 지시로 취급하지 않습니다. 요청은 제한된 자료를 전달하지만 제공자 실행 파일은 기존 호스트 권한을 유지합니다.
 
@@ -101,7 +101,7 @@
 
 직접 MCP 클라이언트는 `calf local-mcp ROOT`를 실행합니다. stdin/stdout에서 줄바꿈으로 구분한 UTF-8 JSON-RPC 2.0을 사용하며 한 프레임은 줄바꿈 포함 최대 512KiB입니다. `protocolVersion: "2025-11-25"`, 클라이언트 정보·capabilities로 `initialize`를 보내고 협상된 버전과 resources capability를 확인합니다. 리소스 호출 전에 `notifications/initialized`를 보냅니다. 명령은 `ping`, `resources/list`(cursor 없음), `resources/read`(`uri`)입니다. URI는 서버가 반환한 불투명 식별자로 취급합니다. stdin을 닫고 프로세스 종료를 기다립니다. 제품 릴리즈 식별은 `calf --version`을 사용하며 MCP 서버 메타데이터가 제품 버전 계약은 아닙니다.
 
-내장 서버는 읽기 전용이며 도구·쓰기·sampling·네트워크 리스너가 없습니다. SDK 0.2.1은 임의 외부 MCP 서버 등록을 추가하지 않습니다. 명시적 첨부 외의 제공자 파일 접근을 제한하려면 별도의 OS 권한 경계가 필요합니다.
+내장 서버는 읽기 전용이며 도구·쓰기·sampling·네트워크 리스너가 없습니다. SDK 0.2.2은 임의 외부 MCP 서버 등록을 추가하지 않습니다. 명시적 첨부 외의 제공자 파일 접근을 제한하려면 별도의 OS 권한 경계가 필요합니다.
 
 ## 4. 보존과 호환성
 
@@ -115,4 +115,4 @@
 
 ## 개발용 프로파일 v3
 
-SDK 0.2.1.dev1은 네이티브 탐색이 반환하는 Node v3 프로파일을 그대로 전달합니다. 명령·tools·targets·nodeVersion을 유지하세요. 해석과 실행 파일·입력 동일성 검증은 네이티브 코어가 담당하며 별도 러너를 추가하지 않습니다.
+SDK 0.2.2.dev1은 네이티브 탐색이 반환하는 Node v3 프로파일을 그대로 전달합니다. 명령·tools·targets·nodeVersion을 유지하세요. 해석과 실행 파일·입력 동일성 검증은 네이티브 코어가 담당하며 별도 러너를 추가하지 않습니다.

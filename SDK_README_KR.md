@@ -1,15 +1,15 @@
-# CALF SDK 0.2.1 — 개발자 프리뷰
+# CALF SDK 0.2.2 — 개발자 프리뷰
 
-Universal Work v1은 고정 계약·파일 버전 결속 검수·범용 Adapter·의존성 없는 Python/Node 클라이언트·선택적 제어 MCP를 제공합니다. [규약과 실행 예제](SDK_WORK_PROTOCOL_KR.md)를 참고하세요. Workbench 1.9.2의 **Runtime Work**에서 같은 작업을 조회·제어할 수 있으며 기존 코드 작업 API도 유지됩니다.
+Universal Work v1은 고정 계약·검사한 파일 버전과 결과를 함께 확인하는 검수·범용 Adapter·의존성 없는 Python/Node 클라이언트·선택적 제어 MCP를 제공합니다. [규약과 실행 예제](SDK_WORK_PROTOCOL_KR.md)를 참고하세요. Workbench 1.9.2의 **Runtime Work**에서 같은 작업을 조회·제어할 수 있으며 기존 코드 작업 API도 유지됩니다.
 
 
 [English](SDK_README.md) · [프로토콜 규격](SDK_PROTOCOL_KR.md) · [확장 라이선스](SDK-LICENSE.txt)
 
-**CALF Harness 1.8.7** 및 **CALF Workbench 1.9.2**에 포함된 네이티브 코어를 연결하는 작은 SDK입니다. Python 3.10 이상과 표준 라이브러리로 동작합니다. 상주 서비스·모델 런타임·데이터베이스·네트워크 의존성을 추가하지 않으며, 비공개 코어 소스는 포함하지 않습니다.
+**CALF Harness 1.8.7–1.8.8** 및 **CALF Workbench 1.9.2–1.9.3**에 포함된 네이티브 코어를 연결하는 작은 SDK입니다. Python 3.10 이상과 표준 라이브러리로 동작합니다. 상주 서비스·모델 런타임·데이터베이스·네트워크 의존성을 추가하지 않으며, 비공개 코어 소스는 포함하지 않습니다.
 
-이 SDK 프리뷰는 **macOS ARM64·Windows x64·Linux x64(Debian 13)**에서 두 릴리즈의 네이티브 코어와 실제 연결 시험을 마쳤습니다. 각 OS에서 SDK 경계 검사 16개와 검사 실패·수정·증거 무효화·기록 공유·작업 제어·Local MCP 통합 검사를 통과했습니다. 합성 제공자와 실제 Python 검사로 검증했으며 새로운 AI 실서비스 시험이나 모든 배포판 지원을 뜻하지는 않습니다. 압축 파일의 `VERIFICATION.json`에 결과가 있습니다.
+이 SDK 프리뷰는 **macOS ARM64·Windows x64·Linux x64(Debian 13)**에서 Harness 1.8.8·Workbench 1.9.3 코어와 실제 연결 시험을 마쳤습니다. 각 OS에서 SDK 경계 검사 16개와 검사 실패·수정·증거 무효화·기록 공유·작업 제어·Local MCP 통합 검사를 통과했습니다. 합성 제공자와 실제 Python 검사로 검증했으며 새로운 AI 실서비스 시험이나 모든 배포판 지원을 뜻하지는 않습니다. 압축 파일의 `VERIFICATION.json`에 결과가 있습니다.
 
-[SDK 0.2.1 다운로드](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.1). 하나의 공용 소스 압축 파일에 SDK·영문/한글 안내·영문/한글 프로토콜·예제·검사 실행기가 포함됩니다. 해당 OS의 CALF 네이티브 릴리즈는 별도로 설치합니다. SDK 압축 파일에 코어 런타임은 포함하지 않습니다.
+[SDK 0.2.2 다운로드](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.2). 하나의 공용 소스 압축 파일에 SDK·영문/한글 안내·영문/한글 프로토콜·예제·검사 실행기가 포함됩니다. 해당 OS의 CALF 네이티브 릴리즈는 별도로 설치합니다. SDK 압축 파일에 코어 런타임은 포함하지 않습니다.
 
 ## 시작하기
 
@@ -26,7 +26,7 @@ for job in client.tasks()["jobs"]:
     print(job["task"], current["state"], is_satisfied(current))
 ```
 
-Windows는 `Path(r"C:\Tools\CALF\calf.exe")` 같은 절대 경로를 사용합니다. GUI 실행기나 `.app` 폴더 대신 내부 네이티브 코어를 선택합니다. 제공자·검사 명령의 실행 파일은 `Path(sys.executable).resolve()`처럼 실제 물리 경로를 사용해야 합니다.
+Windows는 `Path(r"C:\Tools\CALF\calf.exe")` 같은 절대 경로를 사용합니다. GUI 실행기나 `.app` 폴더 대신 내부 네이티브 코어를 선택합니다. 제공자·검사 명령의 실행 파일은 `Path(sys.executable).resolve()`처럼 실제 경로를 사용해야 합니다.
 
 setuptools가 설치된 개발 환경에서는 `python -m pip install --no-build-isolation .`로 로컬 설치할 수도 있습니다. 외부 런타임 라이브러리는 필요하지 않습니다. PyPI에는 게시하지 않았습니다.
 
@@ -69,13 +69,13 @@ job = client.submit(Path("/절대경로/project"), "첨부 요구사항을 반�
                     attachments=[reference])
 ```
 
-폴더 추가·조회·미리보기만으로 AI에게 전송하지 않습니다. 위의 명시적 작업 등록이 선택한 참조를 첨부합니다. 미리보기 이후 파일이 바뀌면 기존 참조로 등록할 수 없습니다. 참조 최대 4개, 직렬화된 문맥 총 8KiB 제한이 적용됩니다. 네이티브 어댑터는 숨김·자격증명 관련 경로와 링크를 제외합니다. 이는 문맥 전송 통제이며 외부 AI 프로세스의 기존 파일 접근 권한을 제한하는 샌드박스는 아닙니다.
+폴더 추가·조회·미리보기만으로 AI에게 전송하지 않습니다. 위 예제에서는 `submit`을 호출할 때 선택한 참조를 첨부합니다. 미리보기 이후 파일이 바뀌면 기존 참조로 등록할 수 없습니다. 참조 최대 4개, 직렬화된 문맥 총 8KiB 제한이 적용됩니다. 네이티브 어댑터는 숨김·자격증명 관련 경로와 링크를 제외합니다. 이는 문맥 전송 통제이며 외부 AI 프로세스의 기존 파일 접근 권한을 제한하는 샌드박스는 아닙니다.
 
-`client.mcp_server(Path("/절대경로/참고자료"))`는 MCP 클라이언트용 `command`, `args`를 반환합니다. CALF의 읽기 전용 stdio 리소스 서버를 실행하며 초기화·`resources/list`·`resources/read`를 지원합니다. 임의 MCP 도구를 실행하는 플러그인 호스트가 아닙니다. 사용 후 stdin을 닫고 프로세스 종료를 확인합니다.
+`client.mcp_server(Path("/절대경로/참고자료"))`는 MCP 클라이언트가 서버를 실행할 때 사용할 `command`와 `args`를 반환합니다. 이 호출 자체는 서버를 시작하지 않습니다. 서버는 읽기 전용이며 초기화·`resources/list`·`resources/read`를 지원합니다. 임의 MCP 도구를 실행하는 플러그인 호스트가 아닙니다. 사용 후 stdin을 닫고 프로세스 종료를 확인합니다.
 
 ## 제공자·검사 어댑터
 
-`Check`·`ProviderConfig`는 기존 네이티브 JSON 설정을 만듭니다. `read_request`·`plan`·`action`·`review`·`emit`으로 제공자 프로토콜을 구현할 수 있습니다. 제공자는 변경안을 반환하고 네이티브 코어가 동일성·보호 파일·검사·증거를 판정합니다. 정상 종료만으로 완료를 선언할 수 없습니다.
+`Check`·`ProviderConfig`는 기존 네이티브 JSON 설정을 만듭니다. `read_request`·`plan`·`action`·`review`·`emit`으로 제공자 프로토콜을 구현할 수 있습니다. 제공자는 변경안을 반환하고 네이티브 코어가 동일성·보호 파일·검사·증거를 판정합니다. 최종 완료 여부는 실제 검사 결과로 확인합니다.
 
 ```python
 import sys
@@ -90,7 +90,7 @@ config = ProviderConfig(
 config.write_new("/절대경로/new-provider.json")
 ```
 
-검사 명령은 빈 검사·전체 건너뛰기·불완전한 검증을 계약에 맞춰 실패로 처리해야 합니다. 일반 종료 코드만으로 검사가 의미 있었는지 추론할 수는 없습니다. `write_new`는 기존 설정을 덮어쓰지 않습니다.
+검사 명령은 빈 검사·전체 건너뛰기·불완전한 검증을 계약에 맞춰 실패로 처리해야 합니다. 종료 코드만으로는 필요한 검사가 실제로 수행됐는지 알 수 없습니다. `write_new`는 기존 설정을 덮어쓰지 않습니다.
 
 사용자 정의 어댑터는 `calf run WORKSPACE REQUEST PROVIDER.json STATE`로 실행하고 `calf run-status WORKSPACE STATE TASK`로 조회합니다. 이 명시적 상태 경로는 Workbench 큐와 별개이며 **Workbench 작업 목록으로 자동 가져오지 않습니다.** 공유 목록이 필요한 작업은 `client.submit`을 사용합니다.
 
@@ -110,12 +110,12 @@ config.write_new("/절대경로/new-provider.json")
 SDK 루트에서 `python -m unittest discover -s tests -v`를 실행합니다. 실제 바이너리 연결 시험은 다음과 같습니다.
 
 ```text
-python ops/verify.py --harness /절대경로/calf-1.8.7 --workbench /절대경로/calf-1.9.2 --output /절대경로/새-시험-폴더
+python ops/verify.py --harness /절대경로/calf-1.8.8 --workbench /절대경로/calf-1.9.3 --output /절대경로/새-시험-폴더
 ```
 
 새 상태와 합성 제공자, 실제 Python 검사로 실패→수정→검수, 외부 변경 이후 증거 무효화, 공유 기록, 작업 제어, CJK, MCP 종료와 오래된 참조 거절을 확인합니다. 실제 AI 호출·기존 CALF 홈 접근·메모리 벤치마크는 하지 않습니다. 출력 폴더는 없어야 하며 실패 보고서도 보존합니다.
 
-## Check Profile과 업데이트 (0.2.1)
+## Check Profile과 업데이트 (0.2.2)
 
 새 검사 탐색은 Harness 1.8.7 또는 Workbench 1.9.2이 필요하며 기존 0.1 API는 유지합니다.
 
@@ -125,7 +125,7 @@ checks = [Check.from_discovered(c) for c in client.discover_checks(project)]
 config = ProviderConfig(command=[python, adapter_path], checks=checks)
 ```
 
-`discover_checks`는 설치된 도구의 메타데이터를 확인하며 검사 실행·의존성 설치·작업 등록을 하지 않습니다. Python은 `.venv`, `venv`, 활성 환경, PATH 순서로 선택하며 명시된 환경이 불완전하면 다른 환경으로 몰래 전환하지 않습니다. Python v2는 인터프리터·환경 설정·패키지 메타데이터를 결속하지만 설치된 모든 패키지 파일의 해시를 보장하지 않습니다. Cargo는 잠금 파일이 있는 단일 패키지의 통합 검사를 지원합니다.
+`discover_checks`는 설치된 도구의 메타데이터를 확인하며 검사 실행·의존성 설치·작업 등록을 하지 않습니다. Python은 `.venv`, `venv`, 활성 환경, PATH 순서로 선택하며 명시된 환경이 불완전하면 다른 환경으로 바꾸지 않고 오류를 알립니다. Python v2는 인터프리터·환경 설정·패키지 메타데이터를 결속하지만 설치된 모든 패키지 파일의 해시를 보장하지 않습니다. Cargo는 잠금 파일이 있는 단일 패키지의 통합 검사를 지원합니다.
 
 코어가 작업 전 실패를 기록하고 기존·새로운·해결된 실패를 구분합니다. 실패한 검사에서 파일과 결과가 계속 같으면 무효 재시도를 멈춥니다. 빈 검사·전부 건너뛴 검사·불완전 결과는 완료가 아닙니다. `no_progress`, `UNKNOWN`, 요청 접수 응답을 성공으로 해석하지 마세요.
 

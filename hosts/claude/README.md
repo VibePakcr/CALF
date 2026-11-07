@@ -2,9 +2,9 @@
 
 [한국어](README_KR.md)
 
-This local host adapter connects Claude Code's official lifecycle hooks to the unchanged CALF 1.8.7 Rust engine. It applies to the CLI and local Code sessions in the Claude desktop application. Ordinary Claude chat, Cowork, cloud sessions and other computers do not automatically acquire these hooks.
+This local host adapter connects Claude Code's official lifecycle hooks to CALF 1.8.7 or 1.8.8. It applies to the CLI and local Code sessions in the Claude desktop application. Ordinary Claude chat, Cowork, cloud sessions and other computers do not automatically acquire these hooks.
 
-The adapter starts only when a hook fires. It uses Python's standard library, a pinned native binary and local files. There is no daemon, model proxy, additional model, vector database or network listener. Claude keeps its own account, model and permission policy.
+The adapter starts only when a hook fires. It uses Python's standard library, a native binary verified by its SHA-256 hash and local files. There is no daemon, model proxy, additional model, vector database or network listener. Claude keeps its own account, model and permission policy.
 
 ## What it does
 
@@ -20,7 +20,7 @@ The adapter removes native `permissionDecision: allow` output. A rewritten comma
 
 ## Local installation
 
-The owner-managed installation lives under the physical T9 CALF tools directory. Its `MANAGED-ROUTING.ko.txt` names the conditional installation/recovery helper. The standard Claude user settings file points to its T9 `claude-settings.json`; an existing T9 Claude profile uses the same definition. Only eight CALF hook events are added. New sessions load them automatically; `/hooks` shows the installed definitions.
+Download the Host Connections kit and follow [the installation guide](../README.md). Choose an installation root, your existing Claude settings file, and the qualified CALF native executable. The kit prepares a versioned adapter, checks the settings hash and merges only its eight hooks. Review them with `/hooks`, then start a new local Code session.
 
 Each work item needs an explicit contract with scope and independent checks. Use the installed binary's `register WORKSPACE CONTRACT.json --config CONFIG.json` command, then use the returned check command. Preserve the chosen contract; never weaken it to make an agent pass. Unregistered sessions still produce observation records, but those observations do not establish task completion.
 
@@ -32,6 +32,6 @@ Auto mode may reject a registered local check. Use the host's approval flow for 
 
 ## Preservation and recovery
 
-Records, prior contracts and native permission settings remain in place. There is no settings reset or credential copy. The conditional restore operation removes only unchanged managed settings links that were absent before installation; it retains all CALF records and the versioned binary. If a user edits either link, stop and reconcile rather than overwriting it.
+Keep the host-kit state folder private: it contains settings backups and versioned adapter files. To update or return to a retained revision, use the kit’s `prepare`, `inspect` and `apply` commands. `recover` checks an interrupted operation against saved before/after hashes and completes its bookkeeping only when the state is recognized. It does not overwrite settings or restore work records. See [Update and recover](../README.md#update-and-recover).
 
-The current implementation uses POSIX file locking. Qualification covers the owner's macOS CLI and an actual local session in the desktop Code tab: report generation, one registered check with eight tests, matching file-version evidence, permission-denial recovery and an accepted Stop verdict. Five isolated reconciliation cases cover denied, successful, legacy-pending, already-claimed and changed-ticket paths. Windows/Linux Claude host integration remains unqualified; the core's cross-platform results do not establish that claim. App-managed UI preferences can update during use and should be distinguished from CALF contracts and settings when auditing preservation.
+The current implementation uses POSIX file locking. Qualification covers macOS CLI sessions and an actual local session in the desktop Code tab: report generation, one registered check with eight tests, matching evidence tied to the files that were checked, permission-denial recovery and an accepted Stop verdict. Five isolated reconciliation cases cover denied, successful, legacy-pending, already-claimed and changed-ticket paths. Windows/Linux Claude host integration remains unqualified; the core's cross-platform results do not establish that claim. App-managed UI preferences can update during use and should be distinguished from CALF contracts and settings when auditing preservation.

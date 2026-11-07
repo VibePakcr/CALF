@@ -44,6 +44,8 @@ def atomic(path,value):
 def execute(config,event,payload):
     cfg=read_json(config)
     if cfg.get('schema')!=1:raise ValueError('adapter_configuration_invalid')
+    core_version=cfg.get('coreVersion','1.8.7')
+    if core_version not in ('1.8.7','1.8.8'):raise ValueError('unqualified_core_version')
     core=physical(cfg['core']);native_config=physical(cfg['nativeConfig']);state=physical(cfg['adapterState'])
     if digest(core)!=cfg['coreSha256']:raise ValueError('native_binary_changed')
     if event not in EVENTS or payload.get('hook_event_name')!=event:raise ValueError('hook_event_mismatch')
@@ -116,7 +118,7 @@ def execute(config,event,payload):
         if event=='SessionStart':
             native=invoke('SessionStart')
             text=native.get('hookSpecificOutput',{}).get('additionalContext','')
-            output={'hookSpecificOutput':{'hookEventName':event,'additionalContext':'CALF 1.8.7 · Claude Code. Only registered checks establish completion. '+text}}
+            output={'hookSpecificOutput':{'hookEventName':event,'additionalContext':'CALF '+core_version+' · Claude Code. Only registered checks establish completion. '+text}}
         elif event=='UserPromptSubmit':
             reconciled=close_unstarted()
             if current['open']:interrupt()
@@ -168,7 +170,7 @@ def execute(config,event,payload):
             reconciled=close_unstarted()
             if current['open']:interrupt()
         atomic(path,current)
-        audit={'host':'claude','nativeWirePort':'codex','engineVersion':'1.8.7','event':event,'session':session,'turn':current['turn'],'workspace':workspace,'tool':payload.get('tool_name'),'toolUseId':payload.get('tool_use_id'),'at':time.time(),'nativeBinarySha256':cfg['coreSha256']}
+        audit={'host':'claude','nativeWirePort':'codex','engineVersion':core_version,'event':event,'session':session,'turn':current['turn'],'workspace':workspace,'tool':payload.get('tool_name'),'toolUseId':payload.get('tool_use_id'),'at':time.time(),'nativeBinarySha256':cfg['coreSha256']}
         if reconciled:audit['reconciledUnstartedChecks']=reconciled
         with (folder/'events.jsonl').open('a') as f:os.fchmod(f.fileno(),0o600);f.write(json.dumps(audit,ensure_ascii=False)+'\n')
         return output

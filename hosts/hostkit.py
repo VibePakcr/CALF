@@ -74,7 +74,8 @@ def prepare(root,revision,core,config,python):
     if not re.fullmatch(r'[0-9A-Za-z.-]{1,64}',revision) or revision in ('.','..'):raise ValueError('revision_required')
     core=physical(core);config=physical(config);python=physical(python)
     info=subprocess.run([str(core),'--version'],capture_output=True,timeout=10,check=True)
-    if json.loads(info.stdout).get('version')!='1.8.7':raise ValueError('qualified_core_187_required')
+    core_version=json.loads(info.stdout).get('version')
+    if core_version not in ('1.8.7','1.8.8'):raise ValueError('qualified_core_187_or_188_required')
     cfg=read(config)
     if cfg.get('version')!=1 or not isinstance(cfg.get('bindings'),list) or not isinstance(cfg.get('stateDir'),str):raise ValueError('native_hook_config_required')
     root=Path(root)
@@ -88,7 +89,7 @@ def prepare(root,revision,core,config,python):
         source=Path(__file__).resolve().parent/'claude/adapter.py'
         with (dest/'adapter.py').open('xb') as f:f.write(source.read_bytes())
         state=root/'state';state.mkdir(mode=0o700,exist_ok=True)
-        write_new(dest/'adapter.json',{'schema':1,'core':str(core),'coreSha256':sha(core),'nativeConfig':str(config),'adapterState':str(state)})
+        write_new(dest/'adapter.json',{'schema':1,'core':str(core),'coreSha256':sha(core),'coreVersion':core_version,'nativeConfig':str(config),'adapterState':str(state)})
         hooks={}
         for event in EVENTS:
             row={'hooks':[{'type':'command','command':shlex.join([str(python),'-B',str(dest/'adapter.py'),event,str(dest/'adapter.json')]),'timeout':20}]}
@@ -96,7 +97,7 @@ def prepare(root,revision,core,config,python):
             hooks[event]=[row]
         release={'revision':revision,'hooks':hooks,'pins':{str(p):sha(p) for p in [core,python,dest/'adapter.py',dest/'adapter.json']}}
         write_new(dest/'release.json',release)
-        return {'status':'PREPARED','revision':revision,'coreVersion':'1.8.7','hooks':len(hooks),'settingsWritten':False}
+        return {'status':'PREPARED','revision':revision,'coreVersion':core_version,'hooks':len(hooks),'settingsWritten':False}
 
 def release(root,revision):
     if not re.fullmatch(r'[0-9A-Za-z.-]{1,64}',revision) or revision in ('.','..'):raise ValueError('revision_required')
