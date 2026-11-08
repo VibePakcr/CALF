@@ -1,5 +1,7 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+**GCN/MCL preview:** Harness 1.8.9 and Workbench 1.9.4 now share CPU-only cell/lane control in the native core. [Guide](GCN_CORE.md) · [Downloads and qualification](GCN_RELEASE.md). Stable downloads below remain available.
+
 **Documentation revision docs.1:** download packages now include the reviewed English and Korean manuals. Runtime code and previous releases are retained. [Changes and verification scope](DOCUMENTATION-RELEASE-20261107.1.md).
 
 CALF is a lightweight, local harness and workbench for supervising AI work. Submit a task to an AI agent, follow its execution, inspect the changes, and check the result against your requirements. Failed and incomplete attempts stay in the local record so you can investigate or resume them.

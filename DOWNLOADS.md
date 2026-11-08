@@ -1,5 +1,7 @@
 # CALF downloads / 다운로드
 
+**GCN/MCL preview:** Harness 1.8.9 and Workbench 1.9.4 now share CPU-only cell/lane control in the native core. [Guide](GCN_CORE.md) · [Downloads and qualification](GCN_RELEASE.md). Stable downloads below remain available.
+
 **Documentation revision docs.1:** download packages now include the reviewed English and Korean manuals. Runtime code and previous releases are retained. [Changes and verification scope](DOCUMENTATION-RELEASE-20261107.1.md).
 
 Free to use · Closed core · Local records · Focused single-agent workflows
