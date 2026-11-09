@@ -56,7 +56,7 @@ On Windows use absolute native `calf.exe`, interpreter and records paths. Inputs
 | `recheck(work=...)` | Check an existing candidate again without running its producer. |
 | `adopt(work=..., digest=...)` | Select the exact current validated version. |
 
-See [schema](../schemas/work-v1.schema.json), [runnable client](../examples/universal_work.py), [Python executor](../examples/runtime_text.py), [Node executor](../examples/runtime_data.mjs), [independent validator](../examples/validator_text.py), and [HTTP bridge](../examples/runtime_http.py).
+See [schema](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/schemas/work-v1.schema.json), [runnable client](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/examples/universal_work.py), [Python executor](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/examples/runtime_text.py), [Node executor](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/examples/runtime_data.mjs), [independent validator](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/examples/validator_text.py), and [HTTP bridge](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/examples/runtime_http.py).
 
 ## Runtime adapter contract
 

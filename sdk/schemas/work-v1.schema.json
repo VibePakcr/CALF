@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:calf:work:v1",
+  "title": "CALF WorkSpec v1",
+  "description": "Structural schema; the native core additionally enforces byte, file identity, path, cross-reference, hash and lifecycle constraints.",
+  "$ref": "#/$defs/WorkSpec",
+  "$defs": {
+    "Name": {"type":"string","minLength":1,"maxLength":80,"pattern":"^[A-Za-z0-9_-]+$"},
+    "Hash": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "Input": {
+      "type":"object","additionalProperties":false,
+      "required":["id","path","sha256","mediaType"],
+      "properties":{
+        "id":{"$ref":"#/$defs/Name"},"path":{"type":"string","minLength":1},
+        "sha256":{"$ref":"#/$defs/Hash"},"mediaType":{"type":"string","minLength":1}
+      }
+    },
+    "Output": {
+      "type":"object","additionalProperties":false,
+      "required":["id","path","mediaType","minBytes","maxBytes"],
+      "properties":{
+        "id":{"$ref":"#/$defs/Name"},"path":{"type":"string","minLength":1,"maxLength":160},
+        "mediaType":{"type":"string","maxLength":128},
+        "minBytes":{"type":"integer","minimum":0,"maximum":536870912},
+        "maxBytes":{"type":"integer","minimum":1,"maximum":536870912}
+      }
+    },
+    "Check": {
+      "type":"object","additionalProperties":false,"required":["id","kind","artifact","rule"],
+      "properties":{
+        "id":{"$ref":"#/$defs/Name"},"artifact":{"$ref":"#/$defs/Name"},
+        "kind":{"enum":["sha256","json-pointer","text-contains","adapter"]},"rule":{"type":"object"}
+      },
+      "allOf":[
+        {"if":{"properties":{"kind":{"const":"sha256"}}},"then":{"properties":{"rule":{"type":"object","additionalProperties":false,"required":["sha256"],"properties":{"sha256":{"$ref":"#/$defs/Hash"}}}}}},
+        {"if":{"properties":{"kind":{"const":"json-pointer"}}},"then":{"properties":{"rule":{"type":"object","additionalProperties":false,"required":["pointer","equals"],"properties":{"pointer":{"type":"string","pattern":"^(/.*)?$"},"equals":{}}}}}},
+        {"if":{"properties":{"kind":{"const":"text-contains"}}},"then":{"properties":{"rule":{"type":"object","additionalProperties":false,"required":["text"],"properties":{"text":{"type":"string","minLength":1,"maxLength":4096}}}}}},
+        {"if":{"properties":{"kind":{"const":"adapter"}}},"then":{"properties":{"rule":{"type":"object","additionalProperties":false,"required":["adapter","parameters"],"properties":{"adapter":{"$ref":"#/$defs/Name"},"parameters":{"type":"object"}}}}}}
+      ]
+    },
+    "WorkSpec": {
+      "type":"object","additionalProperties":false,
+      "required":["schema","key","title","adapter","parameters","inputs","outputs","checks","budget","adoption"],
+      "properties":{
+        "schema":{"const":"calf.work.v1"},"key":{"type":"string","minLength":1,"maxLength":256},
+        "title":{"type":"string","minLength":1,"maxLength":2048},"adapter":{"$ref":"#/$defs/Name"},
+        "parameters":{"type":"object"},
+        "inputs":{"type":"array","maxItems":16,"items":{"$ref":"#/$defs/Input"}},
+        "outputs":{"type":"array","minItems":1,"maxItems":16,"items":{"$ref":"#/$defs/Output"}},
+        "checks":{"type":"array","minItems":1,"maxItems":32,"items":{"$ref":"#/$defs/Check"}},
+        "adoption":{"enum":["manual","automatic"]},
+        "budget":{"type":"object","additionalProperties":false,"required":["maxAttempts","timeoutMs","maxOutputBytes"],"properties":{
+          "maxAttempts":{"type":"integer","minimum":1,"maximum":8},
+          "timeoutMs":{"type":"integer","minimum":100,"maximum":300000},
+          "maxOutputBytes":{"type":"integer","minimum":1,"maximum":536870912}
+        }}
+      }
+    },
+    "Adapter": {
+      "type":"object","additionalProperties":false,"required":["schema","id","role","command","files","capabilities","class"],
+      "properties":{
+        "schema":{"const":1},"id":{"$ref":"#/$defs/Name"},"role":{"enum":["executor","validator"]},
+        "command":{"type":"array","minItems":1,"maxItems":16,"items":{"type":"string","maxLength":4095}},
+        "files":{"type":"array","maxItems":16,"items":{"type":"string","minLength":1}},
+        "class":{"enum":["light","heavy"]},
+        "capabilities":{"type":"object","additionalProperties":false,"required":["asynchronous","query","cancel"],"properties":{
+          "asynchronous":{"type":"boolean"},"query":{"type":"boolean"},"cancel":{"type":"boolean"}
+        },"if":{"properties":{"asynchronous":{"const":true}}},"then":{"properties":{"query":{"const":true}}}}
+      },
+      "if":{"properties":{"role":{"const":"validator"}}},
+      "then":{"properties":{"capabilities":{"properties":{"asynchronous":{"const":false},"query":{"const":false},"cancel":{"const":false}}}}}
+    },
+    "Artifact": {
+      "type":"object","additionalProperties":false,"required":["id","path","mediaType","sha256","bytes"],
+      "properties":{"id":{"$ref":"#/$defs/Name"},"path":{"type":"string"},"mediaType":{"type":"string"},
+        "sha256":{"$ref":"#/$defs/Hash"},"bytes":{"type":"integer","minimum":0,"maximum":536870912}}
+    },
+    "Manifest": {
+      "type":"object","additionalProperties":false,"required":["digest","artifacts"],
+      "properties":{"digest":{"$ref":"#/$defs/Hash"},"artifacts":{"type":"object","additionalProperties":false,"required":["schema","files"],"properties":{
+        "schema":{"const":"calf.artifacts.v1"},"files":{"type":"array","minItems":1,"maxItems":16,"items":{"$ref":"#/$defs/Artifact"}}
+      }}}
+    },
+    "RuntimeResult": {
+      "type":"object","additionalProperties":false,"required":["schema","requestId","state","providerJobId","usage"],
+      "properties":{"schema":{"const":"calf.runtime.v1"},"requestId":{"type":"string","minLength":1},
+        "state":{"enum":["running","succeeded","failed","cancelled","unknown","not_found"]},
+        "providerJobId":{"type":["string","null"],"minLength":1,"maxLength":256},"usage":{"type":["object","null"]}}
+    },
+    "ValidatorResult": {
+      "type":"object","additionalProperties":false,"required":["schema","requestId","checkId","manifestDigest","outcome","reason"],
+      "properties":{"schema":{"const":"calf.runtime.v1"},"requestId":{"type":"string"},"checkId":{"$ref":"#/$defs/Name"},
+        "manifestDigest":{"$ref":"#/$defs/Hash"},"outcome":{"enum":["SATISFIED","VIOLATED","UNKNOWN"]},"reason":{"type":"string","maxLength":2048}}
+    },
+    "Receipt": {
+      "type":"object","additionalProperties":false,"required":["schema","contractDigest","requestId","manifestDigest","checks"],
+      "properties":{"schema":{"const":"calf.validation.v1"},"contractDigest":{"$ref":"#/$defs/Hash"},"requestId":{"type":"string"},
+        "manifestDigest":{"$ref":"#/$defs/Hash"},"checks":{"type":"array","minItems":1,"maxItems":32,"items":{
+          "type":"object","additionalProperties":false,"required":["id","artifact","outcome","manifestDigest","detail"],
+          "properties":{"id":{"$ref":"#/$defs/Name"},"artifact":{"$ref":"#/$defs/Name"},"outcome":{"enum":["SATISFIED","VIOLATED","UNKNOWN"]},
+            "manifestDigest":{"$ref":"#/$defs/Hash"},"detail":{"type":["object","null"]}}
+        }}}
+    },
+    "Adoption": {
+      "type":"object","additionalProperties":false,"required":["schema","work","attempt","digest","contractDigest","authority","at"],
+      "properties":{"schema":{"const":"calf.adoption.v1"},"work":{"type":"string","pattern":"^work-[0-9a-f]{64}$"},
+        "attempt":{"type":"integer","minimum":1,"maximum":8},"digest":{"$ref":"#/$defs/Hash"},"contractDigest":{"$ref":"#/$defs/Hash"},
+        "authority":{"enum":["contract","explicit-client"]},"at":{"type":"integer"}}
+    }
+  }
+}

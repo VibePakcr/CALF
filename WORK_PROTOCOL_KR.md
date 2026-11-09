@@ -46,7 +46,7 @@ Windows에서는 calf.exe와 인터프리터·기록 폴더의 절대 경로를 
 | recheck | 산출물을 다시 만들지 않고 현재 후보만 검사합니다. |
 | adopt | 현재 검수 통과 명세의 정확한 digest를 지정해 채택합니다. |
 
-[JSON Schema](../schemas/work-v1.schema.json), [실행 예제](../examples/universal_work.py), [Python Adapter](../examples/runtime_text.py), [Node Adapter](../examples/runtime_data.mjs), [독립 Validator](../examples/validator_text.py), [HTTP Adapter](../examples/runtime_http.py)를 참고하세요.
+[JSON Schema](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/schemas/work-v1.schema.json), [실행 예제](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/examples/universal_work.py), [Python Adapter](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/examples/runtime_text.py), [Node Adapter](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/examples/runtime_data.mjs), [독립 Validator](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/examples/validator_text.py), [HTTP Adapter](https://github.com/VibePakcr/CALF/blob/sdk-v0.2.4/sdk/examples/runtime_http.py)를 참고하세요.
 
 ## Adapter 규약
 
