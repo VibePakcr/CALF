@@ -1,96 +1,69 @@
 {
-  "status": "PASS",
+  "schema": "calf.release.status-context.v1",
+  "status": "PASS_WITH_DECLARED_SCOPE",
+  "qualifiedAt": "2026-11-09",
   "versions": {
-    "Harness": "1.8.8",
-    "Workbench": "1.9.3",
-    "SDK": "0.2.2",
-    "HostConnections": "1.8.8-hosts.1"
+    "harness": "1.8.10",
+    "workbench": "1.9.5",
+    "sdk": "0.2.3"
   },
-  "nativeUnitTests": 49,
+  "change": "Saved execution results and current observer verdicts separated; bound context differences displayed without relaxing completion rules.",
   "platforms": {
     "macos": {
       "coreSha256": {
-        "harness": "cddbf73743e3b27d9125a8f13f4186d92d1fd3fbadb1d1d56c2814b0bc93387b",
-        "workbench": "efb178d417e907a652b68e2acc5520c5680d9563b3ba84343e7a35450b767597"
+        "harness": "65d94df3a385f762948b712d31fa5ca90df4046b534c7cd31e0b9d3d2cf74021",
+        "workbench": "c44319d980912c9ebf2fa8958346673802f71f46125067ed15c581d0965feb0c"
       },
-      "sdkBoundaryTests": 16,
-      "universalScenariosPerCore": {
-        "harness": 23,
-        "workbench": 23
-      },
-      "antigravityNativeIntegrationPerCore": 5,
-      "realLocalExecution": true,
-      "ui": "native self-check; no new window interaction",
-      "recoveryChecks": [
-        "updated_binary_resumes_real_task_through_frozen_older_runtime",
-        "updated_runtime_bridge_propagates_cancel_and_reaps_producer",
-        "core_crash_without_end_receipt_keeps_unknown_and_execution_reservation",
-        "schema_documents_parse_and_reference_real_protocol"
-      ]
+      "sdkUnitTests": 16,
+      "actualLocalChecksPerEdition": true,
+      "contextCases": [
+        "harness: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history",
+        "workbench: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history"
+      ],
+      "workbenchNativeSelfCheck": "PASS",
+      "guiInteraction": "Earlier actual macOS status-view verification reused; no new Windows/Linux window interaction"
     },
     "windows": {
       "coreSha256": {
-        "harness": "e2ced3127fb9538826598610af66f039520af29fdf14e296261583845bc56b15",
-        "workbench": "564899607ce07abb5b1377404184d4fb7553bb2858a150cb93ea1ab60821b2e4"
+        "harness": "fdbea1c31c17c5d78577431bffc76f1f07f39b3da2f90e1f8f1e7d6e9e59146a",
+        "workbench": "5659908123a7f4e7abd66ec6ae2822d43f08cea92e6487718527b92f2a347a58"
       },
-      "sdkBoundaryTests": 16,
-      "universalScenariosPerCore": {
-        "harness": 23,
-        "workbench": 23
-      },
-      "antigravityNativeIntegrationPerCore": 5,
-      "realLocalExecution": true,
-      "ui": "native self-check; no new window interaction",
-      "recoveryChecks": [
-        "updated_binary_resumes_real_task_through_frozen_older_runtime",
-        "updated_runtime_bridge_propagates_cancel_and_reaps_producer",
-        "core_crash_without_end_receipt_keeps_unknown_and_execution_reservation",
-        "schema_documents_parse_and_reference_real_protocol"
-      ]
+      "sdkUnitTests": 16,
+      "actualLocalChecksPerEdition": true,
+      "contextCases": [
+        "harness: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history",
+        "workbench: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history"
+      ],
+      "workbenchNativeSelfCheck": "PASS",
+      "guiInteraction": "Earlier actual macOS status-view verification reused; no new Windows/Linux window interaction"
     },
     "linux": {
       "coreSha256": {
-        "harness": "75d03e6222a20d1137b43428ea6c6a427166e1dde1a271e9042bb01c685993a8",
-        "workbench": "026fa9794e6106abbe5982b44fce174ee425e25870ed351782cf8c38135d31e5"
+        "harness": "ae67e4aa653d782fe0e40d64c380fa50a0720d75159f3a0ffda22889eb1afb68",
+        "workbench": "fa325cae199b2f21bccfa835c0ab70219abe9906611c7e5cb641dc2fa7fe4ce9"
       },
-      "sdkBoundaryTests": 16,
-      "universalScenariosPerCore": {
-        "harness": 23,
-        "workbench": 23
-      },
-      "antigravityNativeIntegrationPerCore": 5,
-      "realLocalExecution": true,
-      "ui": "native self-check; no new window interaction",
-      "recoveryChecks": [
-        "updated_binary_resumes_real_task_through_frozen_older_runtime",
-        "updated_runtime_bridge_propagates_cancel_and_reaps_producer",
-        "core_crash_without_end_receipt_keeps_unknown_and_execution_reservation",
-        "schema_documents_parse_and_reference_real_protocol"
-      ]
+      "sdkUnitTests": 16,
+      "actualLocalChecksPerEdition": true,
+      "contextCases": [
+        "harness: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history",
+        "workbench: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history"
+      ],
+      "workbenchNativeSelfCheck": "PASS",
+      "guiInteraction": "Earlier actual macOS status-view verification reused; no new Windows/Linux window interaction"
     }
   },
-  "hostKit": {
-    "platform": "macOS",
-    "coreSha256": "cddbf73743e3b27d9125a8f13f4186d92d1fd3fbadb1d1d56c2814b0bc93387b",
-    "checks": [
-      "fresh-claude-install-preserves-settings-and-unrelated-hooks",
-      "settings-cas-refuses-stale-input",
-      "installed-claude-hook-actually-calls-core188",
-      "update-and-old-revision-selection-preserve-later-settings",
-      "interrupted-host-apply-reconciles-without-settings-write",
-      "edited-managed-hook-refused-without-overwrite",
-      "native-codex-antigravity-install-explicit-test-homes",
-      "native-two-host-reinstall-preserves-owner-settings"
-    ]
+  "reusedEvidence": {
+    "nativeUnitTests": 57,
+    "actualMacWorkbenchStatusView": "Saved SATISFIED/current UNKNOWN, files MATCH and LC_ALL mismatch; matching-context query SATISFIED",
+    "oldReaderCompatibility": "CALF 1.8.9 reads new diagnostic records and retains identical registered-task verdicts"
   },
-  "reusedEvidence": [
-    "Prior live Codex, Antigravity and Claude sessions used 1.8.7 or earlier; no new paid AI call.",
-    "Workbench screenshots were captured in 1.9.2."
-  ],
+  "preservation": "Existing releases, task records, contracts, settings and pinned runtimes are retained. New artifacts and tests use separate folders.",
+  "security": "No core source, credentials or owner records included. Arbitrary environment values are redacted; details never grant completion or permission.",
   "limits": [
-    "No new memory/soak qualification.",
-    "Claude adapter uses POSIX locks; Windows/Linux Claude sessions are not qualified.",
-    "Native SessionStart/PreInvocation typed responses predate this patch. Private legacy JS bridge is not bundled.",
-    "Core source remains private; SDK and host adapter source are supplied only under their integration licenses."
+    "No new paid model, memory or soak test.",
+    "Older receipts without bound context details remain unavailable until an exact matching observation exists.",
+    "Old tasks retain their original pinned runtimes; they are not silently migrated.",
+    "Existing Codex, Antigravity and Claude hook policies and individually approved trust hashes are not changed by publishing this release.",
+    "macOS ad-hoc integrity signature, no Apple notarization; no Windows publisher signature."
   ]
 }

@@ -1,9 +1,9 @@
-# CALF SDK 0.2.2 — 개발자 프리뷰
+# CALF SDK 0.2.3 — 개발자 프리뷰
 
-Universal Work v1은 작업 계약을 고정하고 검사한 파일 버전과 결과를 함께 확인하는 범용 작업 규약입니다. 범용 어댑터, 별도 런타임 라이브러리가 필요 없는 Python·Node 클라이언트, 제어 기능을 선택적으로 켤 수 있는 MCP를 제공합니다. [규약과 실행 예제](SDK_WORK_PROTOCOL_KR.md)를 참고하세요. Workbench 1.9.2의 **Runtime Work**에서 같은 작업을 조회·제어할 수 있으며 기존 코드 작업 API도 유지됩니다.
+Universal Work v1은 작업 계약을 고정하고 검사한 파일 버전과 결과를 함께 확인하는 범용 작업 규약입니다. 범용 어댑터, 별도 런타임 라이브러리가 필요 없는 Python·Node 클라이언트, 제어 기능을 선택적으로 켤 수 있는 MCP를 제공합니다. [규약과 실행 예제](WORK_PROTOCOL_KR.md)를 참고하세요. Workbench 1.9.2의 **Runtime Work**에서 같은 작업을 조회·제어할 수 있으며 기존 코드 작업 API도 유지됩니다.
 
 
-[English](SDK_README.md) · [프로토콜 규격](SDK_PROTOCOL_KR.md) · [확장 라이선스](SDK-LICENSE.txt)
+[English](README.md) · [프로토콜 규격](SDK_PROTOCOL_KR.md) · [확장 라이선스](LICENSE-SDK.txt)
 
 **CALF Harness 1.8.7–1.8.8** 및 **CALF Workbench 1.9.2–1.9.3**에 포함된 네이티브 코어를 연결하는 작은 SDK입니다. Python 3.10 이상과 표준 라이브러리로 동작합니다. 상주 서비스·모델 런타임·데이터베이스·네트워크 의존성을 추가하지 않으며, 비공개 코어 소스는 포함하지 않습니다.
 
@@ -135,3 +135,8 @@ config = ProviderConfig(command=[python, adapter_path], checks=checks)
 ### JavaScript / TypeScript
 
 CALF 1.8.7 / 1.9.2는 Node 24 이상 내장 node:test 프로파일을 지원합니다. `Check.from_discovered()`가 v3와 실행 명령을 그대로 유지합니다. `examples/check_profiles.py`를 참고하세요. npm 스크립트·Jest·Vitest·TypeScript 타입 검사는 이 프로파일 범위 밖입니다.
+
+
+## 저장 결과와 현재 상태 조회
+
+하네스 1.8.10 / Workbench 1.9.5에서 `client.registered_tasks(workspace)`로 등록 작업을 찾고 `client.registered_status(workspace, task)`로 현재 판정과 `statusView` 진단 정보를 읽습니다. `is_satisfied(response)`는 최상위 현재 판정만 확인합니다. 저장된 과거 `SATISFIED`를 완료 근거로 사용하지 않습니다. 검사·AI 실행이나 환경 변수 변경은 하지 않습니다. [예제](sdk/examples/status_context.py) · [상세 안내](STATUS_CONTEXT_KR.md).

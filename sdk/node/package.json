@@ -1,0 +1,9 @@
+{
+  "name": "@calf/local-work-sdk",
+  "version": "0.2.2",
+  "private": true,
+  "type": "module",
+  "exports": "./index.mjs",
+  "description": "Development preview of the dependency-free local CALF Work client",
+  "engines": {"node": ">=18"}
+}

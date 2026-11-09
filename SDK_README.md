@@ -1,9 +1,9 @@
-# CALF SDK 0.2.2 — Developer Preview
+# CALF SDK 0.2.3 — Developer Preview
 
-Universal Work v1 adds frozen contracts, checks tied to the exact output files, runtime adapters, dependency-free Node/Python clients and optional-control Local MCP. [Protocol and runnable examples](SDK_WORK_PROTOCOL.md). Workbench 1.9.2 shows the same work under **Runtime Work**. Existing code-job API calls remain compatible.
+Universal Work v1 adds frozen contracts, checks tied to the exact output files, runtime adapters, dependency-free Node/Python clients and optional-control Local MCP. [Protocol and runnable examples](WORK_PROTOCOL.md). Workbench 1.9.2 shows the same work under **Runtime Work**. Existing code-job API calls remain compatible.
 
 
-[한국어](SDK_README_KR.md) · [Protocol](SDK_PROTOCOL.md) · [Extension license](SDK-LICENSE.txt)
+[한국어](README_KR.md) · [Protocol](SDK_PROTOCOL.md) · [Extension license](LICENSE-SDK.txt)
 
 A small integration layer for **CALF Harness 1.8.7–1.8.8** and the native core included in **CALF Workbench 1.9.2–1.9.3**. Python 3.10+ and the standard library are sufficient. The SDK adds no background service, model runtime, database or network dependency. CALF's execution engine remains proprietary and is not included.
 
@@ -148,3 +148,8 @@ New queued jobs retain one shared executable per version in the selected records
 ### JavaScript / TypeScript
 
 CALF 1.8.7 / 1.9.2 supports Node 24+ built-in node:test profiles. `Check.from_discovered()` retains profile v3 and its command. See `examples/check_profiles.py`. npm scripts, Jest, Vitest and TypeScript typechecking are outside this profile.
+
+
+## Saved results and current status
+
+With Harness 1.8.10 / Workbench 1.9.5, use `client.registered_tasks(workspace)` to list registered tasks and `client.registered_status(workspace, task)` to read the current verdict and diagnostic `statusView`. `is_satisfied(response)` checks only the current top-level outcome. Historical `SATISFIED` is not current completion. These calls do not run checks or AI, or change environment variables. [Example](sdk/examples/status_context.py) · [Guide](STATUS_CONTEXT.md).

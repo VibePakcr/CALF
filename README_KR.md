@@ -1,5 +1,16 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+## 최신 배포판 · 2026-11-09
+
+**하네스 1.8.10 · Workbench 1.9.5 · SDK 0.2.3**
+
+저장된 실행 결과와 현재 조회 판정을 나눠 보여줍니다. 검사 당시와 조회 환경의 `LC_ALL` 등이 다르면 어떤 항목이 바뀌었는지 확인할 수 있습니다. 과거 통과 결과로 현재의 `UNKNOWN`을 덮어쓰지 않으며, 기존 기록·계약·설정은 유지합니다.
+
+- [다운로드](DOWNLOADS.md) · [영·한 사용 매뉴얼](CALF_mannual.html) · [이번 변경사항](RELEASE-NOTES.md)
+- [상태 조회 안내](STATUS_CONTEXT_KR.md) · [SDK 안내](SDK_README_KR.md)
+
+이전 버전과 GCN 프리뷰의 안내·다운로드도 아래에 남겨 두었습니다.
+
 **GCN/MCL 프리뷰:** 하네스 1.8.9와 워크벤치 1.9.4가 CPU 기반 셀·레인 제어를 네이티브 코어에서 함께 제공합니다. [안내](GCN_CORE_KR.md) · [다운로드와 검증 범위](GCN_RELEASE.md). 아래의 기존 정식 다운로드도 유지합니다.
 
 **문서 개정판 docs.1:** 배포 패키지 안의 영·한 매뉴얼도 최신 교정본으로 맞췄습니다. 실행 코드와 기존 버전은 유지합니다. [변경 내용·검증 범위](DOCUMENTATION-RELEASE-20261107.1.md).

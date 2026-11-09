@@ -1,5 +1,16 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+## Latest release · 2026-11-09
+
+**Harness 1.8.10 · Workbench 1.9.5 · SDK 0.2.3**
+
+See saved execution results alongside the current status verdict. When the check and the querying app differ in `LC_ALL` or another tracked input, CALF shows the difference. A historical pass never replaces a current `UNKNOWN`. Existing records, contracts and settings are kept.
+
+- [Downloads](DOWNLOADS.md) · [EN/KR user manual](CALF_mannual.html) · [Release notes](RELEASE-NOTES.md)
+- [Status guide](STATUS_CONTEXT.md) · [SDK guide](SDK_README.md)
+
+Earlier releases and the GCN preview remain available below.
+
 **GCN/MCL preview:** Harness 1.8.9 and Workbench 1.9.4 now share CPU-only cell/lane control in the native core. [Guide](GCN_CORE.md) · [Downloads and qualification](GCN_RELEASE.md). Stable downloads below remain available.
 
 **Documentation revision docs.1:** download packages now include the reviewed English and Korean manuals. Runtime code and previous releases are retained. [Changes and verification scope](DOCUMENTATION-RELEASE-20261107.1.md).
