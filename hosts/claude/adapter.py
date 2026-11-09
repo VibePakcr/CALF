@@ -1,4 +1,4 @@
-"""Claude Code hooks -> pinned CALF 1.8.7 compatibility transport.
+"""Claude Code hooks -> pinned CALF native compatibility transport.
 
 The existing native `codex` wire port is reused in an isolated Claude-owned
 state directory. It is not a second model and never grants host permissions.
@@ -7,7 +7,7 @@ No transcript parsing, dependency installation, daemon or prompt storage.
 from pathlib import Path
 import fcntl,hashlib,json,os,re,subprocess,sys,tempfile,time,uuid
 
-EVENTS={'SessionStart','UserPromptSubmit','PreToolUse','PostToolUse','PostToolUseFailure','Stop','StopFailure','SessionEnd'}
+EVENTS={'SessionStart','UserPromptSubmit','PreToolUse','PostToolUse','PostToolUseFailure','PostToolBatch','Stop','StopFailure','SessionEnd'}
 LIMIT=4*1024*1024
 
 def unique(rows):
@@ -45,7 +45,7 @@ def execute(config,event,payload):
     cfg=read_json(config)
     if cfg.get('schema')!=1:raise ValueError('adapter_configuration_invalid')
     core_version=cfg.get('coreVersion','1.8.7')
-    if core_version not in ('1.8.7','1.8.8'):raise ValueError('unqualified_core_version')
+    if core_version not in ('1.8.7','1.8.8','1.8.9','1.8.10','1.8.11','1.9.6'):raise ValueError('unqualified_core_version')
     core=physical(cfg['core']);native_config=physical(cfg['nativeConfig']);state=physical(cfg['adapterState'])
     if digest(core)!=cfg['coreSha256']:raise ValueError('native_binary_changed')
     if event not in EVENTS or payload.get('hook_event_name')!=event:raise ValueError('hook_event_mismatch')
@@ -113,7 +113,7 @@ def execute(config,event,payload):
                 invoke('UserPromptSubmit',turn=turn)
                 closed.append({'attempt':attempt,'turn':turn,'ticketSha256':ticket_hash,'terminalSha256':digest(terminal)})
             return closed
-        reconciled=[]
+        reconciled=[];batch_resolutions=[]
         output={}
         if event=='SessionStart':
             native=invoke('SessionStart')
@@ -159,6 +159,42 @@ def execute(config,event,payload):
                 if event=='PostToolUseFailure':
                     interrupt();extra['tool_response']={'error':True,'interrupted':payload.get('is_interrupt') is True}
                 invoke('PostToolUse',extra)
+        elif event=='PostToolBatch':
+            # A permission denial resolves a tool call without PostToolUse or
+            # PostToolUseFailure. Use the host's complete batch, not transcript
+            # text, timeouts or a missing process, to close an observed call.
+            calls=payload.get('tool_calls')
+            if not current['open'] or not isinstance(calls,list) or len(calls)>128:raise ValueError('batch_shape_invalid')
+            native_cfg=read_json(native_config)
+            transport=physical(Path(native_cfg['stateDir'])/'codex')/key[:32]/'transport.json'
+            observed=read_json(transport) if transport.exists() else {'calls':{}}
+            if not isinstance(observed.get('calls'),dict):raise ValueError('native_transport_invalid')
+            pending=[];seen=set()
+            # Validate the entire batch before writing any terminal observation.
+            for call in calls:
+                if not isinstance(call,dict):raise ValueError('batch_call_invalid')
+                identity=call.get('tool_use_id');tool=call.get('tool_name');value=call.get('tool_input')
+                if not isinstance(identity,str) or not identity or identity in seen or not isinstance(tool,str) or not isinstance(value,dict) or 'tool_response' not in call:raise ValueError('batch_call_invalid')
+                seen.add(identity)
+                prior=current['tools'].get(identity)
+                if prior is None:continue  # Rejected before PreToolUse: no start to close.
+                mapped='apply_patch' if tool in {'Write','Edit','MultiEdit','NotebookEdit'} else tool
+                matches=[v for v in observed['calls'].values() if v.get('toolId')==identity and v.get('turn')==current['turn']]
+                if len(matches)>1:raise ValueError('batch_identity_ambiguous')
+                if not matches:continue
+                native_call=matches[0]
+                # An owned check can finish only through its real native terminal.
+                # Its rewritten tool input is therefore not used as batch proof.
+                if native_call.get('ticket') or native_call.get('criterion') is not None or native_call.get('results'):continue
+                input_hash=hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+                if prior['tool']!=mapped or prior['inputSha256']!=input_hash:raise ValueError('batch_tool_identity_changed')
+                result_hash=hashlib.sha256(json.dumps(call['tool_response'],ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+                pending.append({'tool_name':mapped,'tool_use_id':identity,'tool_input':value,'tool_response':{'calfResolutionEvent':'PostToolBatch','resultSha256':result_hash,'executionConfirmed':False}})
+            for extra in pending:
+                invoke('PostToolUse',extra)
+                batch_resolutions.append({'toolUseId':extra['tool_use_id'],'resultSha256':extra['tool_response']['resultSha256'],'executionConfirmed':False})
+            if pending:
+                output={'hookSpecificOutput':{'hookEventName':event,'additionalContext':'CALF observed '+str(len(pending))+' resolved non-check tool calls from this host batch. This records resolution only, not successful execution or a passing check. Registered checks still require their native receipts.'}}
         elif event=='Stop':
             reconciled=close_unstarted(current_turn_only=True)
             text=payload.get('last_assistant_message')
@@ -172,6 +208,7 @@ def execute(config,event,payload):
         atomic(path,current)
         audit={'host':'claude','nativeWirePort':'codex','engineVersion':core_version,'event':event,'session':session,'turn':current['turn'],'workspace':workspace,'tool':payload.get('tool_name'),'toolUseId':payload.get('tool_use_id'),'at':time.time(),'nativeBinarySha256':cfg['coreSha256']}
         if reconciled:audit['reconciledUnstartedChecks']=reconciled
+        if batch_resolutions:audit['resolvedBatchCalls']=batch_resolutions
         with (folder/'events.jsonl').open('a') as f:os.fchmod(f.fileno(),0o600);f.write(json.dumps(audit,ensure_ascii=False)+'\n')
         return output
 

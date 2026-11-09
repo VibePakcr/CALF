@@ -1,37 +1,41 @@
 # CALF for Claude Code
 
-[한국어](README_KR.md)
+[한국어](README_KR.md) · [Installation, update and recovery](../README.md)
 
-This local host adapter connects Claude Code's official lifecycle hooks to CALF 1.8.7 or 1.8.8. It applies to the CLI and local Code sessions in the Claude desktop application. Ordinary Claude chat, Cowork, cloud sessions and other computers do not automatically acquire these hooks.
+Connect Claude CLI or the Claude desktop app's **local Code mode** to CALF. The adapter supports the qualified Harness 1.8.7–1.8.11 cores and Workbench 1.9.6. Ordinary Claude chat, Cowork and cloud sessions are separate modes. The Claude host adapter is qualified on **macOS only**; the native core and SDK have separate Windows/Linux checks.
 
-The adapter starts only when a hook fires. It uses Python's standard library, a native binary verified by its SHA-256 hash and local files. There is no daemon, model proxy, additional model, vector database or network listener. Claude keeps its own account, model and permission policy.
+The adapter runs when a hook fires, using Python 3.10+, its standard library, local files and a SHA-256-pinned native executable. It adds no model, daemon or network listener. Claude retains its account, model and approval policy. No prompts or transcripts are stored by this adapter.
 
-## What it does
+## What changed
 
-- Records session, request and tool observations without storing prompts or reading transcripts.
-- Sends an exact registered check through CALF's owned execution ticket.
-- Requires current native evidence for a completed registered work item. A tool's text or exit status alone is insufficient.
-- Rejects a stale check after files change and retains incomplete/error states as UNKNOWN.
-- Records failed tools, API failures and unfinished session endings without resubmitting work.
+Claude can deny a command after `PreToolUse` without sending `PostToolUseFailure`. CALF previously retained that non-check call as pending. The ninth hook, `PostToolBatch`, now supplies the resolved batch. CALF closes a pending non-check call only when the session, turn, tool ID and input all match. It stores a result fingerprint, not the response text. A resolved denial has no inferred exit code and is not a successful execution.
 
-The 1.8.7 engine already exposes a Codex-compatible hook transport. This adapter translates Claude events into that **pinned internal wire interface**, in a separate Claude-owned state directory. Native low-level rows therefore name that port `codex`; the adapter's receipts identify the real host as `claude`. No Codex model or session is started. This is not a promise that arbitrary future CALF releases accept the same interface.
+The whole batch is validated before any result is recorded. Missing results or conflicting identities stay `UNKNOWN`. Batch text cannot complete a registered check: CALF requires its actual owned-execution terminal and matching file hashes. Claimed checks remain pending until their real result arrives. Never-started, unclaimed check tickets can be cancelled through the native core without launching the verifier. Earlier failed and denied attempts remain in the record.
 
-The adapter removes native `permissionDecision: allow` output. A rewritten command still goes through Claude's permission checks. Existing deny/ask rules, sandbox settings, MCP configuration and credentials are preserved. Hooks are not an OS sandbox and cannot remove unrelated access already held by a host.
+## Install or update
 
-## Local installation
+The Harness, Workbench and SDK archives include `hosts/hostkit.py`, this adapter and both language guides. A standalone Host Connections ZIP is also available. Follow the [host installation guide](../README.md), using physical absolute paths and a private state folder. Prepare a new revision beside the old one, inspect the current settings hash, then apply that exact revision. The kit refuses changed settings, symlinks and an unreviewed existing CALF route.
 
-Download the Host Connections kit and follow [the installation guide](../README.md). Choose an installation root, your existing Claude settings file, and the qualified CALF native executable. The kit prepares a versioned adapter, checks the settings hash and merges only its eight hooks. Review them with `/hooks`, then start a new local Code session.
+For new installations the kit merges these nine hooks: `SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `PostToolUseFailure`, `PostToolBatch`, `Stop`, `StopFailure`, `SessionEnd`. `PostToolBatch` has no tool matcher. Existing permissions, MCP configuration, unrelated hooks and original settings backups are retained. Review the hooks in Claude and start a new local Code session; an existing session is not proof that it reloaded them.
 
-Each work item needs an explicit contract with scope and independent checks. Use the installed binary's `register WORKSPACE CONTRACT.json --config CONFIG.json` command, then use the returned check command. Preserve the chosen contract; never weaken it to make an agent pass. Unregistered sessions still produce observation records, but those observations do not establish task completion.
+Use `register WORKSPACE CONTRACT.json --config CONFIG.json` with the selected native executable. Keep the returned check command, scope and criteria unchanged. The adapter may replace the check command with its pinned execution ticket, but never forwards `permissionDecision: allow`. The rewritten command still passes through Claude's approval flow.
 
-SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, PostToolUseFailure, Stop, StopFailure and SessionEnd are connected. Claude does not supply a general Interrupt hook. An unfinished turn is marked interrupted when a new request or session-ending/failure event arrives. Immediate cleanup of every background process at an arbitrary UI interruption is not guaranteed by this adapter.
+## If Auto blocks a check
 
-Claude can deny a command after PreToolUse without emitting a tool-result hook. At Stop, or when another request arrives, the adapter closes a matching **never-started, unclaimed** owned check as cancelled. It verifies the ticket identity and cancellation marker, then lets the pinned core write its own cancelled terminal without launching the check command. A claimed ticket is left UNKNOWN until its real terminal is available. Existing passing checks and the denied attempt remain on record; reconciliation does not rerun the work or create a passing CHECK.
+Inspect the exact registered command. If you authorize that check, use Claude's individual approval flow. In the verified desktop session, the owner temporarily selected Manual, chose **Allow once** for that check, then restored Auto. An always-allow rule is a separate persistent setting; it is not required by CALF and is not added by the adapter.
 
-Auto mode may reject a registered local check. Use the host's approval flow for the intended command; CALF does not override that decision or add permanent permission rules. Completion also depends on the check's execution environment. A status query from another environment can return UNKNOWN even when an earlier app-session completion was accepted; the historical receipt remains available.
+Do not rerun an unknown or still-running check blindly. Inspect its existing ticket and evidence first. A host message or exit code zero alone does not establish completion. Failed checks remain `VIOLATED`; missing or stale evidence remains `UNKNOWN`.
 
-## Preservation and recovery
+## Read the result
 
-Keep the host-kit state folder private: it contains settings backups and versioned adapter files. To update or return to a retained revision, use the kit’s `prepare`, `inspect` and `apply` commands. `recover` checks an interrupted operation against saved before/after hashes and completes its bookkeeping only when the state is recognized. It does not overwrite settings or restore work records. See [Update and recover](../README.md#update-and-recover).
+Workbench **Task status** shows **Recorded completion** and **Current observer** separately. A saved `SATISFIED` can coexist with a current `UNKNOWN` when `LC_ALL` differs. Check **File version** and **Execution context**. The SDK exposes the same read-only view through `registered_status`. CALF does not change environment variables to make a verdict pass.
 
-The current implementation uses POSIX file locking. Qualification covers macOS CLI sessions and an actual local session in the desktop Code tab: report generation, one registered check with eight tests, matching evidence tied to the files that were checked, permission-denial recovery and an accepted Stop verdict. Five isolated reconciliation cases cover denied, successful, legacy-pending, already-claimed and changed-ticket paths. Windows/Linux Claude host integration remains unqualified; the core's cross-platform results do not establish that claim. App-managed UI preferences can update during use and should be distinguished from CALF contracts and settings when auditing preservation.
+The real macOS desktop Code session used core 1.8.10: report generation, one check, eight tests, matching file hashes, a native Stop verdict of `SATISFIED`, and return to Auto. That model-session evidence is reused here. New 1.8.11/1.9.6 release binaries receive isolated hook-boundary and installation/update/recovery checks. The separate denied CLI trial verified batch resolution but did not finish its intended work; it is not presented as a successful task.
+
+## Recovery and limits
+
+Keep old versioned binaries, the whole records home, contracts and private kit backups. `recover` reconciles interrupted installation bookkeeping only when saved before/after hashes match; it never restores user settings or rewrites task history. An edited managed hook requires review before an update can continue.
+
+The adapter uses POSIX file locks. Claude Windows/Linux host installation remains unqualified and is refused by this installer. Hooks do not restrict unrelated filesystem access already held by Claude. There is no general Claude Interrupt hook, so immediate cleanup at every UI interruption is not guaranteed. No transcript parsing, model retry, permanent permission rule or automatic adoption is added.
+
+Official host reference: [Claude Code hooks](https://code.claude.com/docs/en/hooks).

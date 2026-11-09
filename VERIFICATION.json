@@ -1,69 +1,194 @@
 {
-  "schema": "calf.release.status-context.v1",
+  "schema": "calf.release.claude-batch.v1",
   "status": "PASS_WITH_DECLARED_SCOPE",
   "qualifiedAt": "2026-11-09",
   "versions": {
-    "harness": "1.8.10",
-    "workbench": "1.9.5",
-    "sdk": "0.2.3"
+    "harness": "1.8.11",
+    "workbench": "1.9.6",
+    "sdk": "0.2.4"
   },
-  "change": "Saved execution results and current observer verdicts separated; bound context differences displayed without relaxing completion rules.",
+  "change": "Claude PostToolBatch matches resolved non-check calls without inventing execution success; nine-hook connection kit bundled with all editions and SDK.",
   "platforms": {
     "macos": {
       "coreSha256": {
-        "harness": "65d94df3a385f762948b712d31fa5ca90df4046b534c7cd31e0b9d3d2cf74021",
-        "workbench": "c44319d980912c9ebf2fa8958346673802f71f46125067ed15c581d0965feb0c"
+        "harness": "0620f06bffd0300be1f3aeab287e9c0524fccd87a8b64ccdec6983b515028fef",
+        "workbench": "10aa75fe92c86cd632bce148f65a745ca4f7236aa8b4277e3451ed709f250d3d"
       },
       "sdkUnitTests": 16,
-      "actualLocalChecksPerEdition": true,
+      "sdkIntegration": {
+        "status": "PASS",
+        "platform": "darwin",
+        "provider": "synthetic; no AI or network call",
+        "checks": [
+          "released 1.8.11/1.9.6 share Unicode preferences and task home",
+          "SDK provider: real failing test, repair, independent check and review at attempt 2",
+          "external file edit invalidates prior success",
+          "native Python v2 discovery roundtrip and actual profiled fail/repair/check",
+          "submit/shared list/pause/resume/cancel/inspect/diff/reuse; no provider launched",
+          "Local MCP CJK list/read/EOF shutdown; hidden files omitted; stale attachment refused before queue write"
+        ],
+        "unitTests": 16,
+        "binaries": {
+          "harness": "0620f06bffd0300be1f3aeab287e9c0524fccd87a8b64ccdec6983b515028fef",
+          "workbench": "10aa75fe92c86cd632bce148f65a745ca4f7236aa8b4277e3451ed709f250d3d"
+        },
+        "protectedFiles": 4,
+        "adapterTask": "run-abf6acc5-382d-42b9-bb8f-1060349016a3",
+        "queueTask": "job-1794197737682-57bf8c6e-be19-4ca3-a0c9-6a7f9ba60d5e"
+      },
       "contextCases": [
         "harness: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history",
         "workbench: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history"
       ],
       "workbenchNativeSelfCheck": "PASS",
-      "guiInteraction": "Earlier actual macOS status-view verification reused; no new Windows/Linux window interaction"
+      "claudeHostSupport": "macOS only"
     },
     "windows": {
       "coreSha256": {
-        "harness": "fdbea1c31c17c5d78577431bffc76f1f07f39b3da2f90e1f8f1e7d6e9e59146a",
-        "workbench": "5659908123a7f4e7abd66ec6ae2822d43f08cea92e6487718527b92f2a347a58"
+        "harness": "8628e024718354526acc5040e67fcea895a2717c50e7a1268b62b10451d4f279",
+        "workbench": "dbaad8d5f50ed3b28d7308e6558663848b79a06eefb4feba72b3a960d7b67ee3"
       },
       "sdkUnitTests": 16,
-      "actualLocalChecksPerEdition": true,
+      "sdkIntegration": {
+        "status": "PASS",
+        "platform": "win32",
+        "provider": "synthetic; no AI or network call",
+        "checks": [
+          "released 1.8.11/1.9.6 share Unicode preferences and task home",
+          "SDK provider: real failing test, repair, independent check and review at attempt 2",
+          "external file edit invalidates prior success",
+          "native Python v2 discovery roundtrip and actual profiled fail/repair/check",
+          "submit/shared list/pause/resume/cancel/inspect/diff/reuse; no provider launched",
+          "Local MCP CJK list/read/EOF shutdown; hidden files omitted; stale attachment refused before queue write"
+        ],
+        "unitTests": 16,
+        "binaries": {
+          "harness": "8628e024718354526acc5040e67fcea895a2717c50e7a1268b62b10451d4f279",
+          "workbench": "dbaad8d5f50ed3b28d7308e6558663848b79a06eefb4feba72b3a960d7b67ee3"
+        },
+        "protectedFiles": 4,
+        "adapterTask": "run-657e309c-1f3d-4e36-be44-63c11d0bd49d",
+        "queueTask": "job-1794197748399-d1adf52c-762e-4725-89c1-8d97bff11d34"
+      },
       "contextCases": [
         "harness: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history",
         "workbench: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history"
       ],
       "workbenchNativeSelfCheck": "PASS",
-      "guiInteraction": "Earlier actual macOS status-view verification reused; no new Windows/Linux window interaction"
+      "claudeHostSupport": "Unqualified Claude host installation refused without writes"
     },
     "linux": {
       "coreSha256": {
-        "harness": "ae67e4aa653d782fe0e40d64c380fa50a0720d75159f3a0ffda22889eb1afb68",
-        "workbench": "fa325cae199b2f21bccfa835c0ab70219abe9906611c7e5cb641dc2fa7fe4ce9"
+        "harness": "0acf6be223b941faca8b466484af5c098c36de853860bf0300d8c5769b464a7d",
+        "workbench": "35ecdc1d773f3bad882c444decaa20f1e53d2446fce9bf918c814c474fda80cc"
       },
       "sdkUnitTests": 16,
-      "actualLocalChecksPerEdition": true,
+      "sdkIntegration": {
+        "status": "PASS",
+        "platform": "linux",
+        "provider": "synthetic; no AI or network call",
+        "checks": [
+          "released 1.8.11/1.9.6 share Unicode preferences and task home",
+          "SDK provider: real failing test, repair, independent check and review at attempt 2",
+          "external file edit invalidates prior success",
+          "native Python v2 discovery roundtrip and actual profiled fail/repair/check",
+          "submit/shared list/pause/resume/cancel/inspect/diff/reuse; no provider launched",
+          "Local MCP CJK list/read/EOF shutdown; hidden files omitted; stale attachment refused before queue write"
+        ],
+        "unitTests": 16,
+        "binaries": {
+          "harness": "0acf6be223b941faca8b466484af5c098c36de853860bf0300d8c5769b464a7d",
+          "workbench": "35ecdc1d773f3bad882c444decaa20f1e53d2446fce9bf918c814c474fda80cc"
+        },
+        "protectedFiles": 4,
+        "adapterTask": "run-2c8c817b-e352-4802-8505-803718a075f2",
+        "queueTask": "job-1794197739878-1a17fd25-d84c-44db-8045-85b4da71f410"
+      },
       "contextCases": [
         "harness: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history",
         "workbench: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history"
       ],
       "workbenchNativeSelfCheck": "PASS",
-      "guiInteraction": "Earlier actual macOS status-view verification reused; no new Windows/Linux window interaction"
+      "claudeHostSupport": "Unqualified Claude host installation refused without writes"
     }
   },
-  "reusedEvidence": {
-    "nativeUnitTests": 57,
-    "actualMacWorkbenchStatusView": "Saved SATISFIED/current UNKNOWN, files MATCH and LC_ALL mismatch; matching-context query SATISFIED",
-    "oldReaderCompatibility": "CALF 1.8.9 reads new diagnostic records and retains identical registered-task verdicts"
+  "freshClaudeAdapterBoundaries": {
+    "1.8.11": [
+      "Missing host result stays UNKNOWN; no timeout/process-liveness inference.",
+      "Matched denied non-check resolves once, records no exit 0/CHECK, retains original prefixes and UNKNOWN.",
+      "Only a real owned verifier establishes SATISFIED; one actual launch and native CHECK.",
+      "Batch text never completes an owned check; existing native cancellation remains authoritative.",
+      "Claimed owned work remains UNKNOWN; no fabricated terminal or duplicate execution.",
+      "Changed tool input refuses resolution before any journal write.",
+      "Entire batch validated before actuation; late invalid entries cannot partially close calls.",
+      "A result without a known PreToolUse start creates no record or evidence."
+    ],
+    "1.9.6": [
+      "Missing host result stays UNKNOWN; no timeout/process-liveness inference.",
+      "Matched denied non-check resolves once, records no exit 0/CHECK, retains original prefixes and UNKNOWN.",
+      "Only a real owned verifier establishes SATISFIED; one actual launch and native CHECK.",
+      "Batch text never completes an owned check; existing native cancellation remains authoritative.",
+      "Claimed owned work remains UNKNOWN; no fabricated terminal or duplicate execution.",
+      "Changed tool input refuses resolution before any journal write.",
+      "Entire batch validated before actuation; late invalid entries cannot partially close calls.",
+      "A result without a known PreToolUse start creates no record or evidence."
+    ]
   },
-  "preservation": "Existing releases, task records, contracts, settings and pinned runtimes are retained. New artifacts and tests use separate folders.",
-  "security": "No core source, credentials or owner records included. Arbitrary environment values are redacted; details never grant completion or permission.",
+  "freshHostKit": {
+    "status": "PASS",
+    "cores": [
+      {
+        "coreVersion": "1.8.11",
+        "coreSha256": "0620f06bffd0300be1f3aeab287e9c0524fccd87a8b64ccdec6983b515028fef",
+        "status": "PASS",
+        "groups": [
+          "nine-hooks-and-no-batch-matcher",
+          "install-preserves-permissions-mcp",
+          "update-and-reselect-no-duplicates",
+          "stale-settings-hash-refused",
+          "interrupted-install-bookkeeping-reconciled",
+          "settings-and-native-config-not-restored"
+        ],
+        "liveHostSettingsWritten": false
+      },
+      {
+        "coreVersion": "1.9.6",
+        "coreSha256": "10aa75fe92c86cd632bce148f65a745ca4f7236aa8b4277e3451ed709f250d3d",
+        "status": "PASS",
+        "groups": [
+          "nine-hooks-and-no-batch-matcher",
+          "install-preserves-permissions-mcp",
+          "update-and-reselect-no-duplicates",
+          "stale-settings-hash-refused",
+          "interrupted-install-bookkeeping-reconciled",
+          "settings-and-native-config-not-restored"
+        ],
+        "liveHostSettingsWritten": false
+      }
+    ],
+    "platform": "macos",
+    "modelCalls": 0
+  },
+  "reusedActualHostSession": {
+    "platform": "macos",
+    "surface": "Claude desktop local Code mode",
+    "coreVersion": "1.8.10",
+    "checkExecutions": 1,
+    "testsPassed": 8,
+    "fileVersion": "MATCH",
+    "nativeStop": "SATISFIED",
+    "initialAutoDenialRetained": true,
+    "approval": "One individual Allow once; restored Auto; no permanent rule",
+    "workbenchCaptureVersion": "1.9.5",
+    "currentExternalObserver": "UNKNOWN due LC_ALL difference; not normalized"
+  },
+  "preservation": "Old releases, records, contracts, installed routes and settings retained. Tests use separate folders; installation/recovery tests use synthetic settings only.",
+  "security": "No private core source, owner records, settings or credentials in public artifacts. No model, daemon, GPU control or permission-policy change.",
   "limits": [
-    "No new paid model, memory or soak test.",
-    "Older receipts without bound context details remain unavailable until an exact matching observation exists.",
-    "Old tasks retain their original pinned runtimes; they are not silently migrated.",
-    "Existing Codex, Antigravity and Claude hook policies and individually approved trust hashes are not changed by publishing this release.",
+    "No new paid AI session, memory or soak test. Actual model-session evidence comes from core1.8.10 with this adapter behavior; new1.8.11/1.9.6 binaries use local synthetic hook/SDK tests.",
+    "Claude host adapter and installer remain macOS-only; core and SDK have separate Windows/Linux checks.",
+    "The separate real denied CLI trial only validated call resolution; its intended task was not completed.",
+    "Earlier native unit and UI interaction evidence is reused; native Workbench self-checks run on all three release platforms.",
     "macOS ad-hoc integrity signature, no Apple notarization; no Windows publisher signature."
   ]
 }

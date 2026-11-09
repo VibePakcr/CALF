@@ -1,4 +1,4 @@
-"""Explicit, local Claude hook installation for the qualified macOS 1.8.7 adapter.
+"""Explicit, local Claude hook installation for the qualified macOS Claude Code adapter.
 
 Codex and Antigravity use the native install command. This tool neither edits
 their settings nor grants trust, command permissions, or a model connection.
@@ -17,7 +17,7 @@ import sys
 import tempfile
 import uuid
 
-EVENTS=('SessionStart','UserPromptSubmit','PreToolUse','PostToolUse','PostToolUseFailure','Stop','StopFailure','SessionEnd')
+EVENTS=('SessionStart','UserPromptSubmit','PreToolUse','PostToolUse','PostToolUseFailure','PostToolBatch','Stop','StopFailure','SessionEnd')
 
 def physical(value,directory=False):
     p=Path(value)
@@ -75,7 +75,7 @@ def prepare(root,revision,core,config,python):
     core=physical(core);config=physical(config);python=physical(python)
     info=subprocess.run([str(core),'--version'],capture_output=True,timeout=10,check=True)
     core_version=json.loads(info.stdout).get('version')
-    if core_version not in ('1.8.7','1.8.8'):raise ValueError('qualified_core_187_or_188_required')
+    if core_version not in ('1.8.7','1.8.8','1.8.9','1.8.10','1.8.11','1.9.6'):raise ValueError('qualified_core_required')
     cfg=read(config)
     if cfg.get('version')!=1 or not isinstance(cfg.get('bindings'),list) or not isinstance(cfg.get('stateDir'),str):raise ValueError('native_hook_config_required')
     root=Path(root)
