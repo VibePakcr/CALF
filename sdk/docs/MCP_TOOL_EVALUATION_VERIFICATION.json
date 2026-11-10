@@ -1,0 +1,253 @@
+{
+  "schema": "calf.release.mcp-tool-policy.v1",
+  "status": "PASS_WITH_DECLARED_SCOPE",
+  "versions": {
+    "harness": "1.8.12",
+    "workbench": "1.9.8",
+    "sdk": "0.2.5"
+  },
+  "programClassification": "FOUNDATION_READY",
+  "localProfileClassification": "INTEGRATION_VERIFIED",
+  "integrationVerifiedForWholeProgram": false,
+  "qualifiedProfile": "pinned local JSON-lines stdio reads, absent candidate creation and preconfigured local artifact recovery",
+  "platforms": {
+    "macos": {
+      "harness": {
+        "coreSha256": "09e392d8b37a4aca3a910af2295cd9b807696b5683d58309b5bf1e3d0708301a",
+        "readGroups": 11,
+        "readCases": 35,
+        "hostGroups": 14,
+        "olderVerifierSha256": "0620f06bffd0300be1f3aeab287e9c0524fccd87a8b64ccdec6983b515028fef",
+        "reportSha256": "7f48b7aa134889a4422ce7669bc292466d3b4421a37d06cfed13953dbe6467e9",
+        "afterWriteTimeoutBudgetMs": 400,
+        "sdkPolicyPreparation": {
+          "status": "PASS",
+          "sdkVersion": "0.2.5",
+          "platform": "darwin",
+          "edition": "harness",
+          "coreSha256": "09e392d8b37a4aca3a910af2295cd9b807696b5683d58309b5bf1e3d0708301a",
+          "preparedWithoutDispatch": true,
+          "policySha256": "03241c4de151c9dbecec8bdc541aa3fdc981923a34af6ccc5dad0f7a40dcd552",
+          "pythonNodeDescriptorsMatch": true,
+          "actualMcpToolsList": [
+            "calf_tool_status",
+            "calf_tool_invoke",
+            "calf_tool_prepare"
+          ],
+          "defaultReadOnly": true,
+          "toolCalls": 0,
+          "modelCalls": 0,
+          "hostSettingsChanged": false
+        }
+      },
+      "workbench": {
+        "coreSha256": "05352cb3110824382103b4e3a615ec900437be15a9bfd4ee0a1aabe0751140c7",
+        "readGroups": 11,
+        "readCases": 35,
+        "hostGroups": 14,
+        "olderVerifierSha256": "0620f06bffd0300be1f3aeab287e9c0524fccd87a8b64ccdec6983b515028fef",
+        "reportSha256": "89791b33ca94f62ab92cf1b4967febbaf215a9c9545c338e98863cc5be2cba39",
+        "afterWriteTimeoutBudgetMs": 400,
+        "sdkPolicyPreparation": {
+          "status": "PASS",
+          "sdkVersion": "0.2.5",
+          "platform": "darwin",
+          "edition": "workbench",
+          "coreSha256": "05352cb3110824382103b4e3a615ec900437be15a9bfd4ee0a1aabe0751140c7",
+          "preparedWithoutDispatch": true,
+          "policySha256": "05c252029d96070389f443c2dd87166eeea8912bd34e214a45f705f7bc49728b",
+          "pythonNodeDescriptorsMatch": true,
+          "actualMcpToolsList": [
+            "calf_tool_status",
+            "calf_tool_invoke",
+            "calf_tool_prepare"
+          ],
+          "defaultReadOnly": true,
+          "toolCalls": 0,
+          "modelCalls": 0,
+          "hostSettingsChanged": false
+        }
+      }
+    },
+    "windows": {
+      "harness": {
+        "coreSha256": "bd06f7a0d4c58579c1a359da887b820edccef36fa9db50b2c78454f3170ff20e",
+        "readGroups": 11,
+        "readCases": 35,
+        "hostGroups": 14,
+        "olderVerifierSha256": "8628e024718354526acc5040e67fcea895a2717c50e7a1268b62b10451d4f279",
+        "reportSha256": "894fec4eaa8d66fde359a12f0c640f9b99fa07288c9e7be5c20b86a183a29104",
+        "afterWriteTimeoutBudgetMs": 1500,
+        "sdkPolicyPreparation": {
+          "status": "PASS",
+          "sdkVersion": "0.2.5",
+          "platform": "win32",
+          "edition": "harness",
+          "coreSha256": "bd06f7a0d4c58579c1a359da887b820edccef36fa9db50b2c78454f3170ff20e",
+          "preparedWithoutDispatch": true,
+          "policySha256": "8a3d5898cf32a0990c1eebd9f21e11a66c22a8173ea5601fb2e72d7826ed6253",
+          "pythonNodeDescriptorsMatch": true,
+          "actualMcpToolsList": [
+            "calf_tool_status",
+            "calf_tool_invoke",
+            "calf_tool_prepare"
+          ],
+          "defaultReadOnly": true,
+          "toolCalls": 0,
+          "modelCalls": 0,
+          "hostSettingsChanged": false
+        }
+      },
+      "workbench": {
+        "coreSha256": "e02e8ee6dc1fbd5c23f6e1c69f3276ab883d91e0cff8a5c7ce8eacecc7c6a565",
+        "readGroups": 11,
+        "readCases": 35,
+        "hostGroups": 14,
+        "olderVerifierSha256": "8628e024718354526acc5040e67fcea895a2717c50e7a1268b62b10451d4f279",
+        "reportSha256": "c380474220eaef4fbd653a90e0e079e5408ea18b23ae8100143b78c94f46c2ae",
+        "afterWriteTimeoutBudgetMs": 1500,
+        "sdkPolicyPreparation": {
+          "status": "PASS",
+          "sdkVersion": "0.2.5",
+          "platform": "win32",
+          "edition": "workbench",
+          "coreSha256": "e02e8ee6dc1fbd5c23f6e1c69f3276ab883d91e0cff8a5c7ce8eacecc7c6a565",
+          "preparedWithoutDispatch": true,
+          "policySha256": "a44b94dde368a4b8d2de44a33b7b38f5df5606404c665b955556c40c9b919f76",
+          "pythonNodeDescriptorsMatch": true,
+          "actualMcpToolsList": [
+            "calf_tool_status",
+            "calf_tool_invoke",
+            "calf_tool_prepare"
+          ],
+          "defaultReadOnly": true,
+          "toolCalls": 0,
+          "modelCalls": 0,
+          "hostSettingsChanged": false
+        }
+      }
+    },
+    "linux": {
+      "harness": {
+        "coreSha256": "d1fa90f528d59757fb25e6c33713dac57516a7d0692b483dae5dec3a0b6a3a75",
+        "readGroups": 11,
+        "readCases": 35,
+        "hostGroups": 14,
+        "olderVerifierSha256": "0acf6be223b941faca8b466484af5c098c36de853860bf0300d8c5769b464a7d",
+        "reportSha256": "47cb4f26746b8c4c4180bf949ee9de2fc655b6d93f767019c446c0c5371d6be7",
+        "afterWriteTimeoutBudgetMs": 400,
+        "sdkPolicyPreparation": {
+          "status": "PASS",
+          "sdkVersion": "0.2.5",
+          "platform": "linux",
+          "edition": "harness",
+          "coreSha256": "d1fa90f528d59757fb25e6c33713dac57516a7d0692b483dae5dec3a0b6a3a75",
+          "preparedWithoutDispatch": true,
+          "policySha256": "bbaa9941a40da126617619d2a3d4bce08ed09f6f8d908ef1bdcaa86f5e535b2f",
+          "pythonNodeDescriptorsMatch": true,
+          "actualMcpToolsList": [
+            "calf_tool_status",
+            "calf_tool_invoke",
+            "calf_tool_prepare"
+          ],
+          "defaultReadOnly": true,
+          "toolCalls": 0,
+          "modelCalls": 0,
+          "hostSettingsChanged": false
+        }
+      },
+      "workbench": {
+        "coreSha256": "ae488cf7ddec896ec54d0ac9d3a3d57cb9949d5e09a29474ef2c297d68547a92",
+        "readGroups": 11,
+        "readCases": 35,
+        "hostGroups": 14,
+        "olderVerifierSha256": "0acf6be223b941faca8b466484af5c098c36de853860bf0300d8c5769b464a7d",
+        "reportSha256": "7edf6e59e74f18ddd89d6a874f5d39be064d12c71ce49243244e91ddf2e47842",
+        "afterWriteTimeoutBudgetMs": 400,
+        "sdkPolicyPreparation": {
+          "status": "PASS",
+          "sdkVersion": "0.2.5",
+          "platform": "linux",
+          "edition": "workbench",
+          "coreSha256": "ae488cf7ddec896ec54d0ac9d3a3d57cb9949d5e09a29474ef2c297d68547a92",
+          "preparedWithoutDispatch": true,
+          "policySha256": "8557371441349ccf4bfef726b0435faf07a72aa4f27b85f017779dc72a24501e",
+          "pythonNodeDescriptorsMatch": true,
+          "actualMcpToolsList": [
+            "calf_tool_status",
+            "calf_tool_invoke",
+            "calf_tool_prepare"
+          ],
+          "defaultReadOnly": true,
+          "toolCalls": 0,
+          "modelCalls": 0,
+          "hostSettingsChanged": false
+        }
+      }
+    }
+  },
+  "sdkAndDesktop": {
+    "macos": {
+      "boundaryTests": 17,
+      "actualSdkIntegration": "PASS",
+      "registeredCheckAndStatusCases": [
+        "harness: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history",
+        "workbench: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history"
+      ],
+      "desktopNativeSelfCheck": "PASS",
+      "reportSha256": "292c2040905456f50c7100a29ac0083a41211243eccede3c707d20820551b4de"
+    },
+    "windows": {
+      "boundaryTests": 17,
+      "actualSdkIntegration": "PASS",
+      "registeredCheckAndStatusCases": [
+        "harness: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history",
+        "workbench: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history"
+      ],
+      "desktopNativeSelfCheck": "PASS",
+      "reportSha256": "9718e4e177eea50f16f566731995764ad44531ea30602fcadba697573d124629"
+    },
+    "linux": {
+      "boundaryTests": 17,
+      "actualSdkIntegration": "PASS",
+      "registeredCheckAndStatusCases": [
+        "harness: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history",
+        "workbench: real registered check; saved/current separation, LC_ALL, empty/unset, redaction, SDK helpers, changed-file invalidation and read-only history"
+      ],
+      "desktopNativeSelfCheck": "PASS",
+      "reportSha256": "07c2b88efbbea00ec620091a8eb6359c0e4dfa31259f9689c0ee777a49ed3991"
+    }
+  },
+  "nativeUnitEvidence": {
+    "reusedPassed": 66,
+    "sourceCoreVersion": "1.9.7-development",
+    "runtimeSourceFilesIdentical": 45,
+    "versionMetadataChangedSeparately": true,
+    "logSha256": "73bd12730414dc492e56b3cde6313c047f84c837e811597e40be552ef6303c1b"
+  },
+  "runtimeDesign": {
+    "cpuOnlyControl": true,
+    "singleExecutor": true,
+    "newModels": 0,
+    "newDaemons": 0,
+    "newLibraries": 0,
+    "newLiveProviderCalls": 0
+  },
+  "windowsRetainedTrial": {
+    "initialBudgetMs": 400,
+    "calls": 0,
+    "candidateCreated": false,
+    "outcome": "UNKNOWN",
+    "qualifiedAfterWriteBudgetMs": 1500,
+    "completionCriteriaRelaxed": false
+  },
+  "scopeLimits": [
+    "Native execution admission is not independent human-consent attestation.",
+    "No general overwrite/delete/external calls, remote-job reconciliation, arbitrary transport or all-distribution claim.",
+    "Existing GCN/MCL and native TASK/ACTION history are reused; no named canonical GCI/external ETS binding is invented.",
+    "No automatic Repository module mapping or OS filesystem/network sandbox is added.",
+    "Claude host installation remains macOS-only, independently of the three-OS MCP/core/SDK profile.",
+    "macOS has ad-hoc integrity signatures, not Apple notarization; Windows has no publisher signature.",
+    "Earlier actual AI sessions and screenshots are labelled as reused; no fresh paid/model-session benchmark or memory/soak test."
+  ]
+}

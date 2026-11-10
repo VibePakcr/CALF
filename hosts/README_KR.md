@@ -1,4 +1,4 @@
-# CALF 1.8.7–1.8.11 / Workbench 1.9.7 호스트 연결
+# CALF 1.8.7–1.8.12 / Workbench 1.9.8 호스트 연결
 
 [English](README.md)
 
@@ -10,7 +10,7 @@ Codex, Antigravity, Claude Code에서 같은 CALF 네이티브 엔진을 사용�
 |---|---|---|
 | Codex | CALF 네이티브 훅, `/hooks`에서 검토 | macOS 새 모델 세션, 독립 검사 8개 통과, `SATISFIED` |
 | Antigravity | CALF 네이티브 훅, 기존 호환 브리지 유지 가능 | macOS 새 ACP 세션, 독립 검사 8개 통과, `SATISFIED` |
-| Claude CLI·앱의 로컬 Code | Python 훅 어댑터와 선택한 1.8.7–1.8.11 / Workbench 1.9.7 엔진 | macOS CLI·앱 Code, 독립 검사 8개 통과, 완료 판정과 저장된 세션 확인 |
+| Claude CLI·앱의 로컬 Code | Python 훅 어댑터와 선택한 1.8.7–1.8.12 / Workbench 1.9.8 엔진 | macOS CLI·앱 Code, 독립 검사 8개 통과, 완료 판정과 저장된 세션 확인 |
 
 호스트의 실제 모델 세션 검증과 Windows·Linux 네이티브 코어 검증은 별도입니다. Claude 어댑터는 POSIX 파일 잠금을 사용하며, 이번 호스트 검증 범위는 macOS입니다. 일반 Claude 채팅, Cowork, 클라우드 세션에는 별도 연결이 필요합니다.
 
@@ -35,9 +35,9 @@ Codex, Antigravity, Claude Code에서 같은 CALF 네이티브 엔진을 사용�
 출력에 나온 버전별 실행 파일과 `config.json` 경로를 다음 명령에 넣습니다.
 
 ```sh
-python3 -B hostkit.py prepare --root /path/to/claude-calf --revision 1.8.11-hosts.1 --core /path/to/native-calf/versions/VERSION/calf --config /path/to/native-calf/config.json --python /physical/path/to/python3
+python3 -B hostkit.py prepare --root /path/to/claude-calf --revision 1.8.12-hosts.1 --core /path/to/native-calf/versions/VERSION/calf --config /path/to/native-calf/config.json --python /physical/path/to/python3
 python3 -B hostkit.py inspect --settings /physical/path/to/claude/settings.json
-python3 -B hostkit.py apply --root /path/to/claude-calf --revision 1.8.11-hosts.1 --settings /physical/path/to/claude/settings.json --expected-sha256 INSPECT에_나온_해시
+python3 -B hostkit.py apply --root /path/to/claude-calf --revision 1.8.12-hosts.1 --settings /physical/path/to/claude/settings.json --expected-sha256 INSPECT에_나온_해시
 ```
 
 settings JSON은 기존 파일이어야 합니다. 새 프로필이라면 Claude를 한 번 실행하거나, Claude가 사용하는 위치에 `{}` 파일을 먼저 만드세요. `prepare`는 선택한 키트 상태 폴더 안에 새 버전만 만듭니다. `apply`는 지정한 해시를 확인하고 원래 설정 바이트를 보존한 뒤 CALF 훅을 합칩니다. 다른 훅, 권한·MCP 설정은 JSON 안에 유지됩니다. Claude에서 훅을 검토하고 새 로컬 Code 세션을 시작하세요.
@@ -77,4 +77,4 @@ python3 -B hostkit.py recover --root /path/to/claude-calf --acknowledge 작업_I
 
 실행 전에 거절된 일반 명령은 `PostToolUseFailure`가 오지 않아 대기 상태로 남을 수 있었습니다. 이제 `PostToolBatch`에서 같은 세션·턴·도구 ID·입력의 결과를 확인해 호출 종료를 기록합니다. 실행 성공으로 간주하거나 통과 CHECK를 만들지는 않습니다. 등록 검사는 실제 실행 영수증이 있어야 완료 근거가 됩니다.
 
-macOS Claude 앱 Code 세션에서 코어 1.8.10 호출, 등록 검사 1회·8개 테스트 통과, 파일 버전 일치와 Stop의 `SATISFIED`를 확인했습니다. 최초 Auto 차단 뒤 해당 검사만 ‘이번만 허용’으로 실행하고 Auto로 복원했습니다. 이 결과가 모든 명령의 무인 Auto 승인을 보장하지는 않습니다. 이번 릴리즈의 새 코어 1.8.11과 1.9.7은 별도 합성 환경에서 어댑터·설치 경로를 검사합니다. 실제 AI 세션은 다시 호출하지 않습니다.
+macOS Claude 앱 Code 세션에서 코어 1.8.10 호출, 등록 검사 1회·8개 테스트 통과, 파일 버전 일치와 Stop의 `SATISFIED`를 확인했습니다. 최초 Auto 차단 뒤 해당 검사만 ‘이번만 허용’으로 실행하고 Auto로 복원했습니다. 이 결과가 모든 명령의 무인 Auto 승인을 보장하지는 않습니다. 이번 릴리즈의 새 코어 1.8.11과 1.9.6은 별도 합성 환경에서 어댑터·설치 경로를 검사합니다. 실제 AI 세션은 다시 호출하지 않습니다.

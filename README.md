@@ -16,15 +16,21 @@ Start with three choices: where the agent may work, your existing AI account, an
 
 ## Latest release · 2026-11-10
 
-**Harness 1.8.11 · Workbench 1.9.7 · SDK 0.2.4**
+**Harness 1.8.12 · Workbench 1.9.8 · SDK 0.2.5**
 
-Workbench adds a guide you can fold and reopen. Existing draft text is preserved; setup diagnosis opens on demand with Check setup. A saved connection does not establish live authentication or execution approval. Existing Harness and SDK releases are retained. See the declared [verification scope](VERIFICATION.json).
+This release binds reviewed local MCP tools to exact execution intents, independent checks and recovery without resubmission. The first-task guide and existing drafts remain intact. See [VERIFICATION.json](VERIFICATION.json) for edition- and OS-specific evidence.
 
 | Edition | Purpose |
 |---|---|
 | Harness 1.8.x | Headless core and hooks for an existing agent |
 | Workbench 1.9.x | Rust + Tauri interface for the same execution and records |
 | SDK | Python/Node clients, Local MCP and runtime adapters |
+
+## Bind MCP tools to the work contract
+
+Reviewed local MCP policies can run reads and create new candidates, with results tied to exact file versions and registered independent checks. Preparation is separate from approval. A lost response never triggers blind resubmission. Local recovery, when enabled in the original policy, checks the terminal receipt and candidate hash, then runs fresh checks. The same path is qualified for both editions on macOS, Windows and Linux.
+
+The existing first-task guide remains available. Connect this extension only when needed; no resident service, extra model or agent pool is required. [MCP guide](MCP_TOOL_EVALUATION.md) · [SDK](SDK_README.md) · [Verification scope](VERIFICATION.json).
 
 ## What you can do
 

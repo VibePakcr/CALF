@@ -61,6 +61,20 @@ class TransportTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.client.call("list", home=str(self.root / "another-home"))
 
+    def test_tool_policy_refuses_ambiguous_authority_inputs_without_launch(self):
+        with patch("calf_sdk.client.subprocess.Popen", side_effect=AssertionError("must not launch")):
+            with self.assertRaises(ValueError):
+                self.client.prepare_tool("relative.json", "a" * 64, {"action": "invoke"})
+            with self.assertRaises(ValueError):
+                self.client.prepare_tool(self.root / "policy.json", "unreviewed", {"action": "invoke"})
+            with self.assertRaises(ValueError):
+                self.client.prepare_tool(self.root / "policy.json", "a" * 64, {}, ttl_ms=True)
+            with self.assertRaises(ValueError):
+                self.client.tool_mcp_server(self.root / "policy.json", "a" * 64, control="allow")
+        descriptor = self.client.tool_mcp_server(self.root / "policy.json", "a" * 64)
+        self.assertEqual(descriptor["command"], str(self.client.executable))
+        self.assertNotIn("--control", descriptor["args"])
+
     def test_config_never_overwrites(self):
         check = Check("unit", [sys.executable, "-m", "unittest"], ["test_result.py"])
         config = ProviderConfig([sys.executable, "adapter.py"], [check])

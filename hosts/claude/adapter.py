@@ -45,7 +45,7 @@ def execute(config,event,payload):
     cfg=read_json(config)
     if cfg.get('schema')!=1:raise ValueError('adapter_configuration_invalid')
     core_version=cfg.get('coreVersion','1.8.7')
-    if core_version not in ('1.8.7','1.8.8','1.8.9','1.8.10','1.8.11','1.9.6','1.9.7'):raise ValueError('unqualified_core_version')
+    if core_version not in ('1.8.7','1.8.8','1.8.9','1.8.10','1.8.11','1.8.12','1.9.6','1.9.7','1.9.8'):raise ValueError('unqualified_core_version')
     core=physical(cfg['core']);native_config=physical(cfg['nativeConfig']);state=physical(cfg['adapterState'])
     if digest(core)!=cfg['coreSha256']:raise ValueError('native_binary_changed')
     if event not in EVENTS or payload.get('hook_event_name')!=event:raise ValueError('hook_event_mismatch')

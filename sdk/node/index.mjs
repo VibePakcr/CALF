@@ -33,5 +33,9 @@ export class CalfClient {
     });
   }
   workMcpServer({control=false}={}) {return {command:this.executable,args:['work-mcp',this.home,...(control?['--control']:[])]};}
+  toolMcpServer(policy,policySha256,{control=false}={}) {
+    if(typeof policy!=='string'||!isAbsolute(policy)||policy.includes('\0')||policy.split(/[\\/]/).includes('..')||typeof policySha256!=='string'||!/^[0-9a-f]{64}$/.test(policySha256)||typeof control!=='boolean')throw Error('An absolute policy path, exact policy SHA-256 and boolean control are required');
+    return {command:this.executable,args:['tool-mcp',policy,policySha256,...(control?['--control']:[])]};
+  }
 }
 export const isSatisfied = result => result?.verified===true && result?.outcome==='SATISFIED';

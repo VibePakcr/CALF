@@ -2,7 +2,7 @@
 
 [English](CLAUDE_CONNECTION.md) · [설치·업데이트·복구 안내](HOST_CONNECTIONS_KR.md)
 
-Claude CLI와 Claude 앱의 **로컬 Code 모드**를 CALF에 연결합니다. 검증 대상은 하네스 1.8.7–1.8.11과 Workbench 1.9.7입니다. 일반 Claude 채팅, Cowork, 클라우드 세션은 별도 모드입니다. Claude 호스트 어댑터는 **macOS에서만 검증**했습니다. 코어·SDK의 Windows·Linux 검증과는 구분합니다.
+Claude CLI와 Claude 앱의 **로컬 Code 모드**를 CALF에 연결합니다. 검증 대상은 하네스 1.8.7–1.8.12과 Workbench 1.9.8입니다. 일반 Claude 채팅, Cowork, 클라우드 세션은 별도 모드입니다. Claude 호스트 어댑터는 **macOS에서만 검증**했습니다. 코어·SDK의 Windows·Linux 검증과는 구분합니다.
 
 훅이 발생할 때 Python 3.10 이상과 표준 라이브러리, 로컬 파일, SHA-256으로 고정한 네이티브 실행 파일을 사용합니다. 모델·상주 서버·네트워크 리스너를 추가하지 않습니다. Claude의 계정·모델·승인 정책을 유지하며, 이 어댑터는 프롬프트나 대화 기록 원문을 저장하지 않습니다.
 
@@ -30,7 +30,7 @@ Claude가 `PreToolUse` 이후 명령을 거절해도 `PostToolUseFailure`는 오
 
 Workbench의 **Task status**는 **Recorded completion**과 **Current observer**를 나눠 보여줍니다. 저장된 결과가 `SATISFIED`여도 조회 환경의 `LC_ALL`이 다르면 현재 판정은 `UNKNOWN`일 수 있습니다. **File version**과 **Execution context**를 함께 확인하세요. SDK의 `registered_status`도 같은 정보를 읽습니다. 통과시키려고 환경 변수를 변경하지 않습니다.
 
-실제 macOS 앱 Code 세션에서는 코어 1.8.10으로 보고서를 만들고 등록 검사 1회·8개 테스트 통과, 파일 해시 일치, Stop의 `SATISFIED`와 Auto 복원을 확인했습니다. 이번 배포는 그 실제 AI 세션 근거를 재사용합니다. 새 1.8.11·1.9.7 실행 파일은 분리된 환경에서 훅 경계와 설치·업데이트·복구를 검사합니다. 별도 CLI 거절 시험은 호출 묶음의 종료 연결만 확인했으며, 의도한 업무는 끝내지 못했으므로 성공한 작업으로 안내하지 않습니다.
+실제 macOS 앱 Code 세션에서는 코어 1.8.10으로 보고서를 만들고 등록 검사 1회·8개 테스트 통과, 파일 해시 일치, Stop의 `SATISFIED`와 Auto 복원을 확인했습니다. 이번 배포는 그 실제 AI 세션 근거를 재사용합니다. 새 1.8.11·1.9.6 실행 파일은 분리된 환경에서 훅 경계와 설치·업데이트·복구를 검사합니다. 별도 CLI 거절 시험은 호출 묶음의 종료 연결만 확인했으며, 의도한 업무는 끝내지 못했으므로 성공한 작업으로 안내하지 않습니다.
 
 ## 복구와 한계
 

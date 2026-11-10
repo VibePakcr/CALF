@@ -2,7 +2,7 @@
 
 [한국어](CLAUDE_CONNECTION_KR.md) · [Installation, update and recovery](HOST_CONNECTIONS.md)
 
-Connect Claude CLI or the Claude desktop app's **local Code mode** to CALF. The adapter supports the qualified Harness 1.8.7–1.8.11 cores and Workbench 1.9.7. Ordinary Claude chat, Cowork and cloud sessions are separate modes. The Claude host adapter is qualified on **macOS only**; the native core and SDK have separate Windows/Linux checks.
+Connect Claude CLI or the Claude desktop app's **local Code mode** to CALF. The adapter supports the qualified Harness 1.8.7–1.8.12 cores and Workbench 1.9.8. Ordinary Claude chat, Cowork and cloud sessions are separate modes. The Claude host adapter is qualified on **macOS only**; the native core and SDK have separate Windows/Linux checks.
 
 The adapter runs when a hook fires, using Python 3.10+, its standard library, local files and a SHA-256-pinned native executable. It adds no model, daemon or network listener. Claude retains its account, model and approval policy. No prompts or transcripts are stored by this adapter.
 
@@ -30,7 +30,7 @@ Do not rerun an unknown or still-running check blindly. Inspect its existing tic
 
 Workbench **Task status** shows **Recorded completion** and **Current observer** separately. A saved `SATISFIED` can coexist with a current `UNKNOWN` when `LC_ALL` differs. Check **File version** and **Execution context**. The SDK exposes the same read-only view through `registered_status`. CALF does not change environment variables to make a verdict pass.
 
-The real macOS desktop Code session used core 1.8.10: report generation, one check, eight tests, matching file hashes, a native Stop verdict of `SATISFIED`, and return to Auto. That model-session evidence is reused here. New 1.8.11/1.9.7 release binaries receive isolated hook-boundary and installation/update/recovery checks. The separate denied CLI trial verified batch resolution but did not finish its intended work; it is not presented as a successful task.
+The real macOS desktop Code session used core 1.8.10: report generation, one check, eight tests, matching file hashes, a native Stop verdict of `SATISFIED`, and return to Auto. That model-session evidence is reused here. New 1.8.11/1.9.6 release binaries receive isolated hook-boundary and installation/update/recovery checks. The separate denied CLI trial verified batch resolution but did not finish its intended work; it is not presented as a successful task.
 
 ## Recovery and limits
 

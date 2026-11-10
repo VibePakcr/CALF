@@ -1,46 +1,80 @@
 {
   "status": "PASS",
-  "exactFinalArchives": {
+  "archiveUpdatePreparation": {
     "macos": {
       "status": "PASS",
       "prepared": [
         {
+          "edition": "Harness",
+          "version": "1.8.12",
+          "coreSha256": "09e392d8b37a4aca3a910af2295cd9b807696b5683d58309b5bf1e3d0708301a",
+          "sha256": "e589569439db91b5cd69e32addce87d17cad2397605d50b950d59bacab2a7100"
+        },
+        {
           "edition": "Workbench",
-          "version": "1.9.7",
-          "coreSha256": "828f29a593b26ea9fef5d0edfb9a443cc18f06e269c0953498c034d3a2b9cb80",
-          "sha256": "bfd9da40f6181e86e7e5136dd61ff834fb05728512d9d021f6e061d492beaae3"
+          "version": "1.9.8",
+          "coreSha256": "05352cb3110824382103b4e3a615ec900437be15a9bfd4ee0a1aabe0751140c7",
+          "sha256": "866312b7e673ea44075058e0297d289692c54ec5e462d44d2f03ba9ac3ed174f"
         }
       ],
-      "existingSentinelsUnchanged": true,
-      "activated": false
+      "reportSha256": "fc912cb4f26ffb6973752c4938d80ffcfc779e72ed33dd0604bb9d0cd07e0d64"
     },
     "windows": {
       "status": "PASS",
       "prepared": [
         {
+          "edition": "Harness",
+          "version": "1.8.12",
+          "coreSha256": "bd06f7a0d4c58579c1a359da887b820edccef36fa9db50b2c78454f3170ff20e",
+          "sha256": "27a44e491c456c0d40b2dd35a92e586858c4ddb23a8353a3c60a59017738825b"
+        },
+        {
           "edition": "Workbench",
-          "version": "1.9.7",
-          "coreSha256": "33cc1eaf04ebac07f3cc5c18f30d684585b699854dd7b7092e1764c65b446004",
-          "sha256": "b932a69646a00d3e8fc128ab699d6061ffe49c5d5f9beee3d43b23146b10b6e8"
+          "version": "1.9.8",
+          "coreSha256": "e02e8ee6dc1fbd5c23f6e1c69f3276ab883d91e0cff8a5c7ce8eacecc7c6a565",
+          "sha256": "42dfb77b25a70f4986ac866c9999db8473c69e68dd72160238bc64943f526a7c"
         }
       ],
-      "existingSentinelsUnchanged": true,
-      "activated": false
+      "reportSha256": "8ef89dd63e8ac7e97c8b4cb7fbc6a2d29406601dc6d38950ce5c3036af251d77"
     },
     "linux": {
       "status": "PASS",
       "prepared": [
         {
+          "edition": "Harness",
+          "version": "1.8.12",
+          "coreSha256": "d1fa90f528d59757fb25e6c33713dac57516a7d0692b483dae5dec3a0b6a3a75",
+          "sha256": "05e2f687c9b881ba0d45d9f565c2c5acdbde28fa3053f87e514c111f102b259f"
+        },
+        {
           "edition": "Workbench",
-          "version": "1.9.7",
-          "coreSha256": "3e6a000127f1dd74d0e18b6a81f07ac07e7f38f7b933836a2e699779220e6ebc",
-          "sha256": "b27424a0cb14d308bd9141c99ad1dc194f6a69bff9f5344db40649c9b960b4fe"
+          "version": "1.9.8",
+          "coreSha256": "ae488cf7ddec896ec54d0ac9d3a3d57cb9949d5e09a29474ef2c297d68547a92",
+          "sha256": "d65aeaf8c235330e249545bc90ec42c15be719a131f67111a49ac29b727a38a4"
         }
       ],
-      "existingSentinelsUnchanged": true,
-      "activated": false
+      "reportSha256": "6821e7ac6b1349e6a6308efa08d64c0120e6d733417b0bc5200d05c72ffb8a84"
     }
   },
-  "activationPerformed": false,
-  "syntheticSentinelsPreserved": true
+  "manualQA": {
+    "status": "PASS",
+    "browser": "actual IAB",
+    "desktopWidth": 1280,
+    "mobileWidth": 390,
+    "mobileHeight": 844,
+    "englishKoreanSwitch": true,
+    "topNavMcpAnchor": true,
+    "horizontalOverflow": false,
+    "firstTaskImagesLoaded": 3,
+    "consoleErrors": 0,
+    "staticLocalLinks": 33,
+    "brokenStaticLinks": [],
+    "screenshots": [
+      "manual-mobile-kr.jpg",
+      "manual-mobile-en.jpg"
+    ],
+    "manualSha256": "7f094167cea492c8f48e9c6b420fa0a121767411cb27b1ea2c63a62fbc178673"
+  },
+  "publicOnly": true,
+  "coreSourceIncluded": false
 }

@@ -245,3 +245,38 @@ class CalfClient:
         Registration is never an MCP tool. Host permissions are unchanged.
         """
         return {"command": str(self.executable), "args": ["work-mcp",str(self.home)] + (["--control"] if control else [])}
+
+    @staticmethod
+    def _tool_policy(policy: str | os.PathLike, policy_sha256: str) -> list[str]:
+        if (not isinstance(policy_sha256, str) or len(policy_sha256) != 64 or
+                any(c not in "0123456789abcdef" for c in policy_sha256)):
+            raise ValueError("The exact lowercase policy SHA-256 is required")
+        return [str(_path(policy)), policy_sha256]
+
+    def tool_contract(self, request: dict) -> dict:
+        """CPU-only contract/pin evaluation; no downstream tool is launched."""
+        if not isinstance(request, dict):
+            raise ValueError("A contract request object is required")
+        return self._invoke(["tool-contract"], request)
+
+    def tool_status(self, policy: str | os.PathLike, policy_sha256: str) -> dict:
+        """Read current native completion; never resubmit an uncertain call."""
+        return self._invoke(["tool-call", *self._tool_policy(policy, policy_sha256)], {"action": "status"})
+
+    def prepare_tool(self, policy: str | os.PathLike, policy_sha256: str,
+                     request: dict, *, ttl_ms: int = 120000) -> dict:
+        """Prepare only. Review returned argv through the existing host flow.
+
+        Requires Harness 1.8.12 / Workbench 1.9.8. This writes local intent
+        bookkeeping but does not run or approve the requested tool. A ticket
+        is not independent proof of a human approval. No automatic retry.
+        """
+        if not isinstance(request, dict) or type(ttl_ms) is not int or not 100 <= ttl_ms <= 300000:
+            raise ValueError("A request object and a 100–300000ms lifetime are required")
+        return self._invoke(["tool-prepare", *self._tool_policy(policy, policy_sha256), str(ttl_ms)], request)
+
+    def tool_mcp_server(self, policy: str | os.PathLike, policy_sha256: str, *, control: bool = False) -> dict:
+        """Foreground descriptor. Control adds invoke/prepare, never approval."""
+        if type(control) is not bool:
+            raise ValueError("control must be boolean")
+        return {"command": str(self.executable), "args": ["tool-mcp", *self._tool_policy(policy, policy_sha256)] + (["--control"] if control else [])}
