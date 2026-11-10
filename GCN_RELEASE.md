@@ -9,7 +9,7 @@ Harness **1.8.9** and Workbench **1.9.4** share the native CPU implementation of
 
 Extract into a new folder and keep the complete existing records home, contracts, settings and runtimes. This is a feature preview, with native bridge self-checks rather than a new GUI interaction or memory benchmark. The core remains free to use and closed-source.
 
-[English guide](GCN_CORE.md) · [한국어 안내](GCN_CORE_KR.md) · [Verification](GCN-VERIFICATION.json)
+[English guide](GCN_CORE.md) · [한국어 안내](GCN_CORE_KR.md) · [Verification](https://github.com/VibePakcr/CALF/releases/download/gcn-20261109-preview.1/GCN-VERIFICATION.json)
 
 ## 한국어
 

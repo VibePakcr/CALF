@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "exactFinalArchives": {
+    "macos": {
+      "status": "PASS",
+      "prepared": [
+        {
+          "edition": "Workbench",
+          "version": "1.9.7",
+          "coreSha256": "828f29a593b26ea9fef5d0edfb9a443cc18f06e269c0953498c034d3a2b9cb80",
+          "sha256": "0b4706fc0b2938dbad499ba5c4ae9f75f6c07c96daf3344d38b48b087ef8a88a"
+        }
+      ],
+      "existingSentinelsUnchanged": true,
+      "activated": false
+    },
+    "windows": {
+      "status": "PASS",
+      "prepared": [
+        {
+          "edition": "Workbench",
+          "version": "1.9.7",
+          "coreSha256": "33cc1eaf04ebac07f3cc5c18f30d684585b699854dd7b7092e1764c65b446004",
+          "sha256": "bae2ab28a883f634be2664c2a375631e689be2ea2cdf0942252210c6fd46bfd3"
+        }
+      ],
+      "existingSentinelsUnchanged": true,
+      "activated": false
+    },
+    "linux": {
+      "status": "PASS",
+      "prepared": [
+        {
+          "edition": "Workbench",
+          "version": "1.9.7",
+          "coreSha256": "3e6a000127f1dd74d0e18b6a81f07ac07e7f38f7b933836a2e699779220e6ebc",
+          "sha256": "db722f1dc0455fbbf7167ca8e0fb914aee6f13adfa356799fcd18bfda053267c"
+        }
+      ],
+      "existingSentinelsUnchanged": true,
+      "activated": false
+    }
+  },
+  "activationPerformed": false,
+  "syntheticSentinelsPreserved": true
+}

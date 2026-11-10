@@ -1,4 +1,4 @@
-# CALF host connections — 1.8.7–1.8.11 / Workbench 1.9.6
+# CALF host connections — 1.8.7–1.8.11 / Workbench 1.9.7
 
 [한국어](HOST_CONNECTIONS_KR.md)
 
@@ -10,7 +10,7 @@ Use CALF to supervise one agent working in Codex, Antigravity or Claude Code. Ea
 |---|---|---|
 | Codex | Native CALF hooks; review them in `/hooks` | macOS, real new Codex session, 8 independent checks, `SATISFIED` |
 | Antigravity | Native CALF hooks; existing compatibility bridge may remain | macOS, real new ACP session, 8 independent checks, `SATISFIED` |
-| Claude CLI and desktop local Code | Python hook adapter to the selected 1.8.7–1.8.11 / Workbench 1.9.6 engine | macOS CLI and desktop Code, 8 independent checks, accepted Stop and saved session |
+| Claude CLI and desktop local Code | Python hook adapter to the selected 1.8.7–1.8.11 / Workbench 1.9.7 engine | macOS CLI and desktop Code, 8 independent checks, accepted Stop and saved session |
 
 These host-session results are separate from the released native core's Windows/Linux qualification. The Claude adapter uses POSIX locking and is qualified here only on macOS. Ordinary Claude chat, Cowork and cloud sessions are separate products/modes.
 
@@ -77,4 +77,4 @@ The separate Local Pack Tools and Repository inspect preview are qualified on ma
 
 A non-check command denied before execution could remain pending because Claude does not emit `PostToolUseFailure` for that denial. The adapter now uses `PostToolBatch` to match its resolved result by session, turn, tool ID and input. Resolution is not execution success and cannot create a passing CHECK. Registered checks still need their real execution receipt.
 
-An actual macOS Claude desktop Code session used core 1.8.10, ran one registered check with eight passing tests, matched the checked file version and recorded `SATISFIED` at Stop. Auto initially denied that check; it ran after an individual Allow once approval, and the session returned to Auto. This does not establish unattended Auto approval for every command. Release cores 1.8.11 and 1.9.6 receive separate synthetic adapter/installer checks; the live AI session is not repeated.
+An actual macOS Claude desktop Code session used core 1.8.10, ran one registered check with eight passing tests, matched the checked file version and recorded `SATISFIED` at Stop. Auto initially denied that check; it ran after an individual Allow once approval, and the session returned to Auto. This does not establish unattended Auto approval for every command. Release cores 1.8.11 and 1.9.7 receive separate synthetic adapter/installer checks; the live AI session is not repeated.

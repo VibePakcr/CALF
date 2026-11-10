@@ -4,13 +4,21 @@
 
 CALF is a lightweight local harness and workbench for supervising one AI agent's work, from execution through checking and recovery. It links requests, actual changes and check evidence, while keeping failed and unfinished attempts in the record. Codex and Antigravity use native hooks; Claude CLI and the desktop app's local Code mode use a macOS adapter. Each host keeps its own account, model and approval policy.
 
-## Latest release · 2026-11-09
+## Less to keep track of on your first task
 
-**Harness 1.8.11 · Workbench 1.9.6 · SDK 0.2.4**
+**Choose the folder, AI connection and result. CALF keeps the changes, check evidence and unfinished attempts together for review.**
 
-A non-check command denied before execution no longer has to remain pending when Claude supplies its resolved `PostToolBatch` result. CALF matches the session, turn, tool and input before recording resolution. A denial never becomes execution success or a passing CHECK. All product archives and the SDK now include the nine-hook adapter, install/update/recovery tools and English/Korean guides.
+Start with three choices: where the agent may work, your existing AI account, and the result, limits and checks. The first-task guide shows your selected setup and next step. **Use a request outline** only inserts three draft lines into an empty request. Fill them in before choosing Submit.
 
-An actual Claude desktop Code session ran one registered check with eight passing tests and recorded `SATISFIED`. Auto initially denied that check; it ran after an individual Allow once approval, then the session returned to Auto. This is not a claim of unattended Auto approval. Fresh release-binary checks and reused model-session evidence are separated in [verification](VERIFICATION.json).
+![Actual Workbench 1.9.7 first-task guide](workbench-first-task.jpg)
+
+[Start with installation](INSTALL.md) · [First-task walkthrough](FIRST_TASK.md) · [EN/KR visual manual](CALF_mannual.html)
+
+## Latest release · 2026-11-10
+
+**Harness 1.8.11 · Workbench 1.9.7 · SDK 0.2.4**
+
+Workbench adds a guide you can fold and reopen. Existing draft text is preserved; setup diagnosis opens on demand with Check setup. A saved connection does not establish live authentication or execution approval. Existing Harness and SDK releases are retained. See the declared [verification scope](VERIFICATION.json).
 
 | Edition | Purpose |
 |---|---|
@@ -40,7 +48,7 @@ The Claude host adapter is qualified on macOS only, separately from Windows/Linu
 
 ![Saved completion and current observer](workbench-status.png)
 
-Actual Workbench 1.9.5 capture of the Claude check: saved success is separate from the current UNKNOWN caused by LC_ALL. Version 1.9.6 retains this status interface.
+Actual Workbench 1.9.5 capture of the Claude check: saved success is separate from the current UNKNOWN caused by LC_ALL. Version 1.9.7 retains this status interface.
 
 [Task Flow](workbench-task-flow.png) · [Diff](workbench-diff.png) · [Runtime Work](workbench-runtime.png): earlier actual 1.9.2 record views remain available. 
 

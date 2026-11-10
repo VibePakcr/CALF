@@ -1,8 +1,8 @@
-# CALF Workbench 1.9.2 · Screenshots / 실제 화면
+# CALF Workbench · Screenshots / 실제 화면
 
-Actual macOS app captures. Only the macOS title bar is omitted; application pixels are unchanged. System metrics show the whole computer, not CALF memory usage.
+Retained 1.9.2 macOS app captures below: only the macOS title bar is omitted; application pixels are unchanged. System metrics show the whole computer, not CALF memory usage.
 
-실제 macOS 앱 캡처입니다. macOS 제목 표시줄만 제외했으며 앱 픽셀은 변경하지 않았습니다. 시스템 수치는 CALF 단독 사용량이 아닌 컴퓨터 전체의 사용량입니다.
+아래 보존된 1.9.2 macOS 앱 캡처는 macOS 제목 표시줄만 제외했으며 앱 픽셀은 변경하지 않았습니다. 시스템 수치는 CALF 단독 사용량이 아닌 컴퓨터 전체의 사용량입니다.
 
 ## Task Flow · execution and evidence / Task Flow · 실행과 근거
 
@@ -28,3 +28,11 @@ A Python adapter produced a CJK document in the 1.9.2 capture. A separate check 
 
 1.9.2 화면에서 Python Adapter가 CJK 문서를 생성했습니다. 생성된 문서의 UTF-8 내용을 별도로 검사하고, 검사한 파일 목록의 해시를 채택 기록에 남겼으며, Workbench를 다시 열어 같은 채택 기록이 남아 있는지 확인했습니다.
 
+
+## First task · Workbench 1.9.7 / 첫 작업
+
+![Actual first-task guide](workbench-first-task.jpg)
+
+![Actual request outline](workbench-request-outline.jpg)
+
+Full native window captures from an isolated macOS 1.9.7 home, before submitting any AI task. No cropping or pixel changes. System metrics concern the whole computer. / AI 작업 제출 전 분리된 macOS 1.9.7 기록 위치의 전체 창 캡처입니다. 자르거나 픽셀을 바꾸지 않았습니다. 시스템 수치는 컴퓨터 전체의 값입니다.
