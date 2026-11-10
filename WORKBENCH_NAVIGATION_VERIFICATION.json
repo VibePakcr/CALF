@@ -1,0 +1,99 @@
+{
+  "schema": "calf.release-verification.v1",
+  "status": "PASS",
+  "versions": {
+    "harness": "1.8.13",
+    "workbench": "1.9.9",
+    "sdk": "0.2.6"
+  },
+  "platforms": {
+    "macos": {
+      "harness": {
+        "coreSha256": "5a41e2deffdafaed7f3b181621fa55310504fbf2d2a57fe6a1d8a70b74e1d21b",
+        "attentionGroups": 8
+      },
+      "workbench": {
+        "coreSha256": "d3b7ab898d30749d61341856202b7645d02da7d416ac269ae6c7c658c2641e96",
+        "attentionGroups": 8
+      },
+      "uiTests": 37,
+      "sdkTests": 17,
+      "desktopSelfCheck": "PASS",
+      "registeredChecksAndRepair": "PASS"
+    },
+    "windows": {
+      "harness": {
+        "coreSha256": "87005a8adccada5485857a4e0258bf166fc39649fb7fe462f7314d60eaa115b6",
+        "attentionGroups": 8
+      },
+      "workbench": {
+        "coreSha256": "fb82c4bac4537a0acbc863ace1de85511c1cb5a36e99c7bfe4200a04fad96a04",
+        "attentionGroups": 8
+      },
+      "uiTests": 37,
+      "sdkTests": 17,
+      "desktopSelfCheck": "PASS",
+      "registeredChecksAndRepair": "PASS"
+    },
+    "linux": {
+      "harness": {
+        "coreSha256": "656376138de2a5e7c3d42ac9ea278647b2df393872451e33d106afab3355bd05",
+        "attentionGroups": 8
+      },
+      "workbench": {
+        "coreSha256": "9299b39bb4c2c60d8539a2b12262dd65379d32ed6afe6bf4f34c409119f741db",
+        "attentionGroups": 8
+      },
+      "uiTests": 37,
+      "sdkTests": 17,
+      "desktopSelfCheck": "PASS",
+      "registeredChecksAndRepair": "PASS"
+    }
+  },
+  "overallMcpProgramClassification": "FOUNDATION_READY",
+  "localProfileClassification": "INTEGRATION_VERIFIED",
+  "mcpEvidenceReusedFrom": {
+    "harness": "1.8.12",
+    "workbench": "1.9.8",
+    "source": "MCP_TOOL_EVALUATION_VERIFICATION.json",
+    "scope": "Previously qualified local stdio profile; unchanged tool modules. Not presented as a new full MCP program verification."
+  },
+  "freshNativeUnitTests": {
+    "macos": 92,
+    "windows": 83,
+    "linux": 91
+  },
+  "windowsUpdateRegression": {
+    "originalFailureRetained": true,
+    "cause": "ZIP enclosed_name normalized portable separators before raw-name validation",
+    "fix": "Validate original ZIP member names while retaining traversal/link/backslash rejection",
+    "freshArchivePreparationRequired": true
+  },
+  "uiEvidenceReused": {
+    "sourceVersion": "1.9.8 development",
+    "macosActualShortcutsEscAndNarrowOverlay": "PASS",
+    "windowsActualRendering": "PASS",
+    "windowsSearchMonitorsDay": "OWNER_CONFIRMED",
+    "linuxActualRendering": "PASS",
+    "remoteWindowsAndLinuxInputIndependentlyVerified": false,
+    "nativeThemeTests": {
+      "macos": 4,
+      "windows": 3,
+      "linux": 4
+    }
+  },
+  "realAiEvidenceReused": {
+    "host": "Codex",
+    "registeredTests": 4,
+    "independentTests": 4,
+    "separateReview": true,
+    "newModelCallsThisRelease": 0
+  },
+  "limits": [
+    "Linux remote GUI button/key delivery remains unqualified. Windows assisted actions were reported by the owner.",
+    "Claude host installation remains macOS-only. Core and SDK checks on Windows/Linux are separate.",
+    "macOS uses ad-hoc integrity signatures without Apple notarization. Windows has no publisher signature.",
+    "No new memory/soak benchmark, product daemon, model, agent pool or dependency.",
+    "Existing completion and approval rules remain authoritative."
+  ]
+}
