@@ -2,7 +2,7 @@
 
 [한국어](README_KR.md) · [Installation, update and recovery](../README.md)
 
-Connect Claude CLI or the Claude desktop app's **local Code mode** to CALF. The adapter supports the qualified Harness 1.8.7–1.8.12 cores and Workbench 1.9.8. Ordinary Claude chat, Cowork and cloud sessions are separate modes. The Claude host adapter is qualified on **macOS only**; the native core and SDK have separate Windows/Linux checks.
+Connect Claude CLI or the Claude desktop app's **local Code mode** to CALF. The adapter supports the qualified Harness 1.8.7–1.8.13 cores and Workbench 1.9.9. Ordinary Claude chat, Cowork and cloud sessions are separate modes. The Claude host adapter is qualified on **macOS only**; the native core and SDK have separate Windows/Linux checks.
 
 The adapter runs when a hook fires, using Python 3.10+, its standard library, local files and a SHA-256-pinned native executable. It adds no model, daemon or network listener. Claude retains its account, model and approval policy. No prompts or transcripts are stored by this adapter.
 

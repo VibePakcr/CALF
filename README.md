@@ -14,11 +14,11 @@ Start with three choices: where the agent may work, your existing AI account, an
 
 [Start with installation](INSTALL.md) · [First-task walkthrough](FIRST_TASK.md) · [EN/KR visual manual](CALF_mannual.html)
 
-## Latest release · 2026-11-10
+## Latest release · 2026-11-11
 
-**Harness 1.8.12 · Workbench 1.9.8 · SDK 0.2.5**
+**Harness 1.8.13 · Workbench 1.9.9 · SDK 0.2.6**
 
-This release binds reviewed local MCP tools to exact execution intents, independent checks and recovery without resubmission. The first-task guide and existing drafts remain intact. See [VERIFICATION.json](VERIFICATION.json) for edition- and OS-specific evidence.
+This release brings Attention, result summaries, request guidance and a Day/Night center. Find CJK tasks with keyboard shortcuts, fold monitors in narrow windows and stop sampling hidden monitors. It also fixes Windows ZIP update preparation. See [VERIFICATION.json](VERIFICATION.json) for OS-specific evidence.
 
 | Edition | Purpose |
 |---|---|
@@ -31,6 +31,12 @@ This release binds reviewed local MCP tools to exact execution intents, independ
 Reviewed local MCP policies can run reads and create new candidates, with results tied to exact file versions and registered independent checks. Preparation is separate from approval. A lost response never triggers blind resubmission. Local recovery, when enabled in the original policy, checks the terminal receipt and candidate hash, then runs fresh checks. The same path is qualified for both editions on macOS, Windows and Linux.
 
 The existing first-task guide remains available. Connect this extension only when needed; no resident service, extra model or agent pool is required. [MCP guide](MCP_TOOL_EVALUATION.md) · [SDK](SDK_README.md) · [Verification scope](VERIFICATION.json).
+
+## See the decisions and results that need your attention
+
+Attention gathers work that needs a decision. Result summaries show changed files, recorded checks and the current verdict. Request guidance helps you describe the result and how to check it while keeping your draft intact. Switch the center between Day and Night, find CJK tasks with keyboard shortcuts, and fold monitors in smaller windows. Folded monitors stop sampling system resources.
+
+The Harness exposes the same read-only Attention query. Viewing or searching never runs or approves work, and completion rules and existing records remain intact. [Usage guide](WORKBENCH_CLARITY.md) · [Verification scope](VERIFICATION.json).
 
 ## What you can do
 

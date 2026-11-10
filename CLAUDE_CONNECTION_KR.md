@@ -1,8 +1,8 @@
 # Claude Code에서 CALF 사용하기
 
-[English](CLAUDE_CONNECTION.md) · [설치·업데이트·복구 안내](HOST_CONNECTIONS_KR.md)
+[English](README.md) · [설치·업데이트·복구 안내](HOST_CONNECTIONS_KR.md)
 
-Claude CLI와 Claude 앱의 **로컬 Code 모드**를 CALF에 연결합니다. 검증 대상은 하네스 1.8.7–1.8.12과 Workbench 1.9.8입니다. 일반 Claude 채팅, Cowork, 클라우드 세션은 별도 모드입니다. Claude 호스트 어댑터는 **macOS에서만 검증**했습니다. 코어·SDK의 Windows·Linux 검증과는 구분합니다.
+Claude CLI와 Claude 앱의 **로컬 Code 모드**를 CALF에 연결합니다. 검증 대상은 하네스 1.8.7–1.8.13과 Workbench 1.9.9입니다. 일반 Claude 채팅, Cowork, 클라우드 세션은 별도 모드입니다. Claude 호스트 어댑터는 **macOS에서만 검증**했습니다. 코어·SDK의 Windows·Linux 검증과는 구분합니다.
 
 훅이 발생할 때 Python 3.10 이상과 표준 라이브러리, 로컬 파일, SHA-256으로 고정한 네이티브 실행 파일을 사용합니다. 모델·상주 서버·네트워크 리스너를 추가하지 않습니다. Claude의 계정·모델·승인 정책을 유지하며, 이 어댑터는 프롬프트나 대화 기록 원문을 저장하지 않습니다.
 

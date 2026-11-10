@@ -6,75 +6,69 @@
       "prepared": [
         {
           "edition": "Harness",
-          "version": "1.8.12",
-          "coreSha256": "09e392d8b37a4aca3a910af2295cd9b807696b5683d58309b5bf1e3d0708301a",
-          "sha256": "e589569439db91b5cd69e32addce87d17cad2397605d50b950d59bacab2a7100"
+          "version": "1.8.13",
+          "coreSha256": "5a41e2deffdafaed7f3b181621fa55310504fbf2d2a57fe6a1d8a70b74e1d21b",
+          "sha256": "abefb0b7dd99899f1926db5e8f90079811452634becc37d20f79b552bd607767"
         },
         {
           "edition": "Workbench",
-          "version": "1.9.8",
-          "coreSha256": "05352cb3110824382103b4e3a615ec900437be15a9bfd4ee0a1aabe0751140c7",
-          "sha256": "866312b7e673ea44075058e0297d289692c54ec5e462d44d2f03ba9ac3ed174f"
+          "version": "1.9.9",
+          "coreSha256": "d3b7ab898d30749d61341856202b7645d02da7d416ac269ae6c7c658c2641e96",
+          "sha256": "2e521eadcf6fb2b43dadd4641b1fe0ee10b88ec3665439e9c675a6b99cf9d679"
         }
-      ],
-      "reportSha256": "fc912cb4f26ffb6973752c4938d80ffcfc779e72ed33dd0604bb9d0cd07e0d64"
+      ]
     },
     "windows": {
       "status": "PASS",
       "prepared": [
         {
           "edition": "Harness",
-          "version": "1.8.12",
-          "coreSha256": "bd06f7a0d4c58579c1a359da887b820edccef36fa9db50b2c78454f3170ff20e",
-          "sha256": "27a44e491c456c0d40b2dd35a92e586858c4ddb23a8353a3c60a59017738825b"
+          "version": "1.8.13",
+          "coreSha256": "87005a8adccada5485857a4e0258bf166fc39649fb7fe462f7314d60eaa115b6",
+          "sha256": "b2ad3894ac9951b66ba2b635595e6228b0c170d20e0c0cca6119e6f5adb2c3de"
         },
         {
           "edition": "Workbench",
-          "version": "1.9.8",
-          "coreSha256": "e02e8ee6dc1fbd5c23f6e1c69f3276ab883d91e0cff8a5c7ce8eacecc7c6a565",
-          "sha256": "42dfb77b25a70f4986ac866c9999db8473c69e68dd72160238bc64943f526a7c"
+          "version": "1.9.9",
+          "coreSha256": "fb82c4bac4537a0acbc863ace1de85511c1cb5a36e99c7bfe4200a04fad96a04",
+          "sha256": "2c2a88e13193ceee17a1ce1cc34eaf62458895c09845f0a94ab99e2b09074c07"
         }
-      ],
-      "reportSha256": "8ef89dd63e8ac7e97c8b4cb7fbc6a2d29406601dc6d38950ce5c3036af251d77"
+      ]
     },
     "linux": {
       "status": "PASS",
       "prepared": [
         {
           "edition": "Harness",
-          "version": "1.8.12",
-          "coreSha256": "d1fa90f528d59757fb25e6c33713dac57516a7d0692b483dae5dec3a0b6a3a75",
-          "sha256": "05e2f687c9b881ba0d45d9f565c2c5acdbde28fa3053f87e514c111f102b259f"
+          "version": "1.8.13",
+          "coreSha256": "656376138de2a5e7c3d42ac9ea278647b2df393872451e33d106afab3355bd05",
+          "sha256": "48785d296128861800f13098a0fc6fde2ffec06251b1be3ac2e05837a4782d49"
         },
         {
           "edition": "Workbench",
-          "version": "1.9.8",
-          "coreSha256": "ae488cf7ddec896ec54d0ac9d3a3d57cb9949d5e09a29474ef2c297d68547a92",
-          "sha256": "d65aeaf8c235330e249545bc90ec42c15be719a131f67111a49ac29b727a38a4"
+          "version": "1.9.9",
+          "coreSha256": "9299b39bb4c2c60d8539a2b12262dd65379d32ed6afe6bf4f34c409119f741db",
+          "sha256": "337ce27220caf02b6b430ae5adb6a474a110045612474a0a74ad296c12729b55"
         }
-      ],
-      "reportSha256": "6821e7ac6b1349e6a6308efa08d64c0120e6d733417b0bc5200d05c72ffb8a84"
+      ]
     }
   },
   "manualQA": {
     "status": "PASS",
-    "browser": "actual IAB",
-    "desktopWidth": 1280,
     "mobileWidth": 390,
     "mobileHeight": 844,
     "englishKoreanSwitch": true,
-    "topNavMcpAnchor": true,
-    "horizontalOverflow": false,
-    "firstTaskImagesLoaded": 3,
-    "consoleErrors": 0,
-    "staticLocalLinks": 33,
+    "newNavigationAnchor": true,
+    "mobileHorizontalOverflow": false,
+    "loadedImageFailures": 0,
+    "offscreenImagesLazyLoaded": true,
+    "staticLinks": 38,
     "brokenStaticLinks": [],
+    "manualSha256": "26245b7c4dedcfe17d5aa388e5f6680bf456d3ecb9122662e3b162902f9fa8e2",
     "screenshots": [
-      "manual-mobile-kr.jpg",
-      "manual-mobile-en.jpg"
-    ],
-    "manualSha256": "7f094167cea492c8f48e9c6b420fa0a121767411cb27b1ea2c63a62fbc178673"
+      "manual-mobile-kr.png",
+      "manual-mobile-en.png"
+    ]
   },
-  "publicOnly": true,
-  "coreSourceIncluded": false
+  "privateCoreSourceIncluded": false
 }
