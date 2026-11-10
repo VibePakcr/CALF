@@ -21,4 +21,4 @@ macOS packages have an ad-hoc integrity signature, not Apple notarization. Windo
 
 [EN/KR manual / 영·한 매뉴얼](CALF_mannual.html) · [English](README.md) · [한국어](README_KR.md) · [Earlier releases / 이전 릴리즈](https://github.com/VibePakcr/CALF/releases)
 
-[Install / 설치 안내](install.md) · [First task / 첫 작업](FIRST_TASK_KR.md)
+[Install / 설치 안내](INSTALL.md) · [First task / 첫 작업](FIRST_TASK_KR.md)

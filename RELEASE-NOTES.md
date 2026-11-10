@@ -4,7 +4,7 @@ First-task guidance shows the selected folder, saved connection and next step. A
 
 첫 작업 안내에 폴더·저장된 연결·다음 단계를 표시합니다. 빈 입력창에만 세 줄 초안을 넣을 수 있고, 새 작업이 나타나면 접히며 다시 열 수 있습니다. 진단은 필요할 때 엽니다. 실행 권한·검사·기록 형식·호스트 정책·모델 설정은 변경하지 않습니다.
 
-[Actual screenshots / 실제 화면](FIRST_TASK_KR.md) · [Installation / 설치](install.md) · [Verification scope / 검증 범위](VERIFICATION.json)
+[Actual screenshots / 실제 화면](FIRST_TASK_KR.md) · [Installation / 설치](INSTALL.md) · [Verification scope / 검증 범위](VERIFICATION.json)
 
 Workbench 1.9.7 and Host Connections 1.8.11-hosts.2 are new artifacts. Harness 1.8.11 and SDK 0.2.4 releases remain unchanged. The latest kit recognizes the new Workbench identity without changing approval settings. Existing records, contracts, settings and older runtimes must be retained.
 
