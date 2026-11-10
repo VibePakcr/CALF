@@ -26,6 +26,18 @@ This release brings Attention, result summaries, request guidance and a Day/Nigh
 | Workbench 1.9.x | Rust + Tauri interface for the same execution and records |
 | SDK | Python/Node clients, Local MCP and runtime adapters |
 
+## CALF at a glance
+
+A one-page overview of the shared core, scoped context, verification, recovery and extension boundaries. Release snapshot: 11 November 2026. The Workbench illustration is a conceptual layout.
+
+<p align="center">
+  <a href="calf-overview-en-20261111.png">
+    <img src="calf-overview-en-20261111.png" alt="CALF product overview: Harness, Workbench, context, verification, recovery and extensions" width="760">
+  </a>
+</p>
+
+[Full-size English infographic](calf-overview-en-20261111.png) · [한국어 인포그래픽](calf-overview-kr-20261111.png)
+
 ## Bind MCP tools to the work contract
 
 Reviewed local MCP policies can run reads and create new candidates, with results tied to exact file versions and registered independent checks. Preparation is separate from approval. A lost response never triggers blind resubmission. Local recovery, when enabled in the original policy, checks the terminal receipt and candidate hash, then runs fresh checks. The same path is qualified for both editions on macOS, Windows and Linux.

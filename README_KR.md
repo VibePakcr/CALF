@@ -26,6 +26,18 @@ Attention·결과 요약·요청 도움과 중앙 Day/Night 테마를 추가했�
 | Workbench 1.9.x | 같은 실행·기록 체계에 Rust + Tauri 작업 화면 추가 |
 | SDK | Python·Node, Local MCP와 범용 어댑터를 통한 확장 |
 
+## CALF 한눈에 보기
+
+공통 코어, 필요한 맥락 조회, 실행·검수·복구와 확장 경계를 한 장에 정리했습니다. 2026년 11월 11일 배포 기준이며, Workbench 그림은 기능을 설명하기 위한 구성도입니다.
+
+<p align="center">
+  <a href="calf-overview-kr-20261111.png">
+    <img src="calf-overview-kr-20261111.png" alt="CALF 공개 제품 개요: 하네스·Workbench·맥락·검수·복구·확장" width="760">
+  </a>
+</p>
+
+[한글 원본 보기](calf-overview-kr-20261111.png) · [English infographic](calf-overview-en-20261111.png)
+
 ## MCP 도구도 계약과 검수에 연결
 
 검토한 로컬 MCP 정책에서 읽기와 새 후보 생성을 실행하고, 실제 파일 버전과 등록 검사를 대조합니다. 실행안 준비와 승인을 구분하며, 응답이 끊겨도 같은 도구를 자동으로 다시 보내지 않습니다. 원래 정책에 설정된 로컬 복구는 종료 영수증과 후보 해시를 확인하고 새 검사를 실행합니다. macOS·Windows·Linux에서 두 제품의 같은 경로를 검증했습니다.
