@@ -22,7 +22,8 @@
         "attentionGroups": 8
       },
       "sdkTests": 17,
-      "uiTests": 37
+      "uiTests": 37,
+      "uiSha256": "d8391318356fbf6027e8de3bc101d542836568e2e24794fdc57a431a01385562"
     },
     "windows": {
       "harness": {
@@ -38,7 +39,8 @@
         "attentionGroups": 8
       },
       "sdkTests": 17,
-      "uiTests": 37
+      "uiTests": 37,
+      "uiSha256": "150776530630bbfb7a00083f6b6cd04657ebec44509e09170cb498e7e5cdcf98"
     },
     "linux": {
       "harness": {
@@ -54,7 +56,8 @@
         "attentionGroups": 8
       },
       "sdkTests": 17,
-      "uiTests": 37
+      "uiTests": 37,
+      "uiSha256": "ee08b4d8e54d3733b47d55b8022d2f1ab8643ecec0417c3a1581a506aaa0feb9"
     }
   },
   "modelCalls": 0,
@@ -66,5 +69,7 @@
     "Claude host adapter installation remains macOS-qualified; Windows/Linux qualification covers the core, SDK and MCP local profile.",
     "The bounded local MCP profile is qualified; general external effects and canonical GCI/external ETS integration are not claimed."
   ],
-  "privateCoreSourceIncluded": false
+  "privateCoreSourceIncluded": false,
+  "packagingRevision": 2,
+  "uiVersionLabel": "1.9.10"
 }

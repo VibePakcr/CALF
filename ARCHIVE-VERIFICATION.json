@@ -16,14 +16,15 @@
           "sha256": "084079a33dad7693d1de9069a2ce71eacbdd98aeee064f80c88d27130175b140"
         },
         {
+          "uiSelfCheck": "PASS",
+          "launchSha256": "65d8cb2c84f0388d1fa5f82a6c487467f495239ca8a5751c22d85a75cfcea5b0",
           "edition": "Workbench",
           "version": "1.9.10",
           "coreSha256": "540d6d53741900d58ea7e1739177bde35154e4314865470d885a9099b541a05e",
-          "sha256": "659dc4cd8a2689d42887c7b7bebd6a48835e4e0e6c0028bc7f16ad5be863e5d6"
+          "sha256": "2c68c4b939ca4b3775e652b6eed1a330c805ecf5d1af0f77506df710ea4f6887"
         }
       ],
-      "existingSentinelsUnchanged": true,
-      "activated": false
+      "existingSentinelsUnchanged": true
     },
     "windows": {
       "status": "PASS",
@@ -35,14 +36,15 @@
           "sha256": "a338d17d6546ed01a81fd4f55d565a5fd8a57489c26631c35be4497c89c40b9b"
         },
         {
+          "uiSelfCheck": "PASS",
+          "launchSha256": "150776530630bbfb7a00083f6b6cd04657ebec44509e09170cb498e7e5cdcf98",
           "edition": "Workbench",
           "version": "1.9.10",
           "coreSha256": "3647465d0082341c07b3f2b1ac56683a7cb3be04b6b27df8270b9bfbb84acc9a",
-          "sha256": "ac0a63de1b88f0f12f5c878f6422d1e6e9d065deca7c651c6704d4b9a02e920e"
+          "sha256": "a8e5eaeda15b7b411bce6fe2cc4f6385b7b18d1ed1f4acff2c9220fbb0c4e2d3"
         }
       ],
-      "existingSentinelsUnchanged": true,
-      "activated": false
+      "existingSentinelsUnchanged": true
     },
     "linux": {
       "status": "PASS",
@@ -54,18 +56,26 @@
           "sha256": "e50e949c3d21a6d249c9369a1a49fbeceea4c16043c0b8acba39c2f7ca4cf634"
         },
         {
+          "uiSelfCheck": "PASS",
+          "launchSha256": "ee08b4d8e54d3733b47d55b8022d2f1ab8643ecec0417c3a1581a506aaa0feb9",
           "edition": "Workbench",
           "version": "1.9.10",
           "coreSha256": "405c94fdeab61d848cac0fbb21206f8de33dee10e84775585f046aae04492d38",
-          "sha256": "7ddd0a28a956e451c92abf3d06517864ca5480c015362b36435b1d5ff86bc0db"
+          "sha256": "0ea0e684ed3453b56e1d4da3e8518c86a8dc16ea90242fe3e7801830f5120f4b"
         }
       ],
-      "existingSentinelsUnchanged": true,
-      "activated": false
+      "existingSentinelsUnchanged": true
     }
   },
   "manualStaticLinks": 38,
   "brokenLinks": [],
   "guiRetested": false,
-  "privateCoreSourceIncluded": false
+  "privateCoreSourceIncluded": false,
+  "packagingRevision": 2,
+  "uiVersionLabel": "1.9.10",
+  "revisedUiSelfChecks": [
+    "macos",
+    "windows",
+    "linux"
+  ]
 }
