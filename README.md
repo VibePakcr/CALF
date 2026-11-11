@@ -9,6 +9,8 @@ The native core also handles optional-pack installation/verification and Claude'
 Reference text, a Git capture and a historical PASS cannot establish current completion. Current native checks and exact file versions still decide it. The Rust source scanner reports candidates, not full Python grammar or semantic proof.
 
 
+A fresh Codex session has also completed one real bilingual handoff through selective module lookup, an independent check and Workbench record review. [Observed result and limits](REPOSITORY_SESSION_VERIFICATION.md).
+
 [한국어](README_KR.md) · [Downloads](DOWNLOADS.md) · [EN/KR manual](CALF_mannual.html)
 
 CALF is a lightweight local harness and workbench for supervising one AI agent's work, from execution through checking and recovery. It links requests, actual changes and check evidence, while keeping failed and unfinished attempts in the record. Codex and Antigravity use native hooks; Claude CLI and the desktop app's local Code mode use a macOS adapter. Each host keeps its own account, model and approval policy.

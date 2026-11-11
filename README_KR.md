@@ -9,6 +9,8 @@
 참고 기록·Git 캡처·과거 PASS만으로 완료를 판정하지 않습니다. 현재 네이티브 검사와 정확한 파일 버전이 기준입니다. Rust 소스 분석은 관계 후보를 제공하며 Python 문법 전체나 의미적 정확성을 증명하지 않습니다.
 
 
+새 Codex 세션에서 필요한 모듈 조회부터 실제 영·한 보고서 작성, 독립 검사, Workbench 기록 확인까지 마쳤습니다. [실제 결과와 확인 범위](REPOSITORY_SESSION_VERIFICATION_KR.md)를 함께 공개합니다.
+
 [English](README.md) · [다운로드](DOWNLOADS.md) · [영·한 사용 매뉴얼](CALF_mannual.html)
 
 CALF는 AI 에이전트 하나에게 맡긴 작업을 실행부터 검사·복구까지 감독하는 경량 로컬 도구입니다. 요청과 실제 변경, 검사 근거를 연결하고 실패하거나 미완료인 시도도 기록에 남깁니다. Codex·Antigravity는 네이티브 훅으로, Claude CLI와 앱의 로컬 Code 모드는 macOS 어댑터로 연결합니다. 각 호스트의 계정·모델·승인 정책은 유지합니다.
@@ -23,7 +25,7 @@ CALF는 AI 에이전트 하나에게 맡긴 작업을 실행부터 검사·복�
 
 [설치부터 시작](INSTALL_KR.md) · [첫 작업 단계별 안내](FIRST_TASK_KR.md) · [영·한 화면 매뉴얼](CALF_mannual.html)
 
-## 최신 배포 · 2026-11-10
+## 최신 배포 · 2026-11-11
 
 **Harness 1.8.15 · Workbench 1.9.11 · SDK 0.2.8**
 

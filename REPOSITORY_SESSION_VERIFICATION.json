@@ -1,0 +1,59 @@
+{
+  "schema": "calf.repository.live-session-verification.v1",
+  "observedDate": "2026-11-11",
+  "publishedDate": "2026-11-12",
+  "versions": {
+    "harness": "1.8.15",
+    "workbench": "1.9.11",
+    "sdk": "0.2.8"
+  },
+  "platform": "macOS ARM64",
+  "task": "Create a bilingual release handoff from frozen actual release evidence.",
+  "freshCodexSession": true,
+  "context": {
+    "implementation": "Rust-native",
+    "selectedModules": [
+      "release-handoff"
+    ],
+    "distinctOriginalReferences": 1,
+    "selectedReferenceSourceBytesPerRead": 2724,
+    "unrelatedModuleRecordsLoaded": false
+  },
+  "nativeCheck": {
+    "count": 1,
+    "firstAttempt": "PASS",
+    "currentOutcome": "SATISFIED",
+    "fileVersion": "MATCH",
+    "executionContext": "MATCH"
+  },
+  "lane": {
+    "originalRegisteredPlan": "WAIT",
+    "reason": "A prerequisite cell declared no required check.",
+    "separateCorrectedPlan": "READY",
+    "correction": "The same registered report-contract check was connected to the prerequisite cell.",
+    "originalPlanAndBindingRetained": true,
+    "coreOrCompletionRulesChanged": false
+  },
+  "workbench": {
+    "version": "1.9.11",
+    "recordedCompletion": "SATISFIED",
+    "currentObserver": "SATISFIED",
+    "fileVersion": "MATCH",
+    "executionContext": "MATCH",
+    "isolatedViewerCopiedFromInstalledCode": true
+  },
+  "preservation": {
+    "originalHistoryFilesExact": 938,
+    "immutableTaskInputsExact": 12,
+    "originalTaskRecordsPreserved": true
+  },
+  "limits": [
+    "One actual documentation handoff on macOS; not a fresh three-host or three-platform AI benchmark.",
+    "Prior native synthetic platform evidence retains its original scope.",
+    "This task does not establish automatic hook dispatch for every event.",
+    "The original registered lane remains WAIT; only the separate corrected plan evaluated READY.",
+    "No memory or long-duration stability test was run."
+  ],
+  "binariesRebuilt": false,
+  "existingReleaseAssetsReplaced": false
+}

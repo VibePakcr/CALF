@@ -1,3 +1,11 @@
+# Fresh Codex session verification · 2026-11-12
+
+The published Harness 1.8.15 / Workbench 1.9.11 / SDK 0.2.8 binaries are unchanged. A fresh macOS Codex session selected one module, produced a real bilingual handoff and passed its registered independent check on the first attempt. Workbench readback matched the saved result, current verdict, file version and execution context. The original test lane remains WAIT; a separate corrected definition evaluated READY without changing completion rules. [Full scope](REPOSITORY_SESSION_VERIFICATION.md).
+
+배포 실행 파일은 그대로입니다. 새 macOS Codex 세션에서 모듈 하나만 읽어 실제 영·한 보고서를 작성하고 첫 독립 검사를 통과했습니다. Workbench에서도 저장된 결과와 현재 판정, 파일 버전·실행 문맥의 일치를 확인했습니다. 원래 시험 레인은 WAIT로 보존했고, 별도 보완 정의는 완료 기준을 바꾸지 않고 READY를 확인했습니다. [자세한 결과와 범위](REPOSITORY_SESSION_VERIFICATION_KR.md).
+
+---
+
 # Repository Intelligence in the Rust core · 2026-11-11
 
 Harness 1.8.15 · Workbench 1.9.11 · SDK 0.2.8 · optional native FFmpeg 0.2.0-preview.1.
