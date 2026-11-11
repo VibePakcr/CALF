@@ -16,9 +16,9 @@ CALF는 AI 에이전트 하나에게 맡긴 작업을 실행부터 검사·복�
 
 ## 최신 배포 · 2026-11-10
 
-**Harness 1.8.13 · Workbench 1.9.9 · SDK 0.2.6**
+**Harness 1.8.14 · Workbench 1.9.10 · SDK 0.2.7**
 
-Attention·결과 요약·요청 도움과 중앙 Day/Night 테마를 추가했습니다. CJK 작업 검색과 좁은 창의 모니터 접기를 지원하고, 접힌 모니터의 자원 조회를 멈춥니다. Windows ZIP 업데이트 경로 오류도 고쳤습니다. OS별 검증 범위는 [VERIFICATION.json](VERIFICATION.json)을 참고하세요.
+세 운영체제의 유지보수 배포본입니다. 기존 기록 위치·계약·설정과 과거 작업의 실행 파일을 보관하세요. 실제 검사와 적용 범위는 [VERIFICATION.json](VERIFICATION.json)에서 확인할 수 있습니다.
 
 | 제품 | 용도 |
 |---|---|

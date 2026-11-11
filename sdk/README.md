@@ -1,15 +1,15 @@
-# CALF SDK 0.2.6 — Developer Preview
+# CALF SDK 0.2.7 — Developer Preview
 
 Universal Work v1 adds frozen contracts, checks tied to the exact output files, runtime adapters, dependency-free Node/Python clients and optional-control Local MCP. [Protocol and runnable examples](docs/WORK_PROTOCOL.md). Workbench 1.9.2 shows the same work under **Runtime Work**. Existing code-job API calls remain compatible.
 
 
 [한국어](README_KR.md) · [Protocol](docs/PROTOCOL.md) · [Extension license](LICENSE-SDK.txt)
 
-A small integration layer for **CALF Harness 1.8.7–1.8.13** and the native core included in **CALF Workbench 1.9.2–1.9.9**. Python 3.10+ and the standard library are sufficient. The SDK adds no background service, model runtime, database or network dependency. CALF's execution engine remains proprietary and is not included.
+A small integration layer for **CALF Harness 1.8.7–1.8.14** and the native core included in **CALF Workbench 1.9.2–1.9.10**. Python 3.10+ and the standard library are sufficient. The SDK adds no background service, model runtime, database or network dependency. CALF's execution engine remains proprietary and is not included.
 
 Qualification details for the native cores and SDK are in `VERIFICATION.json` in the archive. Runtime tests use real Python/Node processes and a loopback HTTP service; no new live AI-service benchmark is claimed.
 
-[Download SDK 0.2.6](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.6). One portable source archive includes this SDK, English/Korean guides, both protocol documents, examples and the test runner. Install a matching CALF native release separately; the SDK archive contains no core runtime.
+[Download SDK 0.2.7](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.7). One portable source archive includes this SDK, English/Korean guides, both protocol documents, examples and the test runner. Install a matching CALF native release separately; the SDK archive contains no core runtime.
 
 ## Start with existing records
 
@@ -158,7 +158,7 @@ With Harness 1.8.10 / Workbench 1.9.5, use `client.registered_tasks(workspace)` 
 
 `hosts/` now includes the nine-hook macOS Claude Code adapter and its install/update/recovery tool, with support for cores 1.8.11 and 1.9.6. `PostToolBatch` resolves matched denied non-check calls; registered checks still require real native receipts. Existing Python/Node APIs and MCP protocols remain unchanged. [Installation](hosts/README.md) · [Approval, status and limits](hosts/claude/README.md). Windows/Linux core and SDK support does not establish Claude host installation support.
 
-## MCP tool policies (0.2.6)
+## MCP tool policies (0.2.7)
 
 The new MCP path requires Harness **1.8.12** or Workbench **1.9.8**. Python's `tool_contract` normalizes contracts, `tool_status` reads current native completion, and `prepare_tool` creates a reviewable intent only. It neither executes nor approves the tool. Review the returned `argv` and run it through the host's existing permission flow. A ticket is not independent proof that a human clicked an approval button.
 
@@ -173,7 +173,3 @@ print(prepared["argv"])
 Python's `tool_mcp_server` and Node's `toolMcpServer` return the same foreground stdio descriptor. Status is the only default tool. Explicit `control=True` or `{control:true}` also exposes read invocation and intent preparation. These helpers do not register a host setting, leave a daemon running or grant permissions. See `examples/mcp_policy.py` for a runnable status/preparation example.
 
 The qualified profile covers reviewed local reads, creation of absent candidates and local recovery enabled in the original policy. Uncertain calls are never automatically resubmitted. Delete, overwrite, external transmission and remote-job reconciliation remain outside this profile. Existing host permissions and completion criteria remain authoritative.
-
-## Workbench 1.9.9
-
-The SDK remains a small, one-shot integration layer. This documentation update includes the new Attention and Workbench controls guide; it adds no background service or automatic provider call. See [the guide](docs/WORKBENCH_CLARITY.md).

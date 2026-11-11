@@ -1,8 +1,8 @@
 # Claude Code에서 CALF 사용하기
 
-[English](README.md) · [설치·업데이트·복구 안내](HOST_CONNECTIONS_KR.md)
+[English](README.md) · [설치·업데이트·복구 안내](../README_KR.md)
 
-Claude CLI와 Claude 앱의 **로컬 Code 모드**를 CALF에 연결합니다. 검증 대상은 하네스 1.8.7–1.8.13과 Workbench 1.9.9입니다. 일반 Claude 채팅, Cowork, 클라우드 세션은 별도 모드입니다. Claude 호스트 어댑터는 **macOS에서만 검증**했습니다. 코어·SDK의 Windows·Linux 검증과는 구분합니다.
+Claude CLI와 Claude 앱의 **로컬 Code 모드**를 CALF에 연결합니다. 검증 대상은 하네스 1.8.7–1.8.14과 Workbench 1.9.10입니다. 일반 Claude 채팅, Cowork, 클라우드 세션은 별도 모드입니다. Claude 호스트 어댑터는 **macOS에서만 검증**했습니다. 코어·SDK의 Windows·Linux 검증과는 구분합니다.
 
 훅이 발생할 때 Python 3.10 이상과 표준 라이브러리, 로컬 파일, SHA-256으로 고정한 네이티브 실행 파일을 사용합니다. 모델·상주 서버·네트워크 리스너를 추가하지 않습니다. Claude의 계정·모델·승인 정책을 유지하며, 이 어댑터는 프롬프트나 대화 기록 원문을 저장하지 않습니다.
 
@@ -14,7 +14,7 @@ Claude가 `PreToolUse` 이후 명령을 거절해도 `PostToolUseFailure`는 오
 
 ## 설치와 업데이트
 
-하네스·워크벤치·SDK 압축 파일에는 `hosts/hostkit.py`, 어댑터와 영·한 안내가 들어 있습니다. Host Connections ZIP만 따로 받을 수도 있습니다. [호스트 설치 안내](HOST_CONNECTIONS_KR.md)에 따라 실제 절대 경로와 비공개 상태 폴더를 지정하세요. 이전 버전 옆에 새 리비전을 준비하고 현재 설정 해시를 확인한 뒤 그 리비전을 적용합니다. 설정이 바뀌었거나 경로가 심볼릭 링크이거나 기존 CALF 연결을 검토하지 않았다면 중단합니다.
+하네스·워크벤치·SDK 압축 파일에는 `hosts/hostkit.py`, 어댑터와 영·한 안내가 들어 있습니다. Host Connections ZIP만 따로 받을 수도 있습니다. [호스트 설치 안내](../README_KR.md)에 따라 실제 절대 경로와 비공개 상태 폴더를 지정하세요. 이전 버전 옆에 새 리비전을 준비하고 현재 설정 해시를 확인한 뒤 그 리비전을 적용합니다. 설정이 바뀌었거나 경로가 심볼릭 링크이거나 기존 CALF 연결을 검토하지 않았다면 중단합니다.
 
 새 설치는 `SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `PostToolUseFailure`, `PostToolBatch`, `Stop`, `StopFailure`, `SessionEnd`의 9개 훅을 병합합니다. `PostToolBatch`에는 도구 매처를 넣지 않습니다. 기존 권한·MCP 설정·다른 훅과 원본 설정 백업은 보존합니다. Claude에서 훅을 검토하고 새 로컬 Code 세션을 시작하세요. 이미 열린 세션이 새 훅을 읽었다고 가정하지 않습니다.
 

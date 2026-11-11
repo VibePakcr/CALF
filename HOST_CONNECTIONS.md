@@ -1,4 +1,4 @@
-# CALF host connections — 1.8.7–1.8.13 / Workbench 1.9.9
+# CALF host connections — 1.8.7–1.8.14 / Workbench 1.9.10
 
 [한국어](README_KR.md)
 
@@ -10,7 +10,7 @@ Use CALF to supervise one agent working in Codex, Antigravity or Claude Code. Ea
 |---|---|---|
 | Codex | Native CALF hooks; review them in `/hooks` | macOS, real new Codex session, 8 independent checks, `SATISFIED` |
 | Antigravity | Native CALF hooks; existing compatibility bridge may remain | macOS, real new ACP session, 8 independent checks, `SATISFIED` |
-| Claude CLI and desktop local Code | Python hook adapter to the selected 1.8.7–1.8.13 / Workbench 1.9.9 engine | macOS CLI and desktop Code, 8 independent checks, accepted Stop and saved session |
+| Claude CLI and desktop local Code | Python hook adapter to the selected 1.8.7–1.8.14 / Workbench 1.9.10 engine | macOS CLI and desktop Code, 8 independent checks, accepted Stop and saved session |
 
 These host-session results are separate from the released native core's Windows/Linux qualification. The Claude adapter uses POSIX locking and is qualified here only on macOS. Ordinary Claude chat, Cowork and cloud sessions are separate products/modes.
 
@@ -22,7 +22,7 @@ Use explicit host homes when testing an installation. Codex requires the normal 
 
 ## Claude on macOS
 
-The local kit includes `hostkit.py` and `claude/adapter.py`. It adds only CALF's nine lifecycle hooks. It never adds an allow rule or edits the desktop UI configuration. Python 3.10+ is required for this adapter, in addition to the native core. [Adapter behavior and limits](CLAUDE_CONNECTION.md).
+The local kit includes `hostkit.py` and `claude/adapter.py`. It adds only CALF's nine lifecycle hooks. It never adds an allow rule or edits the desktop UI configuration. Python 3.10+ is required for this adapter, in addition to the native core. [Adapter behavior and limits](claude/README.md).
 
 Choose physical absolute paths for a native installation, a separate host-kit state folder, the Python executable and the existing Claude settings JSON. If the settings path is a symlink, select its actual target; the tool refuses to replace symlinks. Backups may contain private settings: keep the state folder private and out of shared repositories.
 
@@ -35,9 +35,9 @@ First install the native engine without changing hooks:
 Use the versioned executable path returned by that command and its `config.json`:
 
 ```sh
-python3 -B hostkit.py prepare --root /path/to/claude-calf --revision 1.8.13-hosts.1 --core /path/to/native-calf/versions/VERSION/calf --config /path/to/native-calf/config.json --python /physical/path/to/python3
+python3 -B hostkit.py prepare --root /path/to/claude-calf --revision 1.8.14-hosts.1 --core /path/to/native-calf/versions/VERSION/calf --config /path/to/native-calf/config.json --python /physical/path/to/python3
 python3 -B hostkit.py inspect --settings /physical/path/to/claude/settings.json
-python3 -B hostkit.py apply --root /path/to/claude-calf --revision 1.8.13-hosts.1 --settings /physical/path/to/claude/settings.json --expected-sha256 HASH_FROM_INSPECT
+python3 -B hostkit.py apply --root /path/to/claude-calf --revision 1.8.14-hosts.1 --settings /physical/path/to/claude/settings.json --expected-sha256 HASH_FROM_INSPECT
 ```
 
 The settings JSON must already exist. For a new Claude profile, create an empty `{}` file at the location Claude uses, or start Claude once before selecting it. `prepare` writes only a new version inside the chosen kit state folder. `apply` retains the original settings bytes and merges CALF hooks after checking the supplied hash. Existing permission/MCP settings and unrelated hooks remain in the JSON. Review the hooks in Claude and start a new local Code session.

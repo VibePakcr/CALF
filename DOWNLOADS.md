@@ -1,15 +1,15 @@
 # CALF downloads / 다운로드
 
-**Harness 1.8.13 · Workbench 1.9.9 · SDK 0.2.6**
+**Harness 1.8.14 · Workbench 1.9.10 · SDK 0.2.7**
 
 [English](README.md) · [한국어](README_KR.md) · [EN/KR manual](CALF_mannual.html)
 
 | Edition | macOS ARM64 | Windows x64 | Linux x64 |
 |---|---|---|---|
-| Harness 1.8.13 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.8.13/CALF-Harness-1.8.13-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.8.13/CALF-Harness-1.8.13-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.8.13/CALF-Harness-1.8.13-linux-x86_64.tar.gz) |
-| Workbench 1.9.9 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.9.9/CALF-Workbench-1.9.9-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.9.9/CALF-Workbench-1.9.9-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.9.9/CALF-Workbench-1.9.9-linux-x86_64.tar.gz) |
+| Harness 1.8.14 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.8.14/CALF-Harness-1.8.14-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.8.14/CALF-Harness-1.8.14-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.8.14/CALF-Harness-1.8.14-linux-x86_64.tar.gz) |
+| Workbench 1.9.10 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.9.10/CALF-Workbench-1.9.10-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.9.10/CALF-Workbench-1.9.10-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.9.10/CALF-Workbench-1.9.10-linux-x86_64.tar.gz) |
 
-[SDK 0.2.6](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.6/CALF-SDK-0.2.6.zip) · [Host Connections](https://github.com/VibePakcr/CALF/releases/download/v1.8.13/CALF-Host-Connections-1.8.13-hosts.1.zip) · [SHA-256](SHA256SUMS) · [Verification](VERIFICATION.json)
+[SDK 0.2.7](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.7/CALF-SDK-0.2.7.zip) · [Host Connections](https://github.com/VibePakcr/CALF/releases/download/v1.8.14/CALF-Host-Connections-1.8.14-hosts.1.zip) · [SHA-256](SHA256SUMS) · [Verification](VERIFICATION.json)
 
 Extract into a new folder and retain your existing records home, contracts, settings and older task runtimes. Review changed hooks through the host’s existing approval flow. macOS uses an ad-hoc integrity signature, without Apple notarization; Windows has no publisher signature. Claude host installation is qualified on macOS only.
 

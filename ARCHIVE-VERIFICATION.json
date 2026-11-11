@@ -1,74 +1,71 @@
 {
   "status": "PASS",
+  "versions": {
+    "harness": "1.8.14",
+    "workbench": "1.9.10",
+    "sdk": "0.2.7"
+  },
   "archiveUpdatePreparation": {
     "macos": {
       "status": "PASS",
       "prepared": [
         {
           "edition": "Harness",
-          "version": "1.8.13",
-          "coreSha256": "5a41e2deffdafaed7f3b181621fa55310504fbf2d2a57fe6a1d8a70b74e1d21b",
-          "sha256": "abefb0b7dd99899f1926db5e8f90079811452634becc37d20f79b552bd607767"
+          "version": "1.8.14",
+          "coreSha256": "718fa0a02d98f33fcf1a6ae95a2db97643aafe340ea6f47ddcbc10d449c2ce60",
+          "sha256": "084079a33dad7693d1de9069a2ce71eacbdd98aeee064f80c88d27130175b140"
         },
         {
           "edition": "Workbench",
-          "version": "1.9.9",
-          "coreSha256": "d3b7ab898d30749d61341856202b7645d02da7d416ac269ae6c7c658c2641e96",
-          "sha256": "2e521eadcf6fb2b43dadd4641b1fe0ee10b88ec3665439e9c675a6b99cf9d679"
+          "version": "1.9.10",
+          "coreSha256": "540d6d53741900d58ea7e1739177bde35154e4314865470d885a9099b541a05e",
+          "sha256": "659dc4cd8a2689d42887c7b7bebd6a48835e4e0e6c0028bc7f16ad5be863e5d6"
         }
-      ]
+      ],
+      "existingSentinelsUnchanged": true,
+      "activated": false
     },
     "windows": {
       "status": "PASS",
       "prepared": [
         {
           "edition": "Harness",
-          "version": "1.8.13",
-          "coreSha256": "87005a8adccada5485857a4e0258bf166fc39649fb7fe462f7314d60eaa115b6",
-          "sha256": "b2ad3894ac9951b66ba2b635595e6228b0c170d20e0c0cca6119e6f5adb2c3de"
+          "version": "1.8.14",
+          "coreSha256": "173d014cd4971f251c1cfb71fdd73ee527ae38e3a3bcf1b739a355a18751c695",
+          "sha256": "a338d17d6546ed01a81fd4f55d565a5fd8a57489c26631c35be4497c89c40b9b"
         },
         {
           "edition": "Workbench",
-          "version": "1.9.9",
-          "coreSha256": "fb82c4bac4537a0acbc863ace1de85511c1cb5a36e99c7bfe4200a04fad96a04",
-          "sha256": "2c2a88e13193ceee17a1ce1cc34eaf62458895c09845f0a94ab99e2b09074c07"
+          "version": "1.9.10",
+          "coreSha256": "3647465d0082341c07b3f2b1ac56683a7cb3be04b6b27df8270b9bfbb84acc9a",
+          "sha256": "ac0a63de1b88f0f12f5c878f6422d1e6e9d065deca7c651c6704d4b9a02e920e"
         }
-      ]
+      ],
+      "existingSentinelsUnchanged": true,
+      "activated": false
     },
     "linux": {
       "status": "PASS",
       "prepared": [
         {
           "edition": "Harness",
-          "version": "1.8.13",
-          "coreSha256": "656376138de2a5e7c3d42ac9ea278647b2df393872451e33d106afab3355bd05",
-          "sha256": "48785d296128861800f13098a0fc6fde2ffec06251b1be3ac2e05837a4782d49"
+          "version": "1.8.14",
+          "coreSha256": "1414e917597af5fb4971c7cfbce279b72768deb38962406aad3ff08c877fb1c3",
+          "sha256": "e50e949c3d21a6d249c9369a1a49fbeceea4c16043c0b8acba39c2f7ca4cf634"
         },
         {
           "edition": "Workbench",
-          "version": "1.9.9",
-          "coreSha256": "9299b39bb4c2c60d8539a2b12262dd65379d32ed6afe6bf4f34c409119f741db",
-          "sha256": "337ce27220caf02b6b430ae5adb6a474a110045612474a0a74ad296c12729b55"
+          "version": "1.9.10",
+          "coreSha256": "405c94fdeab61d848cac0fbb21206f8de33dee10e84775585f046aae04492d38",
+          "sha256": "7ddd0a28a956e451c92abf3d06517864ca5480c015362b36435b1d5ff86bc0db"
         }
-      ]
+      ],
+      "existingSentinelsUnchanged": true,
+      "activated": false
     }
   },
-  "manualQA": {
-    "status": "PASS",
-    "mobileWidth": 390,
-    "mobileHeight": 844,
-    "englishKoreanSwitch": true,
-    "newNavigationAnchor": true,
-    "mobileHorizontalOverflow": false,
-    "loadedImageFailures": 0,
-    "offscreenImagesLazyLoaded": true,
-    "staticLinks": 38,
-    "brokenStaticLinks": [],
-    "manualSha256": "26245b7c4dedcfe17d5aa388e5f6680bf456d3ecb9122662e3b162902f9fa8e2",
-    "screenshots": [
-      "manual-mobile-kr.png",
-      "manual-mobile-en.png"
-    ]
-  },
+  "manualStaticLinks": 38,
+  "brokenLinks": [],
+  "guiRetested": false,
   "privateCoreSourceIncluded": false
 }

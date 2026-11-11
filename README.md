@@ -16,9 +16,9 @@ Start with three choices: where the agent may work, your existing AI account, an
 
 ## Latest release · 2026-11-11
 
-**Harness 1.8.13 · Workbench 1.9.9 · SDK 0.2.6**
+**Harness 1.8.14 · Workbench 1.9.10 · SDK 0.2.7**
 
-This release brings Attention, result summaries, request guidance and a Day/Night center. Find CJK tasks with keyboard shortcuts, fold monitors in narrow windows and stop sampling hidden monitors. It also fixes Windows ZIP update preparation. See [VERIFICATION.json](VERIFICATION.json) for OS-specific evidence.
+Current maintenance builds for all three operating systems. Keep your existing records home, contracts, settings and older task runtimes. See [VERIFICATION.json](VERIFICATION.json) for the checks and their scope.
 
 | Edition | Purpose |
 |---|---|

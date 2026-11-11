@@ -1,4 +1,4 @@
-# CALF 1.8.7–1.8.13 / Workbench 1.9.9 호스트 연결
+# CALF 1.8.7–1.8.14 / Workbench 1.9.10 호스트 연결
 
 [English](README.md)
 
@@ -10,7 +10,7 @@ Codex, Antigravity, Claude Code에서 같은 CALF 네이티브 엔진을 사용�
 |---|---|---|
 | Codex | CALF 네이티브 훅, `/hooks`에서 검토 | macOS 새 모델 세션, 독립 검사 8개 통과, `SATISFIED` |
 | Antigravity | CALF 네이티브 훅, 기존 호환 브리지 유지 가능 | macOS 새 ACP 세션, 독립 검사 8개 통과, `SATISFIED` |
-| Claude CLI·앱의 로컬 Code | Python 훅 어댑터와 선택한 1.8.7–1.8.13 / Workbench 1.9.9 엔진 | macOS CLI·앱 Code, 독립 검사 8개 통과, 완료 판정과 저장된 세션 확인 |
+| Claude CLI·앱의 로컬 Code | Python 훅 어댑터와 선택한 1.8.7–1.8.14 / Workbench 1.9.10 엔진 | macOS CLI·앱 Code, 독립 검사 8개 통과, 완료 판정과 저장된 세션 확인 |
 
 호스트의 실제 모델 세션 검증과 Windows·Linux 네이티브 코어 검증은 별도입니다. Claude 어댑터는 POSIX 파일 잠금을 사용하며, 이번 호스트 검증 범위는 macOS입니다. 일반 Claude 채팅, Cowork, 클라우드 세션에는 별도 연결이 필요합니다.
 
@@ -35,9 +35,9 @@ Codex, Antigravity, Claude Code에서 같은 CALF 네이티브 엔진을 사용�
 출력에 나온 버전별 실행 파일과 `config.json` 경로를 다음 명령에 넣습니다.
 
 ```sh
-python3 -B hostkit.py prepare --root /path/to/claude-calf --revision 1.8.13-hosts.1 --core /path/to/native-calf/versions/VERSION/calf --config /path/to/native-calf/config.json --python /physical/path/to/python3
+python3 -B hostkit.py prepare --root /path/to/claude-calf --revision 1.8.14-hosts.1 --core /path/to/native-calf/versions/VERSION/calf --config /path/to/native-calf/config.json --python /physical/path/to/python3
 python3 -B hostkit.py inspect --settings /physical/path/to/claude/settings.json
-python3 -B hostkit.py apply --root /path/to/claude-calf --revision 1.8.13-hosts.1 --settings /physical/path/to/claude/settings.json --expected-sha256 INSPECT에_나온_해시
+python3 -B hostkit.py apply --root /path/to/claude-calf --revision 1.8.14-hosts.1 --settings /physical/path/to/claude/settings.json --expected-sha256 INSPECT에_나온_해시
 ```
 
 settings JSON은 기존 파일이어야 합니다. 새 프로필이라면 Claude를 한 번 실행하거나, Claude가 사용하는 위치에 `{}` 파일을 먼저 만드세요. `prepare`는 선택한 키트 상태 폴더 안에 새 버전만 만듭니다. `apply`는 지정한 해시를 확인하고 원래 설정 바이트를 보존한 뒤 CALF 훅을 합칩니다. 다른 훅, 권한·MCP 설정은 JSON 안에 유지됩니다. Claude에서 훅을 검토하고 새 로컬 Code 세션을 시작하세요.

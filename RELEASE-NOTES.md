@@ -1,3 +1,11 @@
+# Maintenance distribution · 2026-11-11
+
+Harness 1.8.14 · Workbench 1.9.10 · SDK 0.2.7. Existing records, contracts, settings and older task runtimes are retained. No new setup step is required.
+
+하네스 1.8.14 · Workbench 1.9.10 · SDK 0.2.7 유지보수 배포본입니다. 기존 기록·계약·설정과 과거 작업의 실행 파일을 유지합니다.
+
+---
+
 # CALF Harness 1.8.13 · Workbench 1.9.9 · SDK 0.2.6
 
 ## Decisions and results, with less clutter

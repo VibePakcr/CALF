@@ -1,8 +1,8 @@
 # CALF for Claude Code
 
-[한국어](README_KR.md) · [Installation, update and recovery](HOST_CONNECTIONS.md)
+[한국어](README_KR.md) · [Installation, update and recovery](../README.md)
 
-Connect Claude CLI or the Claude desktop app's **local Code mode** to CALF. The adapter supports the qualified Harness 1.8.7–1.8.13 cores and Workbench 1.9.9. Ordinary Claude chat, Cowork and cloud sessions are separate modes. The Claude host adapter is qualified on **macOS only**; the native core and SDK have separate Windows/Linux checks.
+Connect Claude CLI or the Claude desktop app's **local Code mode** to CALF. The adapter supports the qualified Harness 1.8.7–1.8.14 cores and Workbench 1.9.10. Ordinary Claude chat, Cowork and cloud sessions are separate modes. The Claude host adapter is qualified on **macOS only**; the native core and SDK have separate Windows/Linux checks.
 
 The adapter runs when a hook fires, using Python 3.10+, its standard library, local files and a SHA-256-pinned native executable. It adds no model, daemon or network listener. Claude retains its account, model and approval policy. No prompts or transcripts are stored by this adapter.
 
@@ -14,7 +14,7 @@ The whole batch is validated before any result is recorded. Missing results or c
 
 ## Install or update
 
-The Harness, Workbench and SDK archives include `hosts/hostkit.py`, this adapter and both language guides. A standalone Host Connections ZIP is also available. Follow the [host installation guide](HOST_CONNECTIONS.md), using physical absolute paths and a private state folder. Prepare a new revision beside the old one, inspect the current settings hash, then apply that exact revision. The kit refuses changed settings, symlinks and an unreviewed existing CALF route.
+The Harness, Workbench and SDK archives include `hosts/hostkit.py`, this adapter and both language guides. A standalone Host Connections ZIP is also available. Follow the [host installation guide](../README.md), using physical absolute paths and a private state folder. Prepare a new revision beside the old one, inspect the current settings hash, then apply that exact revision. The kit refuses changed settings, symlinks and an unreviewed existing CALF route.
 
 For new installations the kit merges these nine hooks: `SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `PostToolUseFailure`, `PostToolBatch`, `Stop`, `StopFailure`, `SessionEnd`. `PostToolBatch` has no tool matcher. Existing permissions, MCP configuration, unrelated hooks and original settings backups are retained. Review the hooks in Claude and start a new local Code session; an existing session is not proof that it reloaded them.
 
