@@ -1,15 +1,15 @@
-# CALF SDK 0.2.7 — 개발자 프리뷰
+# CALF SDK 0.2.8 — 개발자 프리뷰
 
 Universal Work v1은 작업 계약을 고정하고 검사한 파일 버전과 결과를 함께 확인하는 범용 작업 규약입니다. 범용 어댑터, 별도 런타임 라이브러리가 필요 없는 Python·Node 클라이언트, 제어 기능을 선택적으로 켤 수 있는 MCP를 제공합니다. [규약과 실행 예제](docs/WORK_PROTOCOL_KR.md)를 참고하세요. Workbench 1.9.2의 **Runtime Work**에서 같은 작업을 조회·제어할 수 있으며 기존 코드 작업 API도 유지됩니다.
 
 
 [English](README.md) · [프로토콜 규격](docs/PROTOCOL_KR.md) · [확장 라이선스](LICENSE-SDK.txt)
 
-**CALF Harness 1.8.7–1.8.14** 및 **CALF Workbench 1.9.2–1.9.10**에 포함된 네이티브 코어를 연결하는 작은 SDK입니다. Python 3.10 이상과 표준 라이브러리로 동작합니다. 상주 서비스·모델 런타임·데이터베이스·네트워크 의존성을 추가하지 않으며, 비공개 코어 소스는 포함하지 않습니다.
+**CALF Harness 1.8.7–1.8.15** 및 **CALF Workbench 1.9.2–1.9.11**에 포함된 네이티브 코어를 연결하는 작은 SDK입니다. Python 3.10 이상과 표준 라이브러리로 동작합니다. 상주 서비스·모델 런타임·데이터베이스·네트워크 의존성을 추가하지 않으며, 비공개 코어 소스는 포함하지 않습니다.
 
 OS별 실행 파일·SDK·MCP 검증 결과는 압축 파일의 `VERIFICATION.json`에 있습니다. 합성 작업과 실제 로컬 프로세스로 검사하며 AI 실서비스 호출이나 모든 배포판 지원을 주장하지 않습니다.
 
-[SDK 0.2.7 다운로드](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.7). 하나의 공용 소스 압축 파일에 SDK·영문/한글 안내·영문/한글 프로토콜·예제·검사 실행기가 포함됩니다. 해당 OS의 CALF 네이티브 릴리즈는 별도로 설치합니다. SDK 압축 파일에 코어 런타임은 포함하지 않습니다.
+[SDK 0.2.8 다운로드](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.8). 하나의 공용 소스 압축 파일에 SDK·영문/한글 안내·영문/한글 프로토콜·예제·검사 실행기가 포함됩니다. 해당 OS의 CALF 네이티브 릴리즈는 별도로 설치합니다. SDK 압축 파일에 코어 런타임은 포함하지 않습니다.
 
 ## 시작하기
 
@@ -143,7 +143,7 @@ CALF 1.8.7 / 1.9.2는 Node 24 이상 내장 node:test 프로파일을 지원합�
 
 ## Claude 연결 키트 (0.2.4)
 
-`hosts/`에 macOS Claude Code용 9개 훅 어댑터와 설치·업데이트·복구 도구를 포함했습니다. 새 코어 1.8.11·1.9.6을 지원합니다. 일반 호출의 거절 결과는 `PostToolBatch`로 연결하고, 등록 검사는 실제 실행 영수증으로만 판정합니다. 기존 Python·Node API와 MCP 규약은 유지합니다. [설치 안내](hosts/README_KR.md) · [승인·상태·한계](hosts/claude/README_KR.md). Windows·Linux의 네이티브 코어·SDK 지원이 Claude 호스트 설치 검증을 뜻하지는 않습니다.
+호스트 훅 처리와 연결 설정을 Rust 코어로 통합했습니다. Claude 이벤트 9개, 배치 결과 연결, 등록 검사 영수증, 버전별 설치를 macOS·Windows·Linux의 합성 작업으로 검증했습니다. Windows·Linux의 실제 Claude 앱 새 세션 검증을 뜻하지는 않습니다. Python·Node는 선택적으로 쓰는 얇은 SDK 클라이언트로 남깁니다. [호스트 설정](hosts/README_KR.md) · [Claude 승인·상태](hosts/claude/README_KR.md).
 
 ## MCP 도구 정책 연결 (0.2.7)
 
@@ -160,3 +160,7 @@ print(prepared["argv"])
 Python의 `tool_mcp_server`와 Node의 `toolMcpServer`는 같은 포그라운드 stdio 연결 명세를 반환합니다. 기본 도구는 상태 조회뿐이며 `control=True` 또는 `{control:true}`를 명시하면 읽기 호출과 실행안 준비 도구를 추가합니다. 연결 정보를 반환할 뿐 호스트 설정을 수정하거나 프로세스를 상주시켜 두지 않습니다. 실행 예제는 `examples/mcp_policy.py`를 참고하세요.
 
 지원 범위는 검토한 로컬 읽기, 새 후보 생성, 원래 정책에 미리 설정한 로컬 복구입니다. 불명확한 호출을 자동으로 다시 보내지 않습니다. 삭제·덮어쓰기·외부 전송·원격 작업 복구는 이 규약의 검증 범위에 포함되지 않습니다. 기존 호스트 권한과 완료 기준은 그대로 적용됩니다.
+
+## 네이티브 Repository 문맥
+
+하네스 1.8.15 / 워크벤치 1.9.11부터 사용할 수 있습니다. `client.repository_context(workspace, task="청구서", registry=registry)`는 Rust 코어에서 필요한 로컬 기록만 조회합니다. `client.repository_mcp_server(registry, workspace)`는 읽기 전용 MCP 연결 설정을 반환하며, Node에서는 `repositoryMcpServer`를 사용합니다. 조회한다고 AI에게 자료를 보내거나 완료를 판정하지 않습니다. SDK는 언어별 연결층이며 별도 실행 엔진이 아닙니다.

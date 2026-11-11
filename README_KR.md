@@ -1,5 +1,14 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+## Repository Intelligence를 기본 기능으로 통합했습니다
+
+하네스 **1.8.15**, 워크벤치 **1.9.11**, SDK **0.2.8**에서 필요한 모듈 기록·정확한 원문 조회·로컬 Git 캡처·저장된 HEAD/인덱스/작업 파일 버전·파일 관계 후보를 공통 Rust 코어로 제공합니다. [사용법과 범위](REPOSITORY_BUILTIN_KR.md)를 확인하세요.
+
+선택 팩의 설치·검수와 Claude 이벤트 어댑터도 코어가 처리합니다. 이 경로에는 Python·Node가 필요하지 않습니다. 언어별 SDK는 얇은 연결층으로 유지하며, 프로젝트 검사·FFmpeg/ffprobe·기존 사용자 보호 연결은 각각의 의존성을 유지합니다. 현재 별도 확장은 FFmpeg만 제공합니다. 이전 패키지와 기록도 보존합니다.
+
+참고 기록·Git 캡처·과거 PASS만으로 완료를 판정하지 않습니다. 현재 네이티브 검사와 정확한 파일 버전이 기준입니다. Rust 소스 분석은 관계 후보를 제공하며 Python 문법 전체나 의미적 정확성을 증명하지 않습니다.
+
+
 [English](README.md) · [다운로드](DOWNLOADS.md) · [영·한 사용 매뉴얼](CALF_mannual.html)
 
 CALF는 AI 에이전트 하나에게 맡긴 작업을 실행부터 검사·복구까지 감독하는 경량 로컬 도구입니다. 요청과 실제 변경, 검사 근거를 연결하고 실패하거나 미완료인 시도도 기록에 남깁니다. Codex·Antigravity는 네이티브 훅으로, Claude CLI와 앱의 로컬 Code 모드는 macOS 어댑터로 연결합니다. 각 호스트의 계정·모델·승인 정책은 유지합니다.
@@ -16,7 +25,7 @@ CALF는 AI 에이전트 하나에게 맡긴 작업을 실행부터 검사·복�
 
 ## 최신 배포 · 2026-11-10
 
-**Harness 1.8.14 · Workbench 1.9.10 · SDK 0.2.7**
+**Harness 1.8.15 · Workbench 1.9.11 · SDK 0.2.8**
 
 세 운영체제의 유지보수 배포본입니다. 기존 기록 위치·계약·설정과 과거 작업의 실행 파일을 보관하세요. 실제 검사와 적용 범위는 [VERIFICATION.json](VERIFICATION.json)에서 확인할 수 있습니다.
 
@@ -86,4 +95,4 @@ Claude 호스트 어댑터는 macOS에서만 검증했습니다. Windows·Linux�
 
 확장은 제공되는 **SDK·Adapter·MCP** 인터페이스로 구현하세요. SDK 소스는 별도의 통합 라이선스를 따르며 코어 구현은 비공개로 유지합니다. 이 제한은 사용자가 소유한 프로젝트 코드나 지원되는 설정·확장 인터페이스를 제한하려는 것이 아닙니다. 함께 배포하는 외부 구성요소의 라이선스와 고지는 유지합니다.
 
-[별도 Repository 확장팩](https://github.com/VibePakcr/CALF-Extensions) · [릴리즈 변경사항](RELEASE-NOTES.md)
+[선택형 FFmpeg 확장팩](https://github.com/VibePakcr/CALF-Extensions) · [릴리즈 변경사항](RELEASE-NOTES.md)

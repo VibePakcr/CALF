@@ -163,6 +163,28 @@ class CalfClient:
     def tasks(self) -> dict[str, Any]:
         return self.call("list")
 
+    def repository_context(self, workspace: str | os.PathLike, *, action: str = "read",
+                           task: str = "", modules: list[str] | None = None,
+                           registry: str | os.PathLike | None = None) -> dict[str, Any]:
+        """Read selected local module context in the native core; never send it to AI.
+
+        Registration remains explicit. Historical text cannot establish current
+        completion. Requires Harness 1.8.15 or Workbench 1.9.11.
+        """
+        if action not in {"discover", "read", "resume"}:
+            raise ValueError("Choose discover, read or resume")
+        request: dict[str, Any] = {"action": action, "cwd": str(_path(workspace)), "task": task}
+        if modules is not None:
+            request["modules"] = modules
+        if registry is not None:
+            request["registry"] = str(_path(registry))
+        return self.call("repository", request=request)
+
+    def repository_mcp_server(self, registry: str | os.PathLike,
+                              workspace: str | os.PathLike) -> dict[str, Any]:
+        """Foreground, read-only native MCP. Does not start a server or register a project."""
+        return {"command": str(self.executable), "args": ["repository-mcp", str(_path(registry)), str(_path(workspace))]}
+
     def inspect(self, task: str) -> dict[str, Any]:
         return self.call("inspect", task=task)
 

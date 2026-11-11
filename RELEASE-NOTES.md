@@ -1,3 +1,20 @@
+# Repository Intelligence in the Rust core · 2026-11-11
+
+Harness 1.8.15 · Workbench 1.9.11 · SDK 0.2.8 · optional native FFmpeg 0.2.0-preview.1.
+
+- Repository context, module history, exact-record queries and the existing CPU lane/gate now run in one native core.
+- Local Git captures retain raw HEAD/index/working versions, source hashes and lexical relationship candidates. No Git status, worktree conversions, hooks or fetch are used by this reader.
+- Workbench adds a lazy Repository context panel and saved-source selection. Reading records is separate from sending context to an AI or establishing completion.
+- Native pack management and Claude lifecycle/setup/update/recovery no longer require Python. SDKs remain thin language bindings. Existing owner-managed T9 protection bridges and project-language test runtimes remain intact.
+- FFmpeg is the only current optional extension. Navigator, hosted browsing, video management and motion experiments are excluded from current packages; their historical source and releases are retained.
+- Existing original journals, hash chains, contracts, settings, old task runtimes and approved media are preserved. Completion standards are unchanged.
+
+하네스 1.8.15 · 워크벤치 1.9.11 · SDK 0.2.8 · 선택 확장 FFmpeg 0.2.0-preview.1입니다. Repository 문맥·모듈 기록·원문 조회·CPU 레인과 검사를 공통 Rust 코어로 통합했습니다. 로컬 Git의 원본 버전과 관계 후보를 저장하고 워크벤치에서 필요한 기록·파일만 조회할 수 있습니다. 팩 관리와 Claude 연결도 Rust로 처리하며, 현재 별도 확장은 FFmpeg만 남깁니다. 기존 기록·계약·설정·과거 실행 파일·승인 영상은 보존하고 완료 기준은 유지합니다.
+
+See VERIFICATION.json for exact binary identities and tested platforms. Native synthetic tests are not new paid AI/app-session benchmarks. Rust lexical candidates do not replace a full Python parser or application tests. The optional media profile remains bounded; it does not verify aesthetic quality. macOS packages use ad-hoc integrity signing, not Apple notarization; Windows publisher signing is not claimed.
+
+---
+
 # Maintenance distribution · 2026-11-11
 
 Harness 1.8.14 · Workbench 1.9.10 · SDK 0.2.7. Existing records, contracts, settings and older task runtimes are retained. No new setup step is required.

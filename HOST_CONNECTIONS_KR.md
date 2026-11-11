@@ -1,80 +1,30 @@
-# CALF 1.8.7–1.8.14 / Workbench 1.9.10 호스트 연결
+# CALF 네이티브 호스트 연결
 
-[English](README.md)
+[English](HOST_CONNECTIONS.md)
 
-Codex, Antigravity, Claude Code에서 같은 CALF 네이티브 엔진을 사용할 수 있습니다. 각 호스트의 계정·모델·권한·설정은 그대로 유지합니다. 작업 하나에는 에이전트 하나를 연결하며, 추가 모델이나 상주 서비스, 로컬 LLM은 필요하지 않습니다.
+하네스 1.8.15와 워크벤치 1.9.11은 Codex·Antigravity·로컬 Claude Code에서 에이전트 하나의 작업을 감독합니다. 계정·모델·명령 승인·무관한 훅은 각 호스트가 계속 관리합니다. 추가 모델·데몬·로컬 LLM은 필요하지 않습니다.
 
-## 연결 방식과 확인 범위
+Codex와 Antigravity는 `calf install`과 기존 네이티브 훅을 사용합니다. Codex는 명령이 바뀌면 공식 `/hooks`에서 다시 검토해야 합니다. 기존 T9 등 사용자가 관리하는 보호 연결은 유지하고, 새 경로로 몰래 교체하거나 중복 연결하지 마세요.
 
-| 호스트 | 연결 방식 | 실제 확인한 범위 |
-|---|---|---|
-| Codex | CALF 네이티브 훅, `/hooks`에서 검토 | macOS 새 모델 세션, 독립 검사 8개 통과, `SATISFIED` |
-| Antigravity | CALF 네이티브 훅, 기존 호환 브리지 유지 가능 | macOS 새 ACP 세션, 독립 검사 8개 통과, `SATISFIED` |
-| Claude CLI·앱의 로컬 Code | Python 훅 어댑터와 선택한 1.8.7–1.8.14 / Workbench 1.9.10 엔진 | macOS CLI·앱 Code, 독립 검사 8개 통과, 완료 판정과 저장된 세션 확인 |
+## Claude Code
 
-호스트의 실제 모델 세션 검증과 Windows·Linux 네이티브 코어 검증은 별도입니다. Claude 어댑터는 POSIX 파일 잠금을 사용하며, 이번 호스트 검증 범위는 macOS입니다. 일반 Claude 채팅, Cowork, 클라우드 세션에는 별도 연결이 필요합니다.
-
-## Codex와 Antigravity
-
-[CALF 다운로드](https://github.com/VibePakcr/CALF/blob/main/DOWNLOADS.md)에서 제공하는 네이티브 설치기를 사용하세요. 버전별 바이너리와 설정 백업을 남기고 다른 훅을 보존합니다. 패키지의 설치 안내를 따르고, 업데이트할 때는 같은 설치 위치를 사용하세요. 기존 관리형 설치가 다른 곳에 있다면 현재 연결을 먼저 확인해야 합니다. CALF 연결을 중복으로 추가하지 마세요.
-
-시험 설치에는 호스트 홈 경로를 명시하세요. Codex의 새 훅은 `/hooks`에서 검토해야 하며, Antigravity의 명령 승인·샌드박스 정책도 그대로 적용됩니다. 선택한 연결은 새 세션에서 확인하세요. 이미 실행 중인 세션이 새 설정을 다시 읽었다고 가정하지 않습니다.
-
-## macOS의 Claude
-
-로컬 키트에는 `hostkit.py`와 `claude/adapter.py`가 들어 있습니다. CALF 훅 9개만 추가하며, 허용 규칙이나 Claude 앱의 UI 설정은 수정하지 않습니다. 이 어댑터에는 네이티브 코어 외에 Python 3.10 이상이 필요합니다. [어댑터 동작과 한계](claude/README_KR.md).
-
-네이티브 설치 위치, 별도의 키트 상태 폴더, Python 실행 파일, Claude가 사용하는 기존 settings JSON을 실제 절대 경로로 지정하세요. 설정 경로가 심볼릭 링크라면 실제 대상 파일을 선택해야 합니다. 도구는 링크를 교체하지 않습니다. 백업에는 개인 설정이 들어갈 수 있으므로 상태 폴더를 비공개로 보관하고 공유 저장소에 넣지 마세요.
-
-먼저 훅을 바꾸지 않고 네이티브 엔진을 설치합니다.
+이벤트 어댑터와 버전별 설치·업데이트·복구도 Rust 코어 명령으로 옮겼습니다. 이 연결에 Python은 필요하지 않습니다. 일반 Claude 채팅·Cowork·클라우드 세션은 별도 모드입니다.
 
 ```sh
-/path/to/calf install --root /path/to/native-calf --no-hooks
+/absolute/calf install --root /absolute/native-calf --no-hooks
+/absolute/calf host prepare --root /absolute/claude-kit --revision 1.8.15-hosts.1 --core /absolute/calf --config /absolute/native-calf/config.json
+/absolute/calf host inspect --settings /absolute/claude/settings.json
+/absolute/calf host apply --root /absolute/claude-kit --revision 1.8.15-hosts.1 --settings /absolute/claude/settings.json --expected-sha256 HASH_FROM_INSPECT
 ```
 
-출력에 나온 버전별 실행 파일과 `config.json` 경로를 다음 명령에 넣습니다.
+실제 위치의 절대 경로를 사용하고, `prepare`의 코어 경로는 현재 실행한 코어와 일치해야 합니다. 설치 후 계속 사용할 때는 `install`이 반환한 버전별 실행 파일로 후속 명령을 실행하세요. 새 연결 버전은 이전 버전 옆에 저장합니다. `apply`는 설정 원본을 그대로 백업하고 권한·MCP 항목·무관한 훅을 보존합니다. 관리 대상으로 등록되지 않은 기존 CALF 연결이 있으면 중단하므로, 그 위에 새 연결을 추가하지 말고 차이를 먼저 확인하세요. 연결을 업데이트한 뒤에는 새 호스트 세션을 시작해야 합니다.
 
-```sh
-python3 -B hostkit.py prepare --root /path/to/claude-calf --revision 1.8.14-hosts.1 --core /path/to/native-calf/versions/VERSION/calf --config /path/to/native-calf/config.json --python /physical/path/to/python3
-python3 -B hostkit.py inspect --settings /physical/path/to/claude/settings.json
-python3 -B hostkit.py apply --root /path/to/claude-calf --revision 1.8.14-hosts.1 --settings /physical/path/to/claude/settings.json --expected-sha256 INSPECT에_나온_해시
-```
+이전 연결을 선택하려면 현재 설정 해시를 확인한 뒤 해당 버전으로 `apply`하세요. 설치 중 중단됐다면 `calf host recover --root STORE`로 조회하고, 변경 전후 상태가 확인될 때만 `--acknowledge OPERATION_ID`를 추가합니다. 복구는 설정을 다시 쓰거나 작업을 실행하지 않습니다. 원인을 확인할 수 없는 변경은 UNKNOWN으로 남깁니다.
 
-settings JSON은 기존 파일이어야 합니다. 새 프로필이라면 Claude를 한 번 실행하거나, Claude가 사용하는 위치에 `{}` 파일을 먼저 만드세요. `prepare`는 선택한 키트 상태 폴더 안에 새 버전만 만듭니다. `apply`는 지정한 해시를 확인하고 원래 설정 바이트를 보존한 뒤 CALF 훅을 합칩니다. 다른 훅, 권한·MCP 설정은 JSON 안에 유지됩니다. Claude에서 훅을 검토하고 새 로컬 Code 세션을 시작하세요.
+## 실행과 근거
 
-이미 작동하는 CALF 훅 연결을 이 키트로 다시 설치할 필요는 없습니다. 키트가 관리하지 않는 훅 명령에 `CALF`가 들어 있으면 중복 연결을 추가하지 않고 중단합니다. 기존 연결은 그대로 유지할 수 있으며, 이관하려면 현재 연결을 먼저 명시적으로 검토해야 합니다.
+어댑터는 거절이나 등록 검사의 변경된 입력만 전달하고, 네이티브의 permissionDecision=allow를 호스트 승인으로 전달하지 않습니다. Claude의 승인 절차는 그대로 유지합니다. 완결된 PostToolBatch로 일치하는 일반 도구 호출을 종결할 수 있지만, 실제 실행됐다고 판단하지는 않습니다. 등록 검사는 실제 소유 프로세스의 종료 기록과 검사한 파일 버전이 일치해야 합니다. 시작하지 않은 검사는 명령을 실행하지 않고 취소할 수 있으며, 이미 시작했거나 불명확한 실행은 UNKNOWN으로 남깁니다.
 
-## 업데이트와 복구
+합성 프로토콜 시험과 실제 AI·앱 세션은 구분합니다. 릴리즈 검증 보고서에서 시험한 OS와 범위를 확인하세요. 과거 데스크톱 세션 근거는 보존하며, 새 바이너리를 빌드했다고 이미 열린 앱이 이를 읽었다고 주장하지 않습니다.
 
-새 키트 버전을 나란히 준비하고 현재 설정 해시를 확인한 뒤 적용하세요. 이전 버전을 다시 선택할 때도 같은 `apply` 명령에 보존된 revision을 지정합니다. 이후 추가한 다른 설정·훅은 유지합니다. 관리 중인 CALF 훅이 수정되거나 사라졌다면 덮어쓰지 않고 중단합니다.
-
-적용 중 종료됐다면 다음 명령으로 확인합니다.
-
-```sh
-python3 -B hostkit.py recover --root /path/to/claude-calf
-python3 -B hostkit.py recover --root /path/to/claude-calf --acknowledge 작업_ID
-```
-
-복구는 현재 설정을 보존된 적용 전·후 해시와 비교해, 일치가 확인된 경우에만 키트의 설치 기록을 정리합니다. 설정 쓰기, 작업 실행, 과거 기록 복원, 모델 변경은 하지 않습니다. 어느 쪽과도 일치하지 않으면 `UNKNOWN`으로 남깁니다. 실패 기록과 원본 백업도 보존합니다.
-
-## 실제 작업 확인
-
-설치한 코어에 작업 계약을 명시적으로 등록합니다.
-
-```sh
-/path/to/calf register /path/to/work /path/to/contract.json --config /path/to/native-calf/config.json
-```
-
-등록 결과에 나온 검사 명령을 해당 작업 폴더에서 호스트의 일반 승인 절차를 거쳐 실행하세요. Claude Auto 모드에서도 처음 실행하는 로컬 명령은 승인이 필요할 수 있습니다. 영구 저장할 의도가 없다면 ‘항상 허용’을 선택하지 마세요. 실제 검사 영수증과 파일 버전 일치가 완료 근거이며, 호스트의 설명이나 종료 코드만으로 완료를 판단하지 않습니다. 작업의 `history.html`과 `SATISFIED`, `VIOLATED`, `UNKNOWN` 판정을 확인하세요.
-
-위 호스트 동작은 1.8.7에서 확인한 macOS 실제 모델 세션의 검증 근거를 재사용합니다. 키트 설치 시험은 별도 설정에서 합치기, 업데이트·이전 버전 선택, 적용 중단 복구, 실제 로컬 훅 호출을 확인합니다. 추가 모델 호출이나 다른 OS의 호스트 지원을 주장하지 않습니다.
-
-## 로컬 확장팩
-
-별도 Local Pack Tools와 Repository inspect 프리뷰는 macOS·Windows·Linux에서 검증했습니다. 호스트 훅 경로나 네이티브 엔진은 변경하지 않습니다. [팩 릴리즈와 영·한 안내](https://github.com/VibePakcr/CALF-Extensions/releases/tag/packs-v0.1.0-preview.1)를 참고하세요. Claude 호스트 설치 검증은 macOS에 한정됩니다.
-
-## 이번 연결 보완
-
-실행 전에 거절된 일반 명령은 `PostToolUseFailure`가 오지 않아 대기 상태로 남을 수 있었습니다. 이제 `PostToolBatch`에서 같은 세션·턴·도구 ID·입력의 결과를 확인해 호출 종료를 기록합니다. 실행 성공으로 간주하거나 통과 CHECK를 만들지는 않습니다. 등록 검사는 실제 실행 영수증이 있어야 완료 근거가 됩니다.
-
-macOS Claude 앱 Code 세션에서 코어 1.8.10 호출, 등록 검사 1회·8개 테스트 통과, 파일 버전 일치와 Stop의 `SATISFIED`를 확인했습니다. 최초 Auto 차단 뒤 해당 검사만 ‘이번만 허용’으로 실행하고 Auto로 복원했습니다. 이 결과가 모든 명령의 무인 Auto 승인을 보장하지는 않습니다. 이번 릴리즈의 새 코어 1.8.11과 1.9.6은 별도 합성 환경에서 어댑터·설치 경로를 검사합니다. 실제 AI 세션은 다시 호출하지 않습니다.
+Repository 문맥·읽기 전용 Local MCP·CPU GCN/MCL 연결은 코어의 기본 기능입니다. 현재 선택 확장은 FFmpeg만 제공합니다. 이전 연결·기록·계약·설정·과거 실행 파일도 보존합니다.

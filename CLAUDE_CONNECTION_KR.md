@@ -1,41 +1,30 @@
-# Claude Code에서 CALF 사용하기
+# CALF 네이티브 호스트 연결
 
-[English](README.md) · [설치·업데이트·복구 안내](../README_KR.md)
+[English](CLAUDE_CONNECTION.md)
 
-Claude CLI와 Claude 앱의 **로컬 Code 모드**를 CALF에 연결합니다. 검증 대상은 하네스 1.8.7–1.8.14과 Workbench 1.9.10입니다. 일반 Claude 채팅, Cowork, 클라우드 세션은 별도 모드입니다. Claude 호스트 어댑터는 **macOS에서만 검증**했습니다. 코어·SDK의 Windows·Linux 검증과는 구분합니다.
+하네스 1.8.15와 워크벤치 1.9.11은 Codex·Antigravity·로컬 Claude Code에서 에이전트 하나의 작업을 감독합니다. 계정·모델·명령 승인·무관한 훅은 각 호스트가 계속 관리합니다. 추가 모델·데몬·로컬 LLM은 필요하지 않습니다.
 
-훅이 발생할 때 Python 3.10 이상과 표준 라이브러리, 로컬 파일, SHA-256으로 고정한 네이티브 실행 파일을 사용합니다. 모델·상주 서버·네트워크 리스너를 추가하지 않습니다. Claude의 계정·모델·승인 정책을 유지하며, 이 어댑터는 프롬프트나 대화 기록 원문을 저장하지 않습니다.
+Codex와 Antigravity는 `calf install`과 기존 네이티브 훅을 사용합니다. Codex는 명령이 바뀌면 공식 `/hooks`에서 다시 검토해야 합니다. 기존 T9 등 사용자가 관리하는 보호 연결은 유지하고, 새 경로로 몰래 교체하거나 중복 연결하지 마세요.
 
-## 이번에 달라진 점
+## Claude Code
 
-Claude가 `PreToolUse` 이후 명령을 거절해도 `PostToolUseFailure`는 오지 않을 수 있습니다. 이때 일반 호출이 계속 대기로 남는 문제를 보완했습니다. 아홉 번째 훅인 `PostToolBatch`에서 세션·턴·도구 ID·입력이 모두 같은 결과를 확인한 뒤 호출 종료를 기록합니다. 응답 원문 대신 해시를 보관하며, 거절된 호출의 종료 코드나 실행 성공을 추정하지 않습니다.
+이벤트 어댑터와 버전별 설치·업데이트·복구도 Rust 코어 명령으로 옮겼습니다. 이 연결에 Python은 필요하지 않습니다. 일반 Claude 채팅·Cowork·클라우드 세션은 별도 모드입니다.
 
-호출 묶음 전체를 검증한 뒤 결과를 기록합니다. 결과가 없거나 신원이 다르면 `UNKNOWN`을 유지합니다. 등록 검사는 묶음의 응답 문구로 완료할 수 없습니다. 실제 실행 종료 영수증과 검사한 파일의 해시가 필요합니다. 실행 프로세스가 이미 가져간 검사 티켓은 실제 종료 근거를 기다립니다. 아직 가져가지 않은 미실행 티켓만 코어를 통해 취소하며, 이 과정에서 검사 명령을 실행하지 않습니다. 이전 실패와 거절 기록도 남깁니다.
+```sh
+/absolute/calf install --root /absolute/native-calf --no-hooks
+/absolute/calf host prepare --root /absolute/claude-kit --revision 1.8.15-hosts.1 --core /absolute/calf --config /absolute/native-calf/config.json
+/absolute/calf host inspect --settings /absolute/claude/settings.json
+/absolute/calf host apply --root /absolute/claude-kit --revision 1.8.15-hosts.1 --settings /absolute/claude/settings.json --expected-sha256 HASH_FROM_INSPECT
+```
 
-## 설치와 업데이트
+실제 위치의 절대 경로를 사용하고, `prepare`의 코어 경로는 현재 실행한 코어와 일치해야 합니다. 설치 후 계속 사용할 때는 `install`이 반환한 버전별 실행 파일로 후속 명령을 실행하세요. 새 연결 버전은 이전 버전 옆에 저장합니다. `apply`는 설정 원본을 그대로 백업하고 권한·MCP 항목·무관한 훅을 보존합니다. 관리 대상으로 등록되지 않은 기존 CALF 연결이 있으면 중단하므로, 그 위에 새 연결을 추가하지 말고 차이를 먼저 확인하세요. 연결을 업데이트한 뒤에는 새 호스트 세션을 시작해야 합니다.
 
-하네스·워크벤치·SDK 압축 파일에는 `hosts/hostkit.py`, 어댑터와 영·한 안내가 들어 있습니다. Host Connections ZIP만 따로 받을 수도 있습니다. [호스트 설치 안내](../README_KR.md)에 따라 실제 절대 경로와 비공개 상태 폴더를 지정하세요. 이전 버전 옆에 새 리비전을 준비하고 현재 설정 해시를 확인한 뒤 그 리비전을 적용합니다. 설정이 바뀌었거나 경로가 심볼릭 링크이거나 기존 CALF 연결을 검토하지 않았다면 중단합니다.
+이전 연결을 선택하려면 현재 설정 해시를 확인한 뒤 해당 버전으로 `apply`하세요. 설치 중 중단됐다면 `calf host recover --root STORE`로 조회하고, 변경 전후 상태가 확인될 때만 `--acknowledge OPERATION_ID`를 추가합니다. 복구는 설정을 다시 쓰거나 작업을 실행하지 않습니다. 원인을 확인할 수 없는 변경은 UNKNOWN으로 남깁니다.
 
-새 설치는 `SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `PostToolUseFailure`, `PostToolBatch`, `Stop`, `StopFailure`, `SessionEnd`의 9개 훅을 병합합니다. `PostToolBatch`에는 도구 매처를 넣지 않습니다. 기존 권한·MCP 설정·다른 훅과 원본 설정 백업은 보존합니다. Claude에서 훅을 검토하고 새 로컬 Code 세션을 시작하세요. 이미 열린 세션이 새 훅을 읽었다고 가정하지 않습니다.
+## 실행과 근거
 
-선택한 실행 파일의 `register WORKSPACE CONTRACT.json --config CONFIG.json`으로 작업을 등록합니다. 반환된 검사 명령·변경 범위·검사 기준은 그대로 유지하세요. 어댑터가 명령을 고정된 실행 티켓으로 바꾸더라도 `permissionDecision: allow`는 전달하지 않습니다. 바뀐 명령도 Claude의 승인 절차를 거칩니다.
+어댑터는 거절이나 등록 검사의 변경된 입력만 전달하고, 네이티브의 permissionDecision=allow를 호스트 승인으로 전달하지 않습니다. Claude의 승인 절차는 그대로 유지합니다. 완결된 PostToolBatch로 일치하는 일반 도구 호출을 종결할 수 있지만, 실제 실행됐다고 판단하지는 않습니다. 등록 검사는 실제 소유 프로세스의 종료 기록과 검사한 파일 버전이 일치해야 합니다. 시작하지 않은 검사는 명령을 실행하지 않고 취소할 수 있으며, 이미 시작했거나 불명확한 실행은 UNKNOWN으로 남깁니다.
 
-## Auto가 검사를 차단했다면
+합성 프로토콜 시험과 실제 AI·앱 세션은 구분합니다. 릴리즈 검증 보고서에서 시험한 OS와 범위를 확인하세요. 과거 데스크톱 세션 근거는 보존하며, 새 바이너리를 빌드했다고 이미 열린 앱이 이를 읽었다고 주장하지 않습니다.
 
-정확히 등록된 명령인지 확인한 뒤, 허용하려는 검사만 Claude의 개별 승인 절차로 실행하세요. 실제 앱 검증에서는 잠시 Manual로 바꾸고 해당 검사에 **이번만 허용**을 선택한 후 Auto로 되돌렸습니다. ‘항상 허용’은 별도의 영구 설정입니다. CALF 사용에 필수인 설정이 아니며 어댑터가 추가하지도 않습니다.
-
-상태가 불명확하거나 검사가 진행 중일 때 바로 다시 실행하지 마세요. 기존 티켓과 증거를 먼저 확인합니다. 호스트의 완료 문구나 종료 코드 0만으로는 작업이 완료되지 않습니다. 검사 실패는 `VIOLATED`, 근거가 없거나 오래됐으면 `UNKNOWN`으로 남습니다.
-
-## 결과 확인
-
-Workbench의 **Task status**는 **Recorded completion**과 **Current observer**를 나눠 보여줍니다. 저장된 결과가 `SATISFIED`여도 조회 환경의 `LC_ALL`이 다르면 현재 판정은 `UNKNOWN`일 수 있습니다. **File version**과 **Execution context**를 함께 확인하세요. SDK의 `registered_status`도 같은 정보를 읽습니다. 통과시키려고 환경 변수를 변경하지 않습니다.
-
-실제 macOS 앱 Code 세션에서는 코어 1.8.10으로 보고서를 만들고 등록 검사 1회·8개 테스트 통과, 파일 해시 일치, Stop의 `SATISFIED`와 Auto 복원을 확인했습니다. 이번 배포는 그 실제 AI 세션 근거를 재사용합니다. 새 1.8.11·1.9.6 실행 파일은 분리된 환경에서 훅 경계와 설치·업데이트·복구를 검사합니다. 별도 CLI 거절 시험은 호출 묶음의 종료 연결만 확인했으며, 의도한 업무는 끝내지 못했으므로 성공한 작업으로 안내하지 않습니다.
-
-## 복구와 한계
-
-이전 실행 파일·전체 기록 위치·계약·비공개 키트 백업을 보관하세요. `recover`는 현재 설정이 저장된 이전·이후 해시와 맞을 때만 중단된 설치 기록을 정리합니다. 사용자 설정을 복원하거나 작업 이력을 덮어쓰지 않습니다. 관리 중인 훅을 직접 수정했다면 업데이트 전에 검토해야 합니다.
-
-현재 어댑터는 POSIX 파일 잠금을 사용합니다. Windows·Linux의 Claude 호스트 설치는 아직 검증하지 않았으며 설치 도구가 거부합니다. 훅은 Claude가 별도로 가진 파일 접근 권한을 제한하지 않습니다. Claude에는 일반 Interrupt 훅이 없어 모든 UI 중단 시점의 즉시 정리를 보장하지 않습니다. 대화 파싱·모델 재시도·영구 권한 추가·자동 채택은 하지 않습니다.
-
-공식 호스트 규약: [Claude Code 훅 안내](https://code.claude.com/docs/en/hooks).
+Repository 문맥·읽기 전용 Local MCP·CPU GCN/MCL 연결은 코어의 기본 기능입니다. 현재 선택 확장은 FFmpeg만 제공합니다. 이전 연결·기록·계약·설정·과거 실행 파일도 보존합니다.

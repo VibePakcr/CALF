@@ -1,5 +1,14 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+## Repository Intelligence is now built in
+
+Harness **1.8.15**, Workbench **1.9.11** and SDK **0.2.8** move Repository Intelligence into the shared Rust core: selective module history, exact original records, local Git captures, saved HEAD/index/working source versions and file-relationship candidates. [Guide and limits](REPOSITORY_BUILTIN.md).
+
+The native core also handles optional-pack installation/verification and Claude's lifecycle adapter. No Python or Node runtime is needed for those paths. Language SDKs remain thin clients; project tests, FFmpeg/ffprobe and existing owner-managed protection bridges retain their own dependencies. FFmpeg is the only current standalone extension. Earlier packages and records remain available.
+
+Reference text, a Git capture and a historical PASS cannot establish current completion. Current native checks and exact file versions still decide it. The Rust source scanner reports candidates, not full Python grammar or semantic proof.
+
+
 [한국어](README_KR.md) · [Downloads](DOWNLOADS.md) · [EN/KR manual](CALF_mannual.html)
 
 CALF is a lightweight local harness and workbench for supervising one AI agent's work, from execution through checking and recovery. It links requests, actual changes and check evidence, while keeping failed and unfinished attempts in the record. Codex and Antigravity use native hooks; Claude CLI and the desktop app's local Code mode use a macOS adapter. Each host keeps its own account, model and approval policy.
@@ -16,7 +25,7 @@ Start with three choices: where the agent may work, your existing AI account, an
 
 ## Latest release · 2026-11-11
 
-**Harness 1.8.14 · Workbench 1.9.10 · SDK 0.2.7**
+**Harness 1.8.15 · Workbench 1.9.11 · SDK 0.2.8**
 
 Current maintenance builds for all three operating systems. Keep your existing records home, contracts, settings and older task runtimes. See [VERIFICATION.json](VERIFICATION.json) for the checks and their scope.
 
@@ -86,4 +95,4 @@ Actual Workbench 1.9.5 capture of the Claude check: saved success is separate fr
 
 Build extensions through the provided **SDK, Adapter and MCP** interfaces. SDK source follows its separate integration license; the core implementation remains private. These restrictions concern the proprietary runtime, not your own project code or supported configuration and extension interfaces. Bundled third-party licenses and notices remain in force.
 
-[Separate Repository extensions](https://github.com/VibePakcr/CALF-Extensions) · [Release notes](RELEASE-NOTES.md)
+[Optional FFmpeg extension](https://github.com/VibePakcr/CALF-Extensions) · [Release notes](RELEASE-NOTES.md)

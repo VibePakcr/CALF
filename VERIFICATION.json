@@ -1,75 +1,228 @@
 {
   "status": "PASS",
   "versions": {
-    "harness": "1.8.14",
-    "workbench": "1.9.10",
-    "sdk": "0.2.7"
+    "harness": "1.8.15",
+    "workbench": "1.9.11",
+    "sdk": "0.2.8",
+    "extension": "0.2.0-preview.1"
   },
-  "localProfileClassification": "INTEGRATION_VERIFIED",
-  "overallMcpProgramClassification": "FOUNDATION_READY",
+  "profileClassification": "INTEGRATION_VERIFIED",
+  "privateCoreSourceIncluded": false,
+  "nativeControlCompute": "CPU",
+  "modelCalls": 0,
+  "unitTests": {
+    "passed": 110,
+    "ignoredHelper": 1
+  },
+  "existingUiContractTests": 37,
   "platforms": {
     "macos": {
-      "harness": {
-        "coreSha256": "718fa0a02d98f33fcf1a6ae95a2db97643aafe340ea6f47ddcbc10d449c2ce60",
-        "mcpReadGroups": 11,
-        "mcpHostGroups": 15,
-        "attentionGroups": 8
-      },
-      "workbench": {
-        "coreSha256": "540d6d53741900d58ea7e1739177bde35154e4314865470d885a9099b541a05e",
-        "mcpReadGroups": 11,
-        "mcpHostGroups": 15,
-        "attentionGroups": 8
+      "cores": {
+        "harness": {
+          "version": "1.8.15",
+          "sha256": "c6b7f8a5b78a05ebacaa84eec821fdf3172524a45dc590ef3e253717bbbb33d1",
+          "moduleSourceBytesReadWarm": 0,
+          "moduleIsolation": true,
+          "exactRecordHash": "b50a3c6c9a0b96c8fd8f40c5fce25f0e22f48dedc410050b92ab0fe777ff8830",
+          "gateSequence": [
+            "WAIT",
+            "READY",
+            "WAIT"
+          ],
+          "nativeCompletion": "SATISFIED then UNKNOWN after edit",
+          "readOnlyMcp": true,
+          "rawGitCaptureAndVersions": true,
+          "gitIndexAndConfigPreserved": true,
+          "gitFilterNotInvoked": true,
+          "offlineExportExcludesSourceAndOrigin": true,
+          "nativeClaudeLifecycleAndSettingsMerge": true,
+          "freshAiSession": false
+        },
+        "workbench": {
+          "version": "1.9.11",
+          "sha256": "d2f2c8189f84ba2c22c55a5416342c88703a11a3a1903eccf27f78479a32719f",
+          "moduleSourceBytesReadWarm": 0,
+          "moduleIsolation": true,
+          "exactRecordHash": "1756a38cdc9a99861ee69f4db8a1b21694c25d9f1db6f9217aea66d1074663f0",
+          "gateSequence": [
+            "WAIT",
+            "READY",
+            "WAIT"
+          ],
+          "nativeCompletion": "SATISFIED then UNKNOWN after edit",
+          "readOnlyMcp": true,
+          "rawGitCaptureAndVersions": true,
+          "gitIndexAndConfigPreserved": true,
+          "gitFilterNotInvoked": true,
+          "offlineExportExcludesSourceAndOrigin": true,
+          "nativeClaudeLifecycleAndSettingsMerge": true,
+          "freshAiSession": false
+        }
       },
       "sdkTests": 17,
-      "uiTests": 37,
-      "uiSha256": "d8391318356fbf6027e8de3bc101d542836568e2e24794fdc57a431a01385562"
+      "sdkGroups": [
+        "released 1.8.15/1.9.11 share Unicode preferences and task home",
+        "SDK provider: real failing test, repair, independent check and review at attempt 2",
+        "external file edit invalidates prior success",
+        "native Python v2 discovery roundtrip and actual profiled fail/repair/check",
+        "submit/shared list/pause/resume/cancel/inspect/diff/reuse; no provider launched",
+        "Local MCP CJK list/read/EOF shutdown; hidden files omitted; stale attachment refused before queue write"
+      ],
+      "extension": {
+        "version": "0.2.0-preview.1",
+        "sha256": "2984a80521b4052e07c58fc53872cffb4b05c04808300067702a8e4dc4fc4de9",
+        "nativeQualificationRuns": 2,
+        "sceneValidationAndRecovery": true,
+        "qualifiedLockUpdateAndRollback": true,
+        "modelCalls": 0,
+        "differentVersionUpgradeClaimed": false
+      }
     },
     "windows": {
-      "harness": {
-        "coreSha256": "173d014cd4971f251c1cfb71fdd73ee527ae38e3a3bcf1b739a355a18751c695",
-        "mcpReadGroups": 11,
-        "mcpHostGroups": 15,
-        "attentionGroups": 8
-      },
-      "workbench": {
-        "coreSha256": "3647465d0082341c07b3f2b1ac56683a7cb3be04b6b27df8270b9bfbb84acc9a",
-        "mcpReadGroups": 11,
-        "mcpHostGroups": 15,
-        "attentionGroups": 8
+      "cores": {
+        "harness": {
+          "version": "1.8.15",
+          "sha256": "cf5bf460622a12881ee06e26e75b2d0ff729225d879617ba8cde7d74cef1f6a0",
+          "moduleSourceBytesReadWarm": 0,
+          "moduleIsolation": true,
+          "exactRecordHash": "1782fd9e02b26a0158a9cd3ae43f8abf3eeeb83acce05308dda667ccc2522ad5",
+          "gateSequence": [
+            "WAIT",
+            "READY",
+            "WAIT"
+          ],
+          "nativeCompletion": "SATISFIED then UNKNOWN after edit",
+          "readOnlyMcp": true,
+          "rawGitCaptureAndVersions": true,
+          "gitIndexAndConfigPreserved": true,
+          "gitFilterNotInvoked": true,
+          "offlineExportExcludesSourceAndOrigin": true,
+          "nativeClaudeLifecycleAndSettingsMerge": true,
+          "freshAiSession": false
+        },
+        "workbench": {
+          "version": "1.9.11",
+          "sha256": "f823b82d5d3a733a8c420f2a63329cebdbf067f41f90b81b4432b4321f1f66e4",
+          "moduleSourceBytesReadWarm": 0,
+          "moduleIsolation": true,
+          "exactRecordHash": "21528939726dab805486ce0316eb85dfe5bba357c971910ba63c17c6972fe2b9",
+          "gateSequence": [
+            "WAIT",
+            "READY",
+            "WAIT"
+          ],
+          "nativeCompletion": "SATISFIED then UNKNOWN after edit",
+          "readOnlyMcp": true,
+          "rawGitCaptureAndVersions": true,
+          "gitIndexAndConfigPreserved": true,
+          "gitFilterNotInvoked": true,
+          "offlineExportExcludesSourceAndOrigin": true,
+          "nativeClaudeLifecycleAndSettingsMerge": true,
+          "freshAiSession": false
+        }
       },
       "sdkTests": 17,
-      "uiTests": 37,
-      "uiSha256": "150776530630bbfb7a00083f6b6cd04657ebec44509e09170cb498e7e5cdcf98"
+      "sdkGroups": [
+        "released 1.8.15/1.9.11 share Unicode preferences and task home",
+        "SDK provider: real failing test, repair, independent check and review at attempt 2",
+        "external file edit invalidates prior success",
+        "native Python v2 discovery roundtrip and actual profiled fail/repair/check",
+        "submit/shared list/pause/resume/cancel/inspect/diff/reuse; no provider launched",
+        "Local MCP CJK list/read/EOF shutdown; hidden files omitted; stale attachment refused before queue write"
+      ],
+      "extension": {
+        "version": "0.2.0-preview.1",
+        "sha256": "35c00ce4b4e26f88bcb15d3b10052e8490ecd4f9f9355154c8a1bb498db68ac3",
+        "nativeQualificationRuns": 2,
+        "sceneValidationAndRecovery": true,
+        "qualifiedLockUpdateAndRollback": true,
+        "modelCalls": 0,
+        "differentVersionUpgradeClaimed": false
+      }
     },
     "linux": {
-      "harness": {
-        "coreSha256": "1414e917597af5fb4971c7cfbce279b72768deb38962406aad3ff08c877fb1c3",
-        "mcpReadGroups": 11,
-        "mcpHostGroups": 15,
-        "attentionGroups": 8
-      },
-      "workbench": {
-        "coreSha256": "405c94fdeab61d848cac0fbb21206f8de33dee10e84775585f046aae04492d38",
-        "mcpReadGroups": 11,
-        "mcpHostGroups": 15,
-        "attentionGroups": 8
+      "cores": {
+        "harness": {
+          "version": "1.8.15",
+          "sha256": "5e2360dd3b0e5001b2c1ba9b8d538bb8015b08de2259661e06390bac5c58cd5e",
+          "moduleSourceBytesReadWarm": 0,
+          "moduleIsolation": true,
+          "exactRecordHash": "71c6cb0bae1efdf8adad748bee8d3ff996c2eca7e0bb2b3a59cff2dfddbc8e9a",
+          "gateSequence": [
+            "WAIT",
+            "READY",
+            "WAIT"
+          ],
+          "nativeCompletion": "SATISFIED then UNKNOWN after edit",
+          "readOnlyMcp": true,
+          "rawGitCaptureAndVersions": true,
+          "gitIndexAndConfigPreserved": true,
+          "gitFilterNotInvoked": true,
+          "offlineExportExcludesSourceAndOrigin": true,
+          "nativeClaudeLifecycleAndSettingsMerge": true,
+          "freshAiSession": false
+        },
+        "workbench": {
+          "version": "1.9.11",
+          "sha256": "f9b61c5f03840e57d863f4122d1d21620f974376018c8d5fc0c3b8214c08eda7",
+          "moduleSourceBytesReadWarm": 0,
+          "moduleIsolation": true,
+          "exactRecordHash": "f750b3d3a2bfdf5ff1b39bb2e221e29d4d929a88da12905cdf41c356cc91956e",
+          "gateSequence": [
+            "WAIT",
+            "READY",
+            "WAIT"
+          ],
+          "nativeCompletion": "SATISFIED then UNKNOWN after edit",
+          "readOnlyMcp": true,
+          "rawGitCaptureAndVersions": true,
+          "gitIndexAndConfigPreserved": true,
+          "gitFilterNotInvoked": true,
+          "offlineExportExcludesSourceAndOrigin": true,
+          "nativeClaudeLifecycleAndSettingsMerge": true,
+          "freshAiSession": false
+        }
       },
       "sdkTests": 17,
-      "uiTests": 37,
-      "uiSha256": "ee08b4d8e54d3733b47d55b8022d2f1ab8643ecec0417c3a1581a506aaa0feb9"
+      "sdkGroups": [
+        "released 1.8.15/1.9.11 share Unicode preferences and task home",
+        "SDK provider: real failing test, repair, independent check and review at attempt 2",
+        "external file edit invalidates prior success",
+        "native Python v2 discovery roundtrip and actual profiled fail/repair/check",
+        "submit/shared list/pause/resume/cancel/inspect/diff/reuse; no provider launched",
+        "Local MCP CJK list/read/EOF shutdown; hidden files omitted; stale attachment refused before queue write"
+      ],
+      "extension": {
+        "version": "0.2.0-preview.1",
+        "sha256": "1149497cb2fb0a81c79a9b554713cc7ac608f9cceff1392fa973283ae2331c26",
+        "nativeQualificationRuns": 2,
+        "sceneValidationAndRecovery": true,
+        "qualifiedLockUpdateAndRollback": true,
+        "modelCalls": 0,
+        "differentVersionUpgradeClaimed": false
+      }
     }
   },
-  "modelCalls": 0,
-  "newUnitSuiteClaimed": false,
-  "unitEvidence": "Existing underpatch native unit qualification was retained; release binaries received fresh MCP, recovery, SDK, status and Attention integration checks.",
-  "guiEvidence": "UI contract tests and bridge self-checks are fresh. Earlier actual screens and assisted Windows/Linux observations remain historical. No new remote GUI interaction is claimed.",
   "limits": [
-    "Ad-hoc macOS integrity signature; no Apple notarization. No Windows publisher signature.",
-    "Claude host adapter installation remains macOS-qualified; Windows/Linux qualification covers the core, SDK and MCP local profile.",
-    "The bounded local MCP profile is qualified; general external effects and canonical GCI/external ETS integration are not claimed."
+    "Native synthetic execution and protocol qualification; no fresh paid AI/app-session benchmark is claimed.",
+    "Related-file and call relationships are lexical candidates, not full Python grammar or semantic proof.",
+    "Capture coverage is bounded and exclusions/partial results remain visible. Captures and historical PASS do not establish current completion.",
+    "Existing owner-managed protection bridges and project-language test runtimes retain their dependencies.",
+    "Ad-hoc macOS integrity signing, not Apple notarization; no Windows publisher signature is claimed."
   ],
-  "privateCoreSourceIncluded": false,
-  "packagingRevision": 2,
-  "uiVersionLabel": "1.9.10"
+  "finalInputBoundaryRegressionTests": 13,
+  "existingFeaturesRegression": [
+    "Reuse",
+    "Diff",
+    "Related",
+    "Local Sources",
+    "read-only MCP"
+  ],
+  "actualMacUi": {
+    "version": "1.9.11",
+    "moduleReadSearchExactRecord": true,
+    "localGitCapture": true,
+    "capturedCjkHeadSource": true,
+    "completionLabel": "NOT_EVALUATED"
+  }
 }
