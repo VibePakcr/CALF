@@ -60,8 +60,8 @@
   ],
   "packageUpdate": {
     "packagingRevision": 1,
-    "stage": "LOCAL_QUALIFIED",
-    "publicRoundTrip": "PENDING",
+    "stage": "PUBLIC_PACKAGE_ROUND_TRIP_VERIFIED",
+    "publicRoundTrip": "PASS",
     "executablesChanged": false,
     "updaterLimitsWeakened": false,
     "localPlatforms": [
@@ -77,6 +77,56 @@
       "CALF-Harness-1.8.17-linux-x86_64.tar.gz": "16db0a4b2aeea03d1ca6955f21e457eb32671ce14340a8b692bc61baa4c57c64",
       "CALF-Workbench-1.9.13-linux-x86_64.tar.gz": "06d1bf94eca61aac1269ea0de0829e6b42212f3a70f1b840b5d7fed1c62b435d"
     },
-    "originalArchivesRetained": true
+    "originalArchivesRetained": true,
+    "freshPublicPlatforms": {
+      "mac": {
+        "oldVersion": "1.9.12",
+        "newVersion": "1.9.13",
+        "checks": 13,
+        "bothTaskOutcomes": "SATISFIED",
+        "protectedFiles": 60,
+        "archiveSha256": "f062a09b1a1a3d2eacedcec412fa84d09aa6504b393744227e5e9aefc5ac96c8",
+        "harness": {
+          "oldVersion": "1.8.16",
+          "newVersion": "1.8.17",
+          "archiveSha256": "cbff9ad70b2df73d2a03c6342bc5547c832b20a76ee7a022da97f23023bed954",
+          "prepared": true,
+          "rolledBack": true
+        },
+        "modelCalls": 0
+      },
+      "windows": {
+        "oldVersion": "1.9.12",
+        "newVersion": "1.9.13",
+        "checks": 12,
+        "bothTaskOutcomes": "SATISFIED",
+        "protectedFiles": 60,
+        "archiveSha256": "ad83e75b791cc06675bf15d5d54443433a4fb6f631042a3c0e4ac23824d332fb",
+        "harness": {
+          "oldVersion": "1.8.16",
+          "newVersion": "1.8.17",
+          "archiveSha256": "46c650b92dcefcad08a75fe8cb56c36338705567a1f5a063de9cb1b6a66bb0b4",
+          "prepared": true,
+          "rolledBack": true
+        },
+        "modelCalls": 0
+      },
+      "linux": {
+        "oldVersion": "1.9.12",
+        "newVersion": "1.9.13",
+        "checks": 12,
+        "bothTaskOutcomes": "SATISFIED",
+        "protectedFiles": 60,
+        "archiveSha256": "06d1bf94eca61aac1269ea0de0829e6b42212f3a70f1b840b5d7fed1c62b435d",
+        "harness": {
+          "oldVersion": "1.8.16",
+          "newVersion": "1.8.17",
+          "archiveSha256": "16db0a4b2aeea03d1ca6955f21e457eb32671ce14340a8b692bc61baa4c57c64",
+          "prepared": true,
+          "rolledBack": true
+        },
+        "modelCalls": 0
+      }
+    }
   }
 }
