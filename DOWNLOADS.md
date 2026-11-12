@@ -1,3 +1,5 @@
+> Workbench 1.9.14 · monitor and independent sidebar scrolling. [English](MONITOR_UI_FIX.md) · [한국어](MONITOR_UI_FIX_KR.md).
+
 > Packaging revision 1 · 12 November 2026: download the refreshed archives for in-app updates. Executables are unchanged. [Details](PACKAGE_UPDATE_FIX.md) · [한국어](PACKAGE_UPDATE_FIX_KR.md).
 
 # CALF downloads / 다운로드
@@ -9,7 +11,7 @@
 | Edition | macOS ARM64 | Windows x64 | Linux x64 |
 |---|---|---|---|
 | Harness 1.8.17 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.8.17/CALF-Harness-1.8.17-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.8.17/CALF-Harness-1.8.17-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.8.17/CALF-Harness-1.8.17-linux-x86_64.tar.gz) |
-| Workbench 1.9.13 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.9.13/CALF-Workbench-1.9.13-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.9.13/CALF-Workbench-1.9.13-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.9.13/CALF-Workbench-1.9.13-linux-x86_64.tar.gz) |
+| Workbench 1.9.13 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.9.14/CALF-Workbench-1.9.14-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.9.14/CALF-Workbench-1.9.14-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.9.14/CALF-Workbench-1.9.14-linux-x86_64.tar.gz) |
 
 [SDK 0.2.10](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.10/CALF-SDK-0.2.10.zip) · [Host Connections](https://github.com/VibePakcr/CALF/blob/main/HOST_CONNECTIONS.md) · [SHA-256](SHA256SUMS) · [Verification](VERIFICATION.json)
 

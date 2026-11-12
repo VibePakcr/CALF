@@ -2,7 +2,7 @@
 
 <!-- calf:current-release:start -->
 harness: 1.8.17
-workbench: 1.9.13
+workbench: 1.9.14
 sdk: 0.2.10
 Release state: published
 <!-- calf:current-release:end -->
@@ -34,3 +34,8 @@ macOS ARM64는 macOS 14 이상이 필요하며, 최종 앱의 배포 서명과 �
 이전 배포본·작업 런타임·기록·계약·설정은 보존합니다. 새 배포본을 올려도 다른 사용자의 앱과 호스트 훅이 자동으로 바뀌지는 않습니다.
 
 Task Flow는 왼쪽에서 오른쪽으로 실행 순서를 보여주고, **Work / Checks / Repair / retry** 레인으로 단계 종류를 구분합니다. 레인 이름은 가로로 스크롤해도 보입니다. 위아래 위치는 성공·실패나 중요도를 뜻하지 않으며 노드 간격은 소요 시간에 비례하지 않습니다.
+
+
+## Workbench 1.9.14: 모니터·좌측 패널 수정
+
+민트색 사용량·숫자는 유지하고 남은 구간을 가는 트랙으로 정리했습니다. CPU의 전체 코어 수와 사용량 상위 3개를 구분하며, 좌측 패널은 맨 아래 메뉴와 버전 표시까지 따로 스크롤할 수 있습니다. 맥·윈도우·Debian에서 화면을 확인했습니다. 하네스 1.8.17·SDK 0.2.10과 기존 기록·계약·설정, 이전 배포본은 유지합니다. [자세히](MONITOR_UI_FIX_KR.md) · [English](MONITOR_UI_FIX.md).

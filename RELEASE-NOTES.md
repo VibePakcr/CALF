@@ -1,3 +1,15 @@
+
+## Workbench 1.9.14: monitor and sidebar update
+
+Mint usage bars and values now sit on thin unused tracks. CPU shows its detected total and three busiest cores. The left panel scrolls independently to its bottom menus and version. Qualified on macOS, Windows and Debian; earlier packages and records are retained. Harness 1.8.17 and SDK 0.2.10 are unchanged. [English details](MONITOR_UI_FIX.md) · [한국어](MONITOR_UI_FIX_KR.md).
+
+
+## Workbench 1.9.14: 모니터·좌측 패널 수정
+
+민트색 사용량·숫자는 유지하고 남은 구간을 가는 트랙으로 정리했습니다. CPU의 전체 코어 수와 사용량 상위 3개를 구분하며, 좌측 패널은 맨 아래 메뉴와 버전 표시까지 따로 스크롤할 수 있습니다. 맥·윈도우·Debian에서 화면을 확인했습니다. 하네스 1.8.17·SDK 0.2.10과 기존 기록·계약·설정, 이전 배포본은 유지합니다. [자세히](MONITOR_UI_FIX_KR.md) · [English](MONITOR_UI_FIX.md).
+
+---
+
 ## Packaging correction · 12 November 2026
 
 In-app update archives now carry the required manifest and internal checksums, without extra Mac metadata. Executables, signatures and completion rules are unchanged. [English details](PACKAGE_UPDATE_FIX.md) · [한국어 안내](PACKAGE_UPDATE_FIX_KR.md).

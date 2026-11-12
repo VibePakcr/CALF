@@ -1,5 +1,9 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+## Workbench 1.9.14: monitor and sidebar update
+
+Mint usage bars and values now sit on thin unused tracks. CPU shows its detected total and three busiest cores. The left panel scrolls independently to its bottom menus and version. Qualified on macOS, Windows and Debian; earlier packages and records are retained. Harness 1.8.17 and SDK 0.2.10 are unchanged. [English details](MONITOR_UI_FIX.md) · [한국어](MONITOR_UI_FIX_KR.md).
+
 ## In-app update package correction
 
 The 1.8.17 / 1.9.13 archives were refreshed on 12 November 2026 with the manifest and internal checksums required by the updater. Executables and the Mac notarization ticket are unchanged. Download the corrected archive for in-app updates. Earlier versions and the superseded archives are retained. [English details](PACKAGE_UPDATE_FIX.md) · [한국어 안내](PACKAGE_UPDATE_FIX_KR.md).
