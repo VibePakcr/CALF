@@ -1,80 +1,61 @@
 {
   "status": "PASS",
   "versions": {
-    "harness": "1.8.16",
-    "workbench": "1.9.12",
-    "sdk": "0.2.9"
+    "harness": "1.8.17",
+    "workbench": "1.9.13",
+    "sdk": "0.2.10"
   },
-  "scope": "Recorded-file inventory, sealed managed text and reversible maintenance; existing completion gates retained",
-  "modelCalls": 0,
   "controlCompute": "CPU",
+  "modelCalls": 0,
   "privateCoreSourceIncluded": false,
   "coreTests": {
-    "macos": 138,
-    "ignoredSubprocessHelper": 1,
-    "windowsArtifactTests": 26,
-    "linuxArtifactTests": 28
+    "newNativePerPlatform": 10,
+    "previousMacFullRegressionPassed": 147,
+    "previousIgnoredSubprocessHelper": 1
   },
-  "uiTests": 46,
-  "sdkTestsPerPlatform": 18,
+  "uiTests": {
+    "perPlatform": 53,
+    "method": "Node DOM contract tests",
+    "laneAndCacheContract": "PASS",
+    "unchangedTabSwitchesAllocateNoNodes": 1000
+  },
+  "sdkTestsPerPlatform": 20,
   "platforms": {
     "macos": {
-      "coreSha256": {
-        "harness": "7869bf365fe58c354877dacb589331f25dac75e52ada089a486016162a43619b",
-        "workbench": "3dc52f6476af4e8d7de0cea8cee1c9b23687ebb7d75e7f8b8fcd3906ea1ec927"
-      },
-      "sdkChecks": [
-        "released 1.8.16/1.9.12 share Unicode preferences and task home",
-        "SDK provider: real failing test, repair, independent check and review at attempt 2",
-        "managed text: creation receipt, active-reference protection, explicit release, quarantine and restore",
-        "external file edit invalidates prior success",
-        "native Python v2 discovery roundtrip and actual profiled fail/repair/check",
-        "submit/shared list/pause/resume/cancel/inspect/diff/reuse; no provider launched",
-        "Local MCP CJK list/read/EOF shutdown; hidden files omitted; stale attachment refused before queue write"
-      ]
+      "harnessSha256": "34a0b3726010f6802c9dd321e1a34922604ebc1427bfaecded6319e1280acd19",
+      "workbenchCoreSha256": "a2bf7ba7ba2291a53e1a4adc8e26e8f26624e80dee7735d5e92ffea90705176a",
+      "uiSha256": "d81ff86ca5af5b7dafc87f4c1f977f57af967032fa2e5d0831b937a120fd947c",
+      "syntheticExecution": "SATISFIED"
     },
     "windows": {
-      "coreSha256": {
-        "harness": "5c85ee2866b962b81c2fdca0d154643d0fae6deb66f9f64831d0d2ac4580ffbc",
-        "workbench": "beed3aa37bdd73066eed8507d34d02b41789368722e80da796bd22110f172520"
-      },
-      "sdkChecks": [
-        "released 1.8.16/1.9.12 share Unicode preferences and task home",
-        "SDK provider: real failing test, repair, independent check and review at attempt 2",
-        "managed text: creation receipt, active-reference protection, explicit release, quarantine and restore",
-        "external file edit invalidates prior success",
-        "native Python v2 discovery roundtrip and actual profiled fail/repair/check",
-        "submit/shared list/pause/resume/cancel/inspect/diff/reuse; no provider launched",
-        "Local MCP CJK list/read/EOF shutdown; hidden files omitted; stale attachment refused before queue write"
-      ]
+      "harnessSha256": "55ac0deba4dfeefa02eed65591a7b89f6277840c2e870b2e4be88d219b5cf279",
+      "workbenchCoreSha256": "f08a6699594cd6f18dd681275effadeafdb746988eaa2f7a0615d40d84166d2b",
+      "uiSha256": "52b0fe55f38888376de2b66b7fdb88a4a03891be3e11499cef074f300965c148",
+      "syntheticExecution": "SATISFIED"
     },
     "linux": {
-      "coreSha256": {
-        "harness": "bbd431896f41f968a92017078e2b9216519a6bfa3f95a2aa196416ca61601e2a",
-        "workbench": "e7285db0ace22a97c545569fe534afb3cccbdf104186e07c943fd422709fc92d"
-      },
-      "sdkChecks": [
-        "released 1.8.16/1.9.12 share Unicode preferences and task home",
-        "SDK provider: real failing test, repair, independent check and review at attempt 2",
-        "managed text: creation receipt, active-reference protection, explicit release, quarantine and restore",
-        "external file edit invalidates prior success",
-        "native Python v2 discovery roundtrip and actual profiled fail/repair/check",
-        "submit/shared list/pause/resume/cancel/inspect/diff/reuse; no provider launched",
-        "Local MCP CJK list/read/EOF shutdown; hidden files omitted; stale attachment refused before queue write"
-      ]
+      "harnessSha256": "4b527acb79be64415d38c305ebbca21d3885a4b2d6d1c40bef9d9deb4745c198",
+      "workbenchCoreSha256": "27753bb52ac42522202ae2a47b6eb3c9dff87aa8bef1495ddaab8db854b6357d",
+      "uiSha256": "b0082328703ffc1322d6ac8594e864815b838b77a70e89cd4b233ac496839aae",
+      "syntheticExecution": "SATISFIED"
     }
   },
-  "windowObservations": {
-    "macos": "Final Light/Dark toggle and index preview/quarantine/restore observed through native controls",
-    "windows": "Index preview/quarantine/restore observed in native window; final appearance revision separately qualified by UI contracts",
-    "linux": "Index preview/quarantine/restore observed in native window; final appearance revision separately qualified by UI contracts"
+  "macWorkbench": {
+    "developerIdSigned": true,
+    "notarized": true,
+    "stapled": true,
+    "gatekeeperAccepted": true
+  },
+  "publisherSigning": {
+    "macHarness": "AD_HOC_INTEGRITY",
+    "windows": "NOT_AVAILABLE"
   },
   "limits": [
-    "Recorded paths only; unknown existing files are not scanned or classified.",
-    "Managed disposable text only: 16 KiB per file, 128 files per journal, retention at most 30 days.",
-    "Quarantine retains bytes and reclaims zero disk space; no permanent deletion or automatic cleanup.",
-    "Metadata/identity checks handle ordinary concurrency, not hostile filesystem isolation or universal power-loss recovery.",
-    "Synthetic execution and independent checks are not fresh paid AI-session benchmarks.",
-    "macOS ad-hoc integrity signing, not Apple notarization; Windows publisher signing is not claimed."
+    "Synthetic provider execution and independent native checks are not fresh paid AI-service tests.",
+    "Portable task summaries establish neither origin authenticity nor current task completion.",
+    "No automatic upload or new execution authority is added.",
+    "Live VibePackr import is not verified by this release.",
+    "Linux qualification covers Debian 13 x86_64 with GTK 3 and WebKitGTK 4.1.",
+    "Publishing a release does not automatically replace another user installation."
   ]
 }

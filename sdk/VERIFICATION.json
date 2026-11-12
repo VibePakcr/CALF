@@ -1,99 +1,61 @@
 {
-  "schema": "calf.release-verification.v1",
   "status": "PASS",
   "versions": {
-    "harness": "1.8.13",
-    "workbench": "1.9.9",
-    "sdk": "0.2.6"
+    "harness": "1.8.17",
+    "workbench": "1.9.13",
+    "sdk": "0.2.10"
   },
+  "controlCompute": "CPU",
+  "modelCalls": 0,
+  "privateCoreSourceIncluded": false,
+  "coreTests": {
+    "newNativePerPlatform": 10,
+    "previousMacFullRegressionPassed": 147,
+    "previousIgnoredSubprocessHelper": 1
+  },
+  "uiTests": {
+    "perPlatform": 53,
+    "method": "Node DOM contract tests",
+    "laneAndCacheContract": "PASS",
+    "unchangedTabSwitchesAllocateNoNodes": 1000
+  },
+  "sdkTestsPerPlatform": 20,
   "platforms": {
     "macos": {
-      "harness": {
-        "coreSha256": "5a41e2deffdafaed7f3b181621fa55310504fbf2d2a57fe6a1d8a70b74e1d21b",
-        "attentionGroups": 8
-      },
-      "workbench": {
-        "coreSha256": "d3b7ab898d30749d61341856202b7645d02da7d416ac269ae6c7c658c2641e96",
-        "attentionGroups": 8
-      },
-      "uiTests": 37,
-      "sdkTests": 17,
-      "desktopSelfCheck": "PASS",
-      "registeredChecksAndRepair": "PASS"
+      "harnessSha256": "34a0b3726010f6802c9dd321e1a34922604ebc1427bfaecded6319e1280acd19",
+      "workbenchCoreSha256": "a2bf7ba7ba2291a53e1a4adc8e26e8f26624e80dee7735d5e92ffea90705176a",
+      "uiSha256": "d81ff86ca5af5b7dafc87f4c1f977f57af967032fa2e5d0831b937a120fd947c",
+      "syntheticExecution": "SATISFIED"
     },
     "windows": {
-      "harness": {
-        "coreSha256": "87005a8adccada5485857a4e0258bf166fc39649fb7fe462f7314d60eaa115b6",
-        "attentionGroups": 8
-      },
-      "workbench": {
-        "coreSha256": "fb82c4bac4537a0acbc863ace1de85511c1cb5a36e99c7bfe4200a04fad96a04",
-        "attentionGroups": 8
-      },
-      "uiTests": 37,
-      "sdkTests": 17,
-      "desktopSelfCheck": "PASS",
-      "registeredChecksAndRepair": "PASS"
+      "harnessSha256": "55ac0deba4dfeefa02eed65591a7b89f6277840c2e870b2e4be88d219b5cf279",
+      "workbenchCoreSha256": "f08a6699594cd6f18dd681275effadeafdb746988eaa2f7a0615d40d84166d2b",
+      "uiSha256": "52b0fe55f38888376de2b66b7fdb88a4a03891be3e11499cef074f300965c148",
+      "syntheticExecution": "SATISFIED"
     },
     "linux": {
-      "harness": {
-        "coreSha256": "656376138de2a5e7c3d42ac9ea278647b2df393872451e33d106afab3355bd05",
-        "attentionGroups": 8
-      },
-      "workbench": {
-        "coreSha256": "9299b39bb4c2c60d8539a2b12262dd65379d32ed6afe6bf4f34c409119f741db",
-        "attentionGroups": 8
-      },
-      "uiTests": 37,
-      "sdkTests": 17,
-      "desktopSelfCheck": "PASS",
-      "registeredChecksAndRepair": "PASS"
+      "harnessSha256": "4b527acb79be64415d38c305ebbca21d3885a4b2d6d1c40bef9d9deb4745c198",
+      "workbenchCoreSha256": "27753bb52ac42522202ae2a47b6eb3c9dff87aa8bef1495ddaab8db854b6357d",
+      "uiSha256": "b0082328703ffc1322d6ac8594e864815b838b77a70e89cd4b233ac496839aae",
+      "syntheticExecution": "SATISFIED"
     }
   },
-  "overallMcpProgramClassification": "FOUNDATION_READY",
-  "localProfileClassification": "INTEGRATION_VERIFIED",
-  "mcpEvidenceReusedFrom": {
-    "harness": "1.8.12",
-    "workbench": "1.9.8",
-    "source": "MCP_TOOL_EVALUATION_VERIFICATION.json",
-    "scope": "Previously qualified local stdio profile; unchanged tool modules. Not presented as a new full MCP program verification."
+  "macWorkbench": {
+    "developerIdSigned": true,
+    "notarized": true,
+    "stapled": true,
+    "gatekeeperAccepted": true
   },
-  "freshNativeUnitTests": {
-    "macos": 92,
-    "windows": 83,
-    "linux": 91
-  },
-  "windowsUpdateRegression": {
-    "originalFailureRetained": true,
-    "cause": "ZIP enclosed_name normalized portable separators before raw-name validation",
-    "fix": "Validate original ZIP member names while retaining traversal/link/backslash rejection",
-    "freshArchivePreparationRequired": true
-  },
-  "uiEvidenceReused": {
-    "sourceVersion": "1.9.8 development",
-    "macosActualShortcutsEscAndNarrowOverlay": "PASS",
-    "windowsActualRendering": "PASS",
-    "windowsSearchMonitorsDay": "OWNER_CONFIRMED",
-    "linuxActualRendering": "PASS",
-    "remoteWindowsAndLinuxInputIndependentlyVerified": false,
-    "nativeThemeTests": {
-      "macos": 4,
-      "windows": 3,
-      "linux": 4
-    }
-  },
-  "realAiEvidenceReused": {
-    "host": "Codex",
-    "registeredTests": 4,
-    "independentTests": 4,
-    "separateReview": true,
-    "newModelCallsThisRelease": 0
+  "publisherSigning": {
+    "macHarness": "AD_HOC_INTEGRITY",
+    "windows": "NOT_AVAILABLE"
   },
   "limits": [
-    "Linux remote GUI button/key delivery remains unqualified. Windows assisted actions were reported by the owner.",
-    "Claude host installation remains macOS-only. Core and SDK checks on Windows/Linux are separate.",
-    "macOS uses ad-hoc integrity signatures without Apple notarization. Windows has no publisher signature.",
-    "No new memory/soak benchmark, product daemon, model, agent pool or dependency.",
-    "Existing completion and approval rules remain authoritative."
+    "Synthetic provider execution and independent native checks are not fresh paid AI-service tests.",
+    "Portable task summaries establish neither origin authenticity nor current task completion.",
+    "No automatic upload or new execution authority is added.",
+    "Live VibePackr import is not verified by this release.",
+    "Linux qualification covers Debian 13 x86_64 with GTK 3 and WebKitGTK 4.1.",
+    "Publishing a release does not automatically replace another user installation."
   ]
 }

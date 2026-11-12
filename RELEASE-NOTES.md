@@ -1,73 +1,27 @@
-# Recorded files and recoverable maintenance · 2026-11-12
+# CALF update — Harness 1.8.17 · Workbench 1.9.13 · SDK 0.2.10
 
-Harness 1.8.16 · Workbench 1.9.12 · SDK 0.2.9.
+- Task Flow names the Work, Checks and Repair / retry lanes; labels remain visible while scrolling.
+- A five-step first-task guide keeps check discovery separate from test execution.
+- Up to eight personal request outlines are stored locally and applied to an empty helper form. New work requires fresh checks.
+- Evidence-aware next steps distinguish an unavailable observation from a missing or changed runtime.
+- Task summaries require preview and explicit local export. No automatic upload, permission transfer or current completion certificate is added.
+- Build metadata and English/Korean release documents share version facts. Published release, installed version and current verdict remain distinct.
+- macOS Workbench uses Developer ID signing and Apple notarization. Windows publisher signing is not claimed. Linux qualification covers Debian 13 x86_64.
 
-- **Artifacts** explains recorded paths, task references, current file identity, retention reasons and bounded exact-content matches. Unknown files are not scanned or classified.
-- New core-created disposable text can record creation, references and retention in the existing journal. Completed source writes and registered candidate observations also retain their original evidence links; they do not become disposable.
-- Verified rebuildable indexes and eligible managed text use explicit preview, confirmation and reversible quarantine. Interrupted operations remain inspectable. Restore never overwrites a newer file. No permanent deletion or automatic cleanup is added; retained bytes still use disk space.
-- The appearance control now reads **Light | Dark** and marks the current choice. Existing saved themes and the side panels are unchanged.
-- The shared Rust core and thin Python/Node SDK bindings run on demand. No model, GPU control calculation, daemon or runtime dependency is added. Completion gates are unchanged.
-- Earlier versions, original records, contracts, settings, task runtimes, test inputs, candidates and recovery evidence are retained.
+The proprietary core stays private. CALF remains free to use, independent of VibePackr, local-first and centred on one agent. Connected AI services retain their own accounts, fees and approval rules. Existing versions, records, contracts and settings are preserved.
 
-[English guide](ARTIFACT_LIFECYCLE.md) · [한국어 안내](ARTIFACT_LIFECYCLE_KR.md). Exact platform evidence and binary hashes are in `VERIFICATION.json`. Synthetic runtime tests are separate from fresh paid AI-session tests. macOS integrity signing is ad hoc, not Apple notarization; Windows publisher signing is not claimed.
-
-하네스 1.8.16 · 워크벤치 1.9.12 · SDK 0.2.9입니다. Artifacts에서 기록된 파일의 작업별 참조·현재 내용·보존 이유를 확인합니다. CALF가 새로 만드는 작은 임시 텍스트에는 생성 근거와 보존 기한을 기록하며, 조건을 충족한 파일만 확인 후 격리·복원합니다. 기존 소스·테스트·후보·복구 근거는 계속 보호합니다. 영구 삭제·상주 탐색·자동 정리는 추가하지 않으며, 격리는 공간 확보를 뜻하지 않습니다. 기존 기록·계약·설정과 완료 기준을 유지합니다.
-
----
-
-# Repository Intelligence in the Rust core · 2026-11-11
-
-Harness 1.8.15 · Workbench 1.9.11 · SDK 0.2.8 · optional native FFmpeg 0.2.0-preview.1.
-
-- Repository context, module history, exact-record queries and the existing CPU lane/gate now run in one native core.
-- Local Git captures retain raw HEAD/index/working versions, source hashes and lexical relationship candidates. No Git status, worktree conversions, hooks or fetch are used by this reader.
-- Workbench adds a lazy Repository context panel and saved-source selection. Reading records is separate from sending context to an AI or establishing completion.
-- Native pack management and Claude lifecycle/setup/update/recovery no longer require Python. SDKs remain thin language bindings. Existing owner-managed T9 protection bridges and project-language test runtimes remain intact.
-- FFmpeg is the only current optional extension. Navigator, hosted browsing, video management and motion experiments are excluded from current packages; their historical source and releases are retained.
-- Existing original journals, hash chains, contracts, settings, old task runtimes and approved media are preserved. Completion standards are unchanged.
-
-하네스 1.8.15 · 워크벤치 1.9.11 · SDK 0.2.8 · 선택 확장 FFmpeg 0.2.0-preview.1입니다. Repository 문맥·모듈 기록·원문 조회·CPU 레인과 검사를 공통 Rust 코어로 통합했습니다. 로컬 Git의 원본 버전과 관계 후보를 저장하고 워크벤치에서 필요한 기록·파일만 조회할 수 있습니다. 팩 관리와 Claude 연결도 Rust로 처리하며, 현재 별도 확장은 FFmpeg만 남깁니다. 기존 기록·계약·설정·과거 실행 파일·승인 영상은 보존하고 완료 기준은 유지합니다.
-
-See VERIFICATION.json for exact binary identities and tested platforms. Native synthetic tests are not new paid AI/app-session benchmarks. Rust lexical candidates do not replace a full Python parser or application tests. The optional media profile remains bounded; it does not verify aesthetic quality. macOS packages use ad-hoc integrity signing, not Apple notarization; Windows publisher signing is not claimed.
+[English guide](CURRENT_RELEASE.md) · [한국어 안내](CURRENT_RELEASE_KR.md)
 
 ---
 
-# Maintenance distribution · 2026-11-11
+# CALF 업데이트 — 하네스 1.8.17 · 워크벤치 1.9.13 · SDK 0.2.10
 
-Harness 1.8.14 · Workbench 1.9.10 · SDK 0.2.7. Existing records, contracts, settings and older task runtimes are retained. No new setup step is required.
+- Task Flow에 Work·Checks·Repair / retry 레인 이름을 표시합니다. 가로로 스크롤해도 레인 이름은 보입니다.
+- 다섯 단계 첫 작업 안내에서 검사 항목을 찾는 것과 실제 검사를 구분합니다.
+- 로컬 요청 양식은 최대 8개까지 저장하고 비어 있는 도움말 입력란에 적용합니다. 새 작업은 새로 검수합니다.
+- 근거에 따른 다음 행동을 안내하며, 일시적인 조회 실패를 런타임 손상으로 단정하지 않습니다.
+- 작업 요약은 미리보기와 명시적 확인 후 로컬에 저장합니다. 자동 업로드·실행 권한 이전·현재 완료 인증은 제공하지 않습니다.
+- 빌드와 영·한 문서의 버전 정보를 맞춥니다. 공개 배포·현재 설치·현재 검수 결과는 각각 구분합니다.
+- Mac 워크벤치에 Developer ID 서명과 Apple 공증을 적용합니다. Windows 게시자 서명은 제공하지 않으며 Linux 검증 기준은 Debian 13 x86_64입니다.
 
-하네스 1.8.14 · Workbench 1.9.10 · SDK 0.2.7 유지보수 배포본입니다. 기존 기록·계약·설정과 과거 작업의 실행 파일을 유지합니다.
-
----
-
-# CALF Harness 1.8.13 · Workbench 1.9.9 · SDK 0.2.6
-
-## Decisions and results, with less clutter
-
-- Read-only Attention gathers stopped work and candidates awaiting adoption. The Harness and Workbench share the native query; opening it does not execute or approve work.
-- Result summaries connect changed files, check receipts, saved reviews and the current verdict. A historical pass stays distinct from current verification.
-- Shape request helps describe the outcome, preserved inputs and checks while retaining the user's draft. It does not submit the task or weaken its contract.
-- Day/Night changes only the central workspace. Appearance preferences are stored separately from contracts and other settings.
-- Find task supports CJK text, Cmd/Ctrl+K, arrow keys, Enter and Esc using only the loaded recent queue. It does not scan all history or call a model.
-- Narrow windows fold the system/worker monitors. Hidden monitors stop sampling; Task Flow and execution continue.
-- Fixed Windows update preparation to validate original ZIP member names before platform separator normalization. Traversal, links and backslash member names remain blocked.
-- SDK documents, examples and the three-host compatibility list match this release. No new product library, daemon, model or agent pool is added.
-
-Fresh release binaries and archives are checked separately from the earlier live Codex task and GUI observations. [VERIFICATION.json](VERIFICATION.json) distinguishes that evidence, owner-assisted Windows actions and the remaining Linux remote-input limitation. This is not a new AI-service or memory benchmark.
-
-## 한국어
-
-- Attention에서 중단된 작업과 채택 대기 후보를 모아 볼 수 있습니다. 하네스와 Workbench가 같은 읽기 전용 조회를 사용하며, 조회만으로 실행하거나 승인하지 않습니다.
-- 결과 요약에서 변경 파일·검사 영수증·저장된 검토·현재 판정을 함께 확인합니다. 과거 통과와 현재 검증은 구분합니다.
-- 요청 도움 기능으로 원하는 결과·보존 대상·확인 방법을 정리합니다. 기존 초안을 유지하며 작업을 제출하거나 계약 기준을 낮추지 않습니다.
-- 중앙 작업 영역만 Day/Night로 전환합니다. 테마는 계약과 다른 설정에서 분리해 저장합니다.
-- CJK 작업 검색과 Cmd/Ctrl+K·방향키·Enter·Esc를 지원합니다. 이미 읽은 최근 목록만 검색하고 전체 기록 조회나 AI 호출을 추가하지 않습니다.
-- 좁은 창에서는 시스템·워커 모니터를 접습니다. 접힌 동안 자원 조회를 멈추고, Task Flow와 작업 실행은 계속 유지합니다.
-- Windows 업데이트에서 ZIP의 원래 경로 이름을 검사하도록 고쳤습니다. 정상 경로의 구분자 변환으로 생기던 거부를 해결하며, 경로 이탈·링크·백슬래시 이름은 계속 차단합니다.
-- SDK 문서·예제와 세 호스트의 호환 목록을 맞췄습니다. 새 라이브러리·상주 서비스·모델·에이전트 풀을 추가하지 않았습니다.
-
-새 배포 실행 파일·압축 파일의 검증과 이전 실제 Codex 작업·화면 검증은 [VERIFICATION.json](VERIFICATION.json)에 구분합니다. Windows의 사용자 직접 조작과 Linux 원격 입력의 미확인 범위도 명시합니다. 새 AI 실서비스 시험이나 메모리 시험은 하지 않았습니다.
-
-기존 기록 위치·계약·설정·과거 버전을 보관해 업데이트하세요. 조회 기능은 실행 권한을 부여하지 않으며 기존 완료 기준을 그대로 적용합니다.
-
-[Downloads / 다운로드](DOWNLOADS.md) · [English guide](WORKBENCH_CLARITY.md) · [한국어 안내](WORKBENCH_CLARITY_KR.md)
+비공개 코어는 공개하지 않습니다. CALF는 VibePackr 없이도 무료로 사용할 수 있으며 로컬·경량·싱글 에이전트 중심을 유지합니다. 연결한 AI 서비스의 계정·요금·승인 규칙은 그대로 적용됩니다. 이전 버전과 기존 기록·계약·설정은 보존합니다.

@@ -1,5 +1,13 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+## Personal workflows and labelled task lanes
+
+Harness **1.8.17** · Workbench **1.9.13** · SDK **0.2.10**. Task Flow now names its **Work**, **Checks** and **Repair / retry** lanes. The labels stay visible while you scroll. A five-step first-task guide, local saved request outlines and evidence-aware next steps help you continue without changing the completion rules.
+
+A task summary can be previewed and explicitly saved locally for an integration you configure. Source contents, paths and configuration are excluded; request text is opt-in. A recorded success is separate from current completion. Nothing is uploaded automatically. [English guide](CURRENT_RELEASE.md) · [한국어 안내](CURRENT_RELEASE_KR.md).
+
+The Mac Workbench is signed with Developer ID and notarized by Apple. Windows publisher signing is not claimed; Linux qualification covers Debian 13 x86_64 with GTK 3 and WebKitGTK 4.1. Existing releases, records, contracts and settings are retained.
+
 ## Recorded files and recoverable maintenance
 
 Harness 1.8.16 · Workbench 1.9.12 · SDK 0.2.9. Inspect recorded files, task references and retention reasons in **Artifacts**. New small disposable text can carry creation receipts and retention from the start. Eligible indexes and unreferenced, expired managed text require a preview and explicit confirmation before quarantine; restore never overwrites a newer file. Existing source, tests, candidate files, records, contracts and settings remain protected. There is no background scan or permanent deletion. Quarantine retains the bytes and does not free disk space.
@@ -34,7 +42,7 @@ Start with three choices: where the agent may work, your existing AI account, an
 
 ## Latest release · 2026-11-12
 
-**Harness 1.8.16 · Workbench 1.9.12 · SDK 0.2.9**
+**Harness 1.8.17 · Workbench 1.9.13 · SDK 0.2.10**
 
 Published packages are available for macOS ARM64, Windows x64 and Linux x64. Publishing does not automatically update an existing app or host hooks; apply the update using the installation guide. Keep your existing records home, contracts, settings and older task runtimes. See [VERIFICATION.json](VERIFICATION.json) for the checks and their scope.
 

@@ -1,0 +1,36 @@
+# CALF — personal workflows
+
+<!-- calf:current-release:start -->
+harness: 1.8.17
+workbench: 1.9.13
+sdk: 0.2.10
+Release state: published
+<!-- calf:current-release:end -->
+
+This guide covers Harness 1.8.17, Workbench 1.9.13 and SDK 0.2.10. Verify the published release and your installed version separately. Use the [latest public release](https://github.com/VibePakcr/CALF/releases/latest) for the current distributed version.
+
+CALF remains free to use on its own. Connected AI services keep their own accounts, fees and approval rules. VibePackr is optional; CALF does not require an organisation account or upload your history in the background.
+
+## From first request to result
+
+The five-step guide helps you choose a folder, connect your AI, describe a useful result, find the folder’s checks and review a result. Check discovery does not run or pass tests. Existing task contracts and completion rules still apply.
+
+**Shape your request → My saved outlines** stores up to eight named outlines on this device. Load them only when needed. An outline fills an empty helper form, leaving your request draft alone. Review it before adding it to the request. Saving and removal append to the existing personal journal; earlier records and working-style preferences remain intact. A new task always needs its own checks.
+
+When a task stops, the next-step hint points to its evidence, AI connection, retained runtime or failed checks. It does not retry work, grant permission or mark it complete.
+
+## Export a task summary
+
+Open a task’s **Result summary → Export task summary**. Preview the exact JSON, then choose **Confirm local export**. Nothing is uploaded. Source contents, file paths, configuration and original evidence files are excluded. Request text is excluded unless you select it; review it for private information before sharing.
+
+The summary contains a checkpoint, contract digest, up to 32 record references and the recorded outcome. Its current verdict is always `NOT_EVALUATED`. The digest detects an inconsistent document; it is not a signature, proof of origin or a current completion certificate. Changes after preview require another preview. Export never overwrites an existing file.
+
+The SDK exposes `release_info`, `request_templates`, `handoff` and `validate_handoff`. See `examples/task_handoff.py` for a local preview. A receiving VibePackr integration must validate this input and apply its own work contract, authorisation, original-evidence requirements and current checks. No VibePackr endpoint is assumed, and no live enterprise import is claimed by this release.
+
+## Installation checks
+
+macOS ARM64 requires macOS 14 or newer. Distribution signing and notarisation must be verified on the final bundle. Windows x64 requires WebView2; publisher signing is a separate release check. Linux x64 requires GTK 3 and WebKitGTK 4.1; Debian 13 is the currently qualified distribution. These requirements do not guarantee every OS configuration.
+
+Existing releases, task runtimes, records, contracts and settings are retained. Publishing a release does not automatically update another user’s app or host hooks.
+
+Task Flow runs from left to right in observed execution order. The **Work / Checks / Repair / retry** lanes identify phase categories, and their labels stay visible during horizontal scrolling. Vertical position does not indicate success or importance; node spacing is not proportional to duration.

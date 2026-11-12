@@ -43,13 +43,13 @@ def main():
         home = args.output / "records"
         h = CalfClient(args.harness, home)
         w = CalfClient(args.workbench, home)
-        assert h.version()["version"] == "1.8.16"
-        assert w.version()["version"] == "1.9.12"
+        assert h.version()["version"] == "1.8.17"
+        assert w.version()["version"] == "1.9.13"
         report["binaries"] = {"harness": h.binary_sha256(), "workbench": w.binary_sha256()}
         assert h.tasks()["jobs"] == []
         prefs = h.preferences("한국어 中文 日本語 · keep small")
         assert w.preferences() == prefs
-        report["checks"].append("released 1.8.16/1.9.12 share Unicode preferences and task home")
+        report["checks"].append("released 1.8.17/1.9.13 share Unicode preferences and task home")
 
         ws = args.output / "workspace"
         ws.mkdir()

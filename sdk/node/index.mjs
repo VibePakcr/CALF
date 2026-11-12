@@ -10,6 +10,16 @@ export class CalfClient {
     if(!['register','adapters','submit','list','inspect','step','cancel','retry','recheck','adopt'].includes(action)||['op','home','action'].some(k=>Object.hasOwn(fields,k)))return Promise.reject(Error('Invalid work request'));
     return this._request({...fields,op:'work',home:this.home,action});
   }
+  releaseInfo(){return this._request({op:'release_info',home:this.home});}
+  requestTemplates(action='list',fields={}){
+    if(!['list','save','remove'].includes(action)||Object.keys(fields).some(k=>!['entry','id','digest','confirm'].includes(k)))return Promise.reject(Error('Invalid template request'));
+    return this._request({...fields,op:'request_templates',home:this.home,action});
+  }
+  handoff(task,{includeRequest=false,digest=null,confirm=false}={}){
+    if(typeof task!=='string'||!task||typeof includeRequest!=='boolean'||typeof confirm!=='boolean'||confirm&&!digest)return Promise.reject(Error('Preview the selected task before confirming export'));
+    return this._request({op:'handoff',home:this.home,action:confirm?'export':'preview',task,includeRequest,digest,confirm});
+  }
+  validateHandoff(document){return this._request({op:'handoff',home:this.home,action:'validate',document});}
   artifacts(workspace,{operation='inventory',state,...fields}={}) {
     const valid=p=>typeof p==='string'&&isAbsolute(p)&&!p.includes('\0')&&!p.split(/[\\/]/).includes('..');
     if(!valid(workspace)||(state!==undefined&&!valid(state))||!['inventory','plan','prepare','quarantine','restore','retained','create','pin','release'].includes(operation)||['op','home','request','source','workspace','state','operation'].some(k=>Object.hasOwn(fields,k)))return Promise.reject(Error('Invalid artifact operation or context override'));

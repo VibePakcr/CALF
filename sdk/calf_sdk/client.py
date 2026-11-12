@@ -163,6 +163,34 @@ class CalfClient:
     def tasks(self) -> dict[str, Any]:
         return self.call("list")
 
+    def release_info(self) -> dict[str, Any]:
+        """Build metadata only. Does not certify publication or update an installation."""
+        return self.call("release_info")
+
+    def request_templates(self, *, action: str = "list", **fields: Any) -> dict[str, Any]:
+        """Explicit local draft data; never a task submission or approval."""
+        if action not in {"list", "save", "remove"} or set(fields) - {"entry", "id", "digest", "confirm"}:
+            raise ValueError("Invalid template request")
+        return self.call("request_templates", action=action, **fields)
+
+    def handoff(self, task: str, *, include_request: bool = False,
+                digest: str | None = None, confirm: bool = False) -> dict[str, Any]:
+        """Preview by default; explicit confirmation exports a local summary only.
+
+        Request text may contain private information. A recorded success is not
+        current completion. Requires Harness 1.8.17 or Workbench 1.9.13.
+        """
+        if not isinstance(task, str) or not task or type(include_request) is not bool or type(confirm) is not bool:
+            raise ValueError("A task and explicit boolean options are required")
+        if confirm and not digest:
+            raise ValueError("Preview the summary before confirming export")
+        return self.call("handoff", action="export" if confirm else "preview", task=task,
+                         includeRequest=include_request, digest=digest, confirm=confirm)
+
+    def validate_handoff(self, document: dict[str, Any]) -> dict[str, Any]:
+        """Native format/digest validation. Does not establish source authenticity."""
+        return self.call("handoff", action="validate", document=document)
+
     def artifacts(self, workspace: str | os.PathLike, *, operation: str = "inventory",
                   state: str | os.PathLike | None = None, **fields: Any) -> dict[str, Any]:
         """On-demand native inventory and reversible maintenance.

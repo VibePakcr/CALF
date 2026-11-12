@@ -1,17 +1,19 @@
-# CALF SDK 0.2.9 — Developer Preview
+# CALF SDK 0.2.10 — Developer Preview
 
-SDK 0.2.9 adds `artifacts()` for recorded-file inventory and managed text. Harness 1.8.16 / Workbench 1.9.12 can record creation, references and retention for new small disposable text, then quarantine or restore an eligible file with explicit confirmation. Existing source, tests, candidates and recovery evidence remain protected. See [the guide](docs/ARTIFACT_LIFECYCLE.md), [Python example](examples/managed_artifact.py) and [Node read-only example](examples/artifacts.mjs). No background scanner or automatic deletion is added.
+This release adds explicit local request outlines and task-summary preview/export through the native core. A handoff digest checks consistency; it grants no execution authority or current completion. Nothing is uploaded automatically. [English guide](docs/CURRENT_RELEASE.md) · [한국어 안내](docs/CURRENT_RELEASE_KR.md) · [Python preview](examples/task_handoff.py) · [Node preview](examples/task_handoff.mjs). These APIs require Harness 1.8.17 or Workbench 1.9.13. Download the matching release before using these APIs.
+
+SDK 0.2.9 introduced `artifacts()` for recorded-file inventory and managed text. Harness 1.8.16 / Workbench 1.9.12 can record creation, references and retention for new small disposable text, then quarantine or restore an eligible file with explicit confirmation. Existing source, tests, candidates and recovery evidence remain protected. See [the guide](docs/ARTIFACT_LIFECYCLE.md), [Python example](examples/managed_artifact.py) and [Node read-only example](examples/artifacts.mjs). No background scanner or automatic deletion is added.
 
 Universal Work v1 adds frozen contracts, checks tied to the exact output files, runtime adapters, dependency-free Node/Python clients and optional-control Local MCP. [Protocol and runnable examples](docs/WORK_PROTOCOL.md). Workbench 1.9.2 shows the same work under **Runtime Work**. Existing code-job API calls remain compatible.
 
 
 [한국어](README_KR.md) · [Protocol](docs/PROTOCOL.md) · [Extension license](LICENSE-SDK.txt)
 
-A small integration layer for **CALF Harness 1.8.7–1.8.16** and the native core included in **CALF Workbench 1.9.2–1.9.12**. Python 3.10+ and the standard library are sufficient. The SDK adds no background service, model runtime, database or network dependency. CALF's execution engine remains proprietary and is not included.
+A small integration layer for **CALF Harness 1.8.7–1.8.17** and the native core included in **CALF Workbench 1.9.2–1.9.13**. Python 3.10+ and the standard library are sufficient. The SDK adds no background service, model runtime, database or network dependency. CALF's execution engine remains proprietary and is not included.
 
 Qualification details for the native cores and SDK are in `VERIFICATION.json` in the archive. Runtime tests use real Python/Node processes and a loopback HTTP service; no new live AI-service benchmark is claimed.
 
-[Download SDK 0.2.9](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.9). One portable source archive includes this SDK, English/Korean guides, both protocol documents, examples and the test runner. Install a matching CALF native release separately; the SDK archive contains no core runtime.
+[Download SDK 0.2.10](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.10). One portable source archive includes this SDK, English/Korean guides, both protocol documents, examples and the test runner. Install a matching CALF native release separately; the SDK archive contains no core runtime.
 
 ## Start with existing records
 
