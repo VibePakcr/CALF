@@ -1,3 +1,5 @@
+> Packaging revision 1 · 12 November 2026: download the refreshed archives for in-app updates. Executables are unchanged. [Details](PACKAGE_UPDATE_FIX.md) · [한국어](PACKAGE_UPDATE_FIX_KR.md).
+
 # CALF downloads / 다운로드
 
 **Harness 1.8.17 · Workbench 1.9.13 · SDK 0.2.10**

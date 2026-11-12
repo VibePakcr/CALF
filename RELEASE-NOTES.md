@@ -1,3 +1,9 @@
+## Packaging correction · 12 November 2026
+
+In-app update archives now carry the required manifest and internal checksums, without extra Mac metadata. Executables, signatures and completion rules are unchanged. [English details](PACKAGE_UPDATE_FIX.md) · [한국어 안내](PACKAGE_UPDATE_FIX_KR.md).
+
+---
+
 # CALF update — Harness 1.8.17 · Workbench 1.9.13 · SDK 0.2.10
 
 - Task Flow names the Work, Checks and Repair / retry lanes; labels remain visible while scrolling.

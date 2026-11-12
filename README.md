@@ -1,5 +1,9 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+## In-app update package correction
+
+The 1.8.17 / 1.9.13 archives were refreshed on 12 November 2026 with the manifest and internal checksums required by the updater. Executables and the Mac notarization ticket are unchanged. Download the corrected archive for in-app updates. Earlier versions and the superseded archives are retained. [English details](PACKAGE_UPDATE_FIX.md) · [한국어 안내](PACKAGE_UPDATE_FIX_KR.md).
+
 ## Personal workflows and labelled task lanes
 
 Harness **1.8.17** · Workbench **1.9.13** · SDK **0.2.10**. Task Flow now names its **Work**, **Checks** and **Repair / retry** lanes. The labels stay visible while you scroll. A five-step first-task guide, local saved request outlines and evidence-aware next steps help you continue without changing the completion rules.
