@@ -50,7 +50,7 @@ CALF는 AI 에이전트 하나에게 맡긴 작업을 실행부터 검사·복�
 
 ## 최신 배포 · 2026-11-12
 
-**Harness 1.8.17 · Workbench 1.9.13 · SDK 0.2.10**
+**Harness 1.8.17 · Workbench 1.9.14 · SDK 0.2.10**
 
 macOS ARM64·Windows x64·Linux x64용 패키지가 공개됐습니다. 배포 공개가 기존 설치 앱이나 호스트 훅을 자동으로 바꾸지는 않으므로 설치·업데이트 안내에 따라 적용하세요. 기존 기록 위치·계약·설정과 과거 작업의 실행 파일을 보관하세요. 실제 검사와 적용 범위는 [VERIFICATION.json](VERIFICATION.json)에서 확인할 수 있습니다.
 

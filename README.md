@@ -50,7 +50,7 @@ Start with three choices: where the agent may work, your existing AI account, an
 
 ## Latest release · 2026-11-12
 
-**Harness 1.8.17 · Workbench 1.9.13 · SDK 0.2.10**
+**Harness 1.8.17 · Workbench 1.9.14 · SDK 0.2.10**
 
 Published packages are available for macOS ARM64, Windows x64 and Linux x64. Publishing does not automatically update an existing app or host hooks; apply the update using the installation guide. Keep your existing records home, contracts, settings and older task runtimes. See [VERIFICATION.json](VERIFICATION.json) for the checks and their scope.
 
