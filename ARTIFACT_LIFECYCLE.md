@@ -112,10 +112,18 @@ Restore never overwrites a newer file. An index also requires unchanged source r
 
 ## Verification
 
+### Current release · 12 November 2026
+
+Harness 1.8.16, Workbench 1.9.12 and SDK 0.2.9 have been published for macOS ARM64, Windows x64 and Linux x64. The release packages were downloaded and their SHA-256 hashes checked after publication.
+
+The macOS core suite passed 138 tests. The artifact tests passed natively on Windows (26) and Linux (28); two Unix-only cases are excluded on Windows. The UI suite passed 46 tests and the SDK passed 18 tests on each operating system. Index preview, quarantine and restore were observed in native windows on all three systems. Final Light | Dark toggle clicks were observed on macOS; the final appearance contracts passed on all three systems.
+
+Publishing makes packages available; it does not update another user's installed app or hooks automatically. Follow the installation/update guide and keep the existing records home, contracts, settings and older task runtimes. Native synthetic execution and independent checks are separate from a new paid AI-session benchmark. See the release's `VERIFICATION.json` for exact binary hashes and the scope of each check.
+
 See the release's `VERIFICATION.json` for exact binary hashes, platform results and observed window interactions. Native synthetic execution verifies the runtime and independent checks; it is not a new paid AI benchmark. Earlier index-only evidence is retained below as historical evidence, not as proof of later managed-text functionality.
 
-### Earlier index-only development verification
+### Pre-release index-only tests — historical record
 
 The macOS core suite passed 130 tests, including 20 lifecycle tests. The lifecycle tests also ran natively on Windows (18; two Unix-only cases are excluded) and Linux (20). On all three systems, real CLI and Workbench API calls quarantined/restored synthetic indexes, blocked conflicting restores, and preserved protected file contents and modification times. The six new UI behavior tests passed on each system; the complete 43-test UI suite passed on macOS and Linux. All three native UI shells built successfully.
 
-The macOS Workbench window was also operated through preview, confirmation, quarantine and restore. Windows/Linux validation covers native execution, the API bridge and UI behavior tests; interactive window clicks on those systems were not observed. No model call or global-settings change was required. Published packages, installed host hooks and the user's existing app remain unchanged.
+At that earlier stage, preview, confirmation, quarantine and restore had been observed in the macOS Workbench window. Windows/Linux evidence then covered native execution, the API bridge and UI behavior tests. This paragraph describes pre-release tests. The current-release section above covers the later publication and Windows/Linux window verification.
