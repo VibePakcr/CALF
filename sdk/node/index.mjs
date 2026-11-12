@@ -8,7 +8,17 @@ export class CalfClient {
   }
   work(action,fields={}) {
     if(!['register','adapters','submit','list','inspect','step','cancel','retry','recheck','adopt'].includes(action)||['op','home','action'].some(k=>Object.hasOwn(fields,k)))return Promise.reject(Error('Invalid work request'));
-    const input=JSON.stringify({...fields,op:'work',home:this.home,action});
+    return this._request({...fields,op:'work',home:this.home,action});
+  }
+  artifacts(workspace,{operation='inventory',state,...fields}={}) {
+    const valid=p=>typeof p==='string'&&isAbsolute(p)&&!p.includes('\0')&&!p.split(/[\\/]/).includes('..');
+    if(!valid(workspace)||(state!==undefined&&!valid(state))||!['inventory','plan','prepare','quarantine','restore','retained','create','pin','release'].includes(operation)||['op','home','request','source','workspace','state','operation'].some(k=>Object.hasOwn(fields,k)))return Promise.reject(Error('Invalid artifact operation or context override'));
+    const request={...fields,operation,workspace,source:state===undefined?'native':'journal',...(state===undefined?{}:{state})};
+    return this._request({op:'artifacts',home:this.home,request});
+  }
+  _request(payload) {
+    const fields=payload,action=payload.op==='work'?payload.action:null;
+    const input=JSON.stringify(payload);
     if(Buffer.byteLength(input)>65536)return Promise.reject(Error('Request exceeds 64 KiB'));
     return new Promise((resolve,reject)=>{
       const child=spawn(this.executable,['api'],{shell:false,windowsHide:true,stdio:['pipe','pipe','pipe']});

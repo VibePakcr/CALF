@@ -1,5 +1,12 @@
 # CALF — Controlled Agent Lifecycle Framework
 
+## Recorded files and recoverable maintenance
+
+Harness 1.8.16 · Workbench 1.9.12 · SDK 0.2.9. Inspect recorded files, task references and retention reasons in **Artifacts**. New small disposable text can carry creation receipts and retention from the start. Eligible indexes and unreferenced, expired managed text require a preview and explicit confirmation before quarantine; restore never overwrites a newer file. Existing source, tests, candidate files, records, contracts and settings remain protected. There is no background scan or permanent deletion. Quarantine retains the bytes and does not free disk space.
+
+[English guide](ARTIFACT_LIFECYCLE.md) · [한국어 안내](ARTIFACT_LIFECYCLE_KR.md)
+
+
 ## Repository Intelligence is now built in
 
 Harness **1.8.15**, Workbench **1.9.11** and SDK **0.2.8** move Repository Intelligence into the shared Rust core: selective module history, exact original records, local Git captures, saved HEAD/index/working source versions and file-relationship candidates. [Guide and limits](REPOSITORY_BUILTIN.md).
@@ -25,9 +32,9 @@ Start with three choices: where the agent may work, your existing AI account, an
 
 [Start with installation](INSTALL.md) · [First-task walkthrough](FIRST_TASK.md) · [EN/KR visual manual](CALF_mannual.html)
 
-## Latest release · 2026-11-11
+## Latest release · 2026-11-12
 
-**Harness 1.8.15 · Workbench 1.9.11 · SDK 0.2.8**
+**Harness 1.8.16 · Workbench 1.9.12 · SDK 0.2.9**
 
 Current maintenance builds for all three operating systems. Keep your existing records home, contracts, settings and older task runtimes. See [VERIFICATION.json](VERIFICATION.json) for the checks and their scope.
 
@@ -57,7 +64,7 @@ The existing first-task guide remains available. Connect this extension only whe
 
 ## See the decisions and results that need your attention
 
-Attention gathers work that needs a decision. Result summaries show changed files, recorded checks and the current verdict. Request guidance helps you describe the result and how to check it while keeping your draft intact. Switch the center between Day and Night, find CJK tasks with keyboard shortcuts, and fold monitors in smaller windows. Folded monitors stop sampling system resources.
+Attention gathers work that needs a decision. Result summaries show changed files, recorded checks and the current verdict. Request guidance helps you describe the result and how to check it while keeping your draft intact. Switch the center with the Light | Dark toggle, find CJK tasks with keyboard shortcuts, and fold monitors in smaller windows. Folded monitors stop sampling system resources.
 
 The Harness exposes the same read-only Attention query. Viewing or searching never runs or approves work, and completion rules and existing records remain intact. [Usage guide](WORKBENCH_CLARITY.md) · [Verification scope](VERIFICATION.json).
 

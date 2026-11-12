@@ -61,6 +61,23 @@ class TransportTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.client.call("list", home=str(self.root / "another-home"))
 
+    def test_artifacts_use_native_context_without_direct_record_writes(self):
+        with patch.object(self.client, "_invoke", return_value={"currentCompletion": "NOT_EVALUATED"}) as invoke:
+            self.client.artifacts(self.root, state=self.root / "records", operation="create",
+                                  task="task", requestId="request", role="temporary", label="한글",
+                                  content="local", retentionSeconds=0, confirm=True)
+            args, payload = invoke.call_args.args
+            self.assertEqual(args, ["api"])
+            self.assertEqual(payload["op"], "artifacts")
+            self.assertEqual(payload["request"]["source"], "journal")
+            self.assertEqual(payload["request"]["content"], "local")
+            self.assertEqual(payload["home"], str(self.root))
+            with self.assertRaises(ValueError):
+                self.client.artifacts(self.root, operation="delete")
+            with self.assertRaises(ValueError):
+                self.client.artifacts(self.root, source="uncontrolled")
+            self.assertEqual(invoke.call_count, 1)
+
     def test_tool_policy_refuses_ambiguous_authority_inputs_without_launch(self):
         with patch("calf_sdk.client.subprocess.Popen", side_effect=AssertionError("must not launch")):
             with self.assertRaises(ValueError):

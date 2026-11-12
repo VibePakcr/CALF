@@ -43,13 +43,13 @@ def main():
         home = args.output / "records"
         h = CalfClient(args.harness, home)
         w = CalfClient(args.workbench, home)
-        assert h.version()["version"] == "1.8.15"
-        assert w.version()["version"] == "1.9.11"
+        assert h.version()["version"] == "1.8.16"
+        assert w.version()["version"] == "1.9.12"
         report["binaries"] = {"harness": h.binary_sha256(), "workbench": w.binary_sha256()}
         assert h.tasks()["jobs"] == []
         prefs = h.preferences("한국어 中文 日本語 · keep small")
         assert w.preferences() == prefs
-        report["checks"].append("released 1.8.15/1.9.11 share Unicode preferences and task home")
+        report["checks"].append("released 1.8.16/1.9.12 share Unicode preferences and task home")
 
         ws = args.output / "workspace"
         ws.mkdir()
@@ -79,6 +79,26 @@ def main():
         assert status["statusView"]["currentObserver"]["outcome"] == "SATISFIED"
         assert all(sha(ws / n) == digest for n, digest in preserved.items())
         report["checks"].append("SDK provider: real failing test, repair, independent check and review at attempt 2")
+
+        # These APIs only manage new core-owned text in the existing journal.
+        created = h.artifacts(ws, operation="create", state=state, task=outcome["task"],
+                              requestId="sdk-owned-note", role="temporary", label="SDK verification note",
+                              content="Retain original source · 한국어 中文 日本語\n", retentionSeconds=0, confirm=True)
+        assert created["state"] == "SEALED" and not created["automaticDeletion"]
+        artifact_id = created["artifact"]["artifactId"]
+        plan = w.artifacts(ws, operation="plan", state=state)
+        row = next(v for v in plan["artifacts"] if v["managed"] and v["managed"]["artifactId"] == artifact_id)
+        assert row["suggestion"] == "KEEP" and "MANAGED_ACTIVE_REFERENCE" in row["retentionReasons"]
+        released = h.artifacts(ws, operation="release", state=state, task=outcome["task"],
+                               artifactId=artifact_id, confirm=True)
+        assert released["artifact"]["activeReferences"] == []
+        scope = {"domain": "state", "path": created["path"]}
+        preview = w.artifacts(ws, operation="prepare", state=state, **scope)
+        move = dict(scope, operationId=preview["plan"]["operationId"], digest=preview["digest"], confirm=True)
+        assert h.artifacts(ws, operation="quarantine", state=state, **move)["state"] == "QUARANTINED"
+        assert w.artifacts(ws, operation="restore", state=state, **move)["state"] == "RESTORED"
+        assert all(sha(ws / n) == digest for n, digest in preserved.items())
+        report["checks"].append("managed text: creation receipt, active-reference protection, explicit release, quarantine and restore")
         (ws / "result.py").write_text("VALUE = 'expected'\n# externally edited\n")
         stale = native(args.workbench, "run-status", ws, state, outcome["task"], environment=environment)
         assert stale["state"] == "evidence_stale" and not is_satisfied(stale), stale

@@ -1,8 +1,17 @@
-# Fresh Codex session verification · 2026-11-12
+# Recorded files and recoverable maintenance · 2026-11-12
 
-The published Harness 1.8.15 / Workbench 1.9.11 / SDK 0.2.8 binaries are unchanged. A fresh macOS Codex session selected one module, produced a real bilingual handoff and passed its registered independent check on the first attempt. Workbench readback matched the saved result, current verdict, file version and execution context. The original test lane remains WAIT; a separate corrected definition evaluated READY without changing completion rules. [Full scope](REPOSITORY_SESSION_VERIFICATION.md).
+Harness 1.8.16 · Workbench 1.9.12 · SDK 0.2.9.
 
-배포 실행 파일은 그대로입니다. 새 macOS Codex 세션에서 모듈 하나만 읽어 실제 영·한 보고서를 작성하고 첫 독립 검사를 통과했습니다. Workbench에서도 저장된 결과와 현재 판정, 파일 버전·실행 문맥의 일치를 확인했습니다. 원래 시험 레인은 WAIT로 보존했고, 별도 보완 정의는 완료 기준을 바꾸지 않고 READY를 확인했습니다. [자세한 결과와 범위](REPOSITORY_SESSION_VERIFICATION_KR.md).
+- **Artifacts** explains recorded paths, task references, current file identity, retention reasons and bounded exact-content matches. Unknown files are not scanned or classified.
+- New core-created disposable text can record creation, references and retention in the existing journal. Completed source writes and registered candidate observations also retain their original evidence links; they do not become disposable.
+- Verified rebuildable indexes and eligible managed text use explicit preview, confirmation and reversible quarantine. Interrupted operations remain inspectable. Restore never overwrites a newer file. No permanent deletion or automatic cleanup is added; retained bytes still use disk space.
+- The appearance control now reads **Light | Dark** and marks the current choice. Existing saved themes and the side panels are unchanged.
+- The shared Rust core and thin Python/Node SDK bindings run on demand. No model, GPU control calculation, daemon or runtime dependency is added. Completion gates are unchanged.
+- Earlier versions, original records, contracts, settings, task runtimes, test inputs, candidates and recovery evidence are retained.
+
+[English guide](ARTIFACT_LIFECYCLE.md) · [한국어 안내](ARTIFACT_LIFECYCLE_KR.md). Exact platform evidence and binary hashes are in `VERIFICATION.json`. Synthetic runtime tests are separate from fresh paid AI-session tests. macOS integrity signing is ad hoc, not Apple notarization; Windows publisher signing is not claimed.
+
+하네스 1.8.16 · 워크벤치 1.9.12 · SDK 0.2.9입니다. Artifacts에서 기록된 파일의 작업별 참조·현재 내용·보존 이유를 확인합니다. CALF가 새로 만드는 작은 임시 텍스트에는 생성 근거와 보존 기한을 기록하며, 조건을 충족한 파일만 확인 후 격리·복원합니다. 기존 소스·테스트·후보·복구 근거는 계속 보호합니다. 영구 삭제·상주 탐색·자동 정리는 추가하지 않으며, 격리는 공간 확보를 뜻하지 않습니다. 기존 기록·계약·설정과 완료 기준을 유지합니다.
 
 ---
 

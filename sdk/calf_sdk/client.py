@@ -163,6 +163,23 @@ class CalfClient:
     def tasks(self) -> dict[str, Any]:
         return self.call("list")
 
+    def artifacts(self, workspace: str | os.PathLike, *, operation: str = "inventory",
+                  state: str | os.PathLike | None = None, **fields: Any) -> dict[str, Any]:
+        """On-demand native inventory and reversible maintenance.
+
+        Managed create/pin/release require an existing journal/task and explicit
+        confirm=True. No direct file/journal write or automatic retry is used.
+        Requires Harness 1.8.16 or Workbench 1.9.12.
+        """
+        if operation not in {"inventory", "plan", "prepare", "quarantine", "restore", "retained",
+                             "create", "pin", "release"} or {"op", "home", "request", "source", "workspace", "state", "operation"} & fields.keys():
+            raise ValueError("Invalid artifact operation or context override")
+        request = {**fields, "operation": operation, "workspace": str(_path(workspace)),
+                   "source": "journal" if state is not None else "native"}
+        if state is not None:
+            request["state"] = str(_path(state))
+        return self.call("artifacts", request=request)
+
     def repository_context(self, workspace: str | os.PathLike, *, action: str = "read",
                            task: str = "", modules: list[str] | None = None,
                            registry: str | os.PathLike | None = None) -> dict[str, Any]:

@@ -1,15 +1,17 @@
-# CALF SDK 0.2.8 — Developer Preview
+# CALF SDK 0.2.9 — Developer Preview
+
+SDK 0.2.9 adds `artifacts()` for recorded-file inventory and managed text. Harness 1.8.16 / Workbench 1.9.12 can record creation, references and retention for new small disposable text, then quarantine or restore an eligible file with explicit confirmation. Existing source, tests, candidates and recovery evidence remain protected. See [the guide](https://github.com/VibePakcr/CALF/blob/main/sdk/docs/ARTIFACT_LIFECYCLE.md), [Python example](https://github.com/VibePakcr/CALF/blob/main/sdk/examples/managed_artifact.py) and [Node read-only example](https://github.com/VibePakcr/CALF/blob/main/sdk/examples/artifacts.mjs). No background scanner or automatic deletion is added.
 
 Universal Work v1 adds frozen contracts, checks tied to the exact output files, runtime adapters, dependency-free Node/Python clients and optional-control Local MCP. [Protocol and runnable examples](https://github.com/VibePakcr/CALF/blob/main/sdk/docs/WORK_PROTOCOL.md). Workbench 1.9.2 shows the same work under **Runtime Work**. Existing code-job API calls remain compatible.
 
 
-[한국어](README_KR.md) · [Protocol](docs/PROTOCOL.md) · [Extension license](LICENSE-SDK.txt)
+[한국어](README_KR.md) · [Protocol](https://github.com/VibePakcr/CALF/blob/main/sdk/docs/PROTOCOL.md) · [Extension license](LICENSE-SDK.txt)
 
-A small integration layer for **CALF Harness 1.8.7–1.8.15** and the native core included in **CALF Workbench 1.9.2–1.9.11**. Python 3.10+ and the standard library are sufficient. The SDK adds no background service, model runtime, database or network dependency. CALF's execution engine remains proprietary and is not included.
+A small integration layer for **CALF Harness 1.8.7–1.8.16** and the native core included in **CALF Workbench 1.9.2–1.9.12**. Python 3.10+ and the standard library are sufficient. The SDK adds no background service, model runtime, database or network dependency. CALF's execution engine remains proprietary and is not included.
 
 Qualification details for the native cores and SDK are in `VERIFICATION.json` in the archive. Runtime tests use real Python/Node processes and a loopback HTTP service; no new live AI-service benchmark is claimed.
 
-[Download SDK 0.2.8](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.8). One portable source archive includes this SDK, English/Korean guides, both protocol documents, examples and the test runner. Install a matching CALF native release separately; the SDK archive contains no core runtime.
+[Download SDK 0.2.9](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.9). One portable source archive includes this SDK, English/Korean guides, both protocol documents, examples and the test runner. Install a matching CALF native release separately; the SDK archive contains no core runtime.
 
 ## Start with existing records
 
@@ -152,11 +154,11 @@ CALF 1.8.7 / 1.9.2 supports Node 24+ built-in node:test profiles. `Check.from_di
 
 ## Saved results and current status
 
-With Harness 1.8.10 / Workbench 1.9.5, use `client.registered_tasks(workspace)` to list registered tasks and `client.registered_status(workspace, task)` to read the current verdict and diagnostic `statusView`. `is_satisfied(response)` checks only the current top-level outcome. Historical `SATISFIED` is not current completion. These calls do not run checks or AI, or change environment variables. [Example](https://github.com/VibePakcr/CALF/blob/main/sdk/examples/status_context.py) · [Guide](docs/STATUS_CONTEXT.md).
+With Harness 1.8.10 / Workbench 1.9.5, use `client.registered_tasks(workspace)` to list registered tasks and `client.registered_status(workspace, task)` to read the current verdict and diagnostic `statusView`. `is_satisfied(response)` checks only the current top-level outcome. Historical `SATISFIED` is not current completion. These calls do not run checks or AI, or change environment variables. [Example](https://github.com/VibePakcr/CALF/blob/main/sdk/examples/status_context.py) · [Guide](https://github.com/VibePakcr/CALF/blob/main/sdk/docs/STATUS_CONTEXT.md).
 
 ## Claude connection kit (0.2.4)
 
-Host lifecycle handling and setup now run in the Rust core. The nine Claude events, batch reconciliation, registered-check receipts and side-by-side setup are qualified with synthetic processes on macOS, Windows and Linux. Fresh Claude app sessions on Windows/Linux are not claimed. Python and Node remain optional, thin SDK clients. [Host setup](https://github.com/VibePakcr/CALF/blob/main/sdk/hosts/README.md) · [Claude approval and status](hosts/claude/README.md).
+Host lifecycle handling and setup now run in the Rust core. The nine Claude events, batch reconciliation, registered-check receipts and side-by-side setup are qualified with synthetic processes on macOS, Windows and Linux. Fresh Claude app sessions on Windows/Linux are not claimed. Python and Node remain optional, thin SDK clients. [Host setup](hosts/README.md) · [Claude approval and status](hosts/claude/README.md).
 
 ## MCP tool policies (0.2.7)
 
