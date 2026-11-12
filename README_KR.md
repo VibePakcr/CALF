@@ -92,7 +92,7 @@ Workbench **Task status**는 저장된 완료와 현재 조회 판정을 나눠 
 
 [호스트 연결](HOST_CONNECTIONS_KR.md) · [Claude 안내](CLAUDE_CONNECTION_KR.md) · [SDK 안내](SDK_README_KR.md) · [상태 조회](STATUS_CONTEXT_KR.md) · [이전 릴리즈](https://github.com/VibePakcr/CALF/releases)
 
-Claude 호스트 어댑터는 macOS에서만 검증했습니다. Windows·Linux용 코어·SDK 검증과는 별개입니다. macOS 앱은 무결성 확인용 임시 서명본이며 Apple 공증본은 아닙니다. Windows 패키지에는 배포자 서명이 없습니다.
+Claude 호스트 어댑터는 macOS에서만 검증했습니다. Windows·Linux용 코어·SDK 검증과는 별개입니다. macOS 워크벤치는 Developer ID 서명과 Apple 공증을 적용했습니다. 하네스는 무결성 확인용 임시 서명본입니다. Windows 패키지에는 배포자 서명이 없습니다.
 
 ## Workbench 화면
 

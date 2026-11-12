@@ -92,7 +92,7 @@ Choose macOS ARM64, Windows x64 or Linux x64 in [Downloads](DOWNLOADS.md), then 
 
 [Host connections](HOST_CONNECTIONS.md) · [Claude guide](CLAUDE_CONNECTION.md) · [SDK guide](SDK_README.md) · [Status guide](STATUS_CONTEXT.md) · [Earlier releases](https://github.com/VibePakcr/CALF/releases)
 
-The Claude host adapter is qualified on macOS only, separately from Windows/Linux core and SDK tests. macOS apps have an ad-hoc integrity signature and are not Apple-notarized. Windows packages have no publisher signature.
+The Claude host adapter is qualified on macOS only, separately from Windows/Linux core and SDK tests. The macOS Workbench is signed with Developer ID and notarized by Apple; the Harness has an ad-hoc integrity signature. Windows packages have no publisher signature.
 
 ## See the Workbench
 

@@ -10,4 +10,4 @@ Updating an existing installation: retain the complete CALF_WORK_HOME, contracts
 
 An external AI account/host and project check tools are separate dependencies. The included hosts/ kit supports Workbench 1.9.7; the older SDK 0.2.4 archive remains unchanged. Use this release's included host kit for a 1.9.7 core. Claude host installation is qualified on macOS only.
 
-macOS has an ad-hoc integrity signature, not Apple notarization. Windows has no publisher signature. Review an OS security prompt using your normal policy; this guide does not ask you to disable protections. See the manual for platform requirements and supported execution paths.
+The macOS Workbench is signed with Developer ID and notarized by Apple. The Harness has an ad-hoc integrity signature. Windows has no publisher signature. Review an OS security prompt using your normal policy; this guide does not ask you to disable protections. See the manual for platform requirements and supported execution paths.
