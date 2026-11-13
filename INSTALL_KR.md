@@ -1,6 +1,6 @@
 # CALF Workbench 설치
 
-[English](INSTALL.md) · [다운로드](DOWNLOADS.md) · [첫 작업](FIRST_TASK_KR.md) · [화면 매뉴얼](CALF_mannual.html#install)
+[English](INSTALL.md) · [다운로드](DOWNLOADS.md) · [첫 작업](FIRST_TASK_KR.md) · [화면 매뉴얼](MANUAL.md)
 
 1. [다운로드](DOWNLOADS.md)에서 운영체제에 맞는 **최신 공개 Workbench**를 받습니다. 파일의 SHA-256을 해당 릴리즈의 SHA256SUMS와 비교합니다. 개발 후보와 공개 배포본은 구분합니다.
 2. 압축 파일 전체를 **새 폴더**에 풀고 구성 파일을 함께 보관합니다. macOS는 CALF Workbench.app, Windows는 calf-terminal.exe를 엽니다. Linux는 그래픽 데스크톱에서 ./calf-terminal을 실행합니다.

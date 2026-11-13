@@ -28,4 +28,4 @@ Apps may save window size, sidebar state or other UI preferences while you use t
 
 앱 사용 중 창 크기·사이드바 같은 UI 설정이 자동 저장될 수 있습니다. 이런 변경도 감사 기록에 남기되, 모델·권한·훅·인증정보·계약 변경과 구분해 확인하세요. 설명되지 않는 변경이 있으면 전후 상태를 보존하고 원인을 확인한 뒤 처리합니다.
 
-[Release notes / 변경 사항](RELEASE-NOTES.md) · [Offline EN/KR manual](CALF_mannual.html)
+[Release notes / 변경 사항](RELEASE-NOTES.md) · [Offline EN/KR manual](MANUAL.md)

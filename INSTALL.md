@@ -1,6 +1,6 @@
 # Install CALF Workbench
 
-[한국어](INSTALL_KR.md) · [Downloads](DOWNLOADS.md) · [First task](FIRST_TASK.md) · [Visual manual](CALF_mannual.html#install)
+[한국어](INSTALL_KR.md) · [Downloads](DOWNLOADS.md) · [First task](FIRST_TASK.md) · [Visual manual](MANUAL.md)
 
 1. Download the latest **published Workbench** for your OS from [Downloads](DOWNLOADS.md). Compare its SHA-256 with that release's SHA256SUMS. A source candidate is not a published package.
 2. Extract the whole archive into a **new folder** and keep its files together. On macOS, open CALF Workbench.app. On Windows, run calf-terminal.exe. On Linux, run ./calf-terminal in a graphical desktop.

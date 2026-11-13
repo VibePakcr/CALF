@@ -6,7 +6,7 @@ A lightweight, local-first harness and workbench for one AI agent. CALF keeps a 
 
 **Free to use · Proprietary binary core · macOS / Windows / Linux**
 
-[Download](DOWNLOADS.md) · [English manual](CALF_mannual.html) · [한국어](README_KR.md) · [Latest update](CURRENT_RELEASE.md)
+[Download](DOWNLOADS.md) · [Manual (English / 한국어)](MANUAL.md) · [한국어](README_KR.md) · [Latest update](CURRENT_RELEASE.md)
 
 ## Latest release
 

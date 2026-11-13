@@ -6,7 +6,7 @@ AI 에이전트 하나의 작업을 요청부터 실행·검수·복구까지 �
 
 **무료 사용 · 비공개 바이너리 코어 · macOS / Windows / Linux**
 
-[다운로드](DOWNLOADS.md) · [영·한 매뉴얼](CALF_mannual.html) · [English](README.md) · [최신 안내](CURRENT_RELEASE_KR.md)
+[다운로드](DOWNLOADS.md) · [영·한 매뉴얼](MANUAL.md) · [English](README.md) · [최신 안내](CURRENT_RELEASE_KR.md)
 
 ## 최신 배포
 
