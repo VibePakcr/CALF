@@ -1,11 +1,18 @@
 # CALF — 개인 작업 흐름 개선
 
 <!-- calf:current-release:start -->
-harness: 1.8.18
-workbench: 1.9.15
+harness: 1.8.19
+workbench: 1.9.16
 sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+하네스 **1.8.19** · 워크벤치 **1.9.16** · SDK **0.2.11**(변경 없음)입니다.
+
+취소·일시 정지 요청 뒤에도 미해결 작업을 표시하고, 런타임·검사 근거를 확인할 수 없으면 상태 불명으로 알립니다. 제한된 조회에서 거짓 정상 표시를 방지합니다. [주의 목록 변경](WORK_ATTENTION_HARDENING_KR.md). 별도 [CALF Connect](https://github.com/VibePakcr/CALF-Extensions/tree/main/ide-connect)는 네 IDE에서 Workbench 실행과 읽기 전용 조회를 제공합니다. [실제 화면 매뉴얼](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/MANUAL_KR.md)에서 세 OS의 연결 과정을 확인하세요.
+
+## 이전 배포: 공학 지식 참조
+
 
 하네스 **1.8.18** · 워크벤치 **1.9.15** · SDK **0.2.11**입니다.
 

@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "scope": "Final archives, isolated synthetic lifecycle checks and actual release UI; not production acceptance or a new AI quality benchmark",
+  "versions": {
+    "harness": "1.8.19",
+    "workbench": "1.9.16",
+    "sdk": "0.2.11",
+    "ffmpeg": "0.2.0-preview.2",
+    "connect": "0.1.0-dev.1"
+  },
+  "platforms": {
+    "macos": {
+      "status": "PASS",
+      "checks": [
+        "previous_public_version_task_paused",
+        "incorrect_archive_digest_rejected",
+        "actual_native_updater_prepared_exact_package",
+        "unlisted_prepared_content_blocks_activation",
+        "selected_new_public_core_actually_runs",
+        "selected_workbench_self_check_passes",
+        "extracted_mac_signature_ticket_and_gatekeeper_valid",
+        "old_task_resumes_and_passes_original_independent_checks",
+        "rollback_selects_and_runs_exact_previous_public_version",
+        "new_task_survives_rollback_via_its_retained_runtime",
+        "temporary_update_stages_cleaned",
+        "harness_public_packages_prepare_activate_and_rollback"
+      ],
+      "protectedFixtureFiles": 61,
+      "recordsContractsSettingsPreserved": true,
+      "archiveSha256": "06dcefe54aa84bb731a8597e544cb0d9b9732a38b962f486ecfa813f79dc0031"
+    },
+    "windows": {
+      "status": "PASS",
+      "checks": [
+        "previous_public_version_task_paused",
+        "incorrect_archive_digest_rejected",
+        "actual_native_updater_prepared_exact_package",
+        "unlisted_prepared_content_blocks_activation",
+        "selected_new_public_core_actually_runs",
+        "selected_workbench_self_check_passes",
+        "old_task_resumes_and_passes_original_independent_checks",
+        "rollback_selects_and_runs_exact_previous_public_version",
+        "new_task_survives_rollback_via_its_retained_runtime",
+        "temporary_update_stages_cleaned",
+        "harness_public_packages_prepare_activate_and_rollback"
+      ],
+      "protectedFixtureFiles": 61,
+      "recordsContractsSettingsPreserved": true,
+      "archiveSha256": "fbc0cdb6ed4c2c15601070b749f045d6baea40a8ab75a44d6b20f49924c31107"
+    },
+    "linux": {
+      "status": "PASS",
+      "checks": [
+        "previous_public_version_task_paused",
+        "incorrect_archive_digest_rejected",
+        "actual_native_updater_prepared_exact_package",
+        "unlisted_prepared_content_blocks_activation",
+        "selected_new_public_core_actually_runs",
+        "selected_workbench_self_check_passes",
+        "old_task_resumes_and_passes_original_independent_checks",
+        "rollback_selects_and_runs_exact_previous_public_version",
+        "new_task_survives_rollback_via_its_retained_runtime",
+        "temporary_update_stages_cleaned",
+        "harness_public_packages_prepare_activate_and_rollback"
+      ],
+      "protectedFixtureFiles": 61,
+      "recordsContractsSettingsPreserved": true,
+      "archiveSha256": "3ccfca1c4a9aae0ea1ba6d3e827b604b8d60677dfe25701a384af650c92902eb"
+    }
+  },
+  "uiRegression": {
+    "passed": 62,
+    "failed": 0,
+    "evidenceReusedForIdenticalSource": true
+  },
+  "nativeRegressionReused": {
+    "macos": 167,
+    "windows": 154,
+    "debian13": 166
+  },
+  "actualReleaseScreens": [
+    "macos",
+    "windows",
+    "linux"
+  ],
+  "macOS": {
+    "signed": true,
+    "notarized": "Accepted",
+    "stapled": true,
+    "gatekeeper": "accepted"
+  },
+  "windowsPublisherSignature": false,
+  "sdkChanged": false,
+  "privateCoreSourcePublished": false,
+  "modelCalls": 0
+}

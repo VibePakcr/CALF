@@ -1,52 +1,54 @@
 {
-  "stage": "PREPUBLICATION_PACKAGING",
+  "stage": "IMPLEMENTATION_QUALIFICATION",
   "versions": {
-    "harness": "1.8.18",
-    "workbench": "1.9.15",
+    "harness": "1.8.19",
+    "workbench": "1.9.16",
     "sdk": "0.2.11"
   },
-  "controlCompute": "CPU",
-  "singleAgent": true,
-  "coreTestsPassed": 158,
-  "ignoredSpawnedTestHelper": 1,
-  "additionalLocalDecoderTestsPassed": 3,
-  "desktopTestsPassed": 7,
-  "uiTestsPassed": 61,
-  "sdkPythonTestsPassedPerPlatform": 22,
-  "actualCodex": {
-    "outcome": "SATISFIED",
-    "attempt": 1,
-    "independentTests": 3,
-    "semanticKnowledgeEfficacyEstablished": false
+  "regressionEvidenceReused": true,
+  "implementationMatrix": {
+    "macos": {
+      "nativePassed": 167,
+      "nativeFailed": 0,
+      "ignoredSpawnHelper": 1,
+      "uiPassed": 62,
+      "desktopPassed": 7
+    },
+    "windows": {
+      "nativePassed": 154,
+      "nativeFailed": 0,
+      "ignoredSpawnHelper": 1,
+      "uiPassed": 62
+    },
+    "debian13": {
+      "nativePassed": 166,
+      "nativeFailed": 0,
+      "ignoredSpawnHelper": 1,
+      "uiPassed": 62
+    }
   },
-  "windowsAndDebian": "Actual knowledge import, bounded reads, source binding, provider failure/resume/repair/independent checks and SDK queries passed with synthetic providers",
-  "knowledge": {
-    "starterReferences": 367,
-    "privateQualificationDocuments": 4334,
-    "privateCorpusIncluded": false,
-    "namedOnlyEntriesExplicit": true
-  },
-  "localModels": {
-    "completedTaskQualified": false,
-    "ollama": "Installed Qwen7B loaded; unchanged CALF swap-surge guard interrupted",
-    "mlx": "Installed Qwen7B loaded; unchanged isolated server memory-warning guard interrupted",
-    "downloads": 0,
-    "furtherRetries": 0
-  },
-  "macWorkbench": {
-    "developerIdSigned": true,
-    "notarized": true,
-    "stapled": true,
-    "gatekeeperAccepted": true
-  },
-  "windowsPublisherSigning": false,
+  "attentionCLIAndLoad": "PASS_ON_THREE_PLATFORMS_WITH_ISOLATED_FIXTURES",
+  "ideConnectorActualGUIFlows": 12,
+  "connectorRuntimeUnchangedSinceGUIQualification": true,
+  "sdkChanged": false,
+  "modelCallsInThisFollowup": 0,
+  "finalArtifactChecks": "See separate PACKAGE-VERIFICATION.json release asset",
   "limits": [
-    "No fresh live Windows/Linux model completion or cross-cloud portability claim.",
-    "One initial Windows corruption error-text assertion failed although lookup was rejected; diagnostic and final full runs passed without weaker checks. Exact initial cause not established.",
-    "Reference retrieval is not current completion or authority.",
-    "Private full corpus is not distributed.",
-    "Linux qualification is Debian 13 x64 GTK3/WebKitGTK4.1.",
-    "Public download and installed activation receipts are separate from package verification."
+    "Synthetic provider and technical media checks are not a fresh AI task or production acceptance",
+    "Windows publisher signing is not supplied",
+    "Linux qualification is Debian 13 GTK3/WebKitGTK4.1",
+    "No whole-machine settings immutability, novice study or token saving claim",
+    "IDE menu qualification retained on unchanged connector runtime; Workbench UI release screens refreshed on all three OS."
   ],
-  "buildIsolation": "Harness and Workbench use edition-specific output directories; initial stale-cache outputs retained and excluded."
+  "currentUI": {
+    "workbench": "1.9.16",
+    "threeOSReleaseScreens": true,
+    "uiTestsPassed": 62,
+    "uiRegressionEvidenceReused": true,
+    "sourceEvidence": false,
+    "macOSReleaseTrust": "Developer ID, notarized, stapled, Gatekeeper accepted",
+    "guide": "UI_GUIDE.md",
+    "pixelProvenance": "SCREENSHOTS.json",
+    "freshAITask": false
+  }
 }

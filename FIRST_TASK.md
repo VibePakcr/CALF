@@ -1,19 +1,15 @@
 # Your first CALF Workbench task
 
-[Install](INSTALL.md) · [한국어](FIRST_TASK_KR.md) · [Visual manual](CALF_mannual.html#start)
+[Install](INSTALL.md) · [Screen guide](UI_GUIDE.md) · [한국어](FIRST_TASK_KR.md)
 
-1. Open Workbench and choose **Choose folder**. Select the project CALF may work in.
-2. Choose **Connect AI** and use your existing account or configured provider. **Connection saved** reports selected local setup; it is not a live connection test or permission grant.
-3. Choose **Use a request outline** in an empty request. Fill in **Result I want**, **Keep unchanged** and **How to check**, then review and choose **Submit**. Existing text is never replaced by the outline button.
+1. Select one project with **Choose workspace**.
+2. Use **Connect AI** for your existing account and runtime. A saved selection is separate from authentication and execution approval.
+3. Open **Start a task** to see readiness and the next step. Describe your result, what to preserve and how to check it. **Use a request outline** helps with an empty draft; it neither replaces existing input nor submits it.
+4. Use **Check setup** to find supported project checks, review the request and choose **Submit**. Discovering checks does not execute or pass them.
+5. Read **Current**, **Recorded** and **Next** in **Result summary**, then review Diff and Evidence. Changed files or check context can invalidate current completion while retaining past success.
 
-![Actual Workbench 1.9.7 guide](workbench-first-task.jpg)
+![Actual Workbench 1.9.16 first-task guide](ui-macos-first-task.png)
 
-The guide folds after a new job appears. Reopen **First task** at any time. Use **Check setup** if you need diagnosis; diagnosis no longer opens automatically on an empty start.
+CJK drafts are supported. Light/Dark and monitor folding change presentation while preserving the draft and contract. The screenshot is an actual window with separate example records, not proof of a submitted AI task.
 
-![Actual three-line draft, before a task is submitted](workbench-request-outline.jpg)
-
-CALF links the request, changes, checks and unfinished attempts. Review Diff and Evidence before using the result. A click, a saved AI connection or the guide itself is not proof that a task passed. Your project must already have meaningful supported checks (unittest, configured pytest, single-package Cargo integration tests, or node:test) and their tools. The outline does not create tests or supply your acceptance criteria.
-
-Example to adapt: “Fix the date parser for empty input; preserve accepted date formats; run the project's existing parser tests.” Use an actual check in your project.
-
-Records remain local. A remote AI receives the bounded task snapshot and explicitly attached references; provider charges and existing approval policies still apply. The images show an isolated macOS 1.9.7 installation with no submitted AI task. Whole-computer metrics in the window are not CALF performance measurements.
+Existing supported project checks and tools are required. The guide does not create acceptance criteria or grant approval. Preserve the complete records home, contracts, settings and retained task runtimes.

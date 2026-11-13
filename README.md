@@ -10,9 +10,11 @@ A lightweight, local-first harness and workbench for one AI agent. CALF keeps a 
 
 ## Latest release
 
-Harness **1.8.18** · Workbench **1.9.15** · SDK **0.2.11**
+Harness **1.8.19** · Workbench **1.9.16** · SDK **0.2.11**
 
-Engineering references now live in the shared Rust core. Search the built-in 367-entry starter or explicitly import a local collection, then read only the references needed for the task. The full private qualification dataset is not included. New tasks retain the same selected context when they resume; knowledge never replaces an executed check. [What changed](RELEASE-NOTES.md) · [Knowledge guide](ENGINEERING_KNOWLEDGE.md).
+The first task connects workspace selection, your existing AI connection, request, check readiness and result review. Interface text uses system type; paths, code and execution records retain monospace type. **Current / Recorded / Next** separate current evidence, retained results and the next action. The app icon keeps its original artwork with rounded white-tile corners.
+
+[New screen guide](UI_GUIDE.md) · [Changes](RELEASE-NOTES.md) · [Earlier releases — Legacy](LEGACY.md)
 
 ## How it helps
 
@@ -29,13 +31,11 @@ The optional local model transport remains a preview. Model-list connection is s
 
 Use **Harness 1.8.x** for headless CLI, host hooks and MCP integrations. Open **Workbench 1.9.x** against the same CALF data home to inspect those records. Workbench adds a desktop view; it does not introduce a second completion engine. Keep older task runtimes and records when updating.
 
-## See CALF
+## First task
 
-![Task Flow and execution evidence](workbench-task-flow.png)
+![Actual Workbench 1.9.16 first-task guide](ui-macos-first-task.png)
 
-![File changes in Diff](workbench-diff.png)
-
-These are earlier released Workbench examples. The current knowledge panel and connection fields are described in the linked guides.
+The same release executable is shown with separate example records. See [Windows, Linux and result review](UI_GUIDE.md). Machine-wide monitor values are not a CALF performance measurement.
 
 ## Guides and extensions
 
@@ -52,3 +52,8 @@ CALF is free to use. Its core source is not published and CALF is not an open-so
 ![CALF architecture — English](calf-overview-en-20261111.png)
 
 ![CALF 구조 — 한국어](calf-overview-kr-20261111.png)
+
+
+## IDE connection / IDE 연결
+
+[CALF Connect installation](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/INSTALL.md) · [한국어 설치](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/INSTALL_KR.md) · [Actual-screen manual / 화면 매뉴얼](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/MANUAL_KR.md). Optional local-install files for VS Code, Cursor, PyCharm and Antigravity IDE; actual flows observed on three operating systems. No task is automatically submitted.

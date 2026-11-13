@@ -10,9 +10,11 @@ AI 에이전트 하나의 작업을 요청부터 실행·검수·복구까지 �
 
 ## 최신 배포
 
-하네스 **1.8.18** · 워크벤치 **1.9.15** · SDK **0.2.11**
+하네스 **1.8.19** · 워크벤치 **1.9.16** · SDK **0.2.11**
 
-공학 지식 참조를 공유 Rust 코어에 넣었습니다. 기본 참조 367개를 조회하거나 사용자가 선택한 로컬 자료를 가져와 필요한 내용만 읽을 수 있습니다. 전체 비공개 검증 자료는 배포 파일에 포함하지 않습니다. 새 작업은 재개할 때도 처음 선택한 참조를 유지하며, 지식 조회가 실제 검사를 대신하지는 않습니다. [변경 내용](RELEASE-NOTES.md) · [지식 조회 안내](ENGINEERING_KNOWLEDGE_KR.md).
+첫 작업에서는 작업 폴더·AI 연결·요청·검사 준비·결과 확인을 한 흐름으로 안내합니다. 일반 안내는 읽기 쉬운 시스템 글꼴을, 경로·코드·실행 기록은 고정폭 글꼴을 사용합니다. **Current / Recorded / Next**를 구분해 지금의 판정과 보존된 결과, 필요한 다음 행동을 읽을 수 있습니다. 앱 아이콘의 흰색 바탕에도 둥근 모서리를 적용했습니다.
+
+[새 화면 안내](UI_GUIDE_KR.md) · [변경 내용](RELEASE-NOTES.md) · [이전 배포 — Legacy](LEGACY.md)
 
 ## CALF로 할 수 있는 일
 
@@ -29,13 +31,11 @@ AI 에이전트 하나의 작업을 요청부터 실행·검수·복구까지 �
 
 **하네스 1.8.x**는 CLI·호스트 훅·MCP 연동을 위한 Headless 제품입니다. 같은 CALF 데이터 폴더로 **워크벤치 1.9.x**를 열면 하네스에서 남긴 기록도 볼 수 있습니다. 워크벤치가 별도의 완료 판정 엔진을 만들지는 않습니다. 업데이트할 때 기존 작업 런타임과 기록을 유지하세요.
 
-## 화면으로 보기
+## 첫 화면
 
-![Task Flow와 실행 근거](workbench-task-flow.png)
+![Workbench 1.9.16의 실제 첫 작업 안내](ui-macos-first-task.png)
 
-![Diff에서 변경 확인](workbench-diff.png)
-
-이 이미지는 이전에 공개한 Workbench 예시입니다. 현재 지식 패널과 연결 항목은 아래 안내 문서에서 설명합니다.
+동일 배포 실행 파일을 별도 예제 기록으로 연 실제 화면입니다. [Windows·Linux와 결과 읽는 법](UI_GUIDE_KR.md)을 확인하세요. 화면의 시스템 전체 사용량은 CALF의 성능 측정이 아닙니다.
 
 ## 사용 안내와 확장
 
@@ -52,3 +52,8 @@ CALF는 무료로 사용할 수 있습니다. 코어 소스는 공개하지 않�
 ![CALF 구조 — 한국어](calf-overview-kr-20261111.png)
 
 ![CALF architecture — English](calf-overview-en-20261111.png)
+
+
+## IDE connection / IDE 연결
+
+[CALF Connect installation](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/INSTALL.md) · [한국어 설치](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/INSTALL_KR.md) · [Actual-screen manual / 화면 매뉴얼](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/MANUAL_KR.md). Optional local-install files for VS Code, Cursor, PyCharm and Antigravity IDE; actual flows observed on three operating systems. No task is automatically submitted.

@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "versions": {
+    "harness": "1.8.18",
+    "workbench": "1.9.15",
+    "sdk": "0.2.11"
+  },
+  "releases": {
+    "v1.8.18": {
+      "githubPublished": true,
+      "gitlabPublished": true,
+      "archives": {
+        "CALF-Harness-1.8.18-macos-arm64.zip": "bec35bb78991d11c24d921be096f9ab221d73fb8f3c6e0a185c4491e8ce369de",
+        "CALF-Harness-1.8.18-windows-x86_64.zip": "0ad1dbb35aec58b25d418009a49f396dfca11c4dd947a552d0fc2acb6b522962",
+        "CALF-Harness-1.8.18-linux-x86_64.tar.gz": "95cd63624f434c06b29c376849e3835d32f540f0c264634dd159ad1b8d572332"
+      },
+      "gitlabDownloadLinks": "release description; same verified GitHub-hosted archives",
+      "gitlabCustomAssetLinkCount": 0
+    },
+    "sdk-v0.2.11": {
+      "githubPublished": true,
+      "gitlabPublished": true,
+      "archives": {
+        "CALF-SDK-0.2.11.zip": "c622399d65c879890ec8937846d9d8ad77b675511cffd4be4748ebd1a44ce1f1"
+      },
+      "gitlabDownloadLinks": "release description; same verified GitHub-hosted archives",
+      "gitlabCustomAssetLinkCount": 0
+    },
+    "v1.9.15": {
+      "githubPublished": true,
+      "gitlabPublished": true,
+      "archives": {
+        "CALF-Workbench-1.9.15-macos-arm64.zip": "25e0a72489fa706be0f9f64700a825af7637eafbbeb35ab1ee157fbc8c7a6084",
+        "CALF-Workbench-1.9.15-windows-x86_64.zip": "b9607c8544a22e9cef56b8652ec79762d0816649c6837d3ec593139e8298cce7",
+        "CALF-Workbench-1.9.15-linux-x86_64.tar.gz": "5c978f5cb506c38a60c159b218cbef8c47e95a15df037acdc7c40491bbfb6451"
+      },
+      "gitlabDownloadLinks": "release description; same verified GitHub-hosted archives",
+      "gitlabCustomAssetLinkCount": 0
+    }
+  },
+  "githubCommit": "ecebe1cecaa97777041459447a23e70779b1051a",
+  "gitlabCommit": "7891561484a307be5253a3672ab00e31a9eff75b",
+  "documentsCompared": 65,
+  "previousThreeReleasesUnchanged": true,
+  "bothLatestAliases": "v1.9.15",
+  "actualPublicPackageTests": {
+    "macos": {
+      "status": "PASS",
+      "checks": 13,
+      "taskOutcomes": "SATISFIED",
+      "provider": "deterministic fixture; not a fresh paid model session",
+      "oldTaskRuntimeRetained": true
+    },
+    "windows": {
+      "status": "PASS",
+      "checks": 12,
+      "taskOutcomes": "SATISFIED",
+      "provider": "deterministic fixture; not a fresh paid model session",
+      "oldTaskRuntimeRetained": true
+    },
+    "linux": {
+      "status": "PASS",
+      "checks": 12,
+      "taskOutcomes": "SATISFIED",
+      "provider": "deterministic fixture; not a fresh paid model session",
+      "oldTaskRuntimeRetained": true
+    }
+  },
+  "sdkActualPublicBytes": "PASS",
+  "privateCoreSourcePublished": false,
+  "privateCorpusPublished": false
+}

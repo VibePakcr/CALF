@@ -1,0 +1,42 @@
+{
+  "version": "1.9.16",
+  "exampleRecords": true,
+  "freshAITask": false,
+  "images": [
+    {
+      "file": "ui-macos-first-task.png",
+      "sha256": "a131864582914549112b3cf985ebbd7c906c8f2abaa4342d2aad15e45e5f6f0a",
+      "platform": "macos",
+      "version": "1.9.16",
+      "pixelsReplaced": false
+    },
+    {
+      "file": "ui-windows-first-task.png",
+      "sha256": "9964e5e156c8c5918a327da52f2675e93eeebc0956008875ee40c9faae234547",
+      "platform": "windows",
+      "version": "1.9.16",
+      "pixelsReplaced": false
+    },
+    {
+      "file": "ui-linux-first-task.png",
+      "sha256": "4302fce64088bc8f727700a848b34c9d75e975fef9f1952162dbd65e2aab4157",
+      "platform": "linux",
+      "version": "1.9.16",
+      "pixelsReplaced": false
+    },
+    {
+      "file": "ui-result-current-recorded.png",
+      "sha256": "bbdb43eef9c01f0b56621e1db9744d6c273a02d9b0734124b6f39be6033cc768",
+      "platform": "windows",
+      "version": "1.9.16",
+      "pixelsReplaced": false
+    },
+    {
+      "file": "ui-request-draft.png",
+      "sha256": "84faedc644ff81e6fda354392c41b55d325f1e82e9ae28f4000138968ff8bd4c",
+      "platform": "macos",
+      "version": "1.9.16",
+      "pixelsReplaced": false
+    }
+  ]
+}

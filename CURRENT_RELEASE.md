@@ -1,11 +1,18 @@
 # CALF — personal workflows
 
 <!-- calf:current-release:start -->
-harness: 1.8.18
-workbench: 1.9.15
+harness: 1.8.19
+workbench: 1.9.16
 sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+Harness **1.8.19** · Workbench **1.9.16** · SDK **0.2.11** (unchanged).
+
+Work attention now keeps unresolved effects visible after cancel/pause requests, reports missing runtime/evidence as unknown and bounds observation without returning a false all-clear. [Attention changes](WORK_ATTENTION_HARDENING.md). The optional [CALF Connect](https://github.com/VibePakcr/CALF-Extensions/tree/main/ide-connect) opens Workbench and reads attention from four IDEs; its [manual](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/MANUAL.md) contains actual screens across three operating systems.
+
+## Previous release: engineering references
+
 
 Harness **1.8.18** · Workbench **1.9.15** · SDK **0.2.11**.
 

@@ -1,5 +1,7 @@
 # Workbench: decisions, results and request guidance
 
+Current release: Workbench 1.9.16. The new UI was observed in the actual macOS, Windows and Debian 13 release executables. The 62-test regression evidence is reused for identical UI source. See [the current screen guide](UI_GUIDE.md). Dated development notes below retain their original scope and limitations.
+
 [한국어](WORKBENCH_CLARITY_KR.md)
 
 Usage guide for Harness 1.8.13 and Workbench 1.9.9. Keep the existing records home, contracts, settings and older task runtimes when updating.

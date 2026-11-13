@@ -1,3 +1,21 @@
+# CALF Harness 1.8.19 · Workbench 1.9.16
+
+- Keep unresolved effects visible after cancel/pause requests; do not confuse a request with an actual stopped operation.
+- Show missing runtime/evidence as unknown; bound attention observation and expose coverage instead of a false all-clear.
+- Native authority, contracts, existing records and recovery remain unchanged. SDK 0.2.11 is unchanged.
+- Optional CALF Connect 0.1.0-dev.1 is released separately with bilingual installation and actual-screen manuals. Four IDEs across three operating systems were observed in isolated profiles.
+- Final package identity and lifecycle checks are separate from the reused implementation regression and 12 IDE GUI flows. No new live AI task or token saving is claimed.
+
+## 한국어
+
+- 취소·일시 정지 요청만으로 중단됐다고 표시하지 않고 미해결 효과를 계속 보여줍니다.
+- 확인할 수 없는 런타임·근거는 상태 불명으로 남기고 주의 목록의 조회 범위·한도를 명시합니다.
+- 기존 네이티브 권한·계약·기록·복구를 유지합니다. SDK 0.2.11은 변경하지 않습니다.
+- CALF Connect 0.1.0-dev.1은 별도 배포하며 세 OS·네 IDE의 실제 화면과 영·한 설치·매뉴얼을 제공합니다.
+- 최종 패키지 검사와 재사용 구현 회귀·12개 GUI 검증을 구분합니다. 새로운 실제 AI 작업이나 절감률을 주장하지 않습니다.
+
+---
+
 # CALF update — Harness 1.8.18 · Workbench 1.9.15 · SDK 0.2.11
 
 - The shared Rust core retrieves Development Pack, Pattern and Method references on the CPU. The built-in starter contains 367 references, including entries explicitly marked as names rather than complete definitions.
