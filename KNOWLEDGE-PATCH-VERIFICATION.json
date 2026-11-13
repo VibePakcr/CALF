@@ -1,0 +1,39 @@
+{
+  "schema": "calf.knowledge-onboarding-release.v1",
+  "versions": {
+    "harness": "1.8.20",
+    "workbench": "1.9.17",
+    "sdk": "0.2.11"
+  },
+  "privateSourcePublished": false,
+  "privateCorpusIncluded": false,
+  "nativeUnitTests": {
+    "passed": 167,
+    "failed": 0,
+    "ignored": 1,
+    "execution": "serial; initial parallel journal_busy failure retained; exact isolated check passed without code changes"
+  },
+  "uiRegressionTests": 10,
+  "registeredLocalCriteria": 3,
+  "registeredLocalOutcome": "SATISFIED",
+  "nativeImportQualification": {
+    "macos": {
+      "editions": 2,
+      "groupsPerEdition": 5
+    },
+    "windows": {
+      "editions": 2,
+      "groupsPerEdition": 5
+    },
+    "debian13": {
+      "editions": 2,
+      "groupsPerEdition": 5
+    }
+  },
+  "nativeFolderPicker": "Observed on macOS development build before the release version update; other OS native picker interactions are not claimed",
+  "macWorkbench": "Developer ID signed, notarized, stapled and Gatekeeper accepted",
+  "windowsPublisherSignature": false,
+  "providerCalls": 0,
+  "userInstallationsChanged": false,
+  "historicalReleaseEvidenceReusedForUnchangedBehavior": true
+}

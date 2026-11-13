@@ -4,7 +4,7 @@
 harness: 1.8.20
 workbench: 1.9.17
 sdk: 0.2.11
-Release state: candidate
+Release state: published
 <!-- calf:current-release:end -->
 
 Harness **1.8.20** · Workbench **1.9.17** · SDK **0.2.11** 유지.
