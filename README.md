@@ -2,60 +2,59 @@
 
 **Controlled Agent Lifecycle Framework**
 
-A lightweight, local-first harness and workbench for one AI agent. CALF keeps a task's request, changes, checks, evidence and recovery in one flow. It supports Codex, Antigravity and Claude Code, with a shared Rust core behind the headless Harness and Rust + Tauri Workbench.
+Keep track of the work you give your AI. CALF brings your request, changed files and check results together, so you can review the result and continue work that stopped.
 
-**Free to use · Proprietary binary core · macOS / Windows / Linux**
+Use it with Codex, Antigravity or Claude Code. CALF is built with Rust and Tauri and is free to use on macOS, Windows and Linux.
 
-[CALF website](https://calf.vibepackr.com/en/) · [Install](https://calf.vibepackr.com/manual/?lang=en#install) · [Download](https://calf.vibepackr.com/en/#downloads) · [Online manual](https://calf.vibepackr.com/manual/?lang=en) · [한국어](README_KR.md) · [Latest update](CURRENT_RELEASE.md)
+[Website](https://calf.vibepackr.com/en/) · [Download](https://calf.vibepackr.com/en/#downloads) · [Install](INSTALL.md) · [Manual](https://calf.vibepackr.com/manual/?lang=en) · [한국어](README_KR.md)
 
-**New to CALF?** Read the [overview](https://calf.vibepackr.com/en/), [download Workbench for your OS](https://calf.vibepackr.com/en/#downloads), then follow the [installation and first-task guide](https://calf.vibepackr.com/manual/?lang=en#install).
+## Start with Workbench
 
-## Latest release
+1. [Download Workbench for your OS](https://calf.vibepackr.com/en/#downloads) and extract it to a new folder.
+2. Open the app, choose your project folder and connect the AI you already use.
+3. Describe what you want done and what to keep unchanged. Follow the guide to check that your project tools are ready, then submit the task.
 
-Harness **1.8.19** · Workbench **1.9.16** · SDK **0.2.11**
+The [installation guide](INSTALL.md) and [illustrated manual](https://calf.vibepackr.com/manual/?lang=en#start) walk you through each step.
 
-The first task connects workspace selection, your existing AI connection, request, check readiness and result review. Interface text uses system type; paths, code and execution records retain monospace type. **Current / Recorded / Next** separate current evidence, retained results and the next action. The app icon keeps its original artwork with rounded white-tile corners.
+![Workbench 1.9.16 first-task guide](ui-macos-first-task.png)
 
-[New screen guide](UI_GUIDE.md) · [Changes](RELEASE-NOTES.md) · [Earlier releases — Legacy](LEGACY.md)
+The first-task screen in Workbench 1.9.16. See the [Windows and Linux screens](UI_GUIDE.md) too.
 
-## How it helps
+## What you can do
 
-- **Delegate one bounded task.** Keep a single-agent workflow and the host's existing account and approval rules.
-- **See the actual work.** Task Flow, Git Graph, Diff, worker output and result summaries connect the request to the files and check receipts.
-- **Require evidence.** Registered checks must match the current files and execution context. A normal tool exit or an AI's claim is not completion.
-- **Continue safely.** Retained attempts, explicit resume, protected inputs and recoverable artifact quarantine help you continue without discarding prior records.
-- **Use focused local context.** Repository Intelligence and engineering references use bounded CPU queries. No extra agent, local model or background indexing service is required.
-- **Connect the tools you choose.** Local MCP, adapters and the SDK extend the controlled execution path. VibePackr is optional and CALF works independently.
+- **Review changes.** Open Diff to see which files changed and the checks run for them.
+- **See what needs attention.** Read the current result, earlier records and the next step together.
+- **Continue a task.** Keep earlier attempts and use Resume when you are ready to continue.
+- **Find useful context.** Look up earlier decisions with Repository Intelligence and browse development references in Engineering knowledge.
 
-The optional local model transport remains a preview. Model-list connection is separate from a completed task; read the [Ollama/MLX qualification limits](LOCAL_MODELS.md).
+Repository Intelligence is included with CALF. GCN/MCL helps organize the order of work, file scope and checks. The Computer Engineering Pack / Pattern / Method catalogue provides 367 reference entries, and you can add your own material.
 
-## Harness or Workbench
+## Choose how to use CALF
 
-Use **Harness 1.8.x** for headless CLI, host hooks and MCP integrations. Open **Workbench 1.9.x** against the same CALF data home to inspect those records. Workbench adds a desktop view; it does not introduce a second completion engine. Keep older task runtimes and records when updating.
+| Use | Choose |
+| --- | --- |
+| A desktop app for following tasks and reviewing files | **Workbench 1.9.16** |
+| Terminal commands, host hooks or MCP | **Harness 1.8.19** |
+| Connect your own tools | **SDK 0.2.11** |
 
-## First task
+Workbench and Harness use the same core. Point them to the same CALF data folder to see the same tasks. Keep that folder and older task runtimes when updating.
 
-![Actual Workbench 1.9.16 first-task guide](ui-macos-first-task.png)
+[Downloads](DOWNLOADS.md) · [Release notes](RELEASE-NOTES.md) · [Earlier versions](LEGACY.md)
 
-The same release executable is shown with separate example records. See [Windows, Linux and result review](UI_GUIDE.md). Machine-wide monitor values are not a CALF performance measurement.
+## More help
 
-## Guides and extensions
+[First task](FIRST_TASK.md) · [Connect your AI](HOST_CONNECTIONS.md) · [Repository Intelligence](REPOSITORY_BUILTIN.md) · [Development references](ENGINEERING_KNOWLEDGE.md) · [Saved files](ARTIFACT_LIFECYCLE.md) · [Local MCP tools](MCP_TOOL_EVALUATION.md) · [SDK](SDK_README.md)
 
-[Getting started](INSTALL.md) · [Host connections](HOST_CONNECTIONS.md) · [First task](FIRST_TASK.md) · [Repository Intelligence](REPOSITORY_BUILTIN.md) · [Artifacts](ARTIFACT_LIFECYCLE.md) · [MCP tool evaluation](MCP_TOOL_EVALUATION.md) · [SDK](SDK_README.md) · [Verification scope](VERIFICATION.json)
+Local model connections are in preview. See [Ollama and MLX](LOCAL_MODELS.md) before choosing that route.
 
-Repository Intelligence is built into the core. The separate [CALF Extensions](https://github.com/VibePakcr/CALF-Extensions) repository contains the FFmpeg extension; it is optional.
+CALF works on its own. The optional [FFmpeg extension](https://github.com/VibePakcr/CALF-Extensions) helps manage video work. [CALF Connect](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/INSTALL.md), a development preview, opens Workbench from VS Code, Cursor, PyCharm or Antigravity IDE.
 
-## Distribution terms
+## Use and licence
 
 CALF is free to use. Its core source is not published and CALF is not an open-source licence grant. Unauthorised modification, tampering, reverse engineering or redistribution may lead to legal action under the applicable terms and law. Use the separately provided SDK, adapters and MCP interfaces for extensions; their own licence applies. See the licence files supplied with each package. Connected AI services retain their own fees and terms.
 
-## Architecture overview
+## How CALF fits together
 
 ![CALF architecture — English](calf-overview-en-20261111.png)
 
 ![CALF 구조 — 한국어](calf-overview-kr-20261111.png)
-
-
-## IDE connection / IDE 연결
-
-[CALF Connect installation](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/INSTALL.md) · [한국어 설치](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/INSTALL_KR.md) · [Actual-screen manual / 화면 매뉴얼](https://github.com/VibePakcr/CALF-Extensions/blob/main/ide-connect/MANUAL_KR.md). Optional local-install files for VS Code, Cursor, PyCharm and Antigravity IDE; actual flows observed on three operating systems. No task is automatically submitted.

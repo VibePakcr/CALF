@@ -1,42 +1,34 @@
-# CALF manual · 영·한 매뉴얼
+# CALF 사용 안내 · User guide
 
-## Read online · 웹에서 읽기
+## 웹에서 읽기 · Read online
 
-[English manual](https://calf.vibepackr.com/manual/?lang=en) · [한국어 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko)
+[한국어 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko) · [English manual](https://calf.vibepackr.com/manual/?lang=en)
 
-Read the complete illustrated manual on the CALF website. No installation or HTML download is needed. Use **EN / KR** to switch languages.
+설치부터 첫 작업, 결과 확인과 작업 재개까지 화면을 보며 따라가세요. 위쪽 **KO / EN** 버튼으로 언어를 바꿀 수 있습니다.
 
-CALF 웹사이트에서 실제 화면이 담긴 전체 매뉴얼을 바로 읽을 수 있습니다. 설치하거나 HTML 파일을 내려받을 필요가 없습니다. **EN / KR** 버튼으로 언어를 바꾸세요.
+Follow the pictures to install CALF, start a task, review the result and resume work. Use **KO / EN** at the top to switch languages.
 
-| Start here / 처음 오셨나요? | English | 한국어 |
+| 찾는 내용 · Find what you need | 한국어 | English |
 | --- | --- | --- |
-| What CALF does / CALF 소개 | [Overview](https://calf.vibepackr.com/en/) | [소개](https://calf.vibepackr.com/) |
-| Download for your OS / 운영체제별 다운로드 | [Downloads](https://calf.vibepackr.com/en/#downloads) | [다운로드](https://calf.vibepackr.com/#downloads) |
-| Installation / 설치 | [Illustrated setup](https://calf.vibepackr.com/manual/?lang=en#install) | [화면으로 보는 설치](https://calf.vibepackr.com/manual/?lang=ko#install) |
-| First task / 첫 작업 | [First-task guide](https://calf.vibepackr.com/manual/?lang=en#start) | [첫 작업 안내](https://calf.vibepackr.com/manual/?lang=ko#start) |
+| CALF 소개 · Overview | [소개](https://calf.vibepackr.com/) | [Overview](https://calf.vibepackr.com/en/) |
+| 프로그램 받기 · Download | [다운로드](https://calf.vibepackr.com/#downloads) | [Downloads](https://calf.vibepackr.com/en/#downloads) |
+| 설치하기 · Install | [설치](https://calf.vibepackr.com/manual/?lang=ko#install) | [Installation](https://calf.vibepackr.com/manual/?lang=en#install) |
+| 첫 작업 · First task | [첫 작업](https://calf.vibepackr.com/manual/?lang=ko#start) | [First task](https://calf.vibepackr.com/manual/?lang=en#start) |
 
-## Repository guides · 저장소에서 읽기
+## 짧은 안내 · Quick guides
 
-[English screen guide](UI_GUIDE.md) · [한국어 화면 안내](UI_GUIDE_KR.md) · [Installation (English)](INSTALL.md) · [설치 안내 (한국어)](INSTALL_KR.md)
+[한국어 설치](INSTALL_KR.md) · [English installation](INSTALL.md) · [한국어 화면 안내](UI_GUIDE_KR.md) · [English screen guide](UI_GUIDE.md)
 
-These shorter Markdown guides remain available in this repository.
+## 오프라인에서 읽기 · Read offline
 
-짧은 Markdown 안내는 이 저장소에서도 계속 읽을 수 있습니다.
+[영·한 HTML 매뉴얼 받기 · Download the EN/KR HTML manual (13 MB)](https://github.com/VibePakcr/CALF/releases/download/v1.9.16/CALF_mannual.html)
 
-## Offline manual · 오프라인 매뉴얼
+`CALF_mannual.html`을 받아 Chrome·Edge·Safari에서 여세요. 그림이 모두 들어 있어 인터넷 없이도 볼 수 있습니다. 이 파일은 위쪽 **EN / KR** 버튼으로 언어를 바꿉니다.
 
-[Download EN/KR HTML manual · 영·한 HTML 매뉴얼 내려받기 (13 MB)](https://github.com/VibePakcr/CALF/releases/download/v1.9.16/CALF_mannual.html)
+Download `CALF_mannual.html` and open it in Chrome, Edge or Safari. All pictures are included, so you can read it without an internet connection. In this file, use **EN / KR** to switch languages.
 
-1. Download `CALF_mannual.html` using the link above.
-2. Open the downloaded file in Chrome, Edge or Safari.
-3. Use **EN / KR** at the top to switch languages.
+GitHub에서 HTML 미리보기가 열리지 않으면 위 다운로드 링크를 이용하세요.
 
-1. 위 링크에서 `CALF_mannual.html`을 내려받으세요.
-2. 내려받은 파일을 Chrome·Edge·Safari에서 여세요.
-3. 위쪽 **EN / KR** 버튼으로 언어를 바꾸세요.
+If GitHub cannot preview the HTML file, use the download link above.
 
-Screenshots are included in the single HTML file. The existing release download is unchanged. GitHub cannot preview this large HTML file; use the online manual or download link.
-
-화면 캡처가 HTML 파일 안에 포함돼 있습니다. 기존 릴리즈의 다운로드 파일은 그대로 유지합니다. GitHub는 이 큰 HTML 파일을 미리보기로 표시하지 못하므로 웹 매뉴얼이나 다운로드 링크를 이용하세요.
-
-[GitHub release](https://github.com/VibePakcr/CALF/releases/tag/v1.9.16) · [GitLab release](https://gitlab.com/vibepackr-group/CALF/-/releases/v1.9.16) · [Current downloads / 현재 다운로드](DOWNLOADS.md)
+[GitHub release](https://github.com/VibePakcr/CALF/releases/tag/v1.9.16) · [GitLab release](https://gitlab.com/vibepackr-group/CALF/-/releases/v1.9.16) · [Downloads / 다운로드](DOWNLOADS.md)

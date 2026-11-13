@@ -1,24 +1,49 @@
-# Install CALF Workbench
+# Install CALF and start a task
 
-[CALF website](https://calf.vibepackr.com/en/) · [Downloads](https://calf.vibepackr.com/en/#downloads) · [Illustrated installation](https://calf.vibepackr.com/manual/?lang=en#install) · [Online manual](https://calf.vibepackr.com/manual/?lang=en) · [한국어](INSTALL_KR.md)
+[Website](https://calf.vibepackr.com/en/) · [Download](https://calf.vibepackr.com/en/#downloads) · [Picture guide](https://calf.vibepackr.com/manual/?lang=en#install) · [한국어](INSTALL_KR.md)
 
-**Installing for the first time?** Choose [Workbench for your OS](https://calf.vibepackr.com/en/#downloads), then open the [illustrated installation and first-task manual](https://calf.vibepackr.com/manual/?lang=en#install). The short instructions below remain available here.
+## 1. Download Workbench
 
-1. Download the latest **published Workbench** for your OS from [Downloads](DOWNLOADS.md). Compare its SHA-256 with that release's SHA256SUMS. A source candidate is not a published package.
-2. Extract the whole archive into a **new folder** and keep its files together. On macOS, open CALF Workbench.app. On Windows, run calf-terminal.exe. On Linux, run ./calf-terminal in a graphical desktop.
-3. Follow [First task](FIRST_TASK.md): choose a project folder, connect your existing AI account, describe the result and limits, then find the project's checks. Finding checks does not run them.
-4. After the task, review Diff and the current result summary. A saved success can become UNKNOWN if files or the check environment change.
+Choose the file for your computer on the [download page](https://calf.vibepackr.com/en/#downloads). Workbench is the desktop app; Harness is for terminal use.
 
-CALF is free to use independently. Your AI service keeps its own account, fees and approval rules. Project tools such as Python, Cargo or Node are needed only for the corresponding project checks. Current native host adapters run in Rust; optional SDK examples may use their own client language.
+| Computer | Requirements |
+| --- | --- |
+| Mac with Apple Silicon | macOS 14 or later. Workbench 1.9.16 is signed and Apple notarized. |
+| Windows x64 | Microsoft Edge WebView2 Runtime. The Windows package has no publisher signature. |
+| Linux x64 | Debian 13, GTK 3, WebKitGTK 4.1 and a graphical desktop. Other distributions need a separate compatibility check. |
 
-## OS requirements
+Compare the downloaded file’s SHA-256 with `SHA256SUMS` on the same release page. Follow your OS’s usual security checks when opening the app.
 
-- macOS ARM64: macOS 14 or newer. Check the exact release's Developer ID and Apple notarization status; local source candidates need their own distribution checks.
-- Windows x64: Microsoft Edge WebView2 Runtime. Publisher signing is not currently claimed. Follow your normal OS security policy.
-- Linux x64: GTK 3 and WebKitGTK 4.1. Debian 13 is the qualified distribution; other distributions are not automatically covered.
+## 2. Extract and open
 
-## Existing installations
+Extract the **whole archive into a new folder** and keep its files together.
 
-Keep the complete CALF_WORK_HOME, contracts, settings and old version folders. Use the same data home with the new executable. Tasks may remain pinned to an older runtime. Read [Update and recovery](UPDATE.md) before switching a managed launcher; do not delete an old runtime to make room.
+| System | Open |
+| --- | --- |
+| macOS | `CALF Workbench.app` |
+| Windows | `calf-terminal.exe` |
+| Linux | `./calf-terminal` from a terminal in the extracted folder |
 
-For Codex, Antigravity or Claude, follow the [host connection guide](HOST_CONNECTIONS.md) and use the matching kit included in your package. Inspect an existing installation before adding a route. New Codex hook definitions require the host's normal review. Publishing a package does not update running sessions or grant command permission.
+On Linux, use `tar -xzf FILE.tar.gz` to keep executable permissions. Keep `calf` or `calf.exe` beside the desktop executable. On macOS, both are inside the app bundle.
+
+## 3. Start a small task
+
+1. Choose **Choose workspace** and select your project folder.
+2. Use **Connect AI** to select the AI you already use.
+3. Describe the result you want, what to keep unchanged and how to check it. **Use a request outline** can help you get started.
+4. Check that your project’s tools are ready, review the request and choose **Submit**.
+5. Open **Diff** and the result summary to review the changed files and checks.
+
+CALF uses the checks already set up in your project, such as unittest, configured pytest, supported Cargo integration tests or node:test. Install missing project tools yourself. Choosing checks does not run them; look at the results after the task.
+
+Use **Current** for the latest status and **Recorded** for earlier results. If the files or check environment change, an earlier success may need checking again.
+
+[Follow the first-task guide](FIRST_TASK.md) · [Open the illustrated manual](https://calf.vibepackr.com/manual/?lang=en#start)
+
+## If you already use CALF
+
+Keep your complete `CALF_WORK_HOME`, contracts, settings and older version folders. Point the new program to the same data folder. Older tasks may need the runtime they started with, so keep the `runtimes` folder too.
+
+Read [Update and recovery](UPDATE.md) before switching an existing installation. For Codex, Antigravity or Claude, follow [Host connections](HOST_CONNECTIONS.md) and review any new hooks through the host’s normal approval steps.
+
+CALF is free to use. Your AI service keeps its own account, fees and approval settings.
