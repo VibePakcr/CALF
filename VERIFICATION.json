@@ -1,196 +1,52 @@
 {
-  "release": "Workbench 1.9.14",
-  "date": "2026-11-12",
-  "scope": "Monitor/sidebar UI update; runtime logic and completion rules unchanged.",
-  "stage": "LOCAL_PACKAGES_VERIFIED",
-  "uiQualification": {
-    "priorCommittedSource": "01dd839b71ced8bd256ee0656dc3fdc6ce645a36",
-    "gui": [
-      "macOS ARM64",
-      "Windows x64,16 logical CPUs",
-      "Debian 13 x64,8 logical CPUs"
-    ],
-    "synthetic128CoreBoundary": true,
-    "physical128CoreMachine": false,
-    "linuxGpuCounter": "UNAVAILABLE",
-    "linuxScreenProof": "Native remote-framebuffer exports show the complete app and sidebar bottom; intermittent black Mac window captures were excluded. Underlying capture failure cause is not established."
+  "stage": "PREPUBLICATION_PACKAGING",
+  "versions": {
+    "harness": "1.8.18",
+    "workbench": "1.9.15",
+    "sdk": "0.2.11"
   },
-  "previousRuntimeQualification": {
-    "status": "PASS",
-    "versions": {
-      "harness": "1.8.17",
-      "workbench": "1.9.13",
-      "sdk": "0.2.10"
-    },
-    "controlCompute": "CPU",
-    "modelCalls": 0,
-    "privateCoreSourceIncluded": false,
-    "coreTests": {
-      "newNativePerPlatform": 10,
-      "previousMacFullRegressionPassed": 147,
-      "previousIgnoredSubprocessHelper": 1
-    },
-    "uiTests": {
-      "perPlatform": 53,
-      "method": "Node DOM contract tests",
-      "laneAndCacheContract": "PASS",
-      "unchangedTabSwitchesAllocateNoNodes": 1000
-    },
-    "sdkTestsPerPlatform": 20,
-    "platforms": {
-      "macos": {
-        "harnessSha256": "34a0b3726010f6802c9dd321e1a34922604ebc1427bfaecded6319e1280acd19",
-        "workbenchCoreSha256": "a2bf7ba7ba2291a53e1a4adc8e26e8f26624e80dee7735d5e92ffea90705176a",
-        "uiSha256": "d81ff86ca5af5b7dafc87f4c1f977f57af967032fa2e5d0831b937a120fd947c",
-        "syntheticExecution": "SATISFIED"
-      },
-      "windows": {
-        "harnessSha256": "55ac0deba4dfeefa02eed65591a7b89f6277840c2e870b2e4be88d219b5cf279",
-        "workbenchCoreSha256": "f08a6699594cd6f18dd681275effadeafdb746988eaa2f7a0615d40d84166d2b",
-        "uiSha256": "52b0fe55f38888376de2b66b7fdb88a4a03891be3e11499cef074f300965c148",
-        "syntheticExecution": "SATISFIED"
-      },
-      "linux": {
-        "harnessSha256": "4b527acb79be64415d38c305ebbca21d3885a4b2d6d1c40bef9d9deb4745c198",
-        "workbenchCoreSha256": "27753bb52ac42522202ae2a47b6eb3c9dff87aa8bef1495ddaab8db854b6357d",
-        "uiSha256": "b0082328703ffc1322d6ac8594e864815b838b77a70e89cd4b233ac496839aae",
-        "syntheticExecution": "SATISFIED"
-      }
-    },
-    "macWorkbench": {
-      "developerIdSigned": true,
-      "notarized": true,
-      "stapled": true,
-      "gatekeeperAccepted": true
-    },
-    "publisherSigning": {
-      "macHarness": "AD_HOC_INTEGRITY",
-      "windows": "NOT_AVAILABLE"
-    },
-    "limits": [
-      "Synthetic provider execution and independent native checks are not fresh paid AI-service tests.",
-      "Portable task summaries establish neither origin authenticity nor current task completion.",
-      "No automatic upload or new execution authority is added.",
-      "Live VibePackr import is not verified by this release.",
-      "Linux qualification covers Debian 13 x86_64 with GTK 3 and WebKitGTK 4.1.",
-      "Publishing a release does not automatically replace another user installation."
-    ],
-    "packageUpdate": {
-      "packagingRevision": 1,
-      "stage": "PUBLIC_PACKAGE_ROUND_TRIP_VERIFIED",
-      "publicRoundTrip": "PASS",
-      "executablesChanged": false,
-      "updaterLimitsWeakened": false,
-      "localPlatforms": [
-        "macos",
-        "windows",
-        "linux"
-      ],
-      "publicArchives": {
-        "CALF-Harness-1.8.17-macos-arm64.zip": "cbff9ad70b2df73d2a03c6342bc5547c832b20a76ee7a022da97f23023bed954",
-        "CALF-Workbench-1.9.13-macos-arm64.zip": "f062a09b1a1a3d2eacedcec412fa84d09aa6504b393744227e5e9aefc5ac96c8",
-        "CALF-Harness-1.8.17-windows-x86_64.zip": "46c650b92dcefcad08a75fe8cb56c36338705567a1f5a063de9cb1b6a66bb0b4",
-        "CALF-Workbench-1.9.13-windows-x86_64.zip": "ad83e75b791cc06675bf15d5d54443433a4fb6f631042a3c0e4ac23824d332fb",
-        "CALF-Harness-1.8.17-linux-x86_64.tar.gz": "16db0a4b2aeea03d1ca6955f21e457eb32671ce14340a8b692bc61baa4c57c64",
-        "CALF-Workbench-1.9.13-linux-x86_64.tar.gz": "06d1bf94eca61aac1269ea0de0829e6b42212f3a70f1b840b5d7fed1c62b435d"
-      },
-      "originalArchivesRetained": true,
-      "freshPublicPlatforms": {
-        "mac": {
-          "oldVersion": "1.9.12",
-          "newVersion": "1.9.13",
-          "checks": 13,
-          "bothTaskOutcomes": "SATISFIED",
-          "protectedFiles": 60,
-          "archiveSha256": "f062a09b1a1a3d2eacedcec412fa84d09aa6504b393744227e5e9aefc5ac96c8",
-          "harness": {
-            "oldVersion": "1.8.16",
-            "newVersion": "1.8.17",
-            "archiveSha256": "cbff9ad70b2df73d2a03c6342bc5547c832b20a76ee7a022da97f23023bed954",
-            "prepared": true,
-            "rolledBack": true
-          },
-          "modelCalls": 0
-        },
-        "windows": {
-          "oldVersion": "1.9.12",
-          "newVersion": "1.9.13",
-          "checks": 12,
-          "bothTaskOutcomes": "SATISFIED",
-          "protectedFiles": 60,
-          "archiveSha256": "ad83e75b791cc06675bf15d5d54443433a4fb6f631042a3c0e4ac23824d332fb",
-          "harness": {
-            "oldVersion": "1.8.16",
-            "newVersion": "1.8.17",
-            "archiveSha256": "46c650b92dcefcad08a75fe8cb56c36338705567a1f5a063de9cb1b6a66bb0b4",
-            "prepared": true,
-            "rolledBack": true
-          },
-          "modelCalls": 0
-        },
-        "linux": {
-          "oldVersion": "1.9.12",
-          "newVersion": "1.9.13",
-          "checks": 12,
-          "bothTaskOutcomes": "SATISFIED",
-          "protectedFiles": 60,
-          "archiveSha256": "06d1bf94eca61aac1269ea0de0829e6b42212f3a70f1b840b5d7fed1c62b435d",
-          "harness": {
-            "oldVersion": "1.8.16",
-            "newVersion": "1.8.17",
-            "archiveSha256": "16db0a4b2aeea03d1ca6955f21e457eb32671ce14340a8b692bc61baa4c57c64",
-            "prepared": true,
-            "rolledBack": true
-          },
-          "modelCalls": 0
-        }
-      }
-    }
+  "controlCompute": "CPU",
+  "singleAgent": true,
+  "coreTestsPassed": 158,
+  "ignoredSpawnedTestHelper": 1,
+  "additionalLocalDecoderTestsPassed": 3,
+  "desktopTestsPassed": 7,
+  "uiTestsPassed": 61,
+  "sdkPythonTestsPassedPerPlatform": 22,
+  "actualCodex": {
+    "outcome": "SATISFIED",
+    "attempt": 1,
+    "independentTests": 3,
+    "semanticKnowledgeEfficacyEstablished": false
   },
-  "harness": "1.8.17",
-  "sdk": "0.2.10",
-  "newProviderCalls": 0,
-  "privateCoreSourceIncluded": false,
-  "macPublisherTrust": "Developer ID signed; Apple notarized and stapled; Gatekeeper accepted",
+  "windowsAndDebian": "Actual knowledge import, bounded reads, source binding, provider failure/resume/repair/independent checks and SDK queries passed with synthetic providers",
+  "knowledge": {
+    "starterReferences": 367,
+    "privateQualificationDocuments": 4334,
+    "privateCorpusIncluded": false,
+    "namedOnlyEntriesExplicit": true
+  },
+  "localModels": {
+    "completedTaskQualified": false,
+    "ollama": "Installed Qwen7B loaded; unchanged CALF swap-surge guard interrupted",
+    "mlx": "Installed Qwen7B loaded; unchanged isolated server memory-warning guard interrupted",
+    "downloads": 0,
+    "furtherRetries": 0
+  },
+  "macWorkbench": {
+    "developerIdSigned": true,
+    "notarized": true,
+    "stapled": true,
+    "gatekeeperAccepted": true
+  },
   "windowsPublisherSigning": false,
-  "packages": {
-    "CALF-Workbench-1.9.14-macos-arm64.zip": {
-      "sha256": "873623d2b1098e2ddc7d33d2bdd8c69c3134c89eef676e0ddc94932726ccb22e",
-      "coreSha256": "4110210a98708f37f3c90932345de8a4236240a7710f6a385da163d870667e3e",
-      "uiSha256": "a12046d3a13bf0fb9749e8555838079b635e859bd87c8ee9d81f37336a9b9e80",
-      "entries": 65
-    },
-    "CALF-Workbench-1.9.14-windows-x86_64.zip": {
-      "sha256": "8f2f3b0c232d0dac204a32a184fd4c98b1e281c7bd509c8e561d9d1ea91cd6c0",
-      "coreSha256": "74e4d570e880abe9279282093117d625a225495a886587a92b3cda83c5a79eec",
-      "uiSha256": "3b7713976c34cf7ca4a1f6f54aff70dc0d46f5f997ce44e0069169beca14ff45",
-      "entries": 61
-    },
-    "CALF-Workbench-1.9.14-linux-x86_64.tar.gz": {
-      "sha256": "de41f1ea7914a67837dec037c51700983773a505e21489af6367c1d6c5cb6b50",
-      "coreSha256": "69c3703dc765cfd9339d1b367dd8971e9fa9ce21032a18df4dc8d98ec3502d83",
-      "uiSha256": "de29d68167b489ba9dc0dbc690fc75525dfe1eada15ed87b3c601b0ef5a44bd8",
-      "entries": 61
-    }
-  },
-  "localUpdateResumeRollback": {
-    "macos": {
-      "status": "PASS",
-      "checks": 12,
-      "taskOutcomes": "SATISFIED",
-      "provider": "compiled deterministic fixture, not a new paid AI session"
-    },
-    "windows": {
-      "status": "PASS",
-      "checks": 11,
-      "taskOutcomes": "SATISFIED",
-      "provider": "compiled deterministic fixture, not a new paid AI session"
-    },
-    "linux": {
-      "status": "PASS",
-      "checks": 11,
-      "taskOutcomes": "SATISFIED",
-      "provider": "compiled deterministic fixture, not a new paid AI session"
-    }
-  }
+  "limits": [
+    "No fresh live Windows/Linux model completion or cross-cloud portability claim.",
+    "One initial Windows corruption error-text assertion failed although lookup was rejected; diagnostic and final full runs passed without weaker checks. Exact initial cause not established.",
+    "Reference retrieval is not current completion or authority.",
+    "Private full corpus is not distributed.",
+    "Linux qualification is Debian 13 x64 GTK3/WebKitGTK4.1.",
+    "Public download and installed activation receipts are separate from package verification."
+  ],
+  "buildIsolation": "Harness and Workbench use edition-specific output directories; initial stale-cache outputs retained and excluded."
 }

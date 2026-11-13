@@ -1,30 +1,35 @@
-# CALF native host connections
+# CALF host connections
 
-[한국어](HOST_CONNECTIONS_KR.md)
+[한국어](HOST_CONNECTIONS_KR.md) · [Native host kit](hosts/README.md)
 
-Harness 1.8.15 and Workbench 1.9.11 supervise one agent in Codex, Antigravity or local Claude Code. Accounts, models, command permissions and unrelated hooks remain with each host. No additional model, daemon or local LLM is required.
+CALF supervises one agent working in Codex, Antigravity or Claude Code. Each host
+keeps its own account, model, approval rules and settings. The current adapters
+use the shared Rust core; no extra agent, local model or resident service is
+needed. Ordinary Claude chat, Cowork and cloud Code sessions are separate modes.
 
-Codex and Antigravity use `calf install` and the existing native hooks. Codex requires its normal `/hooks` review when a command changes. An existing T9 or other owner-managed protection bridge must be preserved; do not silently replace it with a second route.
+Use the **host kit included with the exact core package**. Follow its
+[installation guide](hosts/README.md) or [Claude guide](hosts/claude/README.md).
+Older kits may contain a Python adapter; keep them with their original version
+rather than mixing old adapter commands with a newer core.
 
-## Claude Code
+Inspect an existing managed installation first. Keep the same root, retained
+binaries and state. Apply only the reviewed CALF hook definitions. New Codex
+commands need normal /hooks trust review; Antigravity and Claude retain their
+own execution approval. A new session is needed to verify the selected route.
 
-The lifecycle adapter and versioned setup/update/recovery are now Rust commands in the native core. Python is not needed for this connection. Ordinary Claude chat, Cowork and cloud sessions are separate modes.
+A configured route, protocol test, native-core test and actual AI session are
+different evidence. Check the release verification report for the exact OS and
+host mode. Windows/Linux core qualification does not by itself qualify every
+host application on those systems. Likewise, a prompt-bearing event can attach
+local engineering references only when that feature is present in the selected
+core and the correct CALF_WORK_HOME is supplied to that process.
 
-```sh
-/absolute/calf install --root /absolute/native-calf --no-hooks
-/absolute/calf host prepare --root /absolute/claude-kit --revision 1.8.15-hosts.1 --core /absolute/calf --config /absolute/native-calf/config.json
-/absolute/calf host inspect --settings /absolute/claude/settings.json
-/absolute/calf host apply --root /absolute/claude-kit --revision 1.8.15-hosts.1 --settings /absolute/claude/settings.json --expected-sha256 HASH_FROM_INSPECT
-```
+A tool process exiting normally is not task completion. Registered checks must
+match the current files and execution context. If a host denies a command,
+retain the denial and use its ordinary approval flow. Do not weaken checks,
+add blanket allow rules or treat historical PASS as a current verdict.
 
-Use physical absolute paths and run `prepare` with that exact selected core executable. For a durable installation, use the versioned binary returned by `install` for subsequent commands. A new revision is stored beside earlier revisions. `apply` backs up the exact original settings and retains permissions, MCP entries and unrelated hooks. It refuses an unmanaged existing CALF route; migration of such a route needs an explicit comparison, not a second installation over it. Restart the host session after selecting an updated connection.
-
-To select a retained revision, apply that revision with the current settings hash. To inspect an interrupted apply, use `calf host recover --root STORE`, then add `--acknowledge OPERATION_ID` only for a confirmed before/after state. Recovery does not rewrite settings or run work. Unrecognised changes remain UNKNOWN.
-
-## Execution and evidence
-
-The adapter forwards a denied call or a rewritten registered check input, never a native permissionDecision=allow. Claude's own approval flow stays in charge. A complete PostToolBatch can resolve a matching non-check call without claiming it executed. A registered check requires its real owned-process terminal and matching file versions. Never-started owned checks can be cancelled without launching their command; claimed or ambiguous executions remain UNKNOWN.
-
-Synthetic protocol tests are separate from actual AI/app sessions. Read the release verification report for the tested OS and scenario. Earlier actual desktop sessions remain historical evidence; a new binary build does not prove that a running app reloaded it.
-
-Repository context, its read-only Local MCP server and CPU GCN/MCL connection are built into the core. The only current optional extension is FFmpeg. Earlier connections, records, contracts, settings and task runtimes are retained.
+Inspect any local reference collection before running an AI task: selected
+references may be sent to the connected provider as task input. Read-only
+knowledge and Repository MCP queries themselves make no AI calls. Extension
+packs do not automatically replace the native core or update host hooks.

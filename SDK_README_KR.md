@@ -1,19 +1,25 @@
-# CALF SDK 0.2.10 — 개발자 프리뷰
+# CALF SDK 0.2.11
 
-이 버전은 네이티브 코어를 통해 로컬 요청 양식과 작업 요약 미리보기·내보내기를 제공합니다. 지문 검사는 문서의 일관성을 확인할 뿐 실행 권한이나 현재 완료를 증명하지 않습니다. 자동 업로드는 없습니다. [한국어 안내](docs/CURRENT_RELEASE_KR.md) · [English guide](docs/CURRENT_RELEASE.md) · [Python 미리보기](examples/task_handoff.py) · [Node 미리보기](examples/task_handoff.mjs). 새 API는 하네스 1.8.17 또는 워크벤치 1.9.13이 필요합니다. 사용할 API와 맞는 배포본을 설치하세요.
+공유 Rust 코어를 연결하는 가벼운 통합 도구입니다. 이번 버전에는 필요한 공학 지식만 조회하는 Python·Node·Rust 예제를 추가했습니다. 인덱싱·출처 해시·조회 제한·완료 검사는 코어에서 처리하며, SDK가 별도 모델·상주 서비스·데이터베이스를 요구하지 않습니다.
 
-이전 SDK 0.2.9에 `artifacts()`를 추가했습니다. 하네스 1.8.16 / 워크벤치 1.9.12에서 기록된 파일을 조회하고, 새로 만드는 작은 임시 텍스트에 생성 근거·참조·보존 기한을 붙일 수 있습니다. 조건을 충족한 파일은 확인 후 격리·복원하며, 기존 소스·테스트·후보·복구 근거는 계속 보호합니다. [사용 안내](docs/ARTIFACT_LIFECYCLE_KR.md), [Python 예제](examples/managed_artifact.py), [Node 읽기 전용 예제](examples/artifacts.mjs)를 참고하세요. 상주 탐색기나 자동 삭제는 추가하지 않습니다.
+[공학 지식 안내](sdk/docs/ENGINEERING_KNOWLEDGE_KR.md) · [Python](sdk/examples/engineering_knowledge.py) · [Node](sdk/examples/engineering_knowledge.mjs) · [Rust](sdk/examples/engineering_knowledge.rs) · [로컬 모델 미리보기](sdk/docs/LOCAL_MODELS_KR.md)
 
-Universal Work v1은 작업 계약을 고정하고 검사한 파일 버전과 결과를 함께 확인하는 범용 작업 규약입니다. 범용 어댑터, 별도 런타임 라이브러리가 필요 없는 Python·Node 클라이언트, 제어 기능을 선택적으로 켤 수 있는 MCP를 제공합니다. [규약과 실행 예제](docs/WORK_PROTOCOL_KR.md)를 참고하세요. Workbench 1.9.2의 **Runtime Work**에서 같은 작업을 조회·제어할 수 있으며 기존 코드 작업 API도 유지됩니다.
+공학 지식 API는 하네스 **1.8.18** 또는 워크벤치 **1.9.15** 이상이 필요합니다. 선택형 로컬 모델 연결은 미리보기입니다. Qwen7B 시험은 기존 자원 가드가 중단했으므로 작업 완료까지 지원 검증을 마쳤다는 뜻은 아닙니다. 비공개 검증 자료는 포함하지 않습니다.
+
+SDK 0.2.10에서 도입한 작업 요약과 로컬 요청 초안 API도 유지합니다. 조회·내보내기는 실행 권한이나 현재 완료 판정을 부여하지 않으며 자동 업로드도 하지 않습니다.
+
+SDK 0.2.9에 `artifacts()`를 추가했습니다. 하네스 1.8.16 / 워크벤치 1.9.12에서 기록된 파일을 조회하고, 새로 만드는 작은 임시 텍스트에 생성 근거·참조·보존 기한을 붙일 수 있습니다. 조건을 충족한 파일은 확인 후 격리·복원하며, 기존 소스·테스트·후보·복구 근거는 계속 보호합니다. [사용 안내](sdk/docs/ARTIFACT_LIFECYCLE_KR.md), [Python 예제](sdk/examples/managed_artifact.py), [Node 읽기 전용 예제](sdk/examples/artifacts.mjs)를 참고하세요. 상주 탐색기나 자동 삭제는 추가하지 않습니다.
+
+Universal Work v1은 작업 계약을 고정하고 검사한 파일 버전과 결과를 함께 확인하는 범용 작업 규약입니다. 범용 어댑터, 별도 런타임 라이브러리가 필요 없는 Python·Node 클라이언트, 제어 기능을 선택적으로 켤 수 있는 MCP를 제공합니다. [규약과 실행 예제](sdk/docs/WORK_PROTOCOL_KR.md)를 참고하세요. Workbench 1.9.2의 **Runtime Work**에서 같은 작업을 조회·제어할 수 있으며 기존 코드 작업 API도 유지됩니다.
 
 
-[English](README.md) · [프로토콜 규격](docs/PROTOCOL_KR.md) · [확장 라이선스](LICENSE-SDK.txt)
+[English](README.md) · [프로토콜 규격](sdk/docs/PROTOCOL_KR.md) · [확장 라이선스](LICENSE-SDK.txt)
 
-**CALF Harness 1.8.7–1.8.17** 및 **CALF Workbench 1.9.2–1.9.13**에 포함된 네이티브 코어를 연결하는 작은 SDK입니다. Python 3.10 이상과 표준 라이브러리로 동작합니다. 상주 서비스·모델 런타임·데이터베이스·네트워크 의존성을 추가하지 않으며, 비공개 코어 소스는 포함하지 않습니다.
+**CALF Harness 1.8.7–1.8.18** 및 **CALF Workbench 1.9.2–1.9.15**에 포함된 네이티브 코어를 연결하는 작은 SDK입니다. Python 3.10 이상과 표준 라이브러리로 동작합니다. 상주 서비스·모델 런타임·데이터베이스·네트워크 의존성을 추가하지 않으며, 비공개 코어 소스는 포함하지 않습니다.
 
 OS별 실행 파일·SDK·MCP 검증 결과는 압축 파일의 `VERIFICATION.json`에 있습니다. 합성 작업과 실제 로컬 프로세스로 검사하며 AI 실서비스 호출이나 모든 배포판 지원을 주장하지 않습니다.
 
-[SDK 0.2.10 다운로드](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.10). 하나의 공용 소스 압축 파일에 SDK·영문/한글 안내·영문/한글 프로토콜·예제·검사 실행기가 포함됩니다. 해당 OS의 CALF 네이티브 릴리즈는 별도로 설치합니다. SDK 압축 파일에 코어 런타임은 포함하지 않습니다.
+[SDK 0.2.11 다운로드](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.11). 하나의 공용 소스 압축 파일에 SDK·영문/한글 안내·영문/한글 프로토콜·예제·검사 실행기가 포함됩니다. 해당 OS의 CALF 네이티브 릴리즈는 별도로 설치합니다. SDK 압축 파일에 코어 런타임은 포함하지 않습니다.
 
 ## 시작하기
 
@@ -143,7 +149,7 @@ CALF 1.8.7 / 1.9.2는 Node 24 이상 내장 node:test 프로파일을 지원합�
 
 ## 저장 결과와 현재 상태 조회
 
-하네스 1.8.10 / Workbench 1.9.5에서 `client.registered_tasks(workspace)`로 등록 작업을 찾고 `client.registered_status(workspace, task)`로 현재 판정과 `statusView` 진단 정보를 읽습니다. `is_satisfied(response)`는 최상위 현재 판정만 확인합니다. 저장된 과거 `SATISFIED`를 완료 근거로 사용하지 않습니다. 검사·AI 실행이나 환경 변수 변경은 하지 않습니다. [예제](examples/status_context.py) · [상세 안내](docs/STATUS_CONTEXT_KR.md).
+하네스 1.8.10 / Workbench 1.9.5에서 `client.registered_tasks(workspace)`로 등록 작업을 찾고 `client.registered_status(workspace, task)`로 현재 판정과 `statusView` 진단 정보를 읽습니다. `is_satisfied(response)`는 최상위 현재 판정만 확인합니다. 저장된 과거 `SATISFIED`를 완료 근거로 사용하지 않습니다. 검사·AI 실행이나 환경 변수 변경은 하지 않습니다. [예제](sdk/examples/status_context.py) · [상세 안내](sdk/docs/STATUS_CONTEXT_KR.md).
 
 ## Claude 연결 키트 (0.2.4)
 
@@ -168,3 +174,5 @@ Python의 `tool_mcp_server`와 Node의 `toolMcpServer`는 같은 포그라운드
 ## 네이티브 Repository 문맥
 
 하네스 1.8.15 / 워크벤치 1.9.11부터 사용할 수 있습니다. `client.repository_context(workspace, task="청구서", registry=registry)`는 Rust 코어에서 필요한 로컬 기록만 조회합니다. `client.repository_mcp_server(registry, workspace)`는 읽기 전용 MCP 연결 설정을 반환하며, Node에서는 `repositoryMcpServer`를 사용합니다. 조회한다고 AI에게 자료를 보내거나 완료를 판정하지 않습니다. SDK는 언어별 연결층이며 별도 실행 엔진이 아닙니다.
+
+기존 Ollama·MLX 서버 연결은 선택형 미리보기입니다. [연결 방법과 검증 범위](sdk/docs/LOCAL_MODELS_KR.md)를 확인하세요. 모델 목록 연결과 실제 작업 완료는 구분합니다.

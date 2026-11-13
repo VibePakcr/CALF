@@ -1,11 +1,20 @@
 # CALF — 개인 작업 흐름 개선
 
 <!-- calf:current-release:start -->
-harness: 1.8.17
-workbench: 1.9.14
-sdk: 0.2.10
+harness: 1.8.18
+workbench: 1.9.15
+sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+하네스 **1.8.18** · 워크벤치 **1.9.15** · SDK **0.2.11**입니다.
+
+공유 Rust 코어에 필요한 공학 지식만 조회하는 기능, 로컬 전문 검색 인덱스, 작업별 참조 고정과 Workbench 지식 패널을 추가했습니다. 기본 제공하는 참조는 367개입니다. 검증에 사용한 비공개 문서 4,334건은 배포 파일에 포함하지 않습니다. [지식 조회 안내](ENGINEERING_KNOWLEDGE_KR.md) · [로컬 모델 연결과 한계](LOCAL_MODELS_KR.md).
+
+Windows와 Debian에서 합성 제공자를 이용한 가져오기·재개·수정·독립 검사를 통과했습니다. Mac의 실제 Codex 작업도 등록 검사와 별도 검토를 통과했습니다. Qwen MLX·Ollama 시험은 기존 자원 가드가 중단해 작업 완료까지 검증되지는 않았습니다. CALF 자체에는 추가 모델이 필요하지 않습니다.
+
+## 이전 공개 배포본
+
 
 이 문서는 하네스 1.8.17 · 워크벤치 1.9.13 · SDK 0.2.10을 설명합니다. 공개 릴리즈와 현재 설치 버전은 별도로 확인해야 합니다. 배포본은 [최신 공개 릴리즈](https://github.com/VibePakcr/CALF/releases/latest)에서 받으세요.
 

@@ -1,6 +1,12 @@
-# CALF SDK 0.2.10 — Developer Preview
+# CALF SDK 0.2.11
 
-This release adds explicit local request outlines and task-summary preview/export through the native core. A handoff digest checks consistency; it grants no execution authority or current completion. Nothing is uploaded automatically. [English guide](docs/CURRENT_RELEASE.md) · [한국어 안내](docs/CURRENT_RELEASE_KR.md) · [Python preview](examples/task_handoff.py) · [Node preview](examples/task_handoff.mjs). These APIs require Harness 1.8.17 or Workbench 1.9.13. Download the matching release before using these APIs.
+A thin integration layer for the shared Rust core. This release adds bounded engineering-reference queries and examples in Python, Node and Rust. Indexing, source hashes, limits and completion checks stay in the core; the SDK adds no model, daemon or database dependency.
+
+[Engineering guide](docs/ENGINEERING_KNOWLEDGE.md) · [Python](examples/engineering_knowledge.py) · [Node](examples/engineering_knowledge.mjs) · [Rust](examples/engineering_knowledge.rs) · [Local model preview](docs/LOCAL_MODELS.md)
+
+Engineering-reference APIs require Harness **1.8.18** or Workbench **1.9.15**. The optional local-model connection remains a preview: the Qwen7B trials were stopped by unchanged resource guards, so completed-task support is not qualified. The private qualification dataset is not included.
+
+The task-summary and local request-outline APIs introduced in SDK 0.2.10 remain available. They do not grant execution authority or establish current completion, and nothing is uploaded automatically.
 
 SDK 0.2.9 introduced `artifacts()` for recorded-file inventory and managed text. Harness 1.8.16 / Workbench 1.9.12 can record creation, references and retention for new small disposable text, then quarantine or restore an eligible file with explicit confirmation. Existing source, tests, candidates and recovery evidence remain protected. See [the guide](docs/ARTIFACT_LIFECYCLE.md), [Python example](examples/managed_artifact.py) and [Node read-only example](examples/artifacts.mjs). No background scanner or automatic deletion is added.
 
@@ -9,11 +15,11 @@ Universal Work v1 adds frozen contracts, checks tied to the exact output files, 
 
 [한국어](README_KR.md) · [Protocol](docs/PROTOCOL.md) · [Extension license](LICENSE-SDK.txt)
 
-A small integration layer for **CALF Harness 1.8.7–1.8.17** and the native core included in **CALF Workbench 1.9.2–1.9.13**. Python 3.10+ and the standard library are sufficient. The SDK adds no background service, model runtime, database or network dependency. CALF's execution engine remains proprietary and is not included.
+A small integration layer for **CALF Harness 1.8.7–1.8.18** and the native core included in **CALF Workbench 1.9.2–1.9.15**. Python 3.10+ and the standard library are sufficient. The SDK adds no background service, model runtime, database or network dependency. CALF's execution engine remains proprietary and is not included.
 
 Qualification details for the native cores and SDK are in `VERIFICATION.json` in the archive. Runtime tests use real Python/Node processes and a loopback HTTP service; no new live AI-service benchmark is claimed.
 
-[Download SDK 0.2.10](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.10). One portable source archive includes this SDK, English/Korean guides, both protocol documents, examples and the test runner. Install a matching CALF native release separately; the SDK archive contains no core runtime.
+[Download SDK 0.2.11](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.11). One portable source archive includes this SDK, English/Korean guides, both protocol documents, examples and the test runner. Install a matching CALF native release separately; the SDK archive contains no core runtime.
 
 ## Start with existing records
 
@@ -181,3 +187,5 @@ The qualified profile covers reviewed local reads, creation of absent candidates
 ## Native repository context
 
 Requires Harness 1.8.15 / Workbench 1.9.11. `client.repository_context(workspace, task="invoice", registry=registry)` retrieves scoped local references in Rust. `client.repository_mcp_server(registry, workspace)` returns a foreground read-only MCP configuration; Node provides `repositoryMcpServer`. No query sends references to AI or establishes completion. The SDK is a language binding, not a second runtime.
+
+Existing Ollama/MLX server connection is an optional preview. [Connection and qualification limits](docs/LOCAL_MODELS.md). Metadata connection is separate from completed work.

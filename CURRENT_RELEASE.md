@@ -1,11 +1,20 @@
 # CALF — personal workflows
 
 <!-- calf:current-release:start -->
-harness: 1.8.17
-workbench: 1.9.14
-sdk: 0.2.10
+harness: 1.8.18
+workbench: 1.9.15
+sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+Harness **1.8.18** · Workbench **1.9.15** · SDK **0.2.11**.
+
+The shared Rust core adds bounded engineering references, local full-text import, frozen task context and a Workbench knowledge panel. The built-in starter has 367 references; the private 4,334-document qualification dataset is not included. [Engineering guide](ENGINEERING_KNOWLEDGE.md) · [Local model preview and limits](LOCAL_MODELS.md).
+
+Windows and Debian passed actual import, resume, repair and independent checks with deterministic providers. A real Codex-connected Mac task passed its registered checks and a separate review. Local Qwen MLX/Ollama trials were stopped by unchanged resource guards; completed-task support for these models is not qualified. No new model is required by CALF.
+
+## Previous published release
+
 
 This guide covers Harness 1.8.17, Workbench 1.9.14 and SDK 0.2.10. Verify the published release and your installed version separately. Use the [latest public release](https://github.com/VibePakcr/CALF/releases/latest) for the current distributed version.
 

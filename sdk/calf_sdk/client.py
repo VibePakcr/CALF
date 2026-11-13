@@ -167,6 +167,17 @@ class CalfClient:
         """Build metadata only. Does not certify publication or update an installation."""
         return self.call("release_info")
 
+    def knowledge(self, action: str = "status", **fields: Any) -> dict[str, Any]:
+        """Read the Rust core's engineering references. Never imports or executes.
+
+        Requires a core advertising engineering-knowledge-v1. All indexing,
+        selection, content validation and limits remain in Rust.
+        """
+        allowed = {"query", "id", "sha256", "limit", "domain", "kind", "byteBudget", "offset"}
+        if action not in {"status", "search", "read", "resolve"} or set(fields) - allowed:
+            raise ValueError("Invalid read-only knowledge request")
+        return self.call("knowledge", request={"action": action, **fields})
+
     def request_templates(self, *, action: str = "list", **fields: Any) -> dict[str, Any]:
         """Explicit local draft data; never a task submission or approval."""
         if action not in {"list", "save", "remove"} or set(fields) - {"entry", "id", "digest", "confirm"}:
@@ -228,7 +239,8 @@ class CalfClient:
     def repository_mcp_server(self, registry: str | os.PathLike,
                               workspace: str | os.PathLike) -> dict[str, Any]:
         """Foreground, read-only native MCP. Does not start a server or register a project."""
-        return {"command": str(self.executable), "args": ["repository-mcp", str(_path(registry)), str(_path(workspace))]}
+        return {"command": str(self.executable), "args": ["repository-mcp", str(_path(registry)), str(_path(workspace))],
+                "env": {"CALF_WORK_HOME": str(self.home)}}
 
     def inspect(self, task: str) -> dict[str, Any]:
         return self.call("inspect", task=task)

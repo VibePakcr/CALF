@@ -11,6 +11,11 @@ export class CalfClient {
     return this._request({...fields,op:'work',home:this.home,action});
   }
   releaseInfo(){return this._request({op:'release_info',home:this.home});}
+  // Thin transport only. The Rust core owns retrieval, validation and limits.
+  knowledge(action='status',fields={}){
+    if(!['status','search','read','resolve'].includes(action)||!fields||typeof fields!=='object'||Array.isArray(fields)||Object.keys(fields).some(k=>!['query','id','sha256','limit','domain','kind','byteBudget','offset'].includes(k)))return Promise.reject(Error('Invalid read-only knowledge request'));
+    return this._request({op:'knowledge',home:this.home,request:{action,...fields}});
+  }
   requestTemplates(action='list',fields={}){
     if(!['list','save','remove'].includes(action)||Object.keys(fields).some(k=>!['entry','id','digest','confirm'].includes(k)))return Promise.reject(Error('Invalid template request'));
     return this._request({...fields,op:'request_templates',home:this.home,action});
@@ -55,7 +60,7 @@ export class CalfClient {
   workMcpServer({control=false}={}) {return {command:this.executable,args:['work-mcp',this.home,...(control?['--control']:[])]};}
   repositoryMcpServer(registry,workspace) {
     if([registry,workspace].some(p=>typeof p!=='string'||!isAbsolute(p)||p.includes('\0')||p.split(/[\\/]/).includes('..')))throw Error('Explicit absolute registry and workspace paths are required');
-    return {command:this.executable,args:['repository-mcp',registry,workspace]};
+    return {command:this.executable,args:['repository-mcp',registry,workspace],env:{CALF_WORK_HOME:this.home}};
   }
   toolMcpServer(policy,policySha256,{control=false}={}) {
     if(typeof policy!=='string'||!isAbsolute(policy)||policy.includes('\0')||policy.split(/[\\/]/).includes('..')||typeof policySha256!=='string'||!/^[0-9a-f]{64}$/.test(policySha256)||typeof control!=='boolean')throw Error('An absolute policy path, exact policy SHA-256 and boolean control are required');

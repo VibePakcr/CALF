@@ -1,20 +1,16 @@
-> Workbench 1.9.14 · monitor and independent sidebar scrolling. [English](MONITOR_UI_FIX.md) · [한국어](MONITOR_UI_FIX_KR.md).
+# Downloads / 다운로드
 
-> Earlier packaging correction (1.8.17 / 1.9.13) · 12 November 2026: download the refreshed archives for in-app updates. Executables are unchanged. [Details](PACKAGE_UPDATE_FIX.md) · [한국어](PACKAGE_UPDATE_FIX_KR.md).
+Harness **1.8.18** · Workbench **1.9.15** · SDK **0.2.11**
 
-# CALF downloads / 다운로드
+[GitHub latest release](https://github.com/VibePakcr/CALF/releases/latest) · [GitLab latest release](https://gitlab.com/vibepackr-group/CALF/-/releases/permalink/latest)
 
-**Harness 1.8.17 · Workbench 1.9.14 · SDK 0.2.10**
-
-[English](README.md) · [한국어](README_KR.md) · [EN/KR manual](CALF_mannual.html)
-
-| Edition | macOS ARM64 | Windows x64 | Linux x64 |
+| Product | macOS ARM64 | Windows x64 | Linux x64 |
 |---|---|---|---|
-| Harness 1.8.17 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.8.17/CALF-Harness-1.8.17-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.8.17/CALF-Harness-1.8.17-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.8.17/CALF-Harness-1.8.17-linux-x86_64.tar.gz) |
-| Workbench 1.9.14 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.9.14/CALF-Workbench-1.9.14-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.9.14/CALF-Workbench-1.9.14-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.9.14/CALF-Workbench-1.9.14-linux-x86_64.tar.gz) |
+| Harness | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.8.18/CALF-Harness-1.8.18-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.8.18/CALF-Harness-1.8.18-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.8.18/CALF-Harness-1.8.18-linux-x86_64.tar.gz) |
+| Workbench | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.9.15/CALF-Workbench-1.9.15-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.9.15/CALF-Workbench-1.9.15-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.9.15/CALF-Workbench-1.9.15-linux-x86_64.tar.gz) |
 
-[SDK 0.2.10](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.10/CALF-SDK-0.2.10.zip) · [Host Connections](https://github.com/VibePakcr/CALF/blob/main/HOST_CONNECTIONS.md) · [SHA-256](SHA256SUMS) · [Verification](VERIFICATION.json)
+[Portable SDK 0.2.11](https://github.com/VibePakcr/CALF/releases/download/sdk-v0.2.11/CALF-SDK-0.2.11.zip) · [Checksums](SHA256SUMS) · [Install / 설치](INSTALL.md) · [한국어 설치 안내](INSTALL_KR.md)
 
-Extract into a new folder and retain your existing records home, contracts, settings and older task runtimes. Review changed hooks through the host’s existing approval flow. The macOS Workbench uses Developer ID signing and Apple notarization; the Harness has an ad-hoc integrity signature. Windows has no publisher signature. Claude host installation is qualified on macOS only.
+Mac Workbench uses Developer ID signing and Apple notarization. Windows publisher signing is not provided. Linux qualification covers Debian 13 x64 with GTK 3 and WebKitGTK 4.1. Keep your existing CALF records home. Earlier releases remain available.
 
-새 폴더에 압축을 풀고 기존 기록 위치·계약·설정과 과거 작업의 실행 파일을 보관하세요. 변경된 훅은 호스트의 기존 승인 절차에서 검토합니다. macOS 워크벤치는 Developer ID 서명과 Apple 공증을 적용하며 하네스는 무결성 확인용 임시 서명본입니다. Windows에는 배포자 서명이 없습니다. Claude 호스트 설치는 macOS에서만 검증했습니다.
+Mac 워크벤치에는 Developer ID 서명과 Apple 공증을 적용합니다. Windows 게시자 서명은 제공하지 않으며 Linux 검증 기준은 GTK 3·WebKitGTK 4.1을 갖춘 Debian 13 x64입니다. 기존 CALF 기록 폴더를 유지하세요. 이전 배포본도 계속 제공합니다.

@@ -1,44 +1,37 @@
 {
-  "status": "PASS",
+  "stage": "PREPUBLICATION_PACKAGING",
   "versions": {
-    "harness": "1.8.17",
-    "workbench": "1.9.13",
-    "sdk": "0.2.10"
+    "harness": "1.8.18",
+    "workbench": "1.9.15",
+    "sdk": "0.2.11"
   },
   "controlCompute": "CPU",
-  "modelCalls": 0,
-  "privateCoreSourceIncluded": false,
-  "coreTests": {
-    "newNativePerPlatform": 10,
-    "previousMacFullRegressionPassed": 147,
-    "previousIgnoredSubprocessHelper": 1
+  "singleAgent": true,
+  "coreTestsPassed": 158,
+  "ignoredSpawnedTestHelper": 1,
+  "additionalLocalDecoderTestsPassed": 3,
+  "desktopTestsPassed": 7,
+  "uiTestsPassed": 61,
+  "sdkPythonTestsPassedPerPlatform": 22,
+  "actualCodex": {
+    "outcome": "SATISFIED",
+    "attempt": 1,
+    "independentTests": 3,
+    "semanticKnowledgeEfficacyEstablished": false
   },
-  "uiTests": {
-    "perPlatform": 53,
-    "method": "Node DOM contract tests",
-    "laneAndCacheContract": "PASS",
-    "unchangedTabSwitchesAllocateNoNodes": 1000
+  "windowsAndDebian": "Actual knowledge import, bounded reads, source binding, provider failure/resume/repair/independent checks and SDK queries passed with synthetic providers",
+  "knowledge": {
+    "starterReferences": 367,
+    "privateQualificationDocuments": 4334,
+    "privateCorpusIncluded": false,
+    "namedOnlyEntriesExplicit": true
   },
-  "sdkTestsPerPlatform": 20,
-  "platforms": {
-    "macos": {
-      "harnessSha256": "34a0b3726010f6802c9dd321e1a34922604ebc1427bfaecded6319e1280acd19",
-      "workbenchCoreSha256": "a2bf7ba7ba2291a53e1a4adc8e26e8f26624e80dee7735d5e92ffea90705176a",
-      "uiSha256": "d81ff86ca5af5b7dafc87f4c1f977f57af967032fa2e5d0831b937a120fd947c",
-      "syntheticExecution": "SATISFIED"
-    },
-    "windows": {
-      "harnessSha256": "55ac0deba4dfeefa02eed65591a7b89f6277840c2e870b2e4be88d219b5cf279",
-      "workbenchCoreSha256": "f08a6699594cd6f18dd681275effadeafdb746988eaa2f7a0615d40d84166d2b",
-      "uiSha256": "52b0fe55f38888376de2b66b7fdb88a4a03891be3e11499cef074f300965c148",
-      "syntheticExecution": "SATISFIED"
-    },
-    "linux": {
-      "harnessSha256": "4b527acb79be64415d38c305ebbca21d3885a4b2d6d1c40bef9d9deb4745c198",
-      "workbenchCoreSha256": "27753bb52ac42522202ae2a47b6eb3c9dff87aa8bef1495ddaab8db854b6357d",
-      "uiSha256": "b0082328703ffc1322d6ac8594e864815b838b77a70e89cd4b233ac496839aae",
-      "syntheticExecution": "SATISFIED"
-    }
+  "localModels": {
+    "completedTaskQualified": false,
+    "ollama": "Installed Qwen7B loaded; unchanged CALF swap-surge guard interrupted",
+    "mlx": "Installed Qwen7B loaded; unchanged isolated server memory-warning guard interrupted",
+    "downloads": 0,
+    "furtherRetries": 0
   },
   "macWorkbench": {
     "developerIdSigned": true,
@@ -46,16 +39,14 @@
     "stapled": true,
     "gatekeeperAccepted": true
   },
-  "publisherSigning": {
-    "macHarness": "AD_HOC_INTEGRITY",
-    "windows": "NOT_AVAILABLE"
-  },
+  "windowsPublisherSigning": false,
   "limits": [
-    "Synthetic provider execution and independent native checks are not fresh paid AI-service tests.",
-    "Portable task summaries establish neither origin authenticity nor current task completion.",
-    "No automatic upload or new execution authority is added.",
-    "Live VibePackr import is not verified by this release.",
-    "Linux qualification covers Debian 13 x86_64 with GTK 3 and WebKitGTK 4.1.",
-    "Publishing a release does not automatically replace another user installation."
-  ]
+    "No fresh live Windows/Linux model completion or cross-cloud portability claim.",
+    "One initial Windows corruption error-text assertion failed although lookup was rejected; diagnostic and final full runs passed without weaker checks. Exact initial cause not established.",
+    "Reference retrieval is not current completion or authority.",
+    "Private full corpus is not distributed.",
+    "Linux qualification is Debian 13 x64 GTK3/WebKitGTK4.1.",
+    "Public download and installed activation receipts are separate from package verification."
+  ],
+  "buildIsolation": "Harness and Workbench use edition-specific output directories; initial stale-cache outputs retained and excluded."
 }

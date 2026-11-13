@@ -2,12 +2,21 @@
 
 [한국어](INSTALL_KR.md) · [Downloads](DOWNLOADS.md) · [First task](FIRST_TASK.md) · [Visual manual](CALF_mannual.html#install)
 
-1. Download **Workbench 1.9.7** for macOS ARM64, Windows x64 or Linux x64 from [Downloads](DOWNLOADS.md). Compare the file's SHA-256 with the release SHA256SUMS.
-2. Extract the complete archive into a **new folder**. Keep its files together. macOS: open CALF Workbench.app. Windows: run calf-terminal.exe. Linux: run ./calf-terminal in a graphical desktop with WebKitGTK 4.1 and its runtime dependencies.
-3. Follow [First task](FIRST_TASK.md): select a folder, connect an existing AI account, write the result, limits and checks.
+1. Download the latest **published Workbench** for your OS from [Downloads](DOWNLOADS.md). Compare its SHA-256 with that release's SHA256SUMS. A source candidate is not a published package.
+2. Extract the whole archive into a **new folder** and keep its files together. On macOS, open CALF Workbench.app. On Windows, run calf-terminal.exe. On Linux, run ./calf-terminal in a graphical desktop.
+3. Follow [First task](FIRST_TASK.md): choose a project folder, connect your existing AI account, describe the result and limits, then find the project's checks. Finding checks does not run them.
+4. After the task, review Diff and the current result summary. A saved success can become UNKNOWN if files or the check environment change.
 
-Updating an existing installation: retain the complete CALF_WORK_HOME, contracts, settings and old version directories. Use the same records home for the new executable. Old tasks can remain pinned to their prior runtime. See [Update and recovery](UPDATE.md) before switching a managed launcher. Do not delete an older runtime to make room for this update.
+CALF is free to use independently. Your AI service keeps its own account, fees and approval rules. Project tools such as Python, Cargo or Node are needed only for the corresponding project checks. Current native host adapters run in Rust; optional SDK examples may use their own client language.
 
-An external AI account/host and project check tools are separate dependencies. The included hosts/ kit supports Workbench 1.9.7; the older SDK 0.2.4 archive remains unchanged. Use this release's included host kit for a 1.9.7 core. Claude host installation is qualified on macOS only.
+## OS requirements
 
-The macOS Workbench is signed with Developer ID and notarized by Apple. The Harness has an ad-hoc integrity signature. Windows has no publisher signature. Review an OS security prompt using your normal policy; this guide does not ask you to disable protections. See the manual for platform requirements and supported execution paths.
+- macOS ARM64: macOS 14 or newer. Check the exact release's Developer ID and Apple notarization status; local source candidates need their own distribution checks.
+- Windows x64: Microsoft Edge WebView2 Runtime. Publisher signing is not currently claimed. Follow your normal OS security policy.
+- Linux x64: GTK 3 and WebKitGTK 4.1. Debian 13 is the qualified distribution; other distributions are not automatically covered.
+
+## Existing installations
+
+Keep the complete CALF_WORK_HOME, contracts, settings and old version folders. Use the same data home with the new executable. Tasks may remain pinned to an older runtime. Read [Update and recovery](UPDATE.md) before switching a managed launcher; do not delete an old runtime to make room.
+
+For Codex, Antigravity or Claude, use the matching included [host kit](hosts/README.md) and its [Claude guide](hosts/claude/README.md). Inspect an existing installation before adding a route. New Codex hook definitions require the host's normal review. Publishing a package does not update running sessions or grant command permission.

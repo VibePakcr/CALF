@@ -1,3 +1,27 @@
+# CALF update — Harness 1.8.18 · Workbench 1.9.15 · SDK 0.2.11
+
+- The shared Rust core retrieves Development Pack, Pattern and Method references on the CPU. The built-in starter contains 367 references, including entries explicitly marked as names rather than complete definitions.
+- An explicit local import builds a bounded SQLite full-text index, preserving source hashes and candidate/historical status. The private qualification corpus is not included in downloads.
+- New tasks freeze their selected references through plan, repair, review and resume. Knowledge remains reference data; registered, file-bound checks still decide completion.
+- Workbench adds an on-demand Engineering knowledge panel. Repository Local MCP and Rust/Python/Node SDK examples use the same native reader.
+- An optional loopback-only Ollama/MLX chat connection checks model metadata without inference. No model, daemon, cloud dependency or extra agent is required. Actual local-model task completion is not qualified: unchanged memory guards stopped the Qwen7B trials on the M5 16GB.
+- Resource interruptions are distinguished from ordinary provider failure. Short native transport error codes are recorded without prompts or raw model responses.
+- Windows and Debian passed actual synthetic import/resume/repair/check flows and SDK reads. A Mac Codex task passed registered checks, a separate review and three independently rerun tests. A lookup result or a source's past PASS is never a new completion receipt.
+- Previous versions, retained task runtimes, records, contracts and settings remain in place. The proprietary core is distributed as free-to-use binaries; public SDK/adapter/MCP extension points remain separate.
+
+## 한국어
+
+- Development Pack·Pattern·Method 참조를 공유 Rust 코어에서 CPU로 조회합니다. 기본 참조 367개 중 이름만 있는 항목은 완전한 정의와 구분합니다.
+- 사용자가 선택한 자료는 로컬 SQLite 전문 검색 인덱스로 가져옵니다. 출처 해시와 후보·과거 자료 상태를 보존하며 비공개 검증 자료는 배포하지 않습니다.
+- 새 작업의 참조는 계획·수정·검토·재개 동안 그대로 유지합니다. 지식은 참고 자료이고 실제 파일에 결속된 등록 검사가 완료 여부를 판단합니다.
+- Workbench의 Engineering knowledge 패널은 열었을 때만 조회합니다. Repository Local MCP와 Rust·Python·Node SDK 예제도 같은 네이티브 조회기를 사용합니다.
+- 기존 Ollama·MLX 서버를 위한 루프백 연결을 미리보기로 제공합니다. 연결 확인은 모델 목록만 읽습니다. M5 16GB에서 Qwen7B 시험은 기존 메모리 가드가 중단했으므로 작업 완료까지 지원 검증이 끝났다고 안내하지 않습니다.
+- 자원 부족에 따른 중단과 일반 연결 실패를 구분하고, 민감한 본문 없이 오류 코드를 기록합니다.
+- Windows·Debian의 실제 합성 실행·재개·수정·검사와 SDK 조회를 통과했습니다. Mac의 실제 Codex 작업은 등록 검사·별도 검토와 독립 테스트 3개를 통과했습니다.
+- 이전 버전·작업 런타임·기록·계약·설정과 완료 기준을 유지합니다. 코어 소스는 비공개이며 무료 사용 가능한 실행 파일과 별도 SDK·Adapter·MCP 확장점을 제공합니다.
+
+---
+
 
 ## Workbench 1.9.14: monitor and sidebar update
 
