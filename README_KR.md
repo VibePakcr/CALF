@@ -6,7 +6,9 @@ AI 에이전트 하나의 작업을 요청부터 실행·검수·복구까지 �
 
 **무료 사용 · 비공개 바이너리 코어 · macOS / Windows / Linux**
 
-[다운로드](DOWNLOADS.md) · [영·한 매뉴얼](MANUAL.md) · [English](README.md) · [최신 안내](CURRENT_RELEASE_KR.md)
+[CALF 소개](https://calf.vibepackr.com/) · [설치 안내](https://calf.vibepackr.com/manual/?lang=ko#install) · [다운로드](https://calf.vibepackr.com/#downloads) · [웹 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko) · [English](README.md) · [최신 안내](CURRENT_RELEASE_KR.md)
+
+**처음 사용하시나요?** [소개](https://calf.vibepackr.com/)를 확인하고, [운영체제에 맞는 Workbench](https://calf.vibepackr.com/#downloads)를 받은 뒤 [설치·첫 작업 안내](https://calf.vibepackr.com/manual/?lang=ko#install)를 따라가세요.
 
 ## 최신 배포
 
@@ -39,7 +41,7 @@ AI 에이전트 하나의 작업을 요청부터 실행·검수·복구까지 �
 
 ## 사용 안내와 확장
 
-[시작하기](INSTALL_KR.md) · [호스트 연결](HOST_CONNECTIONS_KR.md) · [첫 작업](FIRST_TASK_KR.md) · [내장 Repository Intelligence](REPOSITORY_BUILTIN_KR.md) · [산출물 관리](ARTIFACT_LIFECYCLE_KR.md) · [MCP 도구 평가](MCP_TOOL_EVALUATION_KR.md) · [SDK](sdk/README_KR.md) · [검증 범위](VERIFICATION.json)
+[시작하기](INSTALL_KR.md) · [호스트 연결](HOST_CONNECTIONS_KR.md) · [첫 작업](FIRST_TASK_KR.md) · [내장 Repository Intelligence](REPOSITORY_BUILTIN_KR.md) · [산출물 관리](ARTIFACT_LIFECYCLE_KR.md) · [MCP 도구 평가](MCP_TOOL_EVALUATION_KR.md) · [SDK](SDK_README_KR.md) · [검증 범위](VERIFICATION.json)
 
 Repository Intelligence는 코어에 내장돼 있습니다. 별도 [CALF Extensions](https://github.com/VibePakcr/CALF-Extensions) 저장소에는 선택형 FFmpeg 확장을 제공합니다.
 

@@ -1,6 +1,8 @@
 # CALF Workbench 설치
 
-[English](INSTALL.md) · [다운로드](DOWNLOADS.md) · [첫 작업](FIRST_TASK_KR.md) · [화면 매뉴얼](MANUAL.md)
+[CALF 소개](https://calf.vibepackr.com/) · [다운로드](https://calf.vibepackr.com/#downloads) · [화면으로 보는 설치](https://calf.vibepackr.com/manual/?lang=ko#install) · [웹 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko) · [English](INSTALL.md)
+
+**처음 설치한다면:** 웹사이트에서 [운영체제에 맞는 Workbench](https://calf.vibepackr.com/#downloads)를 선택하세요. 실제 화면은 [설치·첫 작업 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#install)에서 바로 볼 수 있습니다. 아래 짧은 안내도 계속 사용할 수 있습니다.
 
 1. [다운로드](DOWNLOADS.md)에서 운영체제에 맞는 **최신 공개 Workbench**를 받습니다. 파일의 SHA-256을 해당 릴리즈의 SHA256SUMS와 비교합니다. 개발 후보와 공개 배포본은 구분합니다.
 2. 압축 파일 전체를 **새 폴더**에 풀고 구성 파일을 함께 보관합니다. macOS는 CALF Workbench.app, Windows는 calf-terminal.exe를 엽니다. Linux는 그래픽 데스크톱에서 ./calf-terminal을 실행합니다.
@@ -19,4 +21,4 @@ CALF는 독립적으로 무료로 사용할 수 있습니다. AI 서비스의 �
 
 CALF_WORK_HOME 전체와 계약·설정·이전 버전 폴더를 유지합니다. 새 실행 파일도 같은 데이터 폴더를 사용합니다. 이전 작업은 기존 런타임에 고정돼 있을 수 있습니다. 관리형 실행 경로를 바꾸기 전에 [업데이트·복구](UPDATE.md)를 확인하고, 공간 확보를 위해 이전 런타임을 삭제하지 마세요.
 
-Codex·Antigravity·Claude는 함께 제공되는 [호스트 키트](hosts/README_KR.md)와 [Claude 안내](hosts/claude/README_KR.md)를 사용합니다. 이미 설치돼 있다면 기존 연결부터 확인합니다. 새 Codex 훅 정의는 호스트의 정상적인 검토가 필요합니다. 패키지 공개만으로 실행 중인 세션이 바뀌거나 명령 권한이 부여되지는 않습니다.
+Codex·Antigravity·Claude는 [호스트 연결 안내](HOST_CONNECTIONS_KR.md)를 따라 배포 패키지에 포함된 키트를 사용합니다. 이미 설치돼 있다면 기존 연결부터 확인합니다. 새 Codex 훅 정의는 호스트의 정상적인 검토가 필요합니다. 패키지 공개만으로 실행 중인 세션이 바뀌거나 명령 권한이 부여되지는 않습니다.

@@ -1,5 +1,11 @@
 # Current downloads · 현재 다운로드
 
+[CALF website / 소개](https://calf.vibepackr.com/) · [OS download chooser / 운영체제별 다운로드](https://calf.vibepackr.com/#downloads) · [Install (EN)](https://calf.vibepackr.com/manual/?lang=en#install) · [설치 (한국어)](https://calf.vibepackr.com/manual/?lang=ko#install) · [Full manual / 전체 매뉴얼](MANUAL.md)
+
+New users: start with Workbench and the website’s OS download chooser. The direct downloads and Legacy links below are retained.
+
+처음 사용한다면 웹사이트의 운영체제별 Workbench 다운로드부터 시작하세요. 아래 직접 다운로드와 Legacy 링크도 그대로 사용할 수 있습니다.
+
 Harness **1.8.19** · Workbench **1.9.16** · SDK **0.2.11**
 
 Choose one interface for the same Rust core. Workbench has a desktop UI; Harness is headless. The SDK is unchanged. Extract into a new folder and preserve existing records, contracts, settings and prior runtimes.

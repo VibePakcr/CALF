@@ -1,6 +1,8 @@
 # Install CALF Workbench
 
-[한국어](INSTALL_KR.md) · [Downloads](DOWNLOADS.md) · [First task](FIRST_TASK.md) · [Visual manual](MANUAL.md)
+[CALF website](https://calf.vibepackr.com/en/) · [Downloads](https://calf.vibepackr.com/en/#downloads) · [Illustrated installation](https://calf.vibepackr.com/manual/?lang=en#install) · [Online manual](https://calf.vibepackr.com/manual/?lang=en) · [한국어](INSTALL_KR.md)
+
+**Installing for the first time?** Choose [Workbench for your OS](https://calf.vibepackr.com/en/#downloads), then open the [illustrated installation and first-task manual](https://calf.vibepackr.com/manual/?lang=en#install). The short instructions below remain available here.
 
 1. Download the latest **published Workbench** for your OS from [Downloads](DOWNLOADS.md). Compare its SHA-256 with that release's SHA256SUMS. A source candidate is not a published package.
 2. Extract the whole archive into a **new folder** and keep its files together. On macOS, open CALF Workbench.app. On Windows, run calf-terminal.exe. On Linux, run ./calf-terminal in a graphical desktop.
@@ -19,4 +21,4 @@ CALF is free to use independently. Your AI service keeps its own account, fees a
 
 Keep the complete CALF_WORK_HOME, contracts, settings and old version folders. Use the same data home with the new executable. Tasks may remain pinned to an older runtime. Read [Update and recovery](UPDATE.md) before switching a managed launcher; do not delete an old runtime to make room.
 
-For Codex, Antigravity or Claude, use the matching included [host kit](hosts/README.md) and its [Claude guide](hosts/claude/README.md). Inspect an existing installation before adding a route. New Codex hook definitions require the host's normal review. Publishing a package does not update running sessions or grant command permission.
+For Codex, Antigravity or Claude, follow the [host connection guide](HOST_CONNECTIONS.md) and use the matching kit included in your package. Inspect an existing installation before adding a route. New Codex hook definitions require the host's normal review. Publishing a package does not update running sessions or grant command permission.

@@ -6,7 +6,9 @@ A lightweight, local-first harness and workbench for one AI agent. CALF keeps a 
 
 **Free to use · Proprietary binary core · macOS / Windows / Linux**
 
-[Download](DOWNLOADS.md) · [Manual (English / 한국어)](MANUAL.md) · [한국어](README_KR.md) · [Latest update](CURRENT_RELEASE.md)
+[CALF website](https://calf.vibepackr.com/en/) · [Install](https://calf.vibepackr.com/manual/?lang=en#install) · [Download](https://calf.vibepackr.com/en/#downloads) · [Online manual](https://calf.vibepackr.com/manual/?lang=en) · [한국어](README_KR.md) · [Latest update](CURRENT_RELEASE.md)
+
+**New to CALF?** Read the [overview](https://calf.vibepackr.com/en/), [download Workbench for your OS](https://calf.vibepackr.com/en/#downloads), then follow the [installation and first-task guide](https://calf.vibepackr.com/manual/?lang=en#install).
 
 ## Latest release
 
@@ -39,7 +41,7 @@ The same release executable is shown with separate example records. See [Windows
 
 ## Guides and extensions
 
-[Getting started](INSTALL.md) · [Host connections](HOST_CONNECTIONS.md) · [First task](FIRST_TASK.md) · [Repository Intelligence](REPOSITORY_BUILTIN.md) · [Artifacts](ARTIFACT_LIFECYCLE.md) · [MCP tool evaluation](MCP_TOOL_EVALUATION.md) · [SDK](sdk/README.md) · [Verification scope](VERIFICATION.json)
+[Getting started](INSTALL.md) · [Host connections](HOST_CONNECTIONS.md) · [First task](FIRST_TASK.md) · [Repository Intelligence](REPOSITORY_BUILTIN.md) · [Artifacts](ARTIFACT_LIFECYCLE.md) · [MCP tool evaluation](MCP_TOOL_EVALUATION.md) · [SDK](SDK_README.md) · [Verification scope](VERIFICATION.json)
 
 Repository Intelligence is built into the core. The separate [CALF Extensions](https://github.com/VibePakcr/CALF-Extensions) repository contains the FFmpeg extension; it is optional.
 
