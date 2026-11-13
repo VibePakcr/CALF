@@ -1,11 +1,21 @@
-# CALF — 개인 작업 흐름 개선
+# CALF 현재 패치
 
 <!-- calf:current-release:start -->
-harness: 1.8.19
-workbench: 1.9.16
+harness: 1.8.20
+workbench: 1.9.17
 sdk: 0.2.11
-Release state: published
+Release state: candidate
 <!-- calf:current-release:end -->
+
+Harness **1.8.20** · Workbench **1.9.17** · SDK **0.2.11** 유지.
+
+기본 지식은 설치 후 바로 사용하고, 개인 Markdown·텍스트 자료는 폴더 선택 한 번으로 검사·색인·연결합니다. 기존 참조 선택과 작업 기록·계약·설정은 보존합니다. [개발 자료 사용법](ENGINEERING_KNOWLEDGE_KR.md).
+
+## Previous published release
+
+# CALF — 개인 작업 흐름 개선
+
+
 
 하네스 **1.8.19** · 워크벤치 **1.9.16** · SDK **0.2.11**(변경 없음)입니다.
 

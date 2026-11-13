@@ -1,5 +1,8 @@
 # Earlier releases · Legacy / 이전 배포
 
+Previous complete release: [Harness 1.8.19](https://github.com/VibePakcr/CALF/releases/tag/v1.8.19) · [Workbench 1.9.16](https://github.com/VibePakcr/CALF/releases/tag/v1.9.16). Existing tags and assets are retained.
+
+
 [Current downloads / 현재 다운로드](DOWNLOADS.md)
 
 This index separates earlier releases from the currently recommended version of each product. Legacy is an archive label; it does not by itself declare support ended. Original tags, files, hashes and download addresses are retained. Keep the exact runtime pinned by an existing task and read that release's qualification scope before rollback.

@@ -1,11 +1,21 @@
-# CALF — personal workflows
+# CALF current patch
 
 <!-- calf:current-release:start -->
-harness: 1.8.19
-workbench: 1.9.16
+harness: 1.8.20
+workbench: 1.9.17
 sdk: 0.2.11
-Release state: published
+Release state: candidate
 <!-- calf:current-release:end -->
+
+Harness **1.8.20** · Workbench **1.9.17** · SDK **0.2.11** unchanged.
+
+Built-in references work immediately. One folder choice checks, indexes and connects personal Markdown/text material. Existing selections, task records, contracts and settings are retained. [Engineering material guide](ENGINEERING_KNOWLEDGE.md).
+
+## Previous published release
+
+# CALF — personal workflows
+
+
 
 Harness **1.8.19** · Workbench **1.9.16** · SDK **0.2.11** (unchanged).
 

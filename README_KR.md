@@ -20,6 +20,11 @@ Codex·Antigravity·Claude Code와 함께 사용하는 가벼운 워크벤치입
 
 Workbench 1.9.16의 첫 작업 화면입니다. [Windows·Linux 화면](UI_GUIDE_KR.md)도 볼 수 있습니다.
 
+## 자료는 자동으로 연결합니다
+
+기본 지식은 별도 설정 없이 사용합니다. 개인 자료를 더하려면 **Engineering knowledge → Add a material folder…**에서 Markdown·텍스트 폴더를 한 번 선택하세요. 검사·검색 색인·새 작업 연결은 CALF가 처리합니다. [자세한 안내](ENGINEERING_KNOWLEDGE_KR.md)
+
+
 ## 이런 일을 할 수 있습니다
 
 - **바뀐 파일 살펴보기.** Diff에서 변경 내용과 해당 파일의 검사 결과를 함께 봅니다.
@@ -33,8 +38,8 @@ Repository Intelligence는 CALF에 기본으로 포함돼 있습니다. GCN/MCL�
 
 | 하고 싶은 일 | 선택 |
 | --- | --- |
-| 화면에서 작업을 따라가고 파일과 결과 확인하기 | **Workbench 1.9.16** |
-| 터미널 명령·호스트 훅·MCP로 사용하기 | **Harness 1.8.19** |
+| 화면에서 작업을 따라가고 파일과 결과 확인하기 | **Workbench 1.9.17** |
+| 터미널 명령·호스트 훅·MCP로 사용하기 | **Harness 1.8.20** |
 | 직접 만든 도구 연결하기 | **SDK 0.2.11** |
 
 Workbench와 Harness는 같은 코어를 사용합니다. CALF 데이터 폴더를 같게 지정하면 같은 작업을 볼 수 있습니다. 업데이트할 때는 이 폴더와 이전 작업의 런타임을 유지하세요.

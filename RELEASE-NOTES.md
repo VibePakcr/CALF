@@ -1,5 +1,12 @@
 # CALF Harness 1.8.19 · Workbench 1.9.16
 
+## Harness 1.8.20 · Workbench 1.9.17 — automatic engineering material
+
+Built-in references require no setup. Workbench adds one-folder import for UTF-8 Markdown/text and existing CALF knowledge exports. Rust validates files and Unicode chunks, retains original files and existing selections, and keeps import separate from read-only search/MCP. New tasks use the connected material automatically. SDK 0.2.11 is unchanged.
+
+기본 지식은 설정 없이 사용합니다. 개인 자료는 폴더 선택 한 번으로 검사·색인·연결하며 기존 자료·기록·계약·설정을 보존합니다.
+
+
 - Keep unresolved effects visible after cancel/pause requests; do not confuse a request with an actual stopped operation.
 - Show missing runtime/evidence as unknown; bound attention observation and expose coverage instead of a false all-clear.
 - Native authority, contracts, existing records and recovery remain unchanged. SDK 0.2.11 is unchanged.
