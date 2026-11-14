@@ -13,3 +13,7 @@
 CJK drafts are supported. Light/Dark and monitor folding change presentation while preserving the draft and contract. The screenshot is an actual window with separate example records, not proof of a submitted AI task.
 
 Existing supported project checks and tools are required. The guide does not create acceptance criteria or grant approval. Preserve the complete records home, contracts, settings and retained task runtimes.
+
+## A correction you keep adding
+
+Save the same correction from two different tasks and choose it for a later draft when useful. See [correction suggestions](REQUEST_GUIDANCE.md).

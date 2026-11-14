@@ -8,7 +8,7 @@
 
 | 컴퓨터 | 필요한 환경 |
 | --- | --- |
-| Apple Silicon Mac | macOS 14 이상. Workbench 1.9.16은 서명과 Apple 공증을 적용했습니다. |
+| Apple Silicon Mac | macOS 14 이상. Workbench 1.9.18은 서명과 Apple 공증을 적용했습니다. |
 | Windows x64 | Microsoft Edge WebView2 Runtime. Windows 패키지에는 게시자 서명이 없습니다. |
 | Linux x64 | Debian 13, GTK 3, WebKitGTK 4.1과 그래픽 데스크톱. 다른 배포판은 호환성을 따로 확인해야 합니다. |
 

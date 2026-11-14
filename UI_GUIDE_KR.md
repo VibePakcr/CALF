@@ -1,6 +1,16 @@
-# Workbench 1.9.16 화면 안내
+# Workbench 1.9.18 화면 안내
 
 [English](UI_GUIDE.md) · [설치](INSTALL_KR.md) · [첫 작업](FIRST_TASK_KR.md)
+
+## 반복 수정 제안 추가·되돌리기
+
+**Shape request… → Things I keep correcting**에서 제안을 불러와 원래 문구 뒤에 넣거나 되돌립니다. [단계별 사용법](REQUEST_GUIDANCE_KR.md)을 따라 해보세요.
+
+![제안 추가 · 실제 macOS 1.9.18](guidance-add-1.9.18.jpg)
+
+![되돌리기 · 실제 macOS 1.9.18](guidance-undo-1.9.18.jpg)
+
+아래 첫 작업·결과 사진은 기존 1.9.16 배포본의 예시를 보존한 것입니다.
 
 ## 첫 작업에서 확인할 것
 

@@ -1,5 +1,7 @@
 # Earlier releases · Legacy / 이전 배포
 
+Previous complete releases: [Harness 1.8.20](https://github.com/VibePakcr/CALF/releases/tag/v1.8.20) · [Workbench 1.9.17](https://github.com/VibePakcr/CALF/releases/tag/v1.9.17). Earlier tags and download files remain available.
+
 Previous complete release: [Harness 1.8.19](https://github.com/VibePakcr/CALF/releases/tag/v1.8.19) · [Workbench 1.9.16](https://github.com/VibePakcr/CALF/releases/tag/v1.9.16). Existing tags and assets are retained.
 
 

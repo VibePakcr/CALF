@@ -1,6 +1,16 @@
-# Workbench 1.9.16 screen guide
+# Workbench 1.9.18 screen guide
 
 [한국어](UI_GUIDE_KR.md) · [Install](INSTALL.md) · [First task](FIRST_TASK.md)
+
+## Add and undo a repeated correction
+
+Open **Shape request… → Things I keep correcting**. Load suggestions, append one after your text, or undo it. [Follow the steps](REQUEST_GUIDANCE.md).
+
+![Added suggestion · actual macOS 1.9.18](guidance-add-1.9.18.jpg)
+
+![Undo · actual macOS 1.9.18](guidance-undo-1.9.18.jpg)
+
+The first-task and result pictures below remain examples from the earlier 1.9.16 release.
 
 ## Start with the next action
 

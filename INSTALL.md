@@ -8,7 +8,7 @@ Choose the file for your computer on the [download page](https://calf.vibepackr.
 
 | Computer | Requirements |
 | --- | --- |
-| Mac with Apple Silicon | macOS 14 or later. Workbench 1.9.16 is signed and Apple notarized. |
+| Mac with Apple Silicon | macOS 14 or later. Workbench 1.9.18 is signed and Apple notarized. |
 | Windows x64 | Microsoft Edge WebView2 Runtime. The Windows package has no publisher signature. |
 | Linux x64 | Debian 13, GTK 3, WebKitGTK 4.1 and a graphical desktop. Other distributions need a separate compatibility check. |
 

@@ -1,11 +1,21 @@
-# CALF 현재 패치
+# CALF 이번 업데이트
 
 <!-- calf:current-release:start -->
-harness: 1.8.20
-workbench: 1.9.17
+harness: 1.8.21
+workbench: 1.9.18
 sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+반복해서 남긴 수정 사항을 다음 요청에서 골라 넣을 수 있습니다. 추가·되돌리기는 초안만 바꾸며, 제목·닫기 버튼은 본문을 스크롤해도 위에 남습니다. [실제 화면과 사용법](REQUEST_GUIDANCE_KR.md).
+
+기존 기록·계약·설정과 필수 검사는 유지합니다. SDK 0.2.11과 확장팩은 변경하지 않았습니다.
+
+## Earlier updates / 이전 업데이트
+
+# CALF 현재 패치
+
+
 
 Harness **1.8.20** · Workbench **1.9.17** · SDK **0.2.11** 유지.
 

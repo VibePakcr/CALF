@@ -20,6 +20,14 @@ The [installation guide](INSTALL.md) and [illustrated manual](https://calf.vibep
 
 The first-task screen in Workbench 1.9.16. See the [Windows and Linux screens](UI_GUIDE.md) too.
 
+## Asking for the same correction again?
+
+Bring a correction from earlier tasks into the next request as a suggestion. Choose to add it, or undo it. Your existing text and the task’s required checks stay in place.
+
+![A suggestion appended in the actual Workbench 1.9.18 app](guidance-add-1.9.18.jpg)
+
+[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.18/CALF_mannual.html)
+
 ## Material connects automatically
 
 Built-in references need no setup. To add your own material, choose a Markdown or text folder once in **Engineering knowledge → Add a material folder…**. CALF checks the files, builds a search index and connects new tasks. [Read the guide](ENGINEERING_KNOWLEDGE.md).
@@ -38,8 +46,8 @@ Repository Intelligence is included with CALF. GCN/MCL helps organize the order 
 
 | Use | Choose |
 | --- | --- |
-| A desktop app for following tasks and reviewing files | **Workbench 1.9.17** |
-| Terminal commands, host hooks or MCP | **Harness 1.8.20** |
+| A desktop app for following tasks and reviewing files | **Workbench 1.9.18** |
+| Terminal commands, host hooks or MCP | **Harness 1.8.21** |
 | Connect your own tools | **SDK 0.2.11** |
 
 Workbench and Harness use the same core. Point them to the same CALF data folder to see the same tasks. Keep that folder and older task runtimes when updating.

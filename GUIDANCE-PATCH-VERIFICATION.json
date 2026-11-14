@@ -1,0 +1,47 @@
+{
+  "schema": "calf.guidance-patch-qualification.v1",
+  "versions": {
+    "harness": "1.8.21",
+    "workbench": "1.9.18",
+    "sdk": "0.2.11"
+  },
+  "scope": "Explicit local correction notes, new editable request suggestions and fixed-header dialog",
+  "actualNativeUi": {
+    "qualifiedOn": [
+      "macOS",
+      "Windows 11",
+      "Debian 13"
+    ],
+    "scenariosPerOs": 8,
+    "freshReleaseCapture": "macOS 1.9.18 signed and notarized; synthetic examples only",
+    "windowsLinuxUiEvidence": "same guidance implementation qualified before version-only release metadata update"
+  },
+  "finalNativeBlackBox": {
+    "platforms": [
+      "macOS ARM64",
+      "Windows x64",
+      "Linux x64"
+    ],
+    "editionsPerPlatform": 2,
+    "assertionsPerEdition": 31,
+    "providerInvoked": false
+  },
+  "reusedGuidanceRegression": {
+    "nativePassed": {
+      "macos": 175,
+      "windows": 162,
+      "linux": 174
+    },
+    "uiTestsPerOs": 58,
+    "nativeProcessHolderHelper": "one ignored direct helper per OS is executed by its passing parent",
+    "freshWholeReleaseRegressionClaimed": false
+  },
+  "preservation": "Versioned side-by-side packages; existing records, task contracts, settings and required checks retain their meaning",
+  "macTrust": "Developer ID signed, notarized, stapled and Gatekeeper accepted",
+  "windowsPublisherSigned": false,
+  "linuxQualification": "Debian 13 with GTK 3 and WebKitGTK 4.1",
+  "privateSourcePublished": false,
+  "privateCorpusIncluded": false,
+  "noAutomaticRuleAdoption": true,
+  "noPerformanceOrTokenSavingsMeasurement": true
+}

@@ -1,11 +1,21 @@
-# CALF current patch
+# CALF latest update
 
 <!-- calf:current-release:start -->
-harness: 1.8.20
-workbench: 1.9.17
+harness: 1.8.21
+workbench: 1.9.18
 sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+Choose a correction from earlier tasks for the next request. Add and undo affect the draft only. The title and Close stay visible while the contents scroll. [Actual screens and steps](REQUEST_GUIDANCE.md).
+
+Existing records, contracts, settings and required checks are retained. SDK 0.2.11 and extensions are unchanged.
+
+## Earlier updates / 이전 업데이트
+
+# CALF current patch
+
+
 
 Harness **1.8.20** · Workbench **1.9.17** · SDK **0.2.11** unchanged.
 

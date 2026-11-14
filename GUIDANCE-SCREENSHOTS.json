@@ -1,0 +1,15 @@
+{
+  "version": "1.9.18",
+  "platform": "macOS ARM64",
+  "actualNativeApp": true,
+  "developerIdSigned": true,
+  "notarized": true,
+  "syntheticExampleRecords": true,
+  "aiTaskSubmitted": false,
+  "editedPixels": false,
+  "files": {
+    "guidance-list-1.9.18.jpg": "29553d90a393aa06ee888e972ddc83e9dcc4d5b56b7e939b59dce948b5c2cfb0",
+    "guidance-add-1.9.18.jpg": "abf2c42b9f15ed94003a5f21b860cda310211f6c4c125d699a42b9eedabfe5b8",
+    "guidance-undo-1.9.18.jpg": "29b4628f57cf191c3ad891c9bc89dc19d85b693bf12b596450d8952fc14f9682"
+  }
+}

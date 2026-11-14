@@ -1,5 +1,16 @@
 # CALF Harness 1.8.19 · Workbench 1.9.16
 
+## Harness 1.8.21 · Workbench 1.9.18 — corrections for the next request
+
+- Save an explicit correction from a task. Matching notes from two different tasks in the same folder become a suggestion for a new request.
+- Append a suggestion to the editable form and undo it without replacing your original text. Existing contracts, permissions and required checks stay intact.
+- The request helper has a fixed title and Close button with a separate scrolling body. English/Korean guides and the offline manual include actual new-release captures.
+
+같은 폴더에서 반복해서 남긴 수정 사항을 다음 요청에서 골라 넣고 되돌릴 수 있습니다. 기존 기록·계약·설정과 검사 기준을 유지하며, 대화 자동 분석이나 전역 규칙 자동 적용은 하지 않습니다.
+
+[English guide](REQUEST_GUIDANCE.md) · [한국어 사용법](REQUEST_GUIDANCE_KR.md)
+
+
 ## Harness 1.8.20 · Workbench 1.9.17 — automatic engineering material
 
 Built-in references require no setup. Workbench adds one-folder import for UTF-8 Markdown/text and existing CALF knowledge exports. Rust validates files and Unicode chunks, retains original files and existing selections, and keeps import separate from read-only search/MCP. New tasks use the connected material automatically. SDK 0.2.11 is unchanged.
