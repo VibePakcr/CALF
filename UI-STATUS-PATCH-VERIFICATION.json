@@ -1,0 +1,97 @@
+{
+  "schema": "calf.ui-status-patch-qualification.v1",
+  "versions": {
+    "harness": "1.8.22",
+    "workbench": "1.9.19",
+    "sdk": "0.2.11"
+  },
+  "changes": [
+    "central utility views and stable Close controls",
+    "keyboard focus, draft retention, empty states and update actions",
+    "selected-folder status routing to preserved records and original task runtime",
+    "light-theme status selector contrast"
+  ],
+  "nativeTests": {
+    "macos": {
+      "passed": 183,
+      "failed": 0,
+      "ignored": 1
+    },
+    "windows": {
+      "passed": 170,
+      "failed": 0,
+      "ignored": 1
+    },
+    "linux": {
+      "passed": 182,
+      "failed": 0,
+      "ignored": 1
+    }
+  },
+  "ignoredTest": "One child-process helper is intentionally ignored directly and exercised by its passing parent",
+  "uiRegressionTests": {
+    "macos": 83,
+    "windows": 83,
+    "linux": 83,
+    "backend": "synthetic native responses; actual UI source"
+  },
+  "nativeBlackBox": {
+    "platforms": [
+      "macOS ARM64",
+      "Windows x64",
+      "Debian 13 x64"
+    ],
+    "assertionsPerEdition": 31,
+    "editionsPerPlatform": 2,
+    "providerInvoked": false
+  },
+  "actualExistingRecordLookup": {
+    "platform": "macOS ARM64",
+    "checks": 10,
+    "readOnly": true,
+    "originalRuntimePreserved": true,
+    "noProjectTestsOrAiRerun": true
+  },
+  "actualNativeVisualReview": {
+    "platform": "macOS ARM64",
+    "finalSignedApp": true,
+    "views": [
+      "Preferences",
+      "Updates",
+      "Task status"
+    ],
+    "passed": true,
+    "windowsLinuxNativeVisualReviewClaimed": false
+  },
+  "preservation": "Existing CALF records, contracts, settings and original task runtimes preserved; no conversions or pinned-runtime replacement",
+  "macTrust": "Developer ID signed, Apple notarized, stapled and Gatekeeper accepted",
+  "windowsPublisherSigned": false,
+  "sdkChanged": false,
+  "privateSourcePublished": false,
+  "privateCorpusIncluded": false,
+  "performanceMeasurementClaimed": false,
+  "releaseLayoutEvidence": {
+    "checks": 225,
+    "viewportSizes": [
+      [
+        1340,
+        820
+      ],
+      [
+        1024,
+        768
+      ],
+      [
+        900,
+        600
+      ],
+      [
+        640,
+        600
+      ]
+    ],
+    "syntheticNativeBridge": true,
+    "smallestTwoBelowNativeMinimum": true,
+    "releaseSourceFreshlyValidated": true
+  }
+}

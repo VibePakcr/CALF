@@ -1,5 +1,17 @@
 # CALF Harness 1.8.19 · Workbench 1.9.16
 
+## Harness 1.8.22 · Workbench 1.9.19 — clearer views and retained task status
+
+- Utility views use the central work area. Underlying task controls no longer overlap; Close stays available while contents scroll.
+- Navigation, keyboard focus, draft retention, update buttons, light-theme contrast and empty-folder states are polished.
+- Task status finds Workbench records for the selected folder and uses each task’s retained runtime. Recorded results and current observations stay distinct. Missing or corrupt data remains explicit.
+- Existing records, contracts, settings, pinned task runtimes and earlier releases are preserved. SDK 0.2.11 is unchanged.
+
+보조 화면과 뒤쪽 버튼이 겹치지 않도록 배치를 정리하고, 닫기·키보드·초안 유지·업데이트·밝은 테마·빈 폴더 안내를 다듬었습니다. 작업 상태는 선택한 폴더의 보관 기록과 원래 런타임을 조회하며 과거 결과와 현재 관측을 구분합니다. 기존 기록·계약·설정·이전 런타임·배포본은 보존합니다.
+
+[English details](UI_STATUS_PATCH.md) · [한국어 안내](UI_STATUS_PATCH_KR.md)
+
+
 ## Harness 1.8.21 · Workbench 1.9.18 — corrections for the next request
 
 - Save an explicit correction from a task. Matching notes from two different tasks in the same folder become a suggestion for a new request.

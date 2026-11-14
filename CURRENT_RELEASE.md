@@ -1,11 +1,21 @@
 # CALF latest update
 
 <!-- calf:current-release:start -->
-harness: 1.8.21
-workbench: 1.9.18
+harness: 1.8.22
+workbench: 1.9.19
 sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+Utility views now occupy the central work area, keeping underlying task buttons out of the view. Close controls, keyboard navigation, small windows, empty folders and update actions have been polished.
+
+Task status reads the retained records for the selected folder and the task’s original runtime. Recorded and current observations remain distinct; unavailable details remain explicit. Existing records, contracts, settings and retained task runtimes are preserved. SDK 0.2.11 is unchanged.
+
+## Earlier updates / 이전 업데이트
+
+# CALF latest update
+
+
 
 Choose a correction from earlier tasks for the next request. Add and undo affect the draft only. The title and Close stay visible while the contents scroll. [Actual screens and steps](REQUEST_GUIDANCE.md).
 

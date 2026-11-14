@@ -2,6 +2,10 @@
 
 [English](UI_GUIDE.md) · [설치](INSTALL_KR.md) · [첫 작업](FIRST_TASK_KR.md)
 
+## 1.9.19 화면과 작업 상태
+
+보조 화면은 중앙에 표시되며 Close 또는 Escape로 닫습니다. 작성하던 내용은 유지됩니다. **Task status**에서 폴더별 보관 작업을 선택하고 과거 결과와 현재 관측을 구분해 확인하세요. [변경 안내](UI_STATUS_PATCH_KR.md). 아래 사진은 표시된 이전 버전의 예시입니다.
+
 ## 반복 수정 제안 추가·되돌리기
 
 **Shape request… → Things I keep correcting**에서 제안을 불러와 원래 문구 뒤에 넣거나 되돌립니다. [단계별 사용법](REQUEST_GUIDANCE_KR.md)을 따라 해보세요.

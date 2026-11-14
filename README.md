@@ -8,6 +8,10 @@ Use it with Codex, Antigravity or Claude Code. CALF is built with Rust and Tauri
 
 [Website](https://calf.vibepackr.com/en/) · [Download](https://calf.vibepackr.com/en/#downloads) · [Install](INSTALL.md) · [Manual](https://calf.vibepackr.com/manual/?lang=en) · [한국어](README_KR.md)
 
+## Clearer views and task status
+
+Sidebar views no longer overlap underlying controls. Retained tasks use their original runtime for status, with recorded and current observations kept distinct. Existing records, contracts and settings are preserved. [See this patch](UI_STATUS_PATCH.md)
+
 ## Start with Workbench
 
 1. [Download Workbench for your OS](https://calf.vibepackr.com/en/#downloads) and extract it to a new folder.
@@ -26,7 +30,7 @@ Bring a correction from earlier tasks into the next request as a suggestion. Cho
 
 ![A suggestion appended in the actual Workbench 1.9.18 app](guidance-add-1.9.18.jpg)
 
-[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.18/CALF_mannual.html)
+[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.19/CALF_mannual.html)
 
 ## Material connects automatically
 
@@ -46,8 +50,8 @@ Repository Intelligence is included with CALF. GCN/MCL helps organize the order 
 
 | Use | Choose |
 | --- | --- |
-| A desktop app for following tasks and reviewing files | **Workbench 1.9.18** |
-| Terminal commands, host hooks or MCP | **Harness 1.8.21** |
+| A desktop app for following tasks and reviewing files | **Workbench 1.9.19** |
+| Terminal commands, host hooks or MCP | **Harness 1.8.22** |
 | Connect your own tools | **SDK 0.2.11** |
 
 Workbench and Harness use the same core. Point them to the same CALF data folder to see the same tasks. Keep that folder and older task runtimes when updating.

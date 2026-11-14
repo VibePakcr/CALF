@@ -2,6 +2,10 @@
 
 [한국어](UI_GUIDE_KR.md) · [Install](INSTALL.md) · [First task](FIRST_TASK.md)
 
+## 1.9.19 views and task status
+
+Utility views use the center. Close or Escape returns while retaining drafts. In **Task status**, choose a retained task for the folder and read recorded and current observations separately. [Patch guide](UI_STATUS_PATCH.md). Earlier pictures below retain their version labels.
+
 ## Add and undo a repeated correction
 
 Open **Shape request… → Things I keep correcting**. Load suggestions, append one after your text, or undo it. [Follow the steps](REQUEST_GUIDANCE.md).
