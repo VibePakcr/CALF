@@ -1,11 +1,21 @@
 # CALF 이번 업데이트
 
 <!-- calf:current-release:start -->
-harness: 1.8.22
-workbench: 1.9.19
+harness: 1.8.23
+workbench: 1.9.20
 sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+명시적으로 연결한 Codex 작업을 Connected tasks 카드와 Task status에서 읽습니다. 같은 채팅의 최신 응답 기록을 자동 추적하며, 작업 실행·중단·재시작은 하지 않습니다. 기록 쓰기와 조회가 겹쳐도 확정 기록을 읽고 현재 검증이 진행 중이면 미확인으로 표시합니다.
+
+과거 결과와 현재 검증을 구분합니다. 완료 기준이 등록되지 않은 작업의 UNKNOWN은 유지하며, 응답 종료를 전체 작업 완료로 표시하지 않습니다. 기존 기록·계약·설정·고정 런타임과 SDK 0.2.11은 보존합니다.
+
+## Earlier updates / 이전 업데이트
+
+# CALF 이번 업데이트
+
+
 
 보조 화면을 중앙 작업 영역에 표시해 뒤쪽 버튼과 겹치지 않도록 정리했습니다. 닫기·키보드 이동·작은 창·빈 폴더와 업데이트 버튼의 동작도 다듬었습니다.
 

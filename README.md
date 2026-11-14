@@ -8,6 +8,10 @@ Use it with Codex, Antigravity or Claude Code. CALF is built with Rust and Tauri
 
 [Website](https://calf.vibepackr.com/en/) · [Download](https://calf.vibepackr.com/en/#downloads) · [Install](INSTALL.md) · [Manual](https://calf.vibepackr.com/manual/?lang=en) · [한국어](README_KR.md)
 
+## Latest patch: connected tasks and status
+
+Harness **1.8.23** · Workbench **1.9.20**. Cards and details read explicitly linked host records and follow the latest response. Writer contention preserves committed evidence and leaves unavailable current validation unknown. [Patch guide](HOST_TASKS_PATCH.md)
+
 ## Clearer views and task status
 
 Sidebar views no longer overlap underlying controls. Retained tasks use their original runtime for status, with recorded and current observations kept distinct. Existing records, contracts and settings are preserved. [See this patch](UI_STATUS_PATCH.md)
@@ -30,7 +34,7 @@ Bring a correction from earlier tasks into the next request as a suggestion. Cho
 
 ![A suggestion appended in the actual Workbench 1.9.18 app](guidance-add-1.9.18.jpg)
 
-[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.19/CALF_mannual.html)
+[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.20/CALF_mannual.html)
 
 ## Material connects automatically
 

@@ -1,5 +1,17 @@
 # CALF Harness 1.8.19 · Workbench 1.9.16
 
+## Harness 1.8.23 · Workbench 1.9.20 — connected host tasks and writer-safe status
+
+- Connected tasks cards read explicitly linked Codex CALF records and follow the newest response in that same session.
+- Background polling no longer opens retained runtimes' writer journals. A busy original writer leaves a readable committed observation and an unknown current verdict.
+- Response endings, historical completion and current validation remain distinct. Original records, contracts, settings, required checks and pinned runtimes are retained.
+- SDK 0.2.11 is unchanged. No private task bindings or user records are distributed.
+
+연결된 Codex CALF 작업을 카드와 상세 상태에서 읽고 같은 채팅의 최신 응답 기록을 따라갑니다. 기록 쓰기와 조회가 겹쳐도 확정 기록을 읽으며 현재 검증을 임의로 성공 처리하지 않습니다. 작업 중단·재시작 없이 기존 기록·계약·설정·원래 런타임과 이전 배포본을 유지합니다.
+
+[English guide](HOST_TASKS_PATCH.md) · [한국어 안내](HOST_TASKS_PATCH_KR.md)
+
+
 ## Harness 1.8.22 · Workbench 1.9.19 — clearer views and retained task status
 
 - Utility views use the central work area. Underlying task controls no longer overlap; Close stays available while contents scroll.

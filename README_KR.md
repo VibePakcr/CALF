@@ -8,6 +8,10 @@ Codex·Antigravity·Claude Code와 함께 사용하는 가벼운 워크벤치입
 
 [소개](https://calf.vibepackr.com/) · [다운로드](https://calf.vibepackr.com/#downloads) · [설치](INSTALL_KR.md) · [매뉴얼](https://calf.vibepackr.com/manual/?lang=ko) · [English](README.md)
 
+## 최신 패치: 연결된 작업과 상태 조회
+
+Harness **1.8.23** · Workbench **1.9.20**. 명시적으로 연결한 호스트 작업을 카드와 상세 상태에서 읽고 최신 응답을 따라갑니다. 쓰기 잠금과 조회가 겹쳐도 원본 기록을 보존하고 현재 미확인 상태를 유지합니다. [변경 안내](HOST_TASKS_PATCH_KR.md)
+
 ## 화면과 상태 조회를 다듬었습니다
 
 좌측 메뉴 화면이 뒤쪽 버튼과 겹치지 않도록 정리했습니다. 보관된 작업 상태는 원래 런타임으로 조회하고 과거 결과와 현재 관측을 구분합니다. 기존 기록·계약·설정은 그대로 유지합니다. [이번 변경 사용법](UI_STATUS_PATCH_KR.md)
@@ -30,7 +34,7 @@ Workbench 1.9.16의 첫 작업 화면입니다. [Windows·Linux 화면](UI_GUIDE
 
 ![기존 문구 뒤에 제안을 추가한 실제 Workbench 1.9.18 화면](guidance-add-1.9.18.jpg)
 
-[추가·되돌리기 따라 하기](REQUEST_GUIDANCE_KR.md) · [최신 오프라인 영·한 매뉴얼 받기](https://github.com/VibePakcr/CALF/releases/download/v1.9.19/CALF_mannual.html)
+[추가·되돌리기 따라 하기](REQUEST_GUIDANCE_KR.md) · [최신 오프라인 영·한 매뉴얼 받기](https://github.com/VibePakcr/CALF/releases/download/v1.9.20/CALF_mannual.html)
 
 ## 자료는 자동으로 연결합니다
 

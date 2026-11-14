@@ -2,6 +2,10 @@
 
 [English](UI_GUIDE.md) · [설치](INSTALL_KR.md) · [첫 작업](FIRST_TASK_KR.md)
 
+## 1.9.20 연결된 작업
+
+**Connected tasks** 카드에서 명시적으로 연결한 CALF 호스트 기록을 선택하세요. **Task status**는 기록된 결과와 현재 관측을 구분합니다. 카드 갱신과 최신 응답 추적은 작업 실행을 제어하지 않습니다. [안내](HOST_TASKS_PATCH_KR.md). 아래 화면 예시는 각 사진의 이전 버전 표시를 유지합니다.
+
 ## 1.9.19 화면과 작업 상태
 
 보조 화면은 중앙에 표시되며 Close 또는 Escape로 닫습니다. 작성하던 내용은 유지됩니다. **Task status**에서 폴더별 보관 작업을 선택하고 과거 결과와 현재 관측을 구분해 확인하세요. [변경 안내](UI_STATUS_PATCH_KR.md). 아래 사진은 표시된 이전 버전의 예시입니다.

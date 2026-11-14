@@ -1,11 +1,21 @@
 # CALF latest update
 
 <!-- calf:current-release:start -->
-harness: 1.8.22
-workbench: 1.9.19
+harness: 1.8.23
+workbench: 1.9.20
 sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+Connected task cards and Task status read explicitly linked Codex CALF journals and follow the latest response within the same session. They never execute, stop or restart host work. Committed records remain readable during writer contention; unavailable current validation stays unknown.
+
+Historical results and current validation remain distinct. Unregistered completion criteria retain UNKNOWN; a response ending does not mean the whole work program completed. Existing records, contracts, settings, pinned runtimes and SDK 0.2.11 are preserved.
+
+## Earlier updates / 이전 업데이트
+
+# CALF latest update
+
+
 
 Utility views now occupy the central work area, keeping underlying task buttons out of the view. Close controls, keyboard navigation, small windows, empty folders and update actions have been polished.
 

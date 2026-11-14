@@ -1,0 +1,77 @@
+{
+  "schema": "calf.host-status-patch-qualification.v1",
+  "versions": {
+    "harness": "1.8.23",
+    "workbench": "1.9.20",
+    "sdk": "0.2.11"
+  },
+  "changes": [
+    "Explicit read-only links to retained host tasks",
+    "Bounded latest-response journal observation within linked session",
+    "Status listing without record writer acquisition",
+    "Preserved original task runtime for explicit validation",
+    "Historical completion distinct from current observation"
+  ],
+  "nativeTests": {
+    "macos": {
+      "passed": 192,
+      "failed": 0,
+      "ignored": 1
+    },
+    "windows": {
+      "passed": 179,
+      "failed": 0,
+      "ignored": 1
+    },
+    "linux": {
+      "passed": 191,
+      "failed": 0,
+      "ignored": 1
+    }
+  },
+  "ignoredTest": "One child-process helper is intentionally ignored directly and exercised by its passing parent",
+  "fixtureCorrection": {
+    "windowsFirstRun": "175 passed, 4 failed, 1 helper ignored; Unix-only fixture path rejected correctly",
+    "repair": "Test data uses native absolute workspace; validation predicates unchanged",
+    "windowsFullRerunPassed": true,
+    "affectedMacLinuxRerunPassed": true,
+    "productionLogicUnchanged": true
+  },
+  "uiRegressionTests": {
+    "macos": 86,
+    "windows": 86,
+    "linux": 86,
+    "backend": "Synthetic native responses; actual UI source"
+  },
+  "nativeBlackBox": {
+    "platforms": [
+      "macOS ARM64",
+      "Windows x64",
+      "Debian 13 x64"
+    ],
+    "assertionsPerEdition": 31,
+    "editionsPerPlatform": 2,
+    "providerInvoked": false
+  },
+  "actualExistingRecordLookup": {
+    "platform": "macOS ARM64",
+    "linkedSources": 2,
+    "bothDetailsAndRefreshReadable": true,
+    "originalWorkbenchJobOutcome": "SATISFIED",
+    "readOnly": true,
+    "noTaskControlOrProviderCall": true
+  },
+  "nativeVisualReview": {
+    "platform": "macOS ARM64",
+    "finalSignedApp": true,
+    "passed": true,
+    "windowsLinuxVisualReviewClaimed": false
+  },
+  "preservation": "Original records, contracts, settings, task runtimes, installed Workbench and launch selection preserved; live host records may append normally",
+  "macTrust": "Developer ID signed, Apple notarized, stapled and Gatekeeper accepted",
+  "windowsPublisherSigned": false,
+  "sdkChanged": false,
+  "privateSourcePublished": false,
+  "privateCorpusOrUserBindingsIncluded": false,
+  "performanceMeasurementClaimed": false
+}
