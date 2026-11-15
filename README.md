@@ -14,7 +14,7 @@ Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** unchanged.
 
 Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
 
-## Latest patch: connected tasks and status
+## Connected tasks and status · 1.9.20
 
 Harness **1.8.23** · Workbench **1.9.20**. Cards and details read explicitly linked host records and follow the latest response. Writer contention preserves committed evidence and leaves unavailable current validation unknown. [Patch guide](HOST_TASKS_PATCH.md)
 
@@ -40,7 +40,7 @@ Bring a correction from earlier tasks into the next request as a suggestion. Cho
 
 ![A suggestion appended in the actual Workbench 1.9.18 app](guidance-add-1.9.18.jpg)
 
-[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.20/CALF_mannual.html)
+[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/CALF_mannual.html)
 
 ## Material connects automatically
 
@@ -60,8 +60,8 @@ Repository Intelligence is included with CALF. GCN/MCL helps organize the order 
 
 | Use | Choose |
 | --- | --- |
-| A desktop app for following tasks and reviewing files | **Workbench 1.9.19** |
-| Terminal commands, host hooks or MCP | **Harness 1.8.22** |
+| A desktop app for following tasks and reviewing files | **Workbench 1.9.21** |
+| Terminal commands, host hooks or MCP | **Harness 1.8.24** |
 | Connect your own tools | **SDK 0.2.11** |
 
 Workbench and Harness use the same core. Point them to the same CALF data folder to see the same tasks. Keep that folder and older task runtimes when updating.

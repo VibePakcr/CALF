@@ -14,7 +14,7 @@ Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** 유지.
 
 작업 하나의 근거 그래프, 오래된 기록 검색·페이지 이동, 주변·역참조·경로 탐색과 직접·간접 영향 후보를 읽기 전용으로 확인합니다. 기존 기록·계약·설정과 작업 실행을 보존합니다. [사용법](ONTOLOGY_GUIDE_KR.md)
 
-## 최신 패치: 연결된 작업과 상태 조회
+## 연결된 작업과 상태 조회 · 1.9.20
 
 Harness **1.8.23** · Workbench **1.9.20**. 명시적으로 연결한 호스트 작업을 카드와 상세 상태에서 읽고 최신 응답을 따라갑니다. 쓰기 잠금과 조회가 겹쳐도 원본 기록을 보존하고 현재 미확인 상태를 유지합니다. [변경 안내](HOST_TASKS_PATCH_KR.md)
 
@@ -40,7 +40,7 @@ Workbench 1.9.16의 첫 작업 화면입니다. [Windows·Linux 화면](UI_GUIDE
 
 ![기존 문구 뒤에 제안을 추가한 실제 Workbench 1.9.18 화면](guidance-add-1.9.18.jpg)
 
-[추가·되돌리기 따라 하기](REQUEST_GUIDANCE_KR.md) · [최신 오프라인 영·한 매뉴얼 받기](https://github.com/VibePakcr/CALF/releases/download/v1.9.20/CALF_mannual.html)
+[추가·되돌리기 따라 하기](REQUEST_GUIDANCE_KR.md) · [최신 오프라인 영·한 매뉴얼 받기](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/CALF_mannual.html)
 
 ## 자료는 자동으로 연결합니다
 
@@ -60,8 +60,8 @@ Repository Intelligence는 CALF에 기본으로 포함돼 있습니다. GCN/MCL�
 
 | 하고 싶은 일 | 선택 |
 | --- | --- |
-| 화면에서 작업을 따라가고 파일과 결과 확인하기 | **Workbench 1.9.19** |
-| 터미널 명령·호스트 훅·MCP로 사용하기 | **Harness 1.8.22** |
+| 화면에서 작업을 따라가고 파일과 결과 확인하기 | **Workbench 1.9.21** |
+| 터미널 명령·호스트 훅·MCP로 사용하기 | **Harness 1.8.24** |
 | 직접 만든 도구 연결하기 | **SDK 0.2.11** |
 
 Workbench와 Harness는 같은 코어를 사용합니다. CALF 데이터 폴더를 같게 지정하면 같은 작업을 볼 수 있습니다. 업데이트할 때는 이 폴더와 이전 작업의 런타임을 유지하세요.
