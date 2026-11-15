@@ -1,0 +1,1112 @@
+{
+  "activeDepthLimit": 64,
+  "causality": "NOT_EVALUATED",
+  "checkBinding": "CHECK must reference its TASK through checks",
+  "currentCompletion": "NOT_EVALUATED",
+  "initialStates": [
+    "proposed",
+    "accepted"
+  ],
+  "membership": "View-only task field; not a stored dependency",
+  "model": {
+    "causality": "NOT_EVALUATED",
+    "constraints": [
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "record-fields",
+        "rule": "Required fields are exact; unknown properties are rejected for each selected variant."
+      },
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "record-identity",
+        "rule": "Record IDs are unique. TASK has id=task. Other records bind a previously stored TASK."
+      },
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "previous-target",
+        "rule": "Stored relationship targets must already exist and be distinct. Forward and self references are rejected; stored relationship edges follow record order backwards."
+      },
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "relation-domain-range",
+        "rule": "The native allowed-pair predicate and task restrictions define each relation's source and target domains. Duplicate type/target pairs are rejected."
+      },
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "proposal-state",
+        "rule": "Agent-origin records are proposed. A proposed record cannot contain accepted relationships."
+      },
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "contract",
+        "rule": "Registered scope and criteria are nonempty, bounded and unique. Paths are relative; criterion commands and environment keys are constrained."
+      },
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "observed-task",
+        "rule": "Observation-only TASK has empty scope and criteria; observing host activity does not create a work contract."
+      },
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "check-binding",
+        "rule": "CHECK names an existing criterion, matches its exact command and includes checks to its own TASK. Accepted CHECK requires collector origin."
+      },
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "snapshot-and-receipt",
+        "rule": "A complete snapshot has a SHA-256 digest and null reason; an incomplete snapshot has null digest and a string reason. Receipt numbers are finite, finish >= start, and nullable results are retained as unknown."
+      },
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "host-bindings",
+        "rule": "Host start/end/check/artifact variants bind their declared task revision, start, step, attempt and collected scope as applicable. Start, end and artifact variants require accepted collector origin."
+      },
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "operator-review",
+        "rule": "Review is an accepted operator-origin DECISION, targets a same-task non-DECISION record or its existing relation index, and requires a nonempty reason. It cannot promote a non-collector CHECK."
+      },
+      {
+        "enforcedAt": [
+          "APPEND"
+        ],
+        "id": "review-transition",
+        "rule": "Every writer, including direct append and the review command, rejects accepting a record already projected as retracted. Legacy histories retain their original structural read format; no stored reviews are rewritten."
+      },
+      {
+        "enforcedAt": [
+          "APPEND",
+          "LOAD"
+        ],
+        "id": "canonical-history",
+        "rule": "Canonical markup, metadata binding, sequence and the full SHA-256 chain are checked. Append additionally requires the expected current head and rejects concurrent changes."
+      },
+      {
+        "enforcedAt": [
+          "ACTIVE_GRAPH_QUERY"
+        ],
+        "id": "active-graph",
+        "rule": "Active dependencies require accepted records/relations. Retracted, superseded or conflicting evidence and unavailable/deep dependencies are not cleared as active."
+      },
+      {
+        "enforcedAt": [
+          "COMPLETION_QUERY"
+        ],
+        "id": "completion-boundary",
+        "rule": "A well-formed record or stored completion declaration is not a current verdict. Current completion separately checks registered criteria, retained evidence, file scope and execution context."
+      }
+    ],
+    "currentCompletion": "NOT_EVALUATED",
+    "definitions": [
+      {
+        "additionalProperties": false,
+        "name": "task.registered",
+        "properties": [
+          {
+            "name": "scope",
+            "required": true,
+            "type": "relativePath[]"
+          },
+          {
+            "name": "criteria",
+            "required": true,
+            "type": "criterion[]"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "task.observed",
+        "properties": [
+          {
+            "name": "mode",
+            "required": true,
+            "type": "observedMode"
+          },
+          {
+            "name": "scope",
+            "required": true,
+            "type": "emptyArray"
+          },
+          {
+            "name": "criteria",
+            "required": true,
+            "type": "emptyArray"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "criterion",
+        "properties": [
+          {
+            "name": "id",
+            "required": true,
+            "type": "identifier"
+          },
+          {
+            "name": "command",
+            "required": true,
+            "type": "argument[]"
+          },
+          {
+            "name": "envKeys",
+            "required": true,
+            "type": "environmentKey[]"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "snapshot",
+        "properties": [
+          {
+            "name": "complete",
+            "required": true,
+            "type": "boolean"
+          },
+          {
+            "name": "reason",
+            "required": true,
+            "type": "string|null"
+          },
+          {
+            "name": "digest",
+            "required": true,
+            "type": "sha256|null"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "action.note",
+        "properties": [
+          {
+            "name": "details",
+            "required": true,
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "action.hostStart",
+        "properties": [
+          {
+            "name": "details",
+            "required": true,
+            "type": "text"
+          },
+          {
+            "name": "hostStart",
+            "required": true,
+            "type": "hostStart"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "action.hostEnd",
+        "properties": [
+          {
+            "name": "details",
+            "required": true,
+            "type": "text"
+          },
+          {
+            "name": "hostEnd",
+            "required": true,
+            "type": "hostEnd"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "action.hostConflict",
+        "properties": [
+          {
+            "name": "details",
+            "required": true,
+            "type": "text"
+          },
+          {
+            "name": "hostConflict",
+            "required": true,
+            "type": "hostConflict"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "action.mcpArtifact",
+        "properties": [
+          {
+            "name": "details",
+            "required": true,
+            "type": "text"
+          },
+          {
+            "name": "mcpArtifact",
+            "required": true,
+            "type": "mcpArtifact"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "hostStart",
+        "properties": [
+          {
+            "name": "attempt",
+            "required": true,
+            "type": "identifier"
+          },
+          {
+            "name": "step",
+            "required": true,
+            "type": "unsignedInteger"
+          },
+          {
+            "name": "criterion",
+            "required": true,
+            "type": "criterionId|null"
+          },
+          {
+            "name": "taskHash",
+            "required": true,
+            "type": "sha256"
+          },
+          {
+            "name": "before",
+            "required": true,
+            "type": "snapshot"
+          },
+          {
+            "name": "context",
+            "required": true,
+            "type": "sha256|null"
+          },
+          {
+            "name": "commandHash",
+            "required": true,
+            "type": "sha256"
+          },
+          {
+            "name": "cwd",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "started",
+            "required": true,
+            "type": "finiteNumber"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "hostEnd",
+        "properties": [
+          {
+            "name": "start",
+            "required": true,
+            "type": "recordId"
+          },
+          {
+            "name": "step",
+            "required": true,
+            "type": "matchingStartStep"
+          },
+          {
+            "name": "attempt",
+            "required": true,
+            "type": "matchingStartAttempt"
+          },
+          {
+            "name": "exitCode",
+            "required": true,
+            "type": "integer|null"
+          },
+          {
+            "name": "error",
+            "required": true,
+            "type": "boolean"
+          },
+          {
+            "name": "resultHash",
+            "required": true,
+            "type": "sha256"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "hostConflict",
+        "properties": [
+          {
+            "name": "attempt",
+            "required": true,
+            "type": "identifier"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "mcpArtifact",
+        "properties": [
+          {
+            "name": "attempt",
+            "required": true,
+            "type": "identifier"
+          },
+          {
+            "name": "taskHash",
+            "required": true,
+            "type": "sha256"
+          },
+          {
+            "name": "policyHash",
+            "required": true,
+            "type": "sha256"
+          },
+          {
+            "name": "scope",
+            "required": true,
+            "type": "snapshot"
+          },
+          {
+            "name": "source",
+            "required": true,
+            "type": "artifactSource"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "check.native",
+        "properties": [
+          {
+            "name": "criterion",
+            "required": true,
+            "type": "identifier"
+          },
+          {
+            "name": "before",
+            "required": true,
+            "type": "snapshot"
+          },
+          {
+            "name": "after",
+            "required": true,
+            "type": "snapshot"
+          },
+          {
+            "name": "context",
+            "required": true,
+            "type": "sha256|null"
+          },
+          {
+            "name": "receipt",
+            "required": true,
+            "type": "receipt"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "check.host",
+        "properties": [
+          {
+            "name": "criterion",
+            "required": true,
+            "type": "identifier"
+          },
+          {
+            "name": "before",
+            "required": true,
+            "type": "snapshot"
+          },
+          {
+            "name": "after",
+            "required": true,
+            "type": "snapshot"
+          },
+          {
+            "name": "context",
+            "required": true,
+            "type": "sha256|null"
+          },
+          {
+            "name": "receipt",
+            "required": true,
+            "type": "receipt"
+          },
+          {
+            "name": "source",
+            "required": true,
+            "type": "checkSource"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "checkSource",
+        "properties": [
+          {
+            "name": "start",
+            "required": true,
+            "type": "recordId"
+          },
+          {
+            "name": "step",
+            "required": true,
+            "type": "matchingStartStep"
+          },
+          {
+            "name": "attempt",
+            "required": true,
+            "type": "matchingStartAttempt"
+          },
+          {
+            "name": "resultHash",
+            "required": true,
+            "type": "sha256"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "receipt",
+        "properties": [
+          {
+            "name": "argv",
+            "required": true,
+            "type": "matchingCriterionCommand"
+          },
+          {
+            "name": "cwd",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "started",
+            "required": true,
+            "type": "finiteNumber"
+          },
+          {
+            "name": "finished",
+            "required": true,
+            "type": "finiteNumber"
+          },
+          {
+            "name": "exitCode",
+            "required": true,
+            "type": "integer|null"
+          },
+          {
+            "name": "signal",
+            "required": true,
+            "type": "string|null"
+          },
+          {
+            "name": "error",
+            "required": true,
+            "type": "string|null"
+          },
+          {
+            "name": "stdoutSha",
+            "required": true,
+            "type": "sha256|nullForHostSource"
+          },
+          {
+            "name": "stderrSha",
+            "required": true,
+            "type": "sha256|nullForHostSource"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "decision.review",
+        "properties": [
+          {
+            "name": "purpose",
+            "required": true,
+            "type": "reviewPurpose"
+          },
+          {
+            "name": "target",
+            "required": true,
+            "type": "recordId"
+          },
+          {
+            "name": "relation",
+            "required": true,
+            "type": "relationIndex|null"
+          },
+          {
+            "name": "state",
+            "required": true,
+            "type": "reviewState"
+          },
+          {
+            "name": "reason",
+            "required": true,
+            "type": "nonemptyText"
+          }
+        ]
+      },
+      {
+        "additionalProperties": false,
+        "name": "decision.completion",
+        "properties": [
+          {
+            "name": "purpose",
+            "required": true,
+            "type": "completionPurpose"
+          },
+          {
+            "name": "outcome",
+            "required": true,
+            "type": "outcome"
+          },
+          {
+            "name": "reasons",
+            "required": true,
+            "type": "string[]"
+          },
+          {
+            "name": "head",
+            "required": true,
+            "type": "sha256"
+          }
+        ]
+      }
+    ],
+    "limits": {
+      "activeDependencyDepth": 64,
+      "argumentMaxUtf16Exclusive": 8192,
+      "commandArguments": 128,
+      "criteria": 64,
+      "historyRecords": 4096,
+      "relationsPerRecord": 64,
+      "scopeEntries": 64
+    },
+    "objects": [
+      {
+        "dataVariants": [
+          "task.registered",
+          "task.observed"
+        ],
+        "kind": "TASK",
+        "meaning": "A registered work contract or an observation-only task"
+      },
+      {
+        "dataVariants": [
+          "action.note",
+          "action.hostStart",
+          "action.hostEnd",
+          "action.hostConflict",
+          "action.mcpArtifact"
+        ],
+        "kind": "ACTION",
+        "meaning": "An action note or a bound host/artifact observation"
+      },
+      {
+        "dataVariants": [
+          "check.native",
+          "check.host"
+        ],
+        "kind": "CHECK",
+        "meaning": "A retained receipt bound to a registered criterion; validity alone is not a passing verdict"
+      },
+      {
+        "dataVariants": [
+          "decision.review",
+          "decision.completion"
+        ],
+        "kind": "DECISION",
+        "meaning": "An operator review or a historical completion declaration"
+      }
+    ],
+    "primitives": {
+      "argument": {
+        "base": "string",
+        "containsNul": false,
+        "maxUtf16Exclusive": 8192
+      },
+      "artifactSource": {
+        "enum": [
+          "native_tools_call",
+          "native_terminal_and_current_files"
+        ]
+      },
+      "completionPurpose": {
+        "const": "completion"
+      },
+      "criterionId": {
+        "base": "identifier",
+        "reference": "criterion in this TASK"
+      },
+      "emptyArray": {
+        "base": "array",
+        "maxItems": 0
+      },
+      "environmentKey": {
+        "enum": [
+          "LANG",
+          "LC_ALL",
+          "TZ",
+          "NODE_ENV",
+          "NODE_OPTIONS",
+          "PYTHONHASHSEED"
+        ]
+      },
+      "finiteNumber": {
+        "base": "number",
+        "finite": true
+      },
+      "identifier": {
+        "base": "string",
+        "first": "ASCII_ALPHANUMERIC",
+        "maxBytes": 128,
+        "minBytes": 1,
+        "remaining": "ASCII_ALPHANUMERIC_OR_.:-"
+      },
+      "initialState": {
+        "enum": [
+          "proposed",
+          "accepted"
+        ]
+      },
+      "integer": {
+        "base": "number",
+        "finite": true,
+        "integer": true
+      },
+      "matchingCriterionCommand": {
+        "base": "argument[]",
+        "equals": "TASK.criteria[criterion].command"
+      },
+      "matchingStartAttempt": {
+        "base": "identifier",
+        "equals": "source hostStart.attempt"
+      },
+      "matchingStartStep": {
+        "base": "unsignedInteger",
+        "equals": "source hostStart.step"
+      },
+      "nonemptyText": {
+        "base": "text",
+        "minLength": 1
+      },
+      "nullForHostSource": {
+        "base": "null",
+        "requires": "CHECK.data.source is present"
+      },
+      "observedMode": {
+        "const": "observed"
+      },
+      "origin": {
+        "enum": [
+          "operator",
+          "agent",
+          "collector",
+          "calf"
+        ]
+      },
+      "outcome": {
+        "enum": [
+          "SATISFIED",
+          "VIOLATED",
+          "UNKNOWN"
+        ]
+      },
+      "recordData": {
+        "base": "object",
+        "discriminator": "record.kind",
+        "variants": "objects.dataVariants"
+      },
+      "recordId": {
+        "base": "identifier",
+        "reference": "existing previous record"
+      },
+      "recordKind": {
+        "enum": [
+          "TASK",
+          "ACTION",
+          "CHECK",
+          "DECISION"
+        ]
+      },
+      "relationIndex": {
+        "base": "unsignedInteger",
+        "reference": "index in the reviewed target's relations"
+      },
+      "relationType": {
+        "enum": [
+          "based_on",
+          "checks",
+          "supersedes",
+          "conflicts_with"
+        ]
+      },
+      "relativePath": {
+        "base": "string",
+        "excluded": "absolute paths, empty/dot/parent segments, backslash, NUL, root history.html and the .calf root",
+        "maxBytesExclusive": 1024
+      },
+      "reviewPurpose": {
+        "const": "review"
+      },
+      "reviewState": {
+        "enum": [
+          "accepted",
+          "retracted"
+        ]
+      },
+      "sha256": {
+        "alphabet": "0123456789abcdef",
+        "base": "string",
+        "length": 64
+      },
+      "text": {
+        "base": "string",
+        "maxUtf16CodeUnits": 8192
+      },
+      "unsignedInteger": {
+        "base": "number",
+        "integer": true,
+        "minimum": 0,
+        "representation": "u64"
+      }
+    },
+    "readOnly": true,
+    "record": {
+      "additionalProperties": false,
+      "name": "record",
+      "properties": [
+        {
+          "name": "id",
+          "required": true,
+          "type": "identifier"
+        },
+        {
+          "name": "kind",
+          "required": true,
+          "type": "recordKind"
+        },
+        {
+          "name": "task",
+          "required": true,
+          "type": "identifier"
+        },
+        {
+          "name": "body",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "name": "origin",
+          "required": true,
+          "type": "origin"
+        },
+        {
+          "name": "state",
+          "required": true,
+          "type": "initialState"
+        },
+        {
+          "name": "data",
+          "required": true,
+          "type": "recordData"
+        },
+        {
+          "name": "relations",
+          "required": true,
+          "type": "relation[]"
+        }
+      ]
+    },
+    "recordFormat": 1,
+    "relation": {
+      "additionalProperties": false,
+      "name": "relation",
+      "properties": [
+        {
+          "name": "type",
+          "required": true,
+          "type": "relationType"
+        },
+        {
+          "name": "to",
+          "required": true,
+          "type": "recordId"
+        },
+        {
+          "name": "state",
+          "required": true,
+          "type": "initialState"
+        }
+      ]
+    },
+    "schema": "calf.ontology-model.v1",
+    "schemaEvolution": "Describes existing record format 1; no migration, persisted field addition or replacement of old contracts.",
+    "scope": "TASK_EVIDENCE",
+    "trustBoundary": "Origin is a provenance field, not a cryptographic actor identity. Structural acceptance is not proof that a command ran or passed, nor permission to run it.",
+    "version": 1,
+    "viewProjection": {
+      "additionalViewKinds": [
+        "EVENT",
+        "CONTRACT"
+      ],
+      "journalIsStoredOntology": false,
+      "membershipIsDependency": false,
+      "membershipRelation": "task_record",
+      "storedKinds": [
+        "TASK",
+        "ACTION",
+        "CHECK",
+        "DECISION"
+      ],
+      "workbenchTask": "VIRTUAL"
+    }
+  },
+  "readOnly": true,
+  "recordKinds": [
+    "TASK",
+    "ACTION",
+    "CHECK",
+    "DECISION"
+  ],
+  "relations": [
+    {
+      "allowedPairs": [
+        [
+          "TASK",
+          "TASK"
+        ],
+        [
+          "TASK",
+          "ACTION"
+        ],
+        [
+          "TASK",
+          "CHECK"
+        ],
+        [
+          "TASK",
+          "DECISION"
+        ],
+        [
+          "ACTION",
+          "TASK"
+        ],
+        [
+          "ACTION",
+          "ACTION"
+        ],
+        [
+          "ACTION",
+          "CHECK"
+        ],
+        [
+          "ACTION",
+          "DECISION"
+        ],
+        [
+          "CHECK",
+          "TASK"
+        ],
+        [
+          "CHECK",
+          "ACTION"
+        ],
+        [
+          "CHECK",
+          "CHECK"
+        ],
+        [
+          "CHECK",
+          "DECISION"
+        ],
+        [
+          "DECISION",
+          "TASK"
+        ],
+        [
+          "DECISION",
+          "ACTION"
+        ],
+        [
+          "DECISION",
+          "CHECK"
+        ],
+        [
+          "DECISION",
+          "DECISION"
+        ]
+      ],
+      "family": "REFERENCE",
+      "sameTask": "NOT_REQUIRED",
+      "target": "PREVIOUS_DISTINCT_RECORD",
+      "type": "based_on"
+    },
+    {
+      "allowedPairs": [
+        [
+          "CHECK",
+          "TASK"
+        ],
+        [
+          "CHECK",
+          "ACTION"
+        ]
+      ],
+      "family": "REFERENCE",
+      "sameTask": "REQUIRED",
+      "target": "PREVIOUS_DISTINCT_RECORD",
+      "type": "checks"
+    },
+    {
+      "allowedPairs": [
+        [
+          "TASK",
+          "TASK"
+        ],
+        [
+          "ACTION",
+          "ACTION"
+        ],
+        [
+          "CHECK",
+          "CHECK"
+        ],
+        [
+          "DECISION",
+          "DECISION"
+        ]
+      ],
+      "family": "VERSION",
+      "sameTask": "REQUIRED_EXCEPT_TASK",
+      "target": "PREVIOUS_DISTINCT_RECORD",
+      "type": "supersedes"
+    },
+    {
+      "allowedPairs": [
+        [
+          "TASK",
+          "TASK"
+        ],
+        [
+          "TASK",
+          "ACTION"
+        ],
+        [
+          "TASK",
+          "CHECK"
+        ],
+        [
+          "TASK",
+          "DECISION"
+        ],
+        [
+          "ACTION",
+          "TASK"
+        ],
+        [
+          "ACTION",
+          "ACTION"
+        ],
+        [
+          "ACTION",
+          "CHECK"
+        ],
+        [
+          "ACTION",
+          "DECISION"
+        ],
+        [
+          "CHECK",
+          "TASK"
+        ],
+        [
+          "CHECK",
+          "ACTION"
+        ],
+        [
+          "CHECK",
+          "CHECK"
+        ],
+        [
+          "CHECK",
+          "DECISION"
+        ],
+        [
+          "DECISION",
+          "TASK"
+        ],
+        [
+          "DECISION",
+          "ACTION"
+        ],
+        [
+          "DECISION",
+          "CHECK"
+        ],
+        [
+          "DECISION",
+          "DECISION"
+        ]
+      ],
+      "family": "CONFLICT",
+      "sameTask": "REQUIRED",
+      "target": "PREVIOUS_DISTINCT_RECORD",
+      "type": "conflicts_with"
+    }
+  ],
+  "reviewStates": [
+    "accepted",
+    "retracted"
+  ],
+  "schema": "calf.ontology-rules.v1",
+  "version": 1,
+  "viewOnlyKinds": [
+    "EVENT",
+    "CONTRACT"
+  ],
+  "digest": "7fc72fe0c74f05c76647a540f002c85f5d4a015f2788916e55128c137fabde57"
+}

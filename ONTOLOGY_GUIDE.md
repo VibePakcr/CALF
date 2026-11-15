@@ -45,3 +45,7 @@ Actual macOS Workbench 1.9.21 · synthetic example · no checks executed.
 ![ Change impact: direct and indirect review candidates with recorded dependency steps ](ontology-impact-1.9.21.jpg)
 
 Actual macOS Workbench 1.9.21 · synthetic example · no checks executed.
+
+## Actual model and constraints
+
+See the [full specification](ONTOLOGY_MODEL.md) and [JSON](ONTOLOGY_MODEL.json) for all four stored types, common/variant properties, relation domain/range and enforcement points. Direct append and the review command both reject reviving a retracted record. Under Patch 2026-11-16 retains version numbers and the stored record format.

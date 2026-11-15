@@ -1,5 +1,7 @@
 # CALF
 
+Under Patch 2026-11-16 · version numbers retained. The [model specification](ONTOLOGY_MODEL.md) and [JSON](ONTOLOGY_MODEL.json) define objects, common/variant properties, relationship domain/range and enforcement points. Native validation and public descriptions share field definitions. Every append path rejects reviving a retracted record. Stored format, contracts, settings and task runtimes are preserved.
+
 **Controlled Agent Lifecycle Framework**
 
 Keep track of the work you give your AI. CALF brings your request, changed files and check results together, so you can review the result and continue work that stopped.

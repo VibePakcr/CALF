@@ -1,5 +1,7 @@
 # CALF
 
+Under Patch 2026-11-16 · 버전 번호 유지. 객체·공통/타입별 속성·관계의 도메인과 범위·제약 적용 시점을 [명세](ONTOLOGY_MODEL_KR.md)와 [JSON](ONTOLOGY_MODEL.json)으로 제공합니다. Rust 검증기와 필드 정의를 공유하며 모든 기록 추가 경로에서 철회 기록 재승격을 차단합니다. 기존 기록 형식·계약·설정·작업 런타임은 유지합니다.
+
 **Controlled Agent Lifecycle Framework**
 
 AI에게 맡긴 작업이 어디까지 됐는지 확인하세요. CALF에서 요청 내용과 바뀐 파일, 검사 결과를 함께 보고 멈춘 작업을 이어갈 수 있습니다.

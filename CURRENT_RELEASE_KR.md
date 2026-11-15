@@ -7,6 +7,8 @@ sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
 
+Under Patch 2026-11-16 · 버전 번호 유지. 객체·공통/타입별 속성·관계의 도메인과 범위·제약 적용 시점을 [명세](ONTOLOGY_MODEL_KR.md)와 [JSON](ONTOLOGY_MODEL.json)으로 제공합니다. Rust 검증기와 필드 정의를 공유하며 모든 기록 추가 경로에서 철회 기록 재승격을 차단합니다. 기존 기록 형식·계약·설정·작업 런타임은 유지합니다.
+
 Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** 유지.
 
 작업 하나의 근거 그래프, 오래된 기록 검색·페이지 이동, 주변·역참조·경로 탐색과 직접·간접 영향 후보를 읽기 전용으로 확인합니다. 기존 기록·계약·설정과 작업 실행을 보존합니다. [사용법](ONTOLOGY_GUIDE_KR.md)

@@ -7,6 +7,8 @@ sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
 
+Under Patch 2026-11-16 · version numbers retained. The [model specification](ONTOLOGY_MODEL.md) and [JSON](ONTOLOGY_MODEL.json) define objects, common/variant properties, relationship domain/range and enforcement points. Native validation and public descriptions share field definitions. Every append path rejects reviving a retracted record. Stored format, contracts, settings and task runtimes are preserved.
+
 Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** unchanged.
 
 Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
