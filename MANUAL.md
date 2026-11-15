@@ -21,7 +21,7 @@ Follow the pictures to install CALF, start a task, review the result and resume 
 
 ## 오프라인에서 읽기 · Read offline
 
-[영·한 HTML 매뉴얼 받기 · Download the EN/KR HTML manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.20/CALF_mannual.html)
+[영·한 HTML 매뉴얼 받기 · Download the EN/KR HTML manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/CALF_mannual.html)
 
 `CALF_mannual.html`을 받아 Chrome·Edge·Safari에서 여세요. 그림이 모두 들어 있어 인터넷 없이도 볼 수 있습니다. 이 파일은 위쪽 **EN / KR** 버튼으로 언어를 바꿉니다.
 
@@ -31,7 +31,7 @@ GitHub에서 HTML 미리보기가 열리지 않으면 위 다운로드 링크를
 
 If GitHub cannot preview the HTML file, use the download link above.
 
-[GitHub release](https://github.com/VibePakcr/CALF/releases/tag/v1.9.20) · [GitLab release](https://gitlab.com/vibepackr-group/CALF/-/releases/v1.9.20) · [Downloads / 다운로드](DOWNLOADS.md)
+[GitHub release](https://github.com/VibePakcr/CALF/releases/tag/v1.9.21) · [GitLab release](https://gitlab.com/vibepackr-group/CALF/-/releases/v1.9.21) · [Downloads / 다운로드](DOWNLOADS.md)
 
 ## 이번 업데이트 · This update
 
@@ -40,3 +40,5 @@ If GitHub cannot preview the HTML file, use the download link above.
 [화면·상태 조회 변경 안내](UI_STATUS_PATCH_KR.md) · [Views and task status](UI_STATUS_PATCH.md)
 
 [연결 작업 안내](HOST_TASKS_PATCH_KR.md) · [Connected task guide](HOST_TASKS_PATCH.md)
+
+[근거 그래프와 변경 영향](ONTOLOGY_GUIDE_KR.md) · [Evidence exploration](ONTOLOGY_GUIDE.md)

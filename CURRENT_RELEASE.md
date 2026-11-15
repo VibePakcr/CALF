@@ -1,11 +1,18 @@
 # CALF latest update
 
 <!-- calf:current-release:start -->
-harness: 1.8.23
-workbench: 1.9.20
+harness: 1.8.24
+workbench: 1.9.21
 sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** unchanged.
+
+Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
+
+## Earlier updates / 이전 업데이트
+
 
 Connected task cards and Task status read explicitly linked Codex CALF journals and follow the latest response within the same session. They never execute, stop or restart host work. Committed records remain readable during writer contention; unavailable current validation stays unknown.
 

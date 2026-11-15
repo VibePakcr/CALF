@@ -8,8 +8,8 @@ Start with **Workbench** on the [OS download page](https://calf.vibepackr.com/en
 
 | Product | macOS ARM64 | Windows x64 | Linux x64 |
 | --- | --- | --- | --- |
-| Workbench 1.9.20 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.9.20/CALF-Workbench-1.9.20-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.9.20/CALF-Workbench-1.9.20-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.9.20/CALF-Workbench-1.9.20-linux-x86_64.tar.gz) |
-| Harness 1.8.23 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.8.23/CALF-Harness-1.8.23-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.8.23/CALF-Harness-1.8.23-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.8.23/CALF-Harness-1.8.23-linux-x86_64.tar.gz) |
+| Workbench 1.9.21 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/CALF-Workbench-1.9.21-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/CALF-Workbench-1.9.21-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/CALF-Workbench-1.9.21-linux-x86_64.tar.gz) |
+| Harness 1.8.24 | [macos](https://github.com/VibePakcr/CALF/releases/download/v1.8.24/CALF-Harness-1.8.24-macos-arm64.zip) | [windows](https://github.com/VibePakcr/CALF/releases/download/v1.8.24/CALF-Harness-1.8.24-windows-x86_64.zip) | [linux](https://github.com/VibePakcr/CALF/releases/download/v1.8.24/CALF-Harness-1.8.24-linux-x86_64.tar.gz) |
 
 [SDK 0.2.11](https://github.com/VibePakcr/CALF/releases/tag/sdk-v0.2.11) · [GitHub releases](https://github.com/VibePakcr/CALF/releases) · [GitLab releases](https://gitlab.com/vibepackr-group/CALF/-/releases)
 

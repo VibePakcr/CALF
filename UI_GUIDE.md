@@ -2,6 +2,12 @@
 
 [한국어](UI_GUIDE_KR.md) · [Install](INSTALL.md) · [First task](FIRST_TASK.md)
 
+## Ontology evidence exploration
+
+Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** unchanged.
+
+Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
+
 ## 1.9.20 connected tasks
 
 Select an explicitly linked CALF host journal in **Connected tasks**. **Task status** separates recorded evidence and current observation. Refresh and latest-response tracking do not control host execution. [Guide](HOST_TASKS_PATCH.md). Earlier pictures below retain their version labels.

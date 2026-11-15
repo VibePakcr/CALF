@@ -1,0 +1,88 @@
+{
+  "schema": "calf.ontology-patch-qualification.v1",
+  "versions": {
+    "harness": "1.8.24",
+    "workbench": "1.9.21",
+    "sdk": "0.2.11"
+  },
+  "changes": [
+    "Read-only evidence graph and themed selected relation directions",
+    "Historical record search and snapshot-bound paging",
+    "Neighborhood, incoming reference and bounded recorded path navigation",
+    "Direct and indirect impact explanations",
+    "Request-local validated history reuse and indexed native dependency traversal"
+  ],
+  "nativeTests": {
+    "macos": {
+      "passed": 220,
+      "failed": 0,
+      "ignored": 1
+    },
+    "windows": {
+      "passed": 206,
+      "failed": 0,
+      "ignored": 1
+    },
+    "linux": {
+      "passed": 219,
+      "failed": 0,
+      "ignored": 1
+    }
+  },
+  "uiTests": {
+    "macos": 106,
+    "windows": 106,
+    "linux": 106
+  },
+  "ignoredTest": "One direct child helper intentionally ignored and exercised by its passing parent",
+  "blackBoxAssertionsPerEditionPlatform": 31,
+  "nativeVisualReview": "Actual signed macOS ARM64 release; isolated synthetic examples; no executed checks or customer task content in screenshots",
+  "screenshots": [
+    {
+      "name": "ontology-selected-1.9.21.jpg",
+      "sha256": "22f1535a103437d2174e4ef631fd23fddfa5722c11aedfc337bdd3e6aad05943",
+      "bytes": 397723,
+      "width": 2680,
+      "height": 1640,
+      "source": "CUA native app screenshot; unmodified pixels",
+      "syntheticRecords": true,
+      "actualVersion": "1.9.21"
+    },
+    {
+      "name": "ontology-search-1.9.21.jpg",
+      "sha256": "ca363110f362e8178c7edb72e0b47d90ba30d91448412a450dbb31b73c68cfc3",
+      "bytes": 376612,
+      "width": 2680,
+      "height": 1640,
+      "source": "CUA native app screenshot; unmodified pixels",
+      "syntheticRecords": true,
+      "actualVersion": "1.9.21"
+    },
+    {
+      "name": "ontology-impact-1.9.21.jpg",
+      "sha256": "4f3675f53c8b9937a21c9351208760f3b05027f6ce200db636b470824bac5e6b",
+      "bytes": 414149,
+      "width": 2680,
+      "height": 1640,
+      "source": "CUA native app screenshot; unmodified pixels",
+      "syntheticRecords": true,
+      "actualVersion": "1.9.21"
+    }
+  ],
+  "linuxInputCorrection": {
+    "firstNativePassed": 219,
+    "firstUIpassed": 88,
+    "firstUIfailed": 18,
+    "cause": "Two newly added UI files omitted from historical transport list",
+    "correction": "Complete current UI source in a new isolated VM folder; full native and UI qualification rerun",
+    "productionLogicChanged": false
+  },
+  "preservation": "Original records contracts settings pinned task runtimes and previous releases retained. Two linked tasks observed read-only without control. Live journals may append normally.",
+  "macTrust": "Developer ID signed, Apple notarized, stapled and Gatekeeper accepted",
+  "windowsPublisherSigned": false,
+  "sdkChanged": false,
+  "currentCompletion": "NOT_EVALUATED",
+  "causality": "NOT_EVALUATED",
+  "privateSourceOrUserBindingsPublished": false,
+  "newProviderCalls": 0
+}

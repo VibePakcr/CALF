@@ -8,7 +8,7 @@
 
 | 컴퓨터 | 필요한 환경 |
 | --- | --- |
-| Apple Silicon Mac | macOS 14 이상. Workbench 1.9.20은 서명과 Apple 공증을 적용했습니다. |
+| Apple Silicon Mac | macOS 14 이상. Workbench 1.9.21은 서명과 Apple 공증을 적용했습니다. |
 | Windows x64 | Microsoft Edge WebView2 Runtime. Windows 패키지에는 게시자 서명이 없습니다. |
 | Linux x64 | Debian 13, GTK 3, WebKitGTK 4.1과 그래픽 데스크톱. 다른 배포판은 호환성을 따로 확인해야 합니다. |
 
@@ -49,3 +49,5 @@ CALF는 프로젝트에 준비된 unittest·설정된 pytest·지원되는 Cargo
 CALF는 무료로 사용할 수 있습니다. AI 서비스의 계정·요금·승인 설정은 그대로 적용됩니다.
 
 [연결된 작업과 상태 조회](HOST_TASKS_PATCH_KR.md)
+
+[근거 그래프 사용법](ONTOLOGY_GUIDE_KR.md)

@@ -1,11 +1,18 @@
 # CALF 이번 업데이트
 
 <!-- calf:current-release:start -->
-harness: 1.8.23
-workbench: 1.9.20
+harness: 1.8.24
+workbench: 1.9.21
 sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** 유지.
+
+작업 하나의 근거 그래프, 오래된 기록 검색·페이지 이동, 주변·역참조·경로 탐색과 직접·간접 영향 후보를 읽기 전용으로 확인합니다. 기존 기록·계약·설정과 작업 실행을 보존합니다. [사용법](ONTOLOGY_GUIDE_KR.md)
+
+## Earlier updates / 이전 업데이트
+
 
 명시적으로 연결한 Codex 작업을 Connected tasks 카드와 Task status에서 읽습니다. 같은 채팅의 최신 응답 기록을 자동 추적하며, 작업 실행·중단·재시작은 하지 않습니다. 기록 쓰기와 조회가 겹쳐도 확정 기록을 읽고 현재 검증이 진행 중이면 미확인으로 표시합니다.
 

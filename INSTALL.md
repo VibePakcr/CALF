@@ -8,7 +8,7 @@ Choose the file for your computer on the [download page](https://calf.vibepackr.
 
 | Computer | Requirements |
 | --- | --- |
-| Mac with Apple Silicon | macOS 14 or later. Workbench 1.9.20 is signed and Apple notarized. |
+| Mac with Apple Silicon | macOS 14 or later. Workbench 1.9.21 is signed and Apple notarized. |
 | Windows x64 | Microsoft Edge WebView2 Runtime. The Windows package has no publisher signature. |
 | Linux x64 | Debian 13, GTK 3, WebKitGTK 4.1 and a graphical desktop. Other distributions need a separate compatibility check. |
 
@@ -49,3 +49,5 @@ Read [Update and recovery](UPDATE.md) before switching an existing installation.
 CALF is free to use. Your AI service keeps its own account, fees and approval settings.
 
 [Connected host tasks and status](HOST_TASKS_PATCH.md)
+
+[Evidence graph guide](ONTOLOGY_GUIDE.md)

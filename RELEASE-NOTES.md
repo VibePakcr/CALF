@@ -1,5 +1,17 @@
 # CALF Harness 1.8.19 · Workbench 1.9.16
 
+## Harness 1.8.24 · Workbench 1.9.21 — evidence graphs and native ontology exploration
+
+- Read-only evidence graph with themed relationship directions, zoom and fit.
+- Search and page through older selected-task evidence; navigate neighborhoods, incoming references and bounded paths.
+- Inspect direct/indirect impact candidates and their recorded dependency explanations.
+- Reuse canonical reads within one request and index dependency traversal while retaining full source validation and snapshot-change rejection.
+- Preserve original records, contracts, settings, task runtimes and previous releases. SDK 0.2.11 remains unchanged.
+
+작업 하나의 근거 그래프, 오래된 기록 검색과 페이지 이동, 주변·역참조·기록 경로, 직접·간접 영향 근거를 읽기 전용으로 제공합니다. 기록 연결 검증을 유지하면서 반복 해석을 줄였습니다. 현재 작업 완료나 인과관계를 자동 판정하지 않습니다.
+
+[English guide](ONTOLOGY_GUIDE.md) · [한국어 사용법](ONTOLOGY_GUIDE_KR.md)
+
 ## Harness 1.8.23 · Workbench 1.9.20 — connected host tasks and writer-safe status
 
 - Connected tasks cards read explicitly linked Codex CALF records and follow the newest response in that same session.

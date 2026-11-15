@@ -8,6 +8,12 @@ Use it with Codex, Antigravity or Claude Code. CALF is built with Rust and Tauri
 
 [Website](https://calf.vibepackr.com/en/) · [Download](https://calf.vibepackr.com/en/#downloads) · [Install](INSTALL.md) · [Manual](https://calf.vibepackr.com/manual/?lang=en) · [한국어](README_KR.md)
 
+## Ontology evidence exploration
+
+Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** unchanged.
+
+Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
+
 ## Latest patch: connected tasks and status
 
 Harness **1.8.23** · Workbench **1.9.20**. Cards and details read explicitly linked host records and follow the latest response. Writer contention preserves committed evidence and leaves unavailable current validation unknown. [Patch guide](HOST_TASKS_PATCH.md)

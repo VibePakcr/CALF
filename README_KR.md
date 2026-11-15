@@ -8,6 +8,12 @@ Codex·Antigravity·Claude Code와 함께 사용하는 가벼운 워크벤치입
 
 [소개](https://calf.vibepackr.com/) · [다운로드](https://calf.vibepackr.com/#downloads) · [설치](INSTALL_KR.md) · [매뉴얼](https://calf.vibepackr.com/manual/?lang=ko) · [English](README.md)
 
+## 온톨로지 근거 탐색
+
+Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** 유지.
+
+작업 하나의 근거 그래프, 오래된 기록 검색·페이지 이동, 주변·역참조·경로 탐색과 직접·간접 영향 후보를 읽기 전용으로 확인합니다. 기존 기록·계약·설정과 작업 실행을 보존합니다. [사용법](ONTOLOGY_GUIDE_KR.md)
+
 ## 최신 패치: 연결된 작업과 상태 조회
 
 Harness **1.8.23** · Workbench **1.9.20**. 명시적으로 연결한 호스트 작업을 카드와 상세 상태에서 읽고 최신 응답을 따라갑니다. 쓰기 잠금과 조회가 겹쳐도 원본 기록을 보존하고 현재 미확인 상태를 유지합니다. [변경 안내](HOST_TASKS_PATCH_KR.md)
