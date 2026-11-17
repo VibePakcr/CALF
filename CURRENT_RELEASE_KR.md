@@ -1,5 +1,7 @@
 # CALF 이번 업데이트
 
+연결 작업 상태: 대화 기록이 길어져도 원본 기록을 지우거나 연결 설정을 바꾸지 않고 최신 응답을 조회합니다.
+
 Under Patch 2026-11-17 · Mac의 신뢰 브로커와 별도 Linux 호스트를 연결하는 선택형 Rust 작업 위임입니다. 고정 저장소 읽기 조회·정확한 티켓·로컬 확인·일회성 권한·최소 결과를 제공합니다. 기존 기록·계약·설정·진행 작업 런타임을 보존합니다. [사용 범위](CALF_mannual.html#operation-delegation)
 
 <!-- calf:current-release:start -->

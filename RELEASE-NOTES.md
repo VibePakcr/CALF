@@ -1,5 +1,7 @@
 # CALF Harness 1.8.24 · Workbench 1.9.21
 
+Same underpatch includes the long-session status query repair; latest linked responses remain readable with old records and settings preserved.
+
 ## Under Patch — credential-isolated operation delegation
 
 Opt-in Rust broker on macOS with a separately provisioned Linux SSH client, fixed read-only operation, exact ticket and local confirmation before credentials, one-use authority, acknowledged results and fail-closed uncertainty. No local untrusted process route, agent/port/filesystem forwarding or credential-writing CLI. Existing versions, records, contracts, settings and tasks retained.

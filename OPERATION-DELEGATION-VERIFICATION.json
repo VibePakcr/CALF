@@ -48,22 +48,22 @@
   "nativeTests": {
     "macos": {
       "exit": 0,
-      "seconds": 214.73,
-      "passed": 239,
+      "seconds": 220.49,
+      "passed": 240,
       "failed": 0,
       "ignored": 2
     },
     "linux": {
       "exit": 0,
-      "seconds": 130.73,
-      "passed": 235,
+      "seconds": 132.34,
+      "passed": 236,
       "failed": 0,
       "ignored": 1
     },
     "windows": {
       "exit": 0,
-      "seconds": 123.22,
-      "passed": 222,
+      "seconds": 122.78,
+      "passed": 223,
       "failed": 0,
       "ignored": 1
     }
@@ -78,7 +78,7 @@
     },
     "linux": {
       "exit": 0,
-      "seconds": 0.43,
+      "seconds": 0.42,
       "passed": 106,
       "failed": 0
     },
@@ -105,5 +105,13 @@
   "dataMigration": false,
   "privateSourceOrUserDataIncluded": false,
   "macTrust": "Developer ID signed, notarized, stapled; Gatekeeper accepted",
-  "windowsPublisherSigned": false
+  "windowsPublisherSigned": false,
+  "longLinkedSession": {
+    "metadataEntriesLimit": 16384,
+    "canonicalResponseBodiesRead": 1,
+    "expectedFailureReproduced": true,
+    "syntheticRegressionPassed": true,
+    "realTwoTasksStatusAndGraphReadable": true,
+    "originalRecordsAndSettingsChanged": false
+  }
 }
