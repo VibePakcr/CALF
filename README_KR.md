@@ -1,5 +1,7 @@
 # CALF
 
+Under Patch 2026-11-17 · Mac의 신뢰 브로커와 별도 Linux 호스트를 연결하는 선택형 Rust 작업 위임입니다. 고정 저장소 읽기 조회·정확한 티켓·로컬 확인·일회성 권한·최소 결과를 제공합니다. 기존 기록·계약·설정·진행 작업 런타임을 보존합니다. [사용 범위](CALF_mannual.html#operation-delegation)
+
 Under Patch 2026-11-16 · 버전 번호 유지. 객체·공통/타입별 속성·관계의 도메인과 범위·제약 적용 시점을 [명세](ONTOLOGY_MODEL_KR.md)와 [JSON](ONTOLOGY_MODEL.json)으로 제공합니다. Rust 검증기와 필드 정의를 공유하며 모든 기록 추가 경로에서 철회 기록 재승격을 차단합니다. 기존 기록 형식·계약·설정·작업 런타임은 유지합니다.
 
 **Controlled Agent Lifecycle Framework**

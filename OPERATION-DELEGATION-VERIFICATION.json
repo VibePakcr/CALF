@@ -1,0 +1,109 @@
+{
+  "schema": "calf.operation-delegation-qualification.v2",
+  "underPatch": "credential-operation-20261117",
+  "versions": {
+    "harness": "1.8.24",
+    "workbench": "1.9.21",
+    "sdk": "0.2.11"
+  },
+  "sameVersionReplacement": true,
+  "newReleaseOrTagCreated": false,
+  "implementation": "Rust native core",
+  "operation": "github.repository.status",
+  "effect": "read-only",
+  "supportedBoundary": "Trusted macOS broker with separately provisioned Linux host, pinned SSH peer and fixed protocol client",
+  "localUntrustedWorker": false,
+  "credentialTransport": false,
+  "sshAgentPortX11OrFilesystemForwarding": false,
+  "credentialWritingCli": false,
+  "arbitraryPrivilegedCommand": false,
+  "brokerUnavailableDeny": [
+    "linux",
+    "windows"
+  ],
+  "clientProtocolAvailable": [
+    "macos",
+    "linux",
+    "windows"
+  ],
+  "localApproval": "Separate trusted native local confirmation before SSH authentication and GitHub credential use; default Deny; not Touch ID or a cryptographic human-consent signature",
+  "deploymentObservation": "Operator-provisioned prerequisite; no claim of universal automatic physical-host certification",
+  "lease": {
+    "maxUses": 1,
+    "maxLifetimeMs": 60000,
+    "monotonicProcessLocal": true,
+    "persistent": false
+  },
+  "actualSeparatedHostSshRoundtrip": true,
+  "syntheticRoundtripCases": [
+    "observed",
+    "denied",
+    "unknown",
+    "cancelled",
+    "profile-changed",
+    "expired"
+  ],
+  "ticketReplayRejected": true,
+  "rawProviderFieldsAndErrorsNotReturned": true,
+  "nativeTests": {
+    "macos": {
+      "exit": 0,
+      "seconds": 214.73,
+      "passed": 239,
+      "failed": 0,
+      "ignored": 2
+    },
+    "linux": {
+      "exit": 0,
+      "seconds": 130.73,
+      "passed": 235,
+      "failed": 0,
+      "ignored": 1
+    },
+    "windows": {
+      "exit": 0,
+      "seconds": 123.22,
+      "passed": 222,
+      "failed": 0,
+      "ignored": 1
+    }
+  },
+  "uiTests": {
+    "macos": {
+      "status": "PASS",
+      "exit": 0,
+      "passed": 106,
+      "failed": 0,
+      "basis": "Same 48 UI/desktop/shared source files and UI binary unchanged; existing exact-input run retained"
+    },
+    "linux": {
+      "exit": 0,
+      "seconds": 0.43,
+      "passed": 106,
+      "failed": 0
+    },
+    "windows": {
+      "exit": 0,
+      "seconds": 0.22,
+      "passed": 106,
+      "failed": 0
+    }
+  },
+  "blackBoxTaskAssertionsPerEditionPlatform": 31,
+  "macIgnoredCoverage": "Existing child helper exercised by parent; separated-host roundtrip invoked explicitly and passed",
+  "roundtripApprovalAndProvider": "Injected only in native test binary; actual authorized SSH authentication and remote public client used",
+  "signedAndNotarizedClientProtocolCheck": true,
+  "signedProductionBrokerAuthenticatedProviderTest": false,
+  "localDialogVisuallyObserved": false,
+  "realGithubCredentialOrAuthenticatedProviderCallTested": false,
+  "sshAuthenticationWithExistingOperatorKeyTested": true,
+  "osLockScreenActuallyChangedForTest": false,
+  "syntheticDarwinRevocationChannelTested": true,
+  "ackMeaning": "Delivery observation only; not independent verification or task completion",
+  "enterpriseBindingAndInvocationAuthorityChanged": false,
+  "existingWorkersAutomaticallyChanged": false,
+  "dataMigration": false,
+  "privateSourceOrUserDataIncluded": false,
+  "macTrust": "Developer ID signed, notarized, stapled; Gatekeeper accepted",
+  "windowsPublisherSigned": false
+}

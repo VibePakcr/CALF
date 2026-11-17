@@ -44,3 +44,5 @@ If GitHub cannot preview the HTML file, use the download link above.
 [근거 그래프와 변경 영향](ONTOLOGY_GUIDE_KR.md) · [Evidence exploration](ONTOLOGY_GUIDE.md)
 
 [객체·속성·관계·제약 명세](ONTOLOGY_MODEL_KR.md) · [Object model specification](ONTOLOGY_MODEL.md) · [JSON](ONTOLOGY_MODEL.json)
+
+[Credential-isolated operation delegation / 자격증명 격리 작업 위임](CALF_mannual.html#operation-delegation)

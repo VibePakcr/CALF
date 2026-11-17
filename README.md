@@ -1,5 +1,7 @@
 # CALF
 
+Under Patch 2026-11-17 adds opt-in native operation delegation between a trusted Mac broker and a separately provisioned Linux host: a fixed repository read, exact ticket, local confirmation, single-use authority and minimal results. Existing records, contracts, settings and task runtimes are retained. [Usage and scope](CALF_mannual.html#operation-delegation)
+
 Under Patch 2026-11-16 · version numbers retained. The [model specification](ONTOLOGY_MODEL.md) and [JSON](ONTOLOGY_MODEL.json) define objects, common/variant properties, relationship domain/range and enforcement points. Native validation and public descriptions share field definitions. Every append path rejects reviving a retracted record. Stored format, contracts, settings and task runtimes are preserved.
 
 **Controlled Agent Lifecycle Framework**

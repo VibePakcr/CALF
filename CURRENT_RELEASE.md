@@ -1,5 +1,7 @@
 # CALF latest update
 
+Under Patch 2026-11-17 adds opt-in native operation delegation between a trusted Mac broker and a separately provisioned Linux host: a fixed repository read, exact ticket, local confirmation, single-use authority and minimal results. Existing records, contracts, settings and task runtimes are retained. [Usage and scope](CALF_mannual.html#operation-delegation)
+
 <!-- calf:current-release:start -->
 harness: 1.8.24
 workbench: 1.9.21

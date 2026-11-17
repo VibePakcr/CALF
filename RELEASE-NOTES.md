@@ -1,5 +1,9 @@
 # CALF Harness 1.8.24 · Workbench 1.9.21
 
+## Under Patch — credential-isolated operation delegation
+
+Opt-in Rust broker on macOS with a separately provisioned Linux SSH client, fixed read-only operation, exact ticket and local confirmation before credentials, one-use authority, acknowledged results and fail-closed uncertainty. No local untrusted process route, agent/port/filesystem forwarding or credential-writing CLI. Existing versions, records, contracts, settings and tasks retained.
+
 ## Under Patch — ontology model and append integrity
 
 Under Patch 2026-11-16 · version numbers retained. The [model specification](ONTOLOGY_MODEL.md) and [JSON](ONTOLOGY_MODEL.json) define objects, common/variant properties, relationship domain/range and enforcement points. Native validation and public descriptions share field definitions. Every append path rejects reviving a retracted record. Stored format, contracts, settings and task runtimes are preserved.
