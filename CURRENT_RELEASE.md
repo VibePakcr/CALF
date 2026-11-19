@@ -1,5 +1,7 @@
 # CALF latest update
 
+Under Patch 2026-11-19 adds Rust read-only model/skill label evaluation, checkpoint-bound lane failure/time/usage accounting and explicit unknown cost coverage. Local planner replies retain strict validation for nullable expected hashes. Versions remain Harness 1.8.24, Workbench 1.9.21 and SDK 0.2.11. Existing records, contracts, settings and task runtimes are retained. [Usage and measured pilot](ROUTING_EVALUATION.md)
+
 Linked task status: Long linked conversations continue to follow the latest response without deleting old records or changing connection settings.
 
 Under Patch 2026-11-17 adds opt-in native operation delegation between a trusted Mac broker and a separately provisioned Linux host: a fixed repository read, exact ticket, local confirmation, single-use authority and minimal results. Existing records, contracts, settings and task runtimes are retained. [Usage and scope](CALF_mannual.html#operation-delegation)

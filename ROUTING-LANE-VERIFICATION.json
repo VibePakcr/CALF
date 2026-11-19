@@ -1,0 +1,117 @@
+{
+  "schema": "calf.routing-lane-qualification.v1",
+  "underPatch": "routing-lane-20261119",
+  "versions": {
+    "harness": "1.8.24",
+    "workbench": "1.9.21",
+    "sdk": "0.2.11"
+  },
+  "sameVersionReplacement": true,
+  "newReleaseOrTagCreated": false,
+  "implementation": "Rust native core",
+  "operations": [
+    "routing",
+    "checkpoint",
+    "lanes"
+  ],
+  "executionAuthority": false,
+  "evaluationCurrentCompletion": "NOT_EVALUATED",
+  "nativeTests": {
+    "macos": {
+      "passed": 251,
+      "failed": 0,
+      "ignored": 2
+    },
+    "linux": {
+      "passed": 247,
+      "failed": 0,
+      "ignored": 1
+    },
+    "windows": {
+      "passed": 234,
+      "failed": 0,
+      "ignored": 1
+    }
+  },
+  "blackBoxEvaluationAssertionsPerEditionPlatform": 10,
+  "blackBoxProvider": "Fixed synthetic Python processes; no model calls",
+  "queryCheckpointAndBytePreservation": true,
+  "unknownUsageAndCostRemainNull": true,
+  "laneSharedPrerequisitesCountedOnceOverall": true,
+  "modelAndProviderGroups": true,
+  "localPlannerNullableHashStrictlyChecked": true,
+  "genericMcpSchemaContractChanged": false,
+  "ui": {
+    "status": "PASS",
+    "unchangedSourceFiles": 38,
+    "qualifiedDesktopInputsRetained": true,
+    "macSignatureRenewed": true,
+    "freshSelfCheckPlatforms": [
+      "macos",
+      "windows"
+    ],
+    "linuxUiQualification": "Previous exact binary and inputs retained"
+  },
+  "macosTrust": "Developer ID signed, notarized, stapled; Gatekeeper accepted",
+  "windowsPublisherSigned": false,
+  "signedClientProtocolCorrelation": "PASS; no SSH or credential call",
+  "realModelPilot": {
+    "date": "2026-11-19",
+    "requestedReasoningEffort": "medium",
+    "cases": [
+      "decimal CSV totals",
+      "half-open interval merging",
+      "skill-selection negative controls"
+    ],
+    "attemptsPerTask": 1,
+    "models": [
+      {
+        "model": "gpt-6.2-sol",
+        "trials": 3,
+        "verifiedSuccesses": 3,
+        "wallTimeSecondsTotal": 122.361,
+        "wallTimeSecondsMedian": 40.112,
+        "providerTimeSecondsTotal": 117.682,
+        "inputTokens": 145156,
+        "outputTokens": 3459,
+        "cachedInputTokens": 0,
+        "providerCalls": 6,
+        "providerFailures": 0,
+        "standardApiEquivalentUsd": 0.324902,
+        "actualBilledUsd": null
+      },
+      {
+        "model": "gpt-6.2-astra",
+        "trials": 3,
+        "verifiedSuccesses": 3,
+        "wallTimeSecondsTotal": 113.456,
+        "wallTimeSecondsMedian": 38.319,
+        "providerTimeSecondsTotal": 108.81,
+        "inputTokens": 151341,
+        "outputTokens": 2780,
+        "cachedInputTokens": 0,
+        "providerCalls": 6,
+        "providerFailures": 0,
+        "standardApiEquivalentUsd": 1.321928,
+        "actualBilledUsd": null
+      }
+    ],
+    "nativeProviderCalls": 12,
+    "skillNegativeControls": {
+      "accuracy": 1.0,
+      "correct": 4,
+      "forbiddenSelections": 0,
+      "missingRequiredSelections": 0,
+      "scored": 4,
+      "unobserved": 0,
+      "wrong": 0
+    },
+    "pricingMeaning": "Published short-context Standard API equivalent only; excludes unreported cache writes, tier multipliers and subscription accounting; actual invoice unknown",
+    "generality": "Three isolated tasks per model, one attempt. Not a general model ranking or repeatable speedup.",
+    "hostSkillInvocationProven": false
+  },
+  "dataMigration": false,
+  "existingWorkerRuntimesChanged": false,
+  "privateSourceOrUserDataIncluded": false,
+  "publicationAndInstallation": "Read back separately against the published package hashes"
+}

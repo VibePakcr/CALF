@@ -1,3 +1,13 @@
+## Under Patch 2026-11-19 — Harness 1.8.24 · Workbench 1.9.21
+
+- Evaluate supplied model choices, required skills and forbidden skills with `calf evaluation`.
+- Read lane process outcomes, durations, provider-reported usage and supplied-rate estimates from exact native checkpoints. Keep missing counters and unpriced cost unknown.
+- Correct local planner nullable-hash validation while retaining the shared MCP schema rules. Preserve existing records, contracts, settings and pinned task runtimes.
+
+동일 버전의 배포 파일을 교체하는 언더패치입니다. 모델·스킬 선택과 Lane 계측을 Rust에서 읽기 전용으로 평가하며, 기존 기록·계약·설정과 진행 작업의 고정 런타임을 보존합니다.
+
+[English guide and real-model pilot](ROUTING_EVALUATION.md) · [한국어 안내](ROUTING_EVALUATION_KR.md) · [Qualification](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/ROUTING-LANE-VERIFICATION.json)
+
 # CALF Harness 1.8.24 · Workbench 1.9.21
 
 Same underpatch includes the long-session status query repair; latest linked responses remain readable with old records and settings preserved.
