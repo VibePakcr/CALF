@@ -1,6 +1,6 @@
 # Explore task evidence and change impact
 
-Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** unchanged.
+Current guide: Harness **1.8.24** · Workbench **1.9.22** · SDK **0.2.11**.
 
 [Install](INSTALL.md) · [Downloads](DOWNLOADS.md) · [한국어](ONTOLOGY_GUIDE_KR.md)
 

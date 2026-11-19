@@ -1,4 +1,4 @@
-# CALF 사용 안내 · User guide
+# CALF Workbench 1.9.22 사용 안내 · User guide
 
 ## Workbench 1.9.22 — connected task status
 
@@ -46,7 +46,7 @@ Follow the pictures to install CALF, start a task, review the result and resume 
 
 ## 오프라인에서 읽기 · Read offline
 
-[영·한 HTML 매뉴얼 받기 · Download the EN/KR HTML manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/CALF_mannual.html)
+[영·한 HTML 매뉴얼 받기 · Download the EN/KR HTML manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.22/CALF_mannual.html)
 
 `CALF_mannual.html`을 받아 Chrome·Edge·Safari에서 여세요. 그림이 모두 들어 있어 인터넷 없이도 볼 수 있습니다. 이 파일은 위쪽 **EN / KR** 버튼으로 언어를 바꿉니다.
 
@@ -56,7 +56,7 @@ GitHub에서 HTML 미리보기가 열리지 않으면 위 다운로드 링크를
 
 If GitHub cannot preview the HTML file, use the download link above.
 
-[GitHub release](https://github.com/VibePakcr/CALF/releases/tag/v1.9.21) · [GitLab release](https://gitlab.com/vibepackr-group/CALF/-/releases/v1.9.21) · [Downloads / 다운로드](DOWNLOADS.md)
+[GitHub release](https://github.com/VibePakcr/CALF/releases/tag/v1.9.22) · [GitLab release](https://gitlab.com/vibepackr-group/CALF/-/releases/v1.9.22) · [Downloads / 다운로드](DOWNLOADS.md)
 
 ## 이번 업데이트 · This update
 
@@ -70,7 +70,7 @@ If GitHub cannot preview the HTML file, use the download link above.
 
 [객체·속성·관계·제약 명세](ONTOLOGY_MODEL_KR.md) · [Object model specification](ONTOLOGY_MODEL.md) · [JSON](ONTOLOGY_MODEL.json)
 
-[Credential-isolated operation delegation / 자격증명 격리 작업 위임](CALF_mannual.html#operation-delegation)
+[Credential-isolated operation delegation / 자격증명 격리 작업 위임](https://calf.vibepackr.com/manual/?lang=ko#operation-delegation)
 
 
 ## Routing and lane evaluation / 라우팅·Lane 평가
@@ -148,7 +148,7 @@ On 2026-11-19, the official Codex CLI ran three isolated tasks per model at requ
 
 The token counts are provider-reported. The price column applies the published short-context Standard API rates, excluding unreported cache writes, tier multipliers and subscription credit accounting; it is not an invoice. Each model has only three single-attempt samples. Backend load, service tier and cache state were not controlled, so this pilot does not establish a general model ranking or repeatable speedup. The generated selector passed four observed required/forbidden selection cases; it did not invoke host skills.
 
-[OpenAI Sol rates](https://developers.openai.com/api/docs/models/gpt-6.2-sol) · [Astra rates](https://developers.openai.com/api/docs/models/gpt-6.2-astra) · [한국어 안내](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/ROUTING_EVALUATION_KR.md) · [Qualification](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/ROUTING-LANE-VERIFICATION.json)
+[OpenAI Sol rates](https://developers.openai.com/api/docs/models/gpt-6.2-sol) · [Astra rates](https://developers.openai.com/api/docs/models/gpt-6.2-astra) · [한국어 안내](https://github.com/VibePakcr/CALF/blob/main/ROUTING_EVALUATION_KR.md) · [Qualification](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/ROUTING-LANE-VERIFICATION.json)
 
 
 # 라우팅·스킬 선택·Lane 실행 계측
@@ -273,4 +273,4 @@ calf evaluation < routing.json
 
 토큰은 공급자 보고값이며 금액은 3개 과제의 공개 Standard API 단가 환산치입니다. 미보고 캐시 쓰기·서비스 등급 배수·구독 크레딧 과금은 포함하지 않으며 실제 청구액은 미확인입니다. 서버 부하·서비스 등급·캐시 상태를 통제하지 않은 모델당 3개 단일 시도이므로 일반 성능 순위나 반복 가능한 절감률을 뜻하지 않습니다. 생성된 선택 함수를 실행한 필수·금지 선택 4건도 통과했으며 실제 호스트 스킬 호출의 증명은 아닙니다.
 
-[English and official rate sources](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/ROUTING_EVALUATION.md#real-model-pilot) · [검증 범위](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/ROUTING-LANE-VERIFICATION.json)
+[English and official rate sources](https://github.com/VibePakcr/CALF/blob/main/ROUTING_EVALUATION.md#real-model-pilot) · [검증 범위](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/ROUTING-LANE-VERIFICATION.json)

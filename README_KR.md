@@ -1,8 +1,8 @@
 # CALF
 
-Workbench 1.9.22 정식 패치: 연결 작업의 정확한 ID로 상태를 조회하고, 폴더를 선택하기 전에도 연결 기록을 읽습니다. [변경점](CURRENT_RELEASE_KR.md) · [다운로드](DOWNLOADS.md) · [매뉴얼](CALF_mannual.html#connected-task-status)
+Workbench 1.9.22 정식 패치: 연결 작업의 정확한 ID로 상태를 조회하고, 폴더를 선택하기 전에도 연결 기록을 읽습니다. [변경점](CURRENT_RELEASE_KR.md) · [다운로드](DOWNLOADS.md) · [매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#connected-task-status)
 
-Under Patch 2026-11-17 · Mac의 신뢰 브로커와 별도 Linux 호스트를 연결하는 선택형 Rust 작업 위임입니다. 고정 저장소 읽기 조회·정확한 티켓·로컬 확인·일회성 권한·최소 결과를 제공합니다. 기존 기록·계약·설정·진행 작업 런타임을 보존합니다. [사용 범위](CALF_mannual.html#operation-delegation)
+Under Patch 2026-11-17 · Mac의 신뢰 브로커와 별도 Linux 호스트를 연결하는 선택형 Rust 작업 위임입니다. 고정 저장소 읽기 조회·정확한 티켓·로컬 확인·일회성 권한·최소 결과를 제공합니다. 기존 기록·계약·설정·진행 작업 런타임을 보존합니다. [사용 범위](https://calf.vibepackr.com/manual/?lang=ko#operation-delegation)
 
 Under Patch 2026-11-16 · 버전 번호 유지. 객체·공통/타입별 속성·관계의 도메인과 범위·제약 적용 시점을 [명세](ONTOLOGY_MODEL_KR.md)와 [JSON](ONTOLOGY_MODEL.json)으로 제공합니다. Rust 검증기와 필드 정의를 공유하며 모든 기록 추가 경로에서 철회 기록 재승격을 차단합니다. 기존 기록 형식·계약·설정·작업 런타임은 유지합니다.
 
@@ -16,7 +16,7 @@ Codex·Antigravity·Claude Code와 함께 사용하는 가벼운 워크벤치입
 
 ## 온톨로지 근거 탐색
 
-Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** 유지.
+현재 안내: Harness **1.8.24** · Workbench **1.9.22** · SDK **0.2.11**.
 
 작업 하나의 근거 그래프, 오래된 기록 검색·페이지 이동, 주변·역참조·경로 탐색과 직접·간접 영향 후보를 읽기 전용으로 확인합니다. 기존 기록·계약·설정과 작업 실행을 보존합니다. [사용법](ONTOLOGY_GUIDE_KR.md)
 

@@ -1,6 +1,8 @@
 # CALF credential-isolated operation delegation
 
-Harness 1.8.24 · Workbench 1.9.21 · same-version Under Patch.
+Current guide: Harness 1.8.24 · Workbench 1.9.22 · SDK 0.2.11.
+
+Original release context: Harness 1.8.24 · Workbench 1.9.21 · same-version Under Patch.
 
 A trusted Mac broker performs a fixed read operation requested through a separately provisioned Linux environment. Operator credentials stay on the Mac; the separated protocol client receives only the required result. Existing Codex, Claude, Antigravity sessions and running tasks are not automatically moved into this route.
 

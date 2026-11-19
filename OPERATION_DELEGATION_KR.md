@@ -1,6 +1,8 @@
 # CALF 자격증명 분리 작업 위임
 
-Harness 1.8.24 · Workbench 1.9.21 · 동일 버전 Under Patch.
+현재 안내: Harness 1.8.24 · Workbench 1.9.22 · SDK 0.2.11.
+
+최초 적용 버전과 이력: Harness 1.8.24 · Workbench 1.9.21 · 동일 버전 Under Patch.
 
 Mac의 신뢰 브로커가 별도 Linux 실행 환경의 요청을 받아 고정된 읽기 작업을 대행합니다. 운영 자격증명은 Mac에 남고, 분리된 요청 클라이언트에는 필요한 결과만 반환합니다. 기존 Codex·Claude·Antigravity 세션이나 진행 작업은 이 경로로 자동 전환되지 않습니다.
 

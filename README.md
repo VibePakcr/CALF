@@ -1,8 +1,8 @@
 # CALF
 
-Workbench 1.9.22 fixes exact connected-task selection and allows read-only host status before choosing a workspace. [Changes](CURRENT_RELEASE.md) · [Download](DOWNLOADS.md) · [Manual](CALF_mannual.html#connected-task-status)
+Workbench 1.9.22 fixes exact connected-task selection and allows read-only host status before choosing a workspace. [Changes](CURRENT_RELEASE.md) · [Download](DOWNLOADS.md) · [Manual](https://calf.vibepackr.com/manual/?lang=en#connected-task-status)
 
-Under Patch 2026-11-17 adds opt-in native operation delegation between a trusted Mac broker and a separately provisioned Linux host: a fixed repository read, exact ticket, local confirmation, single-use authority and minimal results. Existing records, contracts, settings and task runtimes are retained. [Usage and scope](CALF_mannual.html#operation-delegation)
+Under Patch 2026-11-17 adds opt-in native operation delegation between a trusted Mac broker and a separately provisioned Linux host: a fixed repository read, exact ticket, local confirmation, single-use authority and minimal results. Existing records, contracts, settings and task runtimes are retained. [Usage and scope](https://calf.vibepackr.com/manual/?lang=en#operation-delegation)
 
 Under Patch 2026-11-16 · version numbers retained. The [model specification](ONTOLOGY_MODEL.md) and [JSON](ONTOLOGY_MODEL.json) define objects, common/variant properties, relationship domain/range and enforcement points. Native validation and public descriptions share field definitions. Every append path rejects reviving a retracted record. Stored format, contracts, settings and task runtimes are preserved.
 
@@ -16,7 +16,7 @@ Use it with Codex, Antigravity or Claude Code. CALF is built with Rust and Tauri
 
 ## Ontology evidence exploration
 
-Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** unchanged.
+Current guide: Harness **1.8.24** · Workbench **1.9.22** · SDK **0.2.11**.
 
 Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
 

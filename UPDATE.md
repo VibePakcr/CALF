@@ -1,3 +1,13 @@
+# Update CALF Workbench 1.9.22
+
+Current guide: Workbench **1.9.22** · Harness **1.8.24** · SDK **0.2.11**.
+
+Use Updates or the [current downloads](DOWNLOADS.md). Keep the complete records home, contracts, preferences and pinned task runtimes. Extract into a new folder; linked host tasks continue in their original host. See the [current manual](https://calf.vibepackr.com/manual/?lang=en#connected-task-status).
+
+현재 안내는 Workbench 1.9.22 기준입니다. [다운로드](DOWNLOADS.md)와 [한국어 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#connected-task-status)을 확인하세요. 기존 기록·계약·설정과 작업별 런타임을 보존합니다.
+
+## Historical update notes / 과거 업데이트 기록
+
 # Update CALF / CALF 업데이트
 
 Harness **1.8.8** · Workbench **1.9.3** · SDK **0.2.2**

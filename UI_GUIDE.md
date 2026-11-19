@@ -1,4 +1,4 @@
-# Workbench 1.9.18 screen guide
+# Workbench 1.9.22 screen guide
 
 ## Workbench 1.9.22 — connected task status
 
@@ -17,7 +17,7 @@ Upgrade from Workbench 1.9.21 through Updates, or download 1.9.22 and extract it
 
 ## Ontology evidence exploration
 
-Harness **1.8.24** · Workbench **1.9.21** · SDK **0.2.11** unchanged.
+Current guide: Harness **1.8.24** · Workbench **1.9.22** · SDK **0.2.11**.
 
 Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
 

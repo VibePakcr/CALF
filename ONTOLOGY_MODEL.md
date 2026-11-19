@@ -1,6 +1,8 @@
 # Object, property, relationship and constraint specification
 
-Harness 1.8.24 · Workbench 1.9.21 · Under Patch 2026-11-16 · stored record format 1 retained. Existing files are not rewritten or migrated.
+Current guide: Harness 1.8.24 · Workbench 1.9.22 · SDK 0.2.11.
+
+Original release context: Harness 1.8.24 · Workbench 1.9.21 · Under Patch 2026-11-16 · stored record format 1 retained. Existing files are not rewritten or migrated.
 
 CALF models tasks and their evidence. Four stored record types, common and variant properties, four relationship types and validation constraints are defined in the native Rust core. The graph is a read-only projection of that model.
 
