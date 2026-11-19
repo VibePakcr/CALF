@@ -1,5 +1,7 @@
 # CALF
 
+Workbench 1.9.22 정식 패치: 연결 작업의 정확한 ID로 상태를 조회하고, 폴더를 선택하기 전에도 연결 기록을 읽습니다. [변경점](CURRENT_RELEASE_KR.md) · [다운로드](DOWNLOADS.md) · [매뉴얼](CALF_mannual.html#connected-task-status)
+
 Under Patch 2026-11-17 · Mac의 신뢰 브로커와 별도 Linux 호스트를 연결하는 선택형 Rust 작업 위임입니다. 고정 저장소 읽기 조회·정확한 티켓·로컬 확인·일회성 권한·최소 결과를 제공합니다. 기존 기록·계약·설정·진행 작업 런타임을 보존합니다. [사용 범위](CALF_mannual.html#operation-delegation)
 
 Under Patch 2026-11-16 · 버전 번호 유지. 객체·공통/타입별 속성·관계의 도메인과 범위·제약 적용 시점을 [명세](ONTOLOGY_MODEL_KR.md)와 [JSON](ONTOLOGY_MODEL.json)으로 제공합니다. Rust 검증기와 필드 정의를 공유하며 모든 기록 추가 경로에서 철회 기록 재승격을 차단합니다. 기존 기록 형식·계약·설정·작업 런타임은 유지합니다.
@@ -44,7 +46,7 @@ Workbench 1.9.16의 첫 작업 화면입니다. [Windows·Linux 화면](UI_GUIDE
 
 ![기존 문구 뒤에 제안을 추가한 실제 Workbench 1.9.18 화면](guidance-add-1.9.18.jpg)
 
-[추가·되돌리기 따라 하기](REQUEST_GUIDANCE_KR.md) · [최신 오프라인 영·한 매뉴얼 받기](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/CALF_mannual.html)
+[추가·되돌리기 따라 하기](REQUEST_GUIDANCE_KR.md) · [최신 오프라인 영·한 매뉴얼 받기](https://github.com/VibePakcr/CALF/releases/download/v1.9.22/CALF_mannual.html)
 
 ## 자료는 자동으로 연결합니다
 
@@ -64,7 +66,7 @@ Repository Intelligence는 CALF에 기본으로 포함돼 있습니다. GCN/MCL�
 
 | 하고 싶은 일 | 선택 |
 | --- | --- |
-| 화면에서 작업을 따라가고 파일과 결과 확인하기 | **Workbench 1.9.21** |
+| 화면에서 작업을 따라가고 파일과 결과 확인하기 | **Workbench 1.9.22** |
 | 터미널 명령·호스트 훅·MCP로 사용하기 | **Harness 1.8.24** |
 | 직접 만든 도구 연결하기 | **SDK 0.2.11** |
 

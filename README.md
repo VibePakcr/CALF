@@ -1,5 +1,7 @@
 # CALF
 
+Workbench 1.9.22 fixes exact connected-task selection and allows read-only host status before choosing a workspace. [Changes](CURRENT_RELEASE.md) · [Download](DOWNLOADS.md) · [Manual](CALF_mannual.html#connected-task-status)
+
 Under Patch 2026-11-17 adds opt-in native operation delegation between a trusted Mac broker and a separately provisioned Linux host: a fixed repository read, exact ticket, local confirmation, single-use authority and minimal results. Existing records, contracts, settings and task runtimes are retained. [Usage and scope](CALF_mannual.html#operation-delegation)
 
 Under Patch 2026-11-16 · version numbers retained. The [model specification](ONTOLOGY_MODEL.md) and [JSON](ONTOLOGY_MODEL.json) define objects, common/variant properties, relationship domain/range and enforcement points. Native validation and public descriptions share field definitions. Every append path rejects reviving a retracted record. Stored format, contracts, settings and task runtimes are preserved.
@@ -44,7 +46,7 @@ Bring a correction from earlier tasks into the next request as a suggestion. Cho
 
 ![A suggestion appended in the actual Workbench 1.9.18 app](guidance-add-1.9.18.jpg)
 
-[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/CALF_mannual.html)
+[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.22/CALF_mannual.html)
 
 ## Material connects automatically
 
@@ -64,7 +66,7 @@ Repository Intelligence is included with CALF. GCN/MCL helps organize the order 
 
 | Use | Choose |
 | --- | --- |
-| A desktop app for following tasks and reviewing files | **Workbench 1.9.21** |
+| A desktop app for following tasks and reviewing files | **Workbench 1.9.22** |
 | Terminal commands, host hooks or MCP | **Harness 1.8.24** |
 | Connect your own tools | **SDK 0.2.11** |
 

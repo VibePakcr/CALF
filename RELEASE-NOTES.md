@@ -1,3 +1,19 @@
+# CALF Workbench 1.9.22
+
+Fix connected-task status lookup while preserving existing records, contracts, settings and pinned runtimes. Harness 1.8.24 and SDK 0.2.11 remain unchanged.
+
+- Retain the selected task ID when it is omitted from the task list. An unavailable task shows its own error instead of another task’s verdict.
+- Read explicitly connected host tasks without requiring an unrelated workspace selection.
+- Rechecked utility-panel switching, background control visibility, unsaved preference drafts, Esc and task search.
+
+연결 작업의 상태 조회를 수정한 정식 패치 릴리즈입니다. 목록에서 빠진 작업도 선택한 ID를 유지하며, 해당 작업을 읽지 못할 때 다른 작업의 결과로 대체하지 않습니다. 폴더 선택 전에도 연결 작업을 조회할 수 있습니다.
+
+The task-selection repair passed 79 targeted UI tests, including three reproduced regressions. Actual macOS UI checks read both existing host tasks without controlling them. Per-platform package checks and signing results are recorded in STATUS-LOOKUP-VERIFICATION.json. Windows binaries are unsigned; Linux requires GTK 3 and WebKitGTK 4.1.
+
+Use Updates or extract the new package to a separate folder. Previous releases remain available. Read-only host observations do not establish task liveness or whole-task completion.
+
+## Previous releases
+
 ## Under Patch 2026-11-19 — Harness 1.8.24 · Workbench 1.9.21
 
 - Evaluate supplied model choices, required skills and forbidden skills with `calf evaluation`.

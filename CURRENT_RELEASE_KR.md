@@ -1,3 +1,26 @@
+# CALF Workbench 1.9.22
+
+<!-- calf:current-release:start -->
+harness: 1.8.24
+workbench: 1.9.22
+sdk: 0.2.11
+Release state: published
+<!-- calf:current-release:end -->
+
+## Workbench 1.9.22 — 연결 작업 상태 조회
+
+Connected tasks에서 카드를 누르면 해당 호스트 작업의 기록을 읽습니다. 작업 폴더를 선택하기 전에도 사용할 수 있습니다. Refresh status는 현재 선택한 같은 작업을 다시 조회합니다.
+
+작업이 제한된 목록이나 갱신된 목록에서 빠져도 선택한 ID를 유지해 그 작업을 직접 조회합니다. 연결을 읽을 수 없으면 다른 작업의 결과를 대신 보여주지 않고 오류를 표시합니다. 기존 호스트 연결을 확인한 뒤 다시 조회하세요. 읽기 전용 조회를 위해 작업을 재시작할 필요는 없습니다.
+
+Response ended는 호스트의 응답 종료 기록입니다. 프로세스의 실행 여부나 전체 작업의 완료를 입증하지 않습니다. 현재 완료 여부를 평가하지 않았으면 UNKNOWN을 유지합니다.
+
+좌측 메뉴의 보조 패널은 중앙 작업 영역에 표시됩니다. Close 또는 Esc로 작업 화면에 돌아갑니다. 패널을 전환해도 저장하지 않은 환경설정 초안은 유지되며, Save preferences를 눌러야 저장됩니다.
+
+Workbench 1.9.21의 Updates에서 확인하거나 1.9.22를 받아 새 폴더에 압축을 푸세요. 기존 기록 폴더·계약·환경설정과 작업별 고정 런타임을 유지합니다. 업데이트를 준비하는 동안 현재 창은 계속 실행되며 연결된 작업은 원래 호스트에서 계속됩니다.
+
+## Previous releases
+
 # CALF 이번 업데이트
 
 Under Patch 2026-11-19 · Rust 읽기 전용 모델·스킬 선택 평가, 체크포인트에 결속한 Lane 실패·시간·사용량 계측과 미확인 비용 구분을 추가했습니다. 로컬 계획 응답의 nullable 해시 검사도 보완했습니다. Harness 1.8.24·Workbench 1.9.21·SDK 0.2.11과 기존 기록·계약·설정·작업 런타임을 유지합니다. [사용법과 실제 모델 비교](ROUTING_EVALUATION_KR.md)
@@ -5,13 +28,6 @@ Under Patch 2026-11-19 · Rust 읽기 전용 모델·스킬 선택 평가, 체�
 연결 작업 상태: 대화 기록이 길어져도 원본 기록을 지우거나 연결 설정을 바꾸지 않고 최신 응답을 조회합니다.
 
 Under Patch 2026-11-17 · Mac의 신뢰 브로커와 별도 Linux 호스트를 연결하는 선택형 Rust 작업 위임입니다. 고정 저장소 읽기 조회·정확한 티켓·로컬 확인·일회성 권한·최소 결과를 제공합니다. 기존 기록·계약·설정·진행 작업 런타임을 보존합니다. [사용 범위](CALF_mannual.html#operation-delegation)
-
-<!-- calf:current-release:start -->
-harness: 1.8.24
-workbench: 1.9.21
-sdk: 0.2.11
-Release state: published
-<!-- calf:current-release:end -->
 
 Under Patch 2026-11-16 · 버전 번호 유지. 객체·공통/타입별 속성·관계의 도메인과 범위·제약 적용 시점을 [명세](ONTOLOGY_MODEL_KR.md)와 [JSON](ONTOLOGY_MODEL.json)으로 제공합니다. Rust 검증기와 필드 정의를 공유하며 모든 기록 추가 경로에서 철회 기록 재승격을 차단합니다. 기존 기록 형식·계약·설정·작업 런타임은 유지합니다.
 

@@ -1,3 +1,26 @@
+# CALF Workbench 1.9.22
+
+<!-- calf:current-release:start -->
+harness: 1.8.24
+workbench: 1.9.22
+sdk: 0.2.11
+Release state: published
+<!-- calf:current-release:end -->
+
+## Workbench 1.9.22 — connected task status
+
+Open a card under Connected tasks to read that exact host task. You can do this before choosing a workspace. Refresh status reads the same selected task again.
+
+If the task is missing from a bounded or recently changed task list, Workbench retains its identity and requests that task directly. If its link is no longer readable, the view shows an error instead of displaying another task’s result. Check the existing host connection, then refresh; no restart is needed for this read-only view.
+
+“Response ended” describes a recorded host event. It does not establish process liveness or completion of the whole task. UNKNOWN stays unknown when current completion has not been evaluated.
+
+Sidebar utility panels occupy the central work area. Close or Esc returns to the task view. Switching between panels retains an unsaved preferences draft; Save preferences is the explicit save action.
+
+Upgrade from Workbench 1.9.21 through Updates, or download 1.9.22 and extract it to a new folder. Keep your existing records folder, contracts, preferences and pinned task runtimes. Preparing the update leaves the current window running. Existing linked tasks continue in their original host.
+
+## Previous releases
+
 # CALF latest update
 
 Under Patch 2026-11-19 adds Rust read-only model/skill label evaluation, checkpoint-bound lane failure/time/usage accounting and explicit unknown cost coverage. Local planner replies retain strict validation for nullable expected hashes. Versions remain Harness 1.8.24, Workbench 1.9.21 and SDK 0.2.11. Existing records, contracts, settings and task runtimes are retained. [Usage and measured pilot](ROUTING_EVALUATION.md)
@@ -5,13 +28,6 @@ Under Patch 2026-11-19 adds Rust read-only model/skill label evaluation, checkpo
 Linked task status: Long linked conversations continue to follow the latest response without deleting old records or changing connection settings.
 
 Under Patch 2026-11-17 adds opt-in native operation delegation between a trusted Mac broker and a separately provisioned Linux host: a fixed repository read, exact ticket, local confirmation, single-use authority and minimal results. Existing records, contracts, settings and task runtimes are retained. [Usage and scope](CALF_mannual.html#operation-delegation)
-
-<!-- calf:current-release:start -->
-harness: 1.8.24
-workbench: 1.9.21
-sdk: 0.2.11
-Release state: published
-<!-- calf:current-release:end -->
 
 Under Patch 2026-11-16 · version numbers retained. The [model specification](ONTOLOGY_MODEL.md) and [JSON](ONTOLOGY_MODEL.json) define objects, common/variant properties, relationship domain/range and enforcement points. Native validation and public descriptions share field definitions. Every append path rejects reviving a retracted record. Stored format, contracts, settings and task runtimes are preserved.
 
