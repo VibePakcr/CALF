@@ -1,0 +1,62 @@
+{
+  "schema": "calf.work-state-view-verification.v1",
+  "version": "1.9.24",
+  "status": "PASS",
+  "uiTests": 107,
+  "nativeTests": {
+    "macos": {
+      "exit": 0,
+      "seconds": 192.602,
+      "passed": 283,
+      "failed": 0,
+      "ignored": 2
+    },
+    "windows": {
+      "exit": 0,
+      "seconds": 92.0,
+      "passed": 262,
+      "failed": 0,
+      "ignored": 1
+    },
+    "linux": {
+      "exit": 0,
+      "seconds": 117.589,
+      "passed": 279,
+      "failed": 0,
+      "ignored": 1
+    }
+  },
+  "workflowChecks": {
+    "macos": [
+      "retained historical observations: separated packet, correct/wrong diagnosis and leakage exclusion",
+      "actual CHECK processes reject wrong diagnosis, retain support, distinguish tool failure and invalidate changed inputs",
+      "fresh-process event wait, targeted native execution, independent checks and duplicate suppression; unrelated queued job unchanged",
+      "actual worker interruption cleans owned child; fresh worker and duplicate event cannot replay uncertain dispatch"
+    ],
+    "windows": [
+      "retained historical observations: separated packet, correct/wrong diagnosis and leakage exclusion",
+      "actual CHECK processes reject wrong diagnosis, retain support, distinguish tool failure and invalidate changed inputs",
+      "fresh-process event wait, targeted native execution, independent checks and duplicate suppression; unrelated queued job unchanged",
+      "actual worker interruption cleans owned child; fresh worker and duplicate event cannot replay uncertain dispatch"
+    ],
+    "linux": [
+      "retained historical observations: separated packet, correct/wrong diagnosis and leakage exclusion",
+      "actual CHECK processes reject wrong diagnosis, retain support, distinguish tool failure and invalidate changed inputs",
+      "fresh-process event wait, targeted native execution, independent checks and duplicate suppression; unrelated queued job unchanged",
+      "actual worker interruption cleans owned child; fresh worker and duplicate event cannot replay uncertain dispatch"
+    ]
+  },
+  "modelCalls": 0,
+  "scope": "Native binary suites and deterministic workflow processes on macOS, Windows and Debian Linux; UI regression tests and isolated browser sample-record review. No live-model benchmark or Windows/Linux native-window visual claim.",
+  "nativeCoreLogicChanged": false,
+  "harness": "1.8.25 unchanged",
+  "sdk": "0.2.11 unchanged",
+  "macTrust": {
+    "developerIdSigned": true,
+    "appleNotarized": true,
+    "stapled": true,
+    "gatekeeperAccepted": true
+  },
+  "preservation": "Packages use new version folders; original records, settings, contracts and pinned task runtimes are retained.",
+  "uiBoundary": "Existing bounded native reads; no new execution engine, state database or remote approvals."
+}

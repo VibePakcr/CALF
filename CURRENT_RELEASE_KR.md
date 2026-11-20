@@ -1,11 +1,23 @@
-# CALF Harness 1.8.25 · Workbench 1.9.23
-
+# CALF Harness 1.8.25 · Workbench 1.9.24
 <!-- calf:current-release:start -->
 harness: 1.8.25
-workbench: 1.9.23
+workbench: 1.9.24
 sdk: 0.2.11
 Release channels: GitHub / GitLab
 <!-- calf:current-release:end -->
+
+## Workbench 1.9.24 — 작업 흐름과 중단 이유 확인
+
+**Flow**와 **History**에서 같은 최근 검증 기록을 흐름도와 시간순 목록으로 전환합니다. 작업 요청·기록된 상태·확인 가능한 상태 설명을 함께 보여줍니다. 단계를 선택하면 기록·작업 정보를 읽고, **Task evidence**에서 현재 검증 상태를 확인할 수 있습니다.
+
+**Review requests**로 Attention을 열고 **Needs review**, **Observation gaps**, **All observed**로 같은 제한된 네이티브 조회 결과를 나눠 봅니다. 카드에는 과거 결과와 현재 완료 여부를 구분하고, 관측 시각과 근거 참조를 표시합니다. 작업을 열어 근거를 읽은 뒤 기존 검토 기능을 사용하세요.
+
+기존 기록을 읽는 화면 개선입니다. 별도 실행 엔진·작업 DB·자동 승인·원격 승인·호스트 작업 제어를 추가하지 않습니다. 이전 기록과 작업별 고정 런타임을 보존하며 Harness 1.8.25와 SDK 0.2.11은 유지합니다.
+
+Workbench 1.9.23의 Updates를 사용하거나 1.9.24를 새 폴더에 풀고 기존 기록 위치를 유지하세요. [화면 안내](WORK_STATE_VIEW_KR.md) · [온라인 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#work-state).
+
+## Previous releases / 과거 릴리즈
+
 
 ## 1.8.25 / 1.9.23 — 과거 장애 평가·반증 검증·이벤트 재개
 

@@ -1,4 +1,14 @@
-# Workbench 1.9.23 screen guide
+# Workbench 1.9.24 screen guide
+## Workbench 1.9.24 — follow work and review interruptions
+
+Switch between **Flow** and **History** for the same recent verified steps. The task request, recorded state and available state explanation stay together. Select a step to inspect its record and operation details; use **Task evidence** for current validation.
+
+**Review requests** opens Attention. **Needs review**, **Observation gaps** and **All observed** filter the same bounded native observation. Cards separate the historical outcome from current completion, show freshness, and expose the recorded evidence reference. Open a task to inspect it before taking an existing review action.
+
+This is a view over existing records. It adds no execution engine, task database, automatic approval, remote approval or host-task control. Earlier records and pinned runtimes remain intact. Harness 1.8.25 and SDK 0.2.11 are unchanged.
+
+Upgrade from Workbench 1.9.23 through Updates, or extract 1.9.24 into a new folder and keep your existing records home. [Screen guide](WORK_STATE_VIEW.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#work-state).
+
 
 ## 1.8.25 / 1.9.23 — incident evaluation, adversarial review and event resume
 
@@ -25,7 +35,7 @@ Upgrade from Workbench 1.9.21 through Updates, or download 1.9.22 and extract it
 
 ## Ontology evidence exploration
 
-Current guide: Harness **1.8.25** · Workbench **1.9.23** · SDK **0.2.11**.
+Current guide: Harness **1.8.25** · Workbench **1.9.24** · SDK **0.2.11**.
 
 Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
 

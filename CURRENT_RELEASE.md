@@ -1,11 +1,23 @@
-# CALF Harness 1.8.25 · Workbench 1.9.23
-
+# CALF Harness 1.8.25 · Workbench 1.9.24
 <!-- calf:current-release:start -->
 harness: 1.8.25
-workbench: 1.9.23
+workbench: 1.9.24
 sdk: 0.2.11
 Release channels: GitHub / GitLab
 <!-- calf:current-release:end -->
+
+## Workbench 1.9.24 — follow work and review interruptions
+
+Switch between **Flow** and **History** for the same recent verified steps. The task request, recorded state and available state explanation stay together. Select a step to inspect its record and operation details; use **Task evidence** for current validation.
+
+**Review requests** opens Attention. **Needs review**, **Observation gaps** and **All observed** filter the same bounded native observation. Cards separate the historical outcome from current completion, show freshness, and expose the recorded evidence reference. Open a task to inspect it before taking an existing review action.
+
+This is a view over existing records. It adds no execution engine, task database, automatic approval, remote approval or host-task control. Earlier records and pinned runtimes remain intact. Harness 1.8.25 and SDK 0.2.11 are unchanged.
+
+Upgrade from Workbench 1.9.23 through Updates, or extract 1.9.24 into a new folder and keep your existing records home. [Screen guide](WORK_STATE_VIEW.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#work-state).
+
+## Previous releases / 과거 릴리즈
+
 
 ## 1.8.25 / 1.9.23 — incident evaluation, adversarial review and event resume
 
