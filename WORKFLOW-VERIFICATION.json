@@ -9,8 +9,10 @@
     "macos": {
       "nativeTests": {
         "exit": 0,
-        "seconds": 229.81,
-        "passed": 274,
+        "reusedVerifiedExecution": true,
+        "logSha256": "fdbc3326fb079326db18c62948cc3de34478cc9c7a04e2b58cddded0871b11d7",
+        "binarySha256": "ae4ce662db4d1dd2f64dd4d3031b7e0d40366293c3e17e60b8f7e05492d0d003",
+        "passed": 283,
         "failed": 0,
         "ignored": 2
       },
@@ -30,8 +32,8 @@
     "windows": {
       "nativeTests": {
         "exit": 0,
-        "seconds": 87.172,
-        "passed": 254,
+        "seconds": 92.187,
+        "passed": 262,
         "failed": 0,
         "ignored": 1
       },
@@ -51,8 +53,8 @@
     "linux": {
       "nativeTests": {
         "exit": 0,
-        "seconds": 115.613,
-        "passed": 270,
+        "seconds": 115.521,
+        "passed": 279,
         "failed": 0,
         "ignored": 1
       },
@@ -73,5 +75,22 @@
   "scope": "Real native binaries and processes, deterministic provider fixture; no live-model accuracy or cost claim",
   "modelCalls": 0,
   "historicalCase": "Curated pre-fix observations from a retained status incident report; original telemetry not replayed",
-  "existingOwnerTasksUsed": false
+  "existingOwnerTasksUsed": false,
+  "auditStorage": {
+    "activeSegmentLimitBytes": 67108864,
+    "retention": "Original segment bytes and SHA-256 receipt; no automatic deletion",
+    "normalAppendReadsArchivedSegments": false,
+    "testsIncludedInNativeSuites": [
+      "64 MiB overflow retains original bytes",
+      "failed audit does not mark a host event seen",
+      "pre-write rotation and exact boundary",
+      "pending receipts and older segments retained",
+      "oversized and partial records rejected without erasure",
+      "failed archive leaves hot bytes intact",
+      "concurrent writers preserve complete unique records",
+      "process death releases OS audit lock"
+    ],
+    "unixOnlyCoverage": "symlink and hardlink refusal",
+    "scope": "Synthetic audit files and processes; no long-duration memory benchmark"
+  }
 }

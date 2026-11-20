@@ -4,12 +4,14 @@
 harness: 1.8.25
 workbench: 1.9.23
 sdk: 0.2.11
-Release state: published
+Release channels: GitHub / GitLab
 <!-- calf:current-release:end -->
 
 ## 1.8.25 / 1.9.23 — incident evaluation, adversarial review and event resume
 
 Historical incident packets exclude answers and future evidence; scores separate diagnosis from handoff usefulness. Adversarial review binds support, counterexamples and alternatives to actual current native CHECKs. Opt-in local events resume one bound managed task, reject duplicate/stale events and retain uncertain interrupted execution for review. Existing records, contracts, settings and pinned task runtimes remain intact.
+
+Host audit logs now rotate before a new record would exceed 64 MiB. The previous bytes remain in cold segments with their size and SHA-256 receipts. Writers share an OS lock, and an audit write failure leaves the event unacknowledged for retry.
 
 Use `calf evaluation` and `calf events` through the CLI or common API. [Usage and fields](WORKFLOW_HARDENING.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#workflow-hardening). SDK 0.2.11 is unchanged.
 

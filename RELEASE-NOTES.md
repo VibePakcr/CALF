@@ -4,6 +4,8 @@
 
 Historical incident packets exclude answers and future evidence; scores separate diagnosis from handoff usefulness. Adversarial review binds support, counterexamples and alternatives to actual current native CHECKs. Opt-in local events resume one bound managed task, reject duplicate/stale events and retain uncertain interrupted execution for review. Existing records, contracts, settings and pinned task runtimes remain intact.
 
+Host audit logs now rotate before a new record would exceed 64 MiB. The previous bytes remain in cold segments with their size and SHA-256 receipts. Writers share an OS lock, and an audit write failure leaves the event unacknowledged for retry.
+
 Use `calf evaluation` and `calf events` through the CLI or common API. [Usage and fields](WORKFLOW_HARDENING.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#workflow-hardening). SDK 0.2.11 is unchanged.
 
 Upgrade from Workbench 1.9.22 through Updates or extract 1.9.23 into a new folder. Keep the original records home and pinned task runtimes. Linked host tasks continue in their original host.
@@ -11,6 +13,8 @@ Upgrade from Workbench 1.9.22 through Updates or extract 1.9.23 into a new folde
 ## 1.8.25 / 1.9.23 — 과거 장애 평가·반증 검증·이벤트 재개
 
 과거 장애의 정답·미래 자료를 분리하고 진단과 보고서를 별도 평가합니다. 가설·반례·대안을 실제 네이티브 CHECK에 결속하며, 명시적으로 등록한 이벤트로 지정 관리 작업만 재개합니다. 중복·만료 이벤트와 중단 후 불확실한 재실행을 차단합니다. 기존 기록·계약·설정과 작업별 고정 실행기를 보존합니다.
+
+호스트 감사 로그가 새 기록으로 64MiB를 넘기 전에 자동 회전합니다. 이전 기록은 크기·SHA-256 영수증과 함께 콜드로그로 보관합니다. 작성자는 OS 잠금을 공유하며, 감사 저장에 실패한 이벤트는 처리 완료로 표시하지 않습니다.
 
 CLI와 공통 API의 `calf evaluation`·`calf events`로 사용합니다. [사용법과 필드](WORKFLOW_HARDENING_KR.md) · [온라인 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#workflow-hardening). SDK 0.2.11은 유지합니다.
 

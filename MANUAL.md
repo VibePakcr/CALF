@@ -4,6 +4,8 @@
 
 Historical incident packets exclude answers and future evidence; scores separate diagnosis from handoff usefulness. Adversarial review binds support, counterexamples and alternatives to actual current native CHECKs. Opt-in local events resume one bound managed task, reject duplicate/stale events and retain uncertain interrupted execution for review. Existing records, contracts, settings and pinned task runtimes remain intact.
 
+Host audit logs now rotate before a new record would exceed 64 MiB. The previous bytes remain in cold segments with their size and SHA-256 receipts. Writers share an OS lock, and an audit write failure leaves the event unacknowledged for retry.
+
 Use `calf evaluation` and `calf events` through the CLI or common API. [Usage and fields](WORKFLOW_HARDENING.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#workflow-hardening). SDK 0.2.11 is unchanged.
 
 Upgrade from Workbench 1.9.22 through Updates or extract 1.9.23 into a new folder. Keep the original records home and pinned task runtimes. Linked host tasks continue in their original host.
@@ -11,6 +13,8 @@ Upgrade from Workbench 1.9.22 through Updates or extract 1.9.23 into a new folde
 ## 1.8.25 / 1.9.23 — 과거 장애 평가·반증 검증·이벤트 재개
 
 과거 장애의 정답·미래 자료를 분리하고 진단과 보고서를 별도 평가합니다. 가설·반례·대안을 실제 네이티브 CHECK에 결속하며, 명시적으로 등록한 이벤트로 지정 관리 작업만 재개합니다. 중복·만료 이벤트와 중단 후 불확실한 재실행을 차단합니다. 기존 기록·계약·설정과 작업별 고정 실행기를 보존합니다.
+
+호스트 감사 로그가 새 기록으로 64MiB를 넘기 전에 자동 회전합니다. 이전 기록은 크기·SHA-256 영수증과 함께 콜드로그로 보관합니다. 작성자는 OS 잠금을 공유하며, 감사 저장에 실패한 이벤트는 처리 완료로 표시하지 않습니다.
 
 CLI와 공통 API의 `calf evaluation`·`calf events`로 사용합니다. [사용법과 필드](WORKFLOW_HARDENING_KR.md) · [온라인 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#workflow-hardening). SDK 0.2.11은 유지합니다.
 
@@ -290,3 +294,9 @@ calf evaluation < routing.json
 토큰은 공급자 보고값이며 금액은 3개 과제의 공개 Standard API 단가 환산치입니다. 미보고 캐시 쓰기·서비스 등급 배수·구독 크레딧 과금은 포함하지 않으며 실제 청구액은 미확인입니다. 서버 부하·서비스 등급·캐시 상태를 통제하지 않은 모델당 3개 단일 시도이므로 일반 성능 순위나 반복 가능한 절감률을 뜻하지 않습니다. 생성된 선택 함수를 실행한 필수·금지 선택 4건도 통과했으며 실제 호스트 스킬 호출의 증명은 아닙니다.
 
 [English and official rate sources](https://github.com/VibePakcr/CALF/blob/main/ROUTING_EVALUATION.md#real-model-pilot) · [검증 범위](https://github.com/VibePakcr/CALF/releases/download/v1.9.21/ROUTING-LANE-VERIFICATION.json)
+
+## Hot and cold host audit logs / 핫로그와 콜드로그
+
+The active `events.jsonl` is the hot log. Under the same host state directory, `audit-segments/<id>/events.jsonl` retains a cold segment and `receipt.json` records its byte length, SHA-256 and retention time. Ordinary appends do not scan cold segments. When investigating an incident, select the relevant segment and verify its bytes against the receipt before using it. An interrupted move may leave a receipt without its file; the receipt alone is not a successful preservation check. Automatic deletion is disabled.
+
+현재 쓰는 `events.jsonl`이 핫로그입니다. 같은 호스트 기록 경로의 `audit-segments/<id>/events.jsonl`은 콜드로그이며, `receipt.json`에 크기·SHA-256·보관 시각을 기록합니다. 평소 기록 추가에서는 콜드로그를 순회하지 않습니다. 장애 조사 시 해당 파일과 영수증의 크기·해시를 대조해 참조하세요. 이동 중 중단되면 파일 없는 영수증이 남을 수 있으므로 영수증만으로 보존 성공을 판정하지 않습니다. 자동 삭제는 수행하지 않습니다.
