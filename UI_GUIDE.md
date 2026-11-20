@@ -1,4 +1,14 @@
-# Workbench 1.9.24 screen guide
+# Workbench 1.9.25 screen guide
+## Workbench 1.9.25 — a smaller Updates view
+
+Updates shows the **running version**, at most one **verified newer prepared update**, and the **verified previous version** for rollback. A window still running an older version says so separately from the selected version. An update candidate must be newer than both.
+
+Older installations move into collapsed **Retained versions**, grouped by version without repeated activation buttons. They are kept on disk. Failed candidate or rollback verification disables that action and explains the problem. Existing native activation and rollback verify the selected bytes again when used.
+
+Nothing downloads or changes versions automatically. Records, contracts, settings, audit history and pinned task runtimes remain intact. The retained catalogue keeps its existing bound of 32 local entries. Harness 1.8.25 and SDK 0.2.11 are unchanged.
+
+Update from 1.9.24 through Updates or extract 1.9.25 into a new folder with your existing records home. [Update guide](UPDATE.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#update-view).
+
 ## Workbench 1.9.24 — follow work and review interruptions
 
 Switch between **Flow** and **History** for the same recent verified steps. The task request, recorded state and available state explanation stay together. Select a step to inspect its record and operation details; use **Task evidence** for current validation.
@@ -35,7 +45,7 @@ Upgrade from Workbench 1.9.21 through Updates, or download 1.9.22 and extract it
 
 ## Ontology evidence exploration
 
-Current guide: Harness **1.8.25** · Workbench **1.9.24** · SDK **0.2.11**.
+Current guide: Harness **1.8.25** · Workbench **1.9.25** · SDK **0.2.11**.
 
 Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
 

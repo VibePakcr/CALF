@@ -1,4 +1,24 @@
-# CALF Harness 1.8.25 · Workbench 1.9.24
+# CALF Harness 1.8.25 · Workbench 1.9.25
+## Workbench 1.9.25 — a smaller Updates view
+
+Updates shows the **running version**, at most one **verified newer prepared update**, and the **verified previous version** for rollback. A window still running an older version says so separately from the selected version. An update candidate must be newer than both.
+
+Older installations move into collapsed **Retained versions**, grouped by version without repeated activation buttons. They are kept on disk. Failed candidate or rollback verification disables that action and explains the problem. Existing native activation and rollback verify the selected bytes again when used.
+
+Nothing downloads or changes versions automatically. Records, contracts, settings, audit history and pinned task runtimes remain intact. The retained catalogue keeps its existing bound of 32 local entries. Harness 1.8.25 and SDK 0.2.11 are unchanged.
+
+Update from 1.9.24 through Updates or extract 1.9.25 into a new folder with your existing records home. [Update guide](UPDATE.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#update-view).
+
+## Workbench 1.9.25 — 업데이트와 롤백을 간결하게
+
+Updates에는 **실행 중인 버전**, **검증된 새 업데이트 후보 최대 하나**, **검증된 직전 롤백 버전**을 표시합니다. 이전 버전의 창이 계속 열려 있으면 선택된 버전과 구분해 알려줍니다. 업데이트 후보는 실행 중인 버전과 선택된 버전 모두보다 새로워야 합니다.
+
+이전 설치본은 접힌 **Retained versions**에서 버전별로 묶어 조회합니다. 실행 버튼을 반복하지 않으며 파일은 그대로 보관합니다. 업데이트 후보나 직전 버전의 검증에 실패하면 해당 실행 기능을 비활성화하고 이유를 표시합니다. 실제 업데이트·롤백 때는 기존 네이티브 경로가 파일을 다시 검증합니다.
+
+자동 다운로드나 자동 버전 전환은 없습니다. 기록·계약·설정·감사 이력·작업별 고정 런타임을 보존하며, 보관 목록 조회는 기존 로컬 항목 32개 한도를 유지합니다. Harness 1.8.25와 SDK 0.2.11은 변경하지 않습니다.
+
+1.9.24의 Updates를 사용하거나 1.9.25를 새 폴더에 풀고 기존 기록 위치를 유지하세요. [업데이트 안내](UPDATE.md) · [온라인 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#update-view).
+
 ## Workbench 1.9.24 — follow work and review interruptions
 
 Switch between **Flow** and **History** for the same recent verified steps. The task request, recorded state and available state explanation stay together. Select a step to inspect its record and operation details; use **Task evidence** for current validation.

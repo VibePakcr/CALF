@@ -1,10 +1,22 @@
-# CALF Harness 1.8.25 · Workbench 1.9.24
+# CALF Harness 1.8.25 · Workbench 1.9.25
 <!-- calf:current-release:start -->
 harness: 1.8.25
-workbench: 1.9.24
+workbench: 1.9.25
 sdk: 0.2.11
 Release channels: GitHub / GitLab
 <!-- calf:current-release:end -->
+
+## Workbench 1.9.25 — a smaller Updates view
+
+Updates shows the **running version**, at most one **verified newer prepared update**, and the **verified previous version** for rollback. A window still running an older version says so separately from the selected version. An update candidate must be newer than both.
+
+Older installations move into collapsed **Retained versions**, grouped by version without repeated activation buttons. They are kept on disk. Failed candidate or rollback verification disables that action and explains the problem. Existing native activation and rollback verify the selected bytes again when used.
+
+Nothing downloads or changes versions automatically. Records, contracts, settings, audit history and pinned task runtimes remain intact. The retained catalogue keeps its existing bound of 32 local entries. Harness 1.8.25 and SDK 0.2.11 are unchanged.
+
+Update from 1.9.24 through Updates or extract 1.9.25 into a new folder with your existing records home. [Update guide](UPDATE.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#update-view).
+
+
 
 ## Workbench 1.9.24 — follow work and review interruptions
 
