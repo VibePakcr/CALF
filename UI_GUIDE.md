@@ -1,4 +1,12 @@
-# Workbench 1.9.22 screen guide
+# Workbench 1.9.23 screen guide
+
+## 1.8.25 / 1.9.23 — incident evaluation, adversarial review and event resume
+
+Historical incident packets exclude answers and future evidence; scores separate diagnosis from handoff usefulness. Adversarial review binds support, counterexamples and alternatives to actual current native CHECKs. Opt-in local events resume one bound managed task, reject duplicate/stale events and retain uncertain interrupted execution for review. Existing records, contracts, settings and pinned task runtimes remain intact.
+
+Use `calf evaluation` and `calf events` through the CLI or common API. [Usage and fields](WORKFLOW_HARDENING.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#workflow-hardening). SDK 0.2.11 is unchanged.
+
+Upgrade from Workbench 1.9.22 through Updates or extract 1.9.23 into a new folder. Keep the original records home and pinned task runtimes. Linked host tasks continue in their original host.
 
 ## Workbench 1.9.22 — connected task status
 
@@ -17,7 +25,7 @@ Upgrade from Workbench 1.9.21 through Updates, or download 1.9.22 and extract it
 
 ## Ontology evidence exploration
 
-Current guide: Harness **1.8.24** · Workbench **1.9.22** · SDK **0.2.11**.
+Current guide: Harness **1.8.25** · Workbench **1.9.23** · SDK **0.2.11**.
 
 Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
 

@@ -1,6 +1,6 @@
 # CALF
 
-Workbench 1.9.22 fixes exact connected-task selection and allows read-only host status before choosing a workspace. [Changes](CURRENT_RELEASE.md) · [Download](DOWNLOADS.md) · [Manual](https://calf.vibepackr.com/manual/?lang=en#connected-task-status)
+Historical incident packets exclude answers and future evidence; scores separate diagnosis from handoff usefulness. Adversarial review binds support, counterexamples and alternatives to actual current native CHECKs. Opt-in local events resume one bound managed task, reject duplicate/stale events and retain uncertain interrupted execution for review. Existing records, contracts, settings and pinned task runtimes remain intact. [Workflow guide](WORKFLOW_HARDENING.md)
 
 Under Patch 2026-11-17 adds opt-in native operation delegation between a trusted Mac broker and a separately provisioned Linux host: a fixed repository read, exact ticket, local confirmation, single-use authority and minimal results. Existing records, contracts, settings and task runtimes are retained. [Usage and scope](https://calf.vibepackr.com/manual/?lang=en#operation-delegation)
 
@@ -16,7 +16,7 @@ Use it with Codex, Antigravity or Claude Code. CALF is built with Rust and Tauri
 
 ## Ontology evidence exploration
 
-Current guide: Harness **1.8.24** · Workbench **1.9.22** · SDK **0.2.11**.
+Current guide: Harness **1.8.25** · Workbench **1.9.23** · SDK **0.2.11**.
 
 Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
 
@@ -46,7 +46,7 @@ Bring a correction from earlier tasks into the next request as a suggestion. Cho
 
 ![A suggestion appended in the actual Workbench 1.9.18 app](guidance-add-1.9.18.jpg)
 
-[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.22/CALF_mannual.html)
+[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.23/CALF_mannual.html)
 
 ## Material connects automatically
 
@@ -66,8 +66,8 @@ Repository Intelligence is included with CALF. GCN/MCL helps organize the order 
 
 | Use | Choose |
 | --- | --- |
-| A desktop app for following tasks and reviewing files | **Workbench 1.9.22** |
-| Terminal commands, host hooks or MCP | **Harness 1.8.24** |
+| A desktop app for following tasks and reviewing files | **Workbench 1.9.23** |
+| Terminal commands, host hooks or MCP | **Harness 1.8.25** |
 | Connect your own tools | **SDK 0.2.11** |
 
 Workbench and Harness use the same core. Point them to the same CALF data folder to see the same tasks. Keep that folder and older task runtimes when updating.

@@ -1,6 +1,6 @@
 # CALF 자격증명 분리 작업 위임
 
-현재 안내: Harness 1.8.24 · Workbench 1.9.22 · SDK 0.2.11.
+현재 안내: Harness 1.8.25 · Workbench 1.9.23 · SDK 0.2.11.
 
 최초 적용 버전과 이력: Harness 1.8.24 · Workbench 1.9.21 · 동일 버전 Under Patch.
 

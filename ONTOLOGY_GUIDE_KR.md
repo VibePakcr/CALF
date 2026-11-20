@@ -1,6 +1,6 @@
 # 작업의 근거와 변경 영향 탐색
 
-현재 안내: Harness **1.8.24** · Workbench **1.9.22** · SDK **0.2.11**.
+현재 안내: Harness **1.8.25** · Workbench **1.9.23** · SDK **0.2.11**.
 
 [설치](INSTALL_KR.md) · [다운로드](DOWNLOADS.md) · [English](ONTOLOGY_GUIDE.md)
 

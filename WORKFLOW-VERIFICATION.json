@@ -1,0 +1,77 @@
+{
+  "schema": "calf.workflow-release-verification.v1",
+  "versions": {
+    "Harness": "1.8.25",
+    "Workbench": "1.9.23"
+  },
+  "status": "PASS",
+  "platforms": {
+    "macos": {
+      "nativeTests": {
+        "exit": 0,
+        "seconds": 229.81,
+        "passed": 274,
+        "failed": 0,
+        "ignored": 2
+      },
+      "workflowChecks": [
+        "retained historical observations: separated packet, correct/wrong diagnosis and leakage exclusion",
+        "actual CHECK processes reject wrong diagnosis, retain support, distinguish tool failure and invalidate changed inputs",
+        "fresh-process event wait, targeted native execution, independent checks and duplicate suppression; unrelated queued job unchanged",
+        "actual worker interruption cleans owned child; fresh worker and duplicate event cannot replay uncertain dispatch"
+      ],
+      "harnessWorkflowChecks": [
+        "retained historical observations: separated packet, correct/wrong diagnosis and leakage exclusion",
+        "actual CHECK processes reject wrong diagnosis, retain support, distinguish tool failure and invalidate changed inputs",
+        "fresh-process event wait, targeted native execution, independent checks and duplicate suppression; unrelated queued job unchanged",
+        "actual worker interruption cleans owned child; fresh worker and duplicate event cannot replay uncertain dispatch"
+      ]
+    },
+    "windows": {
+      "nativeTests": {
+        "exit": 0,
+        "seconds": 87.172,
+        "passed": 254,
+        "failed": 0,
+        "ignored": 1
+      },
+      "workflowChecks": [
+        "retained historical observations: separated packet, correct/wrong diagnosis and leakage exclusion",
+        "actual CHECK processes reject wrong diagnosis, retain support, distinguish tool failure and invalidate changed inputs",
+        "fresh-process event wait, targeted native execution, independent checks and duplicate suppression; unrelated queued job unchanged",
+        "actual worker interruption cleans owned child; fresh worker and duplicate event cannot replay uncertain dispatch"
+      ],
+      "harnessWorkflowChecks": [
+        "retained historical observations: separated packet, correct/wrong diagnosis and leakage exclusion",
+        "actual CHECK processes reject wrong diagnosis, retain support, distinguish tool failure and invalidate changed inputs",
+        "fresh-process event wait, targeted native execution, independent checks and duplicate suppression; unrelated queued job unchanged",
+        "actual worker interruption cleans owned child; fresh worker and duplicate event cannot replay uncertain dispatch"
+      ]
+    },
+    "linux": {
+      "nativeTests": {
+        "exit": 0,
+        "seconds": 115.613,
+        "passed": 270,
+        "failed": 0,
+        "ignored": 1
+      },
+      "workflowChecks": [
+        "retained historical observations: separated packet, correct/wrong diagnosis and leakage exclusion",
+        "actual CHECK processes reject wrong diagnosis, retain support, distinguish tool failure and invalidate changed inputs",
+        "fresh-process event wait, targeted native execution, independent checks and duplicate suppression; unrelated queued job unchanged",
+        "actual worker interruption cleans owned child; fresh worker and duplicate event cannot replay uncertain dispatch"
+      ],
+      "harnessWorkflowChecks": [
+        "retained historical observations: separated packet, correct/wrong diagnosis and leakage exclusion",
+        "actual CHECK processes reject wrong diagnosis, retain support, distinguish tool failure and invalidate changed inputs",
+        "fresh-process event wait, targeted native execution, independent checks and duplicate suppression; unrelated queued job unchanged",
+        "actual worker interruption cleans owned child; fresh worker and duplicate event cannot replay uncertain dispatch"
+      ]
+    }
+  },
+  "scope": "Real native binaries and processes, deterministic provider fixture; no live-model accuracy or cost claim",
+  "modelCalls": 0,
+  "historicalCase": "Curated pre-fix observations from a retained status incident report; original telemetry not replayed",
+  "existingOwnerTasksUsed": false
+}

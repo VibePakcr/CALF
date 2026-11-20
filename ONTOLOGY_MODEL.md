@@ -1,6 +1,6 @@
 # Object, property, relationship and constraint specification
 
-Current guide: Harness 1.8.24 · Workbench 1.9.22 · SDK 0.2.11.
+Current guide: Harness 1.8.25 · Workbench 1.9.23 · SDK 0.2.11.
 
 Original release context: Harness 1.8.24 · Workbench 1.9.21 · Under Patch 2026-11-16 · stored record format 1 retained. Existing files are not rewritten or migrated.
 

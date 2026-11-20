@@ -1,4 +1,20 @@
-# CALF Workbench 1.9.22 사용 안내 · User guide
+# CALF Workbench 1.9.23 사용 안내 · User guide
+
+## 1.8.25 / 1.9.23 — incident evaluation, adversarial review and event resume
+
+Historical incident packets exclude answers and future evidence; scores separate diagnosis from handoff usefulness. Adversarial review binds support, counterexamples and alternatives to actual current native CHECKs. Opt-in local events resume one bound managed task, reject duplicate/stale events and retain uncertain interrupted execution for review. Existing records, contracts, settings and pinned task runtimes remain intact.
+
+Use `calf evaluation` and `calf events` through the CLI or common API. [Usage and fields](WORKFLOW_HARDENING.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#workflow-hardening). SDK 0.2.11 is unchanged.
+
+Upgrade from Workbench 1.9.22 through Updates or extract 1.9.23 into a new folder. Keep the original records home and pinned task runtimes. Linked host tasks continue in their original host.
+
+## 1.8.25 / 1.9.23 — 과거 장애 평가·반증 검증·이벤트 재개
+
+과거 장애의 정답·미래 자료를 분리하고 진단과 보고서를 별도 평가합니다. 가설·반례·대안을 실제 네이티브 CHECK에 결속하며, 명시적으로 등록한 이벤트로 지정 관리 작업만 재개합니다. 중복·만료 이벤트와 중단 후 불확실한 재실행을 차단합니다. 기존 기록·계약·설정과 작업별 고정 실행기를 보존합니다.
+
+CLI와 공통 API의 `calf evaluation`·`calf events`로 사용합니다. [사용법과 필드](WORKFLOW_HARDENING_KR.md) · [온라인 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#workflow-hardening). SDK 0.2.11은 유지합니다.
+
+Workbench 1.9.22의 Updates를 사용하거나 1.9.23을 새 폴더에 푸세요. 기존 기록 폴더와 작업별 고정 실행기는 유지하며, 연결 작업은 원래 호스트에서 계속됩니다.
 
 ## Workbench 1.9.22 — connected task status
 
@@ -46,7 +62,7 @@ Follow the pictures to install CALF, start a task, review the result and resume 
 
 ## 오프라인에서 읽기 · Read offline
 
-[영·한 HTML 매뉴얼 받기 · Download the EN/KR HTML manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.22/CALF_mannual.html)
+[영·한 HTML 매뉴얼 받기 · Download the EN/KR HTML manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.23/CALF_mannual.html)
 
 `CALF_mannual.html`을 받아 Chrome·Edge·Safari에서 여세요. 그림이 모두 들어 있어 인터넷 없이도 볼 수 있습니다. 이 파일은 위쪽 **EN / KR** 버튼으로 언어를 바꿉니다.
 
@@ -56,7 +72,7 @@ GitHub에서 HTML 미리보기가 열리지 않으면 위 다운로드 링크를
 
 If GitHub cannot preview the HTML file, use the download link above.
 
-[GitHub release](https://github.com/VibePakcr/CALF/releases/tag/v1.9.22) · [GitLab release](https://gitlab.com/vibepackr-group/CALF/-/releases/v1.9.22) · [Downloads / 다운로드](DOWNLOADS.md)
+[GitHub release](https://github.com/VibePakcr/CALF/releases/tag/v1.9.23) · [GitLab release](https://gitlab.com/vibepackr-group/CALF/-/releases/v1.9.23) · [Downloads / 다운로드](DOWNLOADS.md)
 
 ## 이번 업데이트 · This update
 

@@ -1,6 +1,6 @@
 # CALF
 
-Workbench 1.9.22 정식 패치: 연결 작업의 정확한 ID로 상태를 조회하고, 폴더를 선택하기 전에도 연결 기록을 읽습니다. [변경점](CURRENT_RELEASE_KR.md) · [다운로드](DOWNLOADS.md) · [매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#connected-task-status)
+과거 장애의 정답·미래 자료를 분리하고 진단과 보고서를 별도 평가합니다. 가설·반례·대안을 실제 네이티브 CHECK에 결속하며, 명시적으로 등록한 이벤트로 지정 관리 작업만 재개합니다. 중복·만료 이벤트와 중단 후 불확실한 재실행을 차단합니다. 기존 기록·계약·설정과 작업별 고정 실행기를 보존합니다. [Workflow guide](WORKFLOW_HARDENING_KR.md)
 
 Under Patch 2026-11-17 · Mac의 신뢰 브로커와 별도 Linux 호스트를 연결하는 선택형 Rust 작업 위임입니다. 고정 저장소 읽기 조회·정확한 티켓·로컬 확인·일회성 권한·최소 결과를 제공합니다. 기존 기록·계약·설정·진행 작업 런타임을 보존합니다. [사용 범위](https://calf.vibepackr.com/manual/?lang=ko#operation-delegation)
 
@@ -16,7 +16,7 @@ Codex·Antigravity·Claude Code와 함께 사용하는 가벼운 워크벤치입
 
 ## 온톨로지 근거 탐색
 
-현재 안내: Harness **1.8.24** · Workbench **1.9.22** · SDK **0.2.11**.
+현재 안내: Harness **1.8.25** · Workbench **1.9.23** · SDK **0.2.11**.
 
 작업 하나의 근거 그래프, 오래된 기록 검색·페이지 이동, 주변·역참조·경로 탐색과 직접·간접 영향 후보를 읽기 전용으로 확인합니다. 기존 기록·계약·설정과 작업 실행을 보존합니다. [사용법](ONTOLOGY_GUIDE_KR.md)
 
@@ -46,7 +46,7 @@ Workbench 1.9.16의 첫 작업 화면입니다. [Windows·Linux 화면](UI_GUIDE
 
 ![기존 문구 뒤에 제안을 추가한 실제 Workbench 1.9.18 화면](guidance-add-1.9.18.jpg)
 
-[추가·되돌리기 따라 하기](REQUEST_GUIDANCE_KR.md) · [최신 오프라인 영·한 매뉴얼 받기](https://github.com/VibePakcr/CALF/releases/download/v1.9.22/CALF_mannual.html)
+[추가·되돌리기 따라 하기](REQUEST_GUIDANCE_KR.md) · [최신 오프라인 영·한 매뉴얼 받기](https://github.com/VibePakcr/CALF/releases/download/v1.9.23/CALF_mannual.html)
 
 ## 자료는 자동으로 연결합니다
 
@@ -66,8 +66,8 @@ Repository Intelligence는 CALF에 기본으로 포함돼 있습니다. GCN/MCL�
 
 | 하고 싶은 일 | 선택 |
 | --- | --- |
-| 화면에서 작업을 따라가고 파일과 결과 확인하기 | **Workbench 1.9.22** |
-| 터미널 명령·호스트 훅·MCP로 사용하기 | **Harness 1.8.24** |
+| 화면에서 작업을 따라가고 파일과 결과 확인하기 | **Workbench 1.9.23** |
+| 터미널 명령·호스트 훅·MCP로 사용하기 | **Harness 1.8.25** |
 | 직접 만든 도구 연결하기 | **SDK 0.2.11** |
 
 Workbench와 Harness는 같은 코어를 사용합니다. CALF 데이터 폴더를 같게 지정하면 같은 작업을 볼 수 있습니다. 업데이트할 때는 이 폴더와 이전 작업의 런타임을 유지하세요.

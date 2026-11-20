@@ -1,11 +1,23 @@
-# CALF Workbench 1.9.22
+# CALF Harness 1.8.25 · Workbench 1.9.23
 
 <!-- calf:current-release:start -->
-harness: 1.8.24
-workbench: 1.9.22
+harness: 1.8.25
+workbench: 1.9.23
 sdk: 0.2.11
 Release state: published
 <!-- calf:current-release:end -->
+
+## 1.8.25 / 1.9.23 — incident evaluation, adversarial review and event resume
+
+Historical incident packets exclude answers and future evidence; scores separate diagnosis from handoff usefulness. Adversarial review binds support, counterexamples and alternatives to actual current native CHECKs. Opt-in local events resume one bound managed task, reject duplicate/stale events and retain uncertain interrupted execution for review. Existing records, contracts, settings and pinned task runtimes remain intact.
+
+Use `calf evaluation` and `calf events` through the CLI or common API. [Usage and fields](WORKFLOW_HARDENING.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#workflow-hardening). SDK 0.2.11 is unchanged.
+
+Upgrade from Workbench 1.9.22 through Updates or extract 1.9.23 into a new folder. Keep the original records home and pinned task runtimes. Linked host tasks continue in their original host.
+
+## Previous releases / 과거 릴리즈
+
+# CALF Workbench 1.9.22
 
 ## Workbench 1.9.22 — connected task status
 
