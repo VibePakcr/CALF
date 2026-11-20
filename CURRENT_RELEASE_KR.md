@@ -1,10 +1,22 @@
-# CALF Harness 1.8.25 · Workbench 1.9.25
+# CALF Harness 1.8.25 · Workbench 1.9.26
 <!-- calf:current-release:start -->
 harness: 1.8.25
-workbench: 1.9.25
+workbench: 1.9.26
 sdk: 0.2.11
 Release channels: GitHub / GitLab
 <!-- calf:current-release:end -->
+
+## Workbench 1.9.26 — 작업 공간 확보와 근거 그래프 조작
+
+작업 관측 영역과 작업 기록 영역을 각각 스크롤합니다. Task Flow·Git Graph·Diff를 바꿔도 **Start a task**와 실행 기록에 필요한 공간을 유지합니다. 경계선을 끌어 비율을 조절하거나, 경계선에 초점을 두고 방향키를 사용하세요. Enter는 기본 비율로 되돌립니다.
+
+**Evidence graph**에서 노드를 끌어 배치하고, 배경을 끌거나 스크롤하여 이동합니다. 확대·축소 버튼 또는 Ctrl/⌘ + 휠을 사용할 수 있습니다. **Fit to view**는 화면에 맞추고 **Reset layout**은 처음 배치로 복원합니다. 초점이 있는 노드는 Shift + 방향키로 이동할 수 있습니다. 화면을 위한 임시 조작이며 근거 기록·관계·완료 판정은 변경하지 않습니다.
+
+Git Graph는 기존의 로컬 커밋·브랜치 보기입니다. 병합, 로컬 변경, 충돌, 분리된 HEAD, 로컬 추적 참조의 앞섬·뒤처짐을 표시하며 최근 커밋 최대 20개를 조회합니다. fetch나 저장소 변경은 수행하지 않습니다. 파일 의존 관계 그래프는 별도 보기이며 이번 변경에 포함하지 않습니다.
+
+1.9.25의 Updates를 사용하거나 1.9.26을 새 폴더에 풀고 기존 기록 위치를 유지하세요. 이전 설치본과 롤백을 보존합니다. Harness 1.8.25와 SDK 0.2.11은 변경하지 않습니다. [업데이트 안내](UPDATE.md) · [온라인 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#workspace-graphs).
+
+
 
 ## Workbench 1.9.25 — 업데이트와 롤백을 간결하게
 

@@ -1,4 +1,25 @@
-# Update CALF Workbench 1.9.25
+# Update CALF Workbench 1.9.26
+
+## Workbench 1.9.26 — usable task space and interactive evidence graphs
+
+Task observations and task records now have separate scrolling areas. **Start a task** and the execution records keep their own space when switching between Task Flow, Git Graph and Diff. Drag the divider to adjust the split, or focus it and use arrow keys; Enter restores the default.
+
+In **Evidence graph**, drag a node to rearrange it, drag the background or scroll to move around, and use the zoom controls or Ctrl/⌘ + wheel. **Fit to view** fits the graph; **Reset layout** restores the original arrangement. Shift + arrow keys moves a focused node. These are temporary view changes: recorded evidence, relationships and completion decisions are unchanged.
+
+Git Graph continues to show local commits and branches. It displays merges, local changes, conflicts, detached HEAD and tracking counts from local refs, with at most 20 recent commits. It does not fetch or modify the repository. A file dependency graph is a separate view and is not part of this update.
+
+Update from 1.9.25 through Updates, or extract 1.9.26 into a new folder while keeping the existing records home. Earlier installations and rollback remain available. Harness 1.8.25 and SDK 0.2.11 are unchanged. [Update guide](UPDATE.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#workspace-graphs).
+
+## Workbench 1.9.26 — 작업 공간 확보와 근거 그래프 조작
+
+작업 관측 영역과 작업 기록 영역을 각각 스크롤합니다. Task Flow·Git Graph·Diff를 바꿔도 **Start a task**와 실행 기록에 필요한 공간을 유지합니다. 경계선을 끌어 비율을 조절하거나, 경계선에 초점을 두고 방향키를 사용하세요. Enter는 기본 비율로 되돌립니다.
+
+**Evidence graph**에서 노드를 끌어 배치하고, 배경을 끌거나 스크롤하여 이동합니다. 확대·축소 버튼 또는 Ctrl/⌘ + 휠을 사용할 수 있습니다. **Fit to view**는 화면에 맞추고 **Reset layout**은 처음 배치로 복원합니다. 초점이 있는 노드는 Shift + 방향키로 이동할 수 있습니다. 화면을 위한 임시 조작이며 근거 기록·관계·완료 판정은 변경하지 않습니다.
+
+Git Graph는 기존의 로컬 커밋·브랜치 보기입니다. 병합, 로컬 변경, 충돌, 분리된 HEAD, 로컬 추적 참조의 앞섬·뒤처짐을 표시하며 최근 커밋 최대 20개를 조회합니다. fetch나 저장소 변경은 수행하지 않습니다. 파일 의존 관계 그래프는 별도 보기이며 이번 변경에 포함하지 않습니다.
+
+1.9.25의 Updates를 사용하거나 1.9.26을 새 폴더에 풀고 기존 기록 위치를 유지하세요. 이전 설치본과 롤백을 보존합니다. Harness 1.8.25와 SDK 0.2.11은 변경하지 않습니다. [업데이트 안내](UPDATE.md) · [온라인 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#workspace-graphs).
+
 
 ## Workbench 1.9.25 — a smaller Updates view
 
@@ -21,11 +42,11 @@ Updates에는 **실행 중인 버전**, **검증된 새 업데이트 후보 최�
 1.9.24의 Updates를 사용하거나 1.9.25를 새 폴더에 풀고 기존 기록 위치를 유지하세요. [업데이트 안내](UPDATE.md) · [온라인 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#update-view).
 
 
-Current guide: Workbench **1.9.25** · Harness **1.8.25** · SDK **0.2.11**.
+Current guide: Workbench **1.9.26** · Harness **1.8.25** · SDK **0.2.11**.
 
 Use Updates or the [current downloads](DOWNLOADS.md). Keep the complete records home, contracts, preferences and pinned task runtimes. Extract into a new folder; linked host tasks continue in their original host. See the [current manual](https://calf.vibepackr.com/manual/?lang=en#update-view).
 
-현재 안내는 Workbench 1.9.25 기준입니다. [다운로드](DOWNLOADS.md)와 [한국어 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#update-view)을 확인하세요. 기존 기록·계약·설정과 작업별 런타임을 보존합니다.
+현재 안내는 Workbench 1.9.26 기준입니다. [다운로드](DOWNLOADS.md)와 [한국어 매뉴얼](https://calf.vibepackr.com/manual/?lang=ko#update-view)을 확인하세요. 기존 기록·계약·설정과 작업별 런타임을 보존합니다.
 
 ## Historical update notes / 과거 업데이트 기록
 

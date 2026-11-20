@@ -16,7 +16,7 @@ Codex·Antigravity·Claude Code와 함께 사용하는 가벼운 워크벤치입
 
 ## 온톨로지 근거 탐색
 
-현재 안내: Harness **1.8.25** · Workbench **1.9.25** · SDK **0.2.11**.
+현재 안내: Harness **1.8.25** · Workbench **1.9.26** · SDK **0.2.11**.
 
 작업 하나의 근거 그래프, 오래된 기록 검색·페이지 이동, 주변·역참조·경로 탐색과 직접·간접 영향 후보를 읽기 전용으로 확인합니다. 기존 기록·계약·설정과 작업 실행을 보존합니다. [사용법](ONTOLOGY_GUIDE_KR.md)
 
@@ -46,7 +46,7 @@ Workbench 1.9.16의 첫 작업 화면입니다. [Windows·Linux 화면](UI_GUIDE
 
 ![기존 문구 뒤에 제안을 추가한 실제 Workbench 1.9.18 화면](guidance-add-1.9.18.jpg)
 
-[추가·되돌리기 따라 하기](REQUEST_GUIDANCE_KR.md) · [최신 오프라인 영·한 매뉴얼 받기](https://github.com/VibePakcr/CALF/releases/download/v1.9.25/CALF_mannual.html)
+[추가·되돌리기 따라 하기](REQUEST_GUIDANCE_KR.md) · [최신 오프라인 영·한 매뉴얼 받기](https://github.com/VibePakcr/CALF/releases/download/v1.9.26/CALF_mannual.html)
 
 ## 자료는 자동으로 연결합니다
 
@@ -66,7 +66,7 @@ Repository Intelligence는 CALF에 기본으로 포함돼 있습니다. GCN/MCL�
 
 | 하고 싶은 일 | 선택 |
 | --- | --- |
-| 화면에서 작업을 따라가고 파일과 결과 확인하기 | **Workbench 1.9.25** |
+| 화면에서 작업을 따라가고 파일과 결과 확인하기 | **Workbench 1.9.26** |
 | 터미널 명령·호스트 훅·MCP로 사용하기 | **Harness 1.8.25** |
 | 직접 만든 도구 연결하기 | **SDK 0.2.11** |
 

@@ -16,7 +16,7 @@ Use it with Codex, Antigravity or Claude Code. CALF is built with Rust and Tauri
 
 ## Ontology evidence exploration
 
-Current guide: Harness **1.8.25** · Workbench **1.9.25** · SDK **0.2.11**.
+Current guide: Harness **1.8.25** · Workbench **1.9.26** · SDK **0.2.11**.
 
 Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
 
@@ -46,7 +46,7 @@ Bring a correction from earlier tasks into the next request as a suggestion. Cho
 
 ![A suggestion appended in the actual Workbench 1.9.18 app](guidance-add-1.9.18.jpg)
 
-[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.25/CALF_mannual.html)
+[Follow add and undo](REQUEST_GUIDANCE.md) · [Download the latest offline EN/KR manual](https://github.com/VibePakcr/CALF/releases/download/v1.9.26/CALF_mannual.html)
 
 ## Material connects automatically
 
@@ -66,7 +66,7 @@ Repository Intelligence is included with CALF. GCN/MCL helps organize the order 
 
 | Use | Choose |
 | --- | --- |
-| A desktop app for following tasks and reviewing files | **Workbench 1.9.25** |
+| A desktop app for following tasks and reviewing files | **Workbench 1.9.26** |
 | Terminal commands, host hooks or MCP | **Harness 1.8.25** |
 | Connect your own tools | **SDK 0.2.11** |
 

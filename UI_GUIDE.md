@@ -1,4 +1,14 @@
-# Workbench 1.9.25 screen guide
+# Workbench 1.9.26 screen guide
+## Workbench 1.9.26 — usable task space and interactive evidence graphs
+
+Task observations and task records now have separate scrolling areas. **Start a task** and the execution records keep their own space when switching between Task Flow, Git Graph and Diff. Drag the divider to adjust the split, or focus it and use arrow keys; Enter restores the default.
+
+In **Evidence graph**, drag a node to rearrange it, drag the background or scroll to move around, and use the zoom controls or Ctrl/⌘ + wheel. **Fit to view** fits the graph; **Reset layout** restores the original arrangement. Shift + arrow keys moves a focused node. These are temporary view changes: recorded evidence, relationships and completion decisions are unchanged.
+
+Git Graph continues to show local commits and branches. It displays merges, local changes, conflicts, detached HEAD and tracking counts from local refs, with at most 20 recent commits. It does not fetch or modify the repository. A file dependency graph is a separate view and is not part of this update.
+
+Update from 1.9.25 through Updates, or extract 1.9.26 into a new folder while keeping the existing records home. Earlier installations and rollback remain available. Harness 1.8.25 and SDK 0.2.11 are unchanged. [Update guide](UPDATE.md) · [Online manual](https://calf.vibepackr.com/manual/?lang=en#workspace-graphs).
+
 ## Workbench 1.9.25 — a smaller Updates view
 
 Updates shows the **running version**, at most one **verified newer prepared update**, and the **verified previous version** for rollback. A window still running an older version says so separately from the selected version. An update candidate must be newer than both.
@@ -45,7 +55,7 @@ Upgrade from Workbench 1.9.21 through Updates, or download 1.9.22 and extract it
 
 ## Ontology evidence exploration
 
-Current guide: Harness **1.8.25** · Workbench **1.9.25** · SDK **0.2.11**.
+Current guide: Harness **1.8.25** · Workbench **1.9.26** · SDK **0.2.11**.
 
 Read-only task evidence graphs, historical search and paging, reference navigation, and direct/indirect impact explanations. Existing records, contracts, settings and task execution are preserved. [Guide](ONTOLOGY_GUIDE.md)
 
